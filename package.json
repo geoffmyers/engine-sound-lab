@@ -1,0 +1,9 @@
+{
+  "name": "engine-sound-lab",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "check": "node tests/dsp-check.mjs && node scripts/check-acceleration.mjs"
+  }
+}

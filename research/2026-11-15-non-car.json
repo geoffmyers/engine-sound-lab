@@ -1,0 +1,570 @@
+[
+  {
+    "id": "harley-davidson-street-bob-114-2023",
+    "label": "Harley-Davidson Milwaukee-Eight 114 (2023 Softail Street Bob 114, FXBBS)",
+    "category": "motorcycle",
+    "engine": {
+      "code": "Milwaukee-Eight 114",
+      "layout": "V-twin",
+      "cylinders": 2,
+      "strokes": 4,
+      "bankAngleDeg": 45,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 1.868,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline (electronic sequential port fuel injection)",
+      "powerKw": 70,
+      "powerRpm": 4750,
+      "torqueNm": 161,
+      "torqueRpm": 3000
+    },
+    "transmission": {
+      "type": "constant-mesh 6-speed with chain primary and belt final",
+      "gears": 6,
+      "ratios": [
+        9.311,
+        6.454,
+        4.793,
+        3.882,
+        3.307,
+        2.79
+      ],
+      "primaryDrive": 1.353,
+      "finalDrive": 2.0625,
+      "propellerReduction": null,
+      "gearCut": "overall ratios (incl. primary and final) from official sheet; internal gearbox ratios derived = overall/(46/34*66/32): approx 3.337, 2.313, 1.718, 1.391, 1.185, 1.000"
+    },
+    "vehicle": {
+      "massKg": 297,
+      "rearTyre": "150/80B16 77H"
+    },
+    "sources": [
+      "https://h-dmediakit.com/epapi-get/pdf/bikepages/specs/2023/fxbbs/specifications_fxbbs_us.pdf",
+      "https://en.wikipedia.org/wiki/Harley-Davidson_Milwaukee-Eight_engine",
+      "https://serviceinfo.harley-davidson.com/sip/service/procedure/2194585103748144855/BLAISE/473445/en_US?nid=4866"
+    ],
+    "notes": "Model chosen: 2023 Softail Street Bob 114 (FXBBS). Official US spec sheet: bore 102 mm, stroke 114.3 mm, 1868 cc, CR 10.5:1, torque 161 Nm (119 ft-lb) at 3000 rpm, 94 HP/70 kW at 4750 rpm, primary chain 34/46, belt final 32/66, mass in running order 297 kg (as shipped 286 kg). Overall gear ratios 9.311/6.454/4.793/3.882/3.307/2.79 on the sheet; the Twin-Cooled 114 service manual table lists different numbers (9.593...2.875, final 32/68) for that other variant. NOT FOUND in any read source: rev limit, idle rpm, firing intervals (a 45-degree single-crankpin V-twin is believed to fire 315/405 degrees but I could not confirm it from a source), firing order (cylinder numbering). Wikipedia quotes only 86 hp at rear wheel."
+  },
+  {
+    "id": "ducati-panigale-v4-2018",
+    "label": "Ducati Panigale V4 (2018, Desmosedici Stradale 1103)",
+    "category": "motorcycle",
+    "engine": {
+      "code": "Desmosedici Stradale",
+      "layout": "V",
+      "cylinders": 4,
+      "strokes": 4,
+      "bankAngleDeg": 90,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 1.103,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 157.5,
+      "powerRpm": 13000,
+      "torqueNm": 124,
+      "torqueRpm": 10000
+    },
+    "transmission": {
+      "type": "sequential 6-speed, wet multi-plate slipper clutch, chain final",
+      "gears": 6,
+      "ratios": [
+        2.7143,
+        2.1176,
+        1.7368,
+        1.5238,
+        1.3636,
+        1.25
+      ],
+      "primaryDrive": 1.8,
+      "finalDrive": 2.5625,
+      "propellerReduction": null,
+      "gearCut": "1st-6th = 38/14, 36/17, 33/19, 32/21, 30/22, 30/24; primary 1.80:1 straight-cut; chain 16/41"
+    },
+    "vehicle": {
+      "massKg": 195,
+      "rearTyre": "200/60 ZR17"
+    },
+    "sources": [
+      "https://www.moto-data.net/ducati/panigale-v4-2018",
+      "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
+      "https://www.ducati.com/au/en/bikes/panigale/panigale-v4/engine (via search result text only; direct fetch was 403)"
+    ],
+    "notes": "Bore x stroke 81 x 53.5 mm, CR 14:1. Power: moto-data 157.5 kW (211 hp) at 13000; Wikipedia infobox 160.92 kW (215.8 hp) at 13000; I used moto-data. Torque 124 Nm at 10000 rpm (both). Mass: moto-data wet 195 kg, dry 174 kg (Wikipedia 173 kg dry). Ducati describes 70-degree crankpin offset with 90-degree V ('Twin Pulse', rearward-rotating crank, engine rotated back 42 degrees) per a search summary of ducati.com. GEARS CONFLICT: moto-data's 2018 base page gives the 38/14... set above, which another listing attributes to the Speciale; a different listing gave 36/15, 34/17, 33/19, 32/21, 30/22, 27/22 (possibly a later model year). NULL/NOT FOUND: rev limit, idle, actual firing intervals in crank degrees (not published in any source I read; I will not derive them), firing order."
+  },
+  {
+    "id": "suzuki-hayabusa-gsx1300r-2008-2020",
+    "label": "Suzuki Hayabusa GSX1300R (2008-2020)",
+    "category": "motorcycle",
+    "engine": {
+      "code": "GSX1300R",
+      "layout": "inline",
+      "cylinders": 4,
+      "strokes": 4,
+      "bankAngleDeg": null,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 1.34,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 145,
+      "powerRpm": 9500,
+      "torqueNm": 155,
+      "torqueRpm": 7200
+    },
+    "transmission": {
+      "type": "6-speed constant-mesh sequential with slipper clutch, chain final (#530)",
+      "gears": 6,
+      "ratios": [
+        2.615,
+        1.937,
+        1.526,
+        1.285,
+        1.136,
+        1.043
+      ],
+      "primaryDrive": 1.596,
+      "finalDrive": 2.389,
+      "propellerReduction": null,
+      "gearCut": "tooth counts 34/13, 31/16, 29/19, 27/21, 25/22, 24/23; primary 83/52; final 43/18"
+    },
+    "vehicle": {
+      "massKg": 266,
+      "rearTyre": "190/50 ZR17"
+    },
+    "sources": [
+      "https://suzukicycles.org/Hayabusa/GSX1300R-Hayabusa-2.shtml",
+      "https://en.wikipedia.org/wiki/Suzuki_Hayabusa",
+      "https://motorcyclespecs.co.za/model/suzu/suzuki_gsxr1300r 08.htm",
+      "bikeswiki gear ratio list (seen only via search snippet; fetch failed)"
+    ],
+    "notes": "Bore x stroke 81 x 65 mm, CR 12.5:1. Power/torque: suzukicycles 194 hp (145 kW) at 9500, 155 Nm at 7200; motorcyclespecs 146 kW at 9800; Wikipedia claims 147 kW and 138.7 Nm (conflicts). Wet mass 266 kg (2012+ curb; motorcyclespecs 266; Wikipedia 264-268.5; dry 220 kg 2008-09). The motorcyclespecs gear list is mislabeled; tooth counts from suzukicycles are authoritative. NULL: firing order (an inline-4 is typically 1-2-4-3 but I found no source), rev limit/redline, idle, firing intervals."
+  },
+  {
+    "id": "ktm-250-sx-2022",
+    "label": "KTM 250 SX two-stroke (MY2022 tech data; 2019-2021 not separately verified)",
+    "category": "motorcycle",
+    "engine": {
+      "code": "250 SX",
+      "layout": "single",
+      "cylinders": 1,
+      "strokes": 2,
+      "bankAngleDeg": null,
+      "firingOrder": [
+        1
+      ],
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 0.249,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": null,
+      "idleRpm": null,
+      "fuel": "premix gasoline, oil 1:60 (mixture lubrication)",
+      "powerKw": null,
+      "powerRpm": null,
+      "torqueNm": null,
+      "torqueRpm": null
+    },
+    "transmission": {
+      "type": "5-speed sequential, wet multi-disc DDS clutch (Brembo hydraulic), chain final",
+      "gears": 5,
+      "ratios": [
+        2.0,
+        1.625,
+        1.3333,
+        1.1429,
+        0.9545
+      ],
+      "primaryDrive": 2.8077,
+      "finalDrive": 3.5,
+      "propellerReduction": null,
+      "gearCut": "1st-5th = 14:28, 16:26, 18:24, 21:24, 22:21 (stated as input:output teeth in the KTM table); primary 26:73; final 14:49"
+    },
+    "vehicle": {
+      "massKg": 95.5,
+      "rearTyre": "110/90-19"
+    },
+    "sources": [
+      "https://www.ktm.com/language-masters/en/mx-mediainformation/MY22%20KTM%20SX%20Range%20-%20Tech%20Data.pdf"
+    ],
+    "notes": "Bore x stroke 66.4/72 mm, 249 cc, Mikuni TMX 38 carburettor, exhaust control TVC. Mass is 'ready to race without fuel, approx.' 95.5 kg. Ratios computed as driven/driving teeth from the table; the table lists the pairs as 14:28 etc., meaning 14-tooth driver to 28-tooth driven. All figures are from the MY22 sheet; I did not verify MY19-MY21. NULL: power, torque, rev limit, idle (KTM does not publish them for the SX two-strokes), firing intervals (single cylinder, one firing per 360 degrees of crank rotation inherent in 2-stroke)."
+  },
+  {
+    "id": "stihl-ms-462-c-m",
+    "label": "STIHL MS 462 C-M professional chainsaw",
+    "category": "tool",
+    "engine": {
+      "code": "MS 462 C-M (2-MIX)",
+      "layout": "single",
+      "cylinders": 1,
+      "strokes": 2,
+      "bankAngleDeg": null,
+      "firingOrder": [
+        1
+      ],
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 0.0722,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": 13500,
+      "idleRpm": 2800,
+      "fuel": "petrol:2-stroke oil 50:1",
+      "powerKw": 4.4,
+      "powerRpm": null,
+      "torqueNm": 6.8,
+      "torqueRpm": null
+    },
+    "transmission": {
+      "type": "outboard centrifugal clutch, direct sprocket drive (no gearbox)",
+      "gears": 0,
+      "ratios": [
+        1.0
+      ],
+      "primaryDrive": null,
+      "finalDrive": null,
+      "propellerReduction": null,
+      "gearCut": "7-tooth 3/8 in sprocket"
+    },
+    "vehicle": {
+      "massKg": 6.0,
+      "rearTyre": null
+    },
+    "sources": [
+      "https://ssc.stihl.com/tsa/techdoc-documents/DVS_STIHL%2FZBA%2FZBA%2F0458-790-7521-B_ZBA_05_01.pdf (official MS 462 C-M manual, section 19.1, German)",
+      "https://fireandsaw.com/stihl-ms-462-chainsaw/"
+    ],
+    "notes": "Model chosen: MS 462 C-M. Official manual: 72.2 cm3, 4.4 kW (6.0 PS), idle 2800 +/-50 rpm (ISO 11681), weight 6.0 kg with empty tanks, no bar/chain. Max 13,500 rpm, torque ~6.8 Nm, 7-tooth 3/8 sprocket from fireandsaw.com (a retailer; a STIHL MS 461 manual also lists 13,500 rpm). Torque rpm and power rpm not given. NULL: bore/stroke (an MS 461 manual lists 52 mm bore x 36 mm stroke, which is the 76.5 cc saw; for 72.2 cc a 52 x 34 mm combination computes but is NOT sourced), clutch engagement rpm (not found), exact max rpm from STIHL itself."
+  },
+  {
+    "id": "briggs-stratton-625exi-093j",
+    "label": "Briggs & Stratton 625EXi series 150 cc walk-behind mower engine (093J)",
+    "category": "tool",
+    "engine": {
+      "code": "625EXi 093J",
+      "layout": "single",
+      "cylinders": 1,
+      "strokes": 4,
+      "bankAngleDeg": null,
+      "firingOrder": [
+        1
+      ],
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 0.15,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": null,
+      "powerRpm": null,
+      "torqueNm": 8.48,
+      "torqueRpm": 2600
+    },
+    "transmission": {
+      "type": "none: blade directly on vertical crankshaft",
+      "gears": 0,
+      "ratios": [
+        1.0
+      ],
+      "primaryDrive": null,
+      "finalDrive": null,
+      "propellerReduction": null,
+      "gearCut": null
+    },
+    "vehicle": {
+      "massKg": 7.9,
+      "rearTyre": null
+    },
+    "sources": [
+      "https://www.briggsandstratton.com/en-gb/products/625exi-series"
+    ],
+    "notes": "OHV vertical-shaft, bore x stroke 65.5 x 44.5 mm, gross torque 8.48 Nm at 2600 rpm (SAE J1940), engine mass 7.9 kg, tank 0.8 L. NULL: governed speed, idle, power (page links a power-curve PDF that I could not read), maxRpm. I did not guess a governed rpm."
+  },
+  {
+    "id": "rolls-royce-merlin-66-spitfire-lf-ix",
+    "label": "Rolls-Royce Merlin 66 (Supermarine Spitfire LF Mk IX)",
+    "category": "aircraft",
+    "engine": {
+      "code": "Merlin 66 (RM 10SM)",
+      "layout": "V",
+      "cylinders": 12,
+      "strokes": 4,
+      "bankAngleDeg": 60,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 27.0,
+      "aspiration": {
+        "type": "two-stage two-speed supercharger",
+        "superchargerType": "centrifugal, two-stage, two-speed (Bendix-Stromberg anti-g carburettor)",
+        "peakBoostBar": 1.72
+      },
+      "maxRpm": 3000,
+      "idleRpm": null,
+      "fuel": "100 octane; 100/150 grade for +25 lb boost",
+      "powerKw": 1283,
+      "powerRpm": 3000,
+      "torqueNm": null,
+      "torqueRpm": null
+    },
+    "transmission": {
+      "type": "propeller reduction gear, spur type",
+      "gears": 1,
+      "ratios": [
+        0.477
+      ],
+      "primaryDrive": null,
+      "finalDrive": null,
+      "propellerReduction": 0.477,
+      "gearCut": null
+    },
+    "vehicle": {
+      "massKg": 3354,
+      "rearTyre": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Rolls-Royce_Merlin",
+      "https://en.wikipedia.org/wiki/Supermarine_Spitfire_variants:_specifications,_performance_and_armament",
+      "https://dingeraviation.net/spitfire/meandgr.htm",
+      "https://mnealon.eosc.edu/SpitfirePropSpeed.htm (0.477 seen only in search snippet)"
+    ],
+    "notes": "Chose Merlin 66 (low-altitude LF Mk IX). Merlin family: bore 5.4 in x stroke 6.0 in, 1,647 cu in (27 L), 60-degree V (dingeraviation; Wikipedia gives these for Merlin 61). Merlin 66: 1,315 hp at 3000 rpm take-off; 1,720 hp (1,283 kW) at 11,000 ft at +25 lb with 150 grade, or 1,720 hp at 5,790 ft on +18 psi (Wikipedia, two places); +25 psi = 1.72 bar, +18 = 1.24 bar. Max 3000 rpm is the take-off/rated speed (no separate combat limit found). Reduction: 0.477:1 for the 66 per a table snippet and Wikipedia's statement that non-61 Spitfire engines used 0.477 (the Merlin 61 is 0.42:1); treat as moderately confident. LF IXe loaded weight 7,400 lb (3,354 kg), empty 5,090 lb. NULL: firing order and A/B bank assignment (no authoritative source read; a PPRuNe forum post cites 1L-2R-5L-4R-3L-1R-6L-5R-2L-3R-4L-6R for right-hand rotation but I could not open it and it is unofficial), idle rpm, supercharger gear ratios."
+  },
+  {
+    "id": "pratt-whitney-r-1340-an-1-t-6-texan",
+    "label": "Pratt & Whitney R-1340-AN-1 Wasp (North American T-6/AT-6 Texan)",
+    "category": "aircraft",
+    "engine": {
+      "code": "R-1340-AN-1",
+      "layout": "radial",
+      "cylinders": 9,
+      "strokes": 4,
+      "bankAngleDeg": null,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 22.02,
+      "aspiration": {
+        "type": "supercharged",
+        "superchargerType": "single-speed single-stage centrifugal, 10:1 step-up (listed for the S1H1-G variant)",
+        "peakBoostBar": null
+      },
+      "maxRpm": 2250,
+      "idleRpm": null,
+      "fuel": "91 octane (S1H1-G spec); 100/130 typical in service unverified",
+      "powerKw": 447,
+      "powerRpm": 2250,
+      "torqueNm": null,
+      "torqueRpm": null
+    },
+    "transmission": {
+      "type": "direct drive (reduction gear NOT confirmed for AN-1)",
+      "gears": 1,
+      "ratios": [
+        1.0
+      ],
+      "primaryDrive": null,
+      "finalDrive": null,
+      "propellerReduction": null,
+      "gearCut": null
+    },
+    "vehicle": {
+      "massKg": 2548,
+      "rearTyre": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Pratt_%26_Whitney_R-1340_Wasp",
+      "https://en.wikipedia.org/wiki/North_American_T-6_Texan",
+      "https://www.enginehistory.org/Piston/P&W/R-1340/r-1340.shtml",
+      "https://powerplants.warbirdsresourcegroup.org/unitedstates_powerplants_P-W_R-1340_Wasp.html",
+      "https://si.edu/object/pratt-whitney-wasp-r-1340-50-radial-9-engine:nasm_A19860278000"
+    ],
+    "notes": "Bore and stroke 5.75 in each, 1,343.8 cu in (22.02 L). AN-1 is listed with 550 hp and 600 hp ratings (the 600 hp figure is also what the T-6G page cites). 2250 rpm / 3:2 reduction / 10:1 supercharger / 930 lb dry weight come from the R-1340-S1H1-G spec, not the AN-1 (the AN-50 is 550 hp at 2200 rpm; one listing assigns 3:2 geared prop shaft to the AN-2 and none to the AN-1), so maxRpm 2250 and power rpm are carried over from the family and are UNCERTAIN. T-6G gross weight 5,617 lb (2,548 kg), empty 1,886 kg (Wikipedia citing Jane's). NULL: firing order (1-3-5-7-9-2-4-6-8 follows from the every-other-cylinder principle in Wikipedia's Radial engine article but is not stated for the R-1340 anywhere I read), idle rpm, boost, torque, confirmed AN-1 reduction ratio (TCDS not fetched)."
+  },
+  {
+    "id": "lycoming-o-360-a4a-piper-pa-28-180-archer",
+    "label": "Lycoming O-360-A series (Piper PA-28-180 Cherokee/Archer, O-360-A4A)",
+    "category": "aircraft",
+    "engine": {
+      "code": "O-360-A",
+      "layout": "flat",
+      "cylinders": 4,
+      "strokes": 4,
+      "bankAngleDeg": null,
+      "firingOrder": [
+        1,
+        3,
+        2,
+        4
+      ],
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 5.9,
+      "aspiration": {
+        "type": "naturally aspirated, carburetted",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": 2700,
+      "idleRpm": null,
+      "fuel": "91/96 avgas minimum (100LL typical)",
+      "powerKw": 134,
+      "powerRpm": 2700,
+      "torqueNm": null,
+      "torqueRpm": null
+    },
+    "transmission": {
+      "type": "direct drive propeller (no reduction)",
+      "gears": 1,
+      "ratios": [
+        1.0
+      ],
+      "primaryDrive": null,
+      "finalDrive": null,
+      "propellerReduction": 1.0,
+      "gearCut": null
+    },
+    "vehicle": {
+      "massKg": 1089,
+      "rearTyre": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lycoming_O-360",
+      "https://pilotfriend.com/aero_engines/engine_specs/Lycoming%200%20360.htm",
+      "https://en.wikipedia.org/wiki/Piper_PA-28_Cherokee",
+      "https://en.wikipedia.org/wiki/Cessna_172"
+    ],
+    "notes": "Model chosen: Piper PA-28-180 (Archer uses O-360-A4A). Wikipedia/TCDS E-286 data for O-360-A1A: 361 cu in, bore 5.125 in, stroke 4.375 in, 180 hp at 2700 rpm, CR 8.5:1, dry 258 lb. Firing order 1-3-2-4 from pilotfriend's Lycoming table (general 0-360 text). Gross weight 2,400 lb (1,089 kg) is the 1962 PA-28-180 certification; Challenger 2,450 lb (1,111 kg). Cessna 172 R/S use the fuel-injected IO-360-L2A, not O-360; the 172Q Cutlass used O-360-A4N (180 hp, 2,550 lb). NULL: torque, idle rpm, TCDS text itself not read."
+  },
+  {
+    "id": "detroit-diesel-8v-71",
+    "label": "Detroit Diesel 8V-71 (naturally aspirated, Roots-blown two-stroke V8; highway coach/truck/marine)",
+    "category": "truck-or-marine",
+    "engine": {
+      "code": "8V-71N",
+      "layout": "V",
+      "cylinders": 8,
+      "strokes": 2,
+      "bankAngleDeg": null,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 9.3,
+      "aspiration": {
+        "type": "Roots blower (scavenging, gear-driven, not turbocharged)",
+        "superchargerType": "Roots, two-lobe (type per Wikipedia: Roots)",
+        "peakBoostBar": null
+      },
+      "maxRpm": 2100,
+      "idleRpm": 550,
+      "fuel": "diesel",
+      "powerKw": 227,
+      "powerRpm": 2100,
+      "torqueNm": 1085,
+      "torqueRpm": 1600
+    },
+    "transmission": {
+      "type": "not determined (application dependent: manual, Allison automatic or marine gear)",
+      "gears": null,
+      "ratios": null,
+      "primaryDrive": null,
+      "finalDrive": null,
+      "propellerReduction": null,
+      "gearCut": null
+    },
+    "vehicle": {
+      "massKg": null,
+      "rearTyre": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Detroit_Diesel_Series_71",
+      "https://dieselhub.com/specs/detroit-71-series-two-stroke-diesel.html",
+      "https://dieselpro.com/blog/?p=894 (search snippet)"
+    ],
+    "notes": "Bore x stroke 4.25 x 5.0 in (108 x 127 mm), 568 cu in (9.3 L). Power: Wikipedia detailed table 304 hp (227 kW) at 2,100 rpm, model table 318 hp (237 kW), dieselhub 318 hp at 2,100 / torque 863 lb-ft at 1,200 rpm; Wikipedia torque 800 lb-ft (1,085 N-m) at 1,600 rpm. The two sources conflict on torque and rpm. Governed speed: the rated 2,100 rpm is used; a bus-forum post says 318 hp engines were governed at 2,100, other forum posts cite no-load governed speeds of 2,300-2,450. Idle 500-600 rpm is from a parts-seller page (search snippet); forum posts say 575-700. NULL: firing order (two parts-seller pages disagree: 1-2-7-8-4-5-6-3 vs 1R-5R-3R-7R-2L-6L-4L-8L), bank angle (Wikipedia says only V8; V-71 is known as a 90-degree V but I did not find that stated), specific vehicle and transmission, mass, which bank has which cylinders."
+  },
+  {
+    "id": "ford-model-t-1908-1927",
+    "label": "Ford Model T (1908-1927) 177 cu in four and two-speed planetary transmission",
+    "category": "vintage-car",
+    "engine": {
+      "code": "Model T",
+      "layout": "inline",
+      "cylinders": 4,
+      "strokes": 4,
+      "bankAngleDeg": null,
+      "firingOrder": null,
+      "firingIntervalsDeg": null,
+      "banks": null,
+      "displacementL": 2.9,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "maxRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline (also kerosene/ethanol)",
+      "powerKw": 14.9,
+      "powerRpm": null,
+      "torqueNm": null,
+      "torqueRpm": null
+    },
+    "transmission": {
+      "type": "two-speed planetary (marketed as three-speed, reverse counted) plus 3.6363:1 rear axle",
+      "gears": 2,
+      "ratios": [
+        2.75,
+        1.0
+      ],
+      "primaryDrive": null,
+      "finalDrive": 3.6363,
+      "propellerReduction": null,
+      "gearCut": "gearbox: low 2.75:1, high 1:1 (direct), reverse -4:1; overall with 40/11 axle: low 10:1, high 3.6363:1, reverse -14.5452:1"
+    },
+    "vehicle": {
+      "massKg": 645,
+      "rearTyre": "30 x 3.5 in clincher (balloon 21 x 4.5 from 1925)"
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ford_Model_T_engine",
+      "https://en.wikipedia.org/wiki/Ford_Model_T",
+      "https://www.thesahb.com/technical-talk-14-the-ford-model-t/"
+    ],
+    "notes": "Bore 3.75 in x stroke 4 in (95.25 x 101.6 mm), 177 cu in, CR 3.98:1, 20 hp. Planetary ratios (SAHB technical talk): low 2.75:1, reverse -4:1, high 1:1; rear 40/11 = 3.6363. Curb weight 1,200-1,650 lb (540-750 kg); massKg is the midpoint 645 kg, not a specific figure. NULL: power rpm, idle and max rpm, torque, firing order (1-2-4-3 is the well-known order but I found no source to cite), 20 hp rpm."
+  }
+]

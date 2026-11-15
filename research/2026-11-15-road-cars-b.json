@@ -1,0 +1,639 @@
+[
+ {
+  "id": "nissan-gt-r-r35-2009",
+  "label": "Nissan GT-R (R35, 2009)",
+  "engine": {
+   "code": "VR38DETT",
+   "layout": "V",
+   "cylinders": 6,
+   "bankAngleDeg": 60,
+   "crank": null,
+   "firingOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "banks": {
+    "A": [
+     1,
+     3,
+     5
+    ],
+    "B": [
+     2,
+     4,
+     6
+    ]
+   },
+   "displacementL": 3.799,
+   "aspiration": {
+    "type": "turbo",
+    "count": 2,
+    "superchargerType": null,
+    "peakBoostBar": 0.7
+   },
+   "redlineRpm": 7000,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 357,
+   "powerRpm": 6400,
+   "torqueNm": 588,
+   "torqueRpm": 3200
+  },
+  "transmission": {
+   "type": "dual-clutch",
+   "gears": 6,
+   "ratios": [
+    4.056,
+    2.301,
+    1.595,
+    1.248,
+    1.001,
+    0.796
+   ],
+   "finalDrive": 3.7,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1740,
+   "rearTyre": "285/35ZRF20",
+   "cd": 0.27,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Nissan_GT-R",
+   "https://en.wikipedia.org/wiki/Nissan_VR_engine",
+   "https://www.manualsdir.com/manuals/192484/nissan-r35-d-2009-gt-r.html?page=289",
+   "https://rerev.com/firing-orders/nissan/3-8l/",
+   "https://autoprove.net (Japanese spec sheet via search summary; GR6 ratios)",
+   "https://j-garage.com/nissan/gtr35spec2.html",
+   "https://www3.nissan.co.jp/content/dam/Nissan/jp/vehicles/GT-R/pdf/gt-r_nismo_specification.pdf",
+   "https://www.carexpert.com.au/nissan/gt-r/2009/base/powertrain-and-performance"
+  ],
+  "notes": "Firing order 1-2-3-4-5-6 is from Nissan's R35 manual (manualsdir) and rerev. Which bank holds 1,3,5 is NOT confirmed: rerev text and diagram conflict (driver side vs passenger side); Nissan manual gives no numbering. Treat bank A=[1,3,5], B=[2,4,6] as unverified; left/right unknown. Crank type not stated in any source (null). Boost: Wikipedia says 'more than 0.7 bar' (floor, not a peak). Torque: Wikipedia lists 583 Nm (2007-09) and 588 Nm (2009-10), plateau 3200-5200 rpm; used 588. Idle: Nissan manual says no adjustment needed, no rpm published. Rear tyre 285/35ZRF20 is from the Nissan Japan NISMO spec sheet via search summary; carexpert lists 285/35 R20 for base. Gear ratios/final drive 3.700 (rear) from Japanese spec sheets via search-result summaries, I did not read the PDF directly; reverse 3.383, front final 2.937. Frontal area not found. Gear cut not found. Curb 1740 kg is the 2007-09 figure (Wikipedia)."
+ },
+ {
+  "id": "subaru-impreza-wrx-sti-grb",
+  "label": "Subaru Impreza WRX STI (GRB, EJ257, 6MT)",
+  "engine": {
+   "code": "EJ257",
+   "layout": "flat",
+   "cylinders": 4,
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": [
+    1,
+    3,
+    2,
+    4
+   ],
+   "banks": {
+    "A": [
+     1,
+     3
+    ],
+    "B": [
+     2,
+     4
+    ]
+   },
+   "displacementL": 2.457,
+   "aspiration": {
+    "type": "turbo",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 6700,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 227,
+   "powerRpm": 6000,
+   "torqueNm": 393,
+   "torqueRpm": 4000
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 6,
+   "ratios": [
+    3.64,
+    2.23,
+    1.52,
+    1.14,
+    0.97,
+    0.76
+   ],
+   "finalDrive": 3.9,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1540,
+   "rearTyre": "245/40R18",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Subaru_EJ_engine",
+   "https://www.carspecs.us/cars/2008/subaru/impreza/90786",
+   "https://www.autopadre.com/tire-and-wheel-sizes/subaru-impreza/2008-wrx-sti-6-spd-43619",
+   "https://rerev.com/firing-orders/subaru/2-5l/"
+  ],
+  "notes": "Firing order 1-3-2-4 per Wikipedia. Bank assignment: one secondary source says 1,3 passenger side and 2,4 driver side; another low-quality page conflicts; unverified, left/right unknown. Wikipedia gives displacement 2,457 cc, redline 6700 rpm for EJ257. Power/torque are 2008 US figures (305 hp @6000 = 227 kW; 290 lb-ft = 393 Nm @4000) from carspecs, not JDM/EU ratings. Gear ratios are rounded to 2 dp from carspecs (the 3.636/2.375/1.761... set seen on an oakos page is the 2004 car, not used; note my earlier second gear 2.375 differs from carspecs 2.23). Curb weight 3,395 lb = 1,540 kg (carspecs, wagon/hatch). Turbo count (single) and boost not sourced, so null. Idle, Cd, frontal area not found. Aspiration 'turbo' per Wikipedia 'turbocharged'."
+ },
+ {
+  "id": "audi-rs3-8y-2022",
+  "label": "Audi RS3 (8Y, 2022, 7-speed S tronic)",
+  "engine": {
+   "code": "EA855 evo (DNWC per auto-data.net)",
+   "layout": "inline",
+   "cylinders": 5,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [
+    1,
+    2,
+    4,
+    5,
+    3
+   ],
+   "banks": {},
+   "displacementL": 2.48,
+   "aspiration": {
+    "type": "turbo",
+    "count": 1,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 294,
+   "powerRpm": 5600,
+   "torqueNm": 500,
+   "torqueRpm": 2250
+  },
+  "transmission": {
+   "type": "dual-clutch",
+   "gears": 7,
+   "ratios": [],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1570,
+   "rearTyre": "265/30R19",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://www.audi.com/en/high-performance-redefined-audi-rs-3-sportback-and-rs-3-sedan-2021-14310/facts-and-figures-14311",
+   "https://www.auto-data.net/en/audi-rs3-sportback-8y-2.5-tfsi-400hp-quattro-s-tronic-44005",
+   "https://cararac.com/spec/audi/rs3/rs-3-sportback-8y/"
+  ],
+  "notes": "Firing order 1-2-4-5-3 from Audi's press page. Displacement 2,480 cc and code from auto-data (the 'DNWC' code is auto-data's, not Audi's page). Power 294 kW (400 PS) is a plateau 5600-7000 rpm, powerRpm=5600 is the start; torque 500 Nm plateau 2250-5600. Turbo count 1 is my reading of 'a turbocharger' (auto-data/cararac 'Turbocharger: Yes'); Audi release does not give count. NOT FOUND: S tronic gear ratios, final drive, peak boost, redline, idle, frontal area (all null/empty). Curb 1570 kg without driver (Audi). Rear tyre 265/30R19 per cararac; auto-data lists front 265/30 and rear 245/35 (apparently swapped), so tyre uncertain. Cd 0.34 only from auto-data."
+ },
+ {
+  "id": "bmw-m3-e46",
+  "label": "BMW M3 (E46, S54, 6MT)",
+  "engine": {
+   "code": "S54B32",
+   "layout": "inline",
+   "cylinders": 6,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "banks": {},
+   "displacementL": 3.246,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 8000,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 252,
+   "powerRpm": 7900,
+   "torqueNm": 365,
+   "torqueRpm": 4900
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 6,
+   "ratios": [
+    4.227,
+    2.528,
+    1.669,
+    1.226,
+    1.0,
+    0.828
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1560,
+   "rearTyre": "",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/BMW_S54",
+   "https://en.wikipedia.org/wiki/BMW_M3",
+   "https://en.wikipedia.org/wiki/Getrag_420G_transmission",
+   "https://archive.org/download/BMWTechnicalTrainingDocuments/ST501%20New%20Engine%20Technology/02_Engine%20Diagnosis.pdf",
+   "https://www.bimmernut.com/forum/showthread.php/45233-BMW-engines-firing-orders"
+  ],
+  "notes": "Firing order 1-5-3-6-2-4 per BMW technical training material (via search summary); cylinder 1 at the front is from enthusiast forums only. Gearbox is the Getrag S6S420G (not S6-37); reverse 3.746. Power/torque are EU figures (US: 248 kW/355 Nm). NOT FOUND: final drive (null; I did not source the common 3.62), rear tyre (null), Cd, frontal area, idle. Curb 1,560 kg Wikipedia infobox (text says 1,565). Gear cut not stated."
+ },
+ {
+  "id": "mercedes-sls-amg-2011",
+  "label": "Mercedes-Benz SLS AMG (2011, M159)",
+  "engine": {
+   "code": "M159",
+   "layout": "V",
+   "cylinders": 8,
+   "bankAngleDeg": 90,
+   "crank": "cross-plane (inferred, not stated)",
+   "firingOrder": [
+    1,
+    5,
+    4,
+    2,
+    6,
+    3,
+    7,
+    8
+   ],
+   "banks": {
+    "left_or_A": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "right_or_B": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "displacementL": 6.208,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 7200,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 420,
+   "powerRpm": 6800,
+   "torqueNm": 650,
+   "torqueRpm": 4750
+  },
+  "transmission": {
+   "type": "dual-clutch",
+   "gears": 7,
+   "ratios": [
+    3.4,
+    2.19,
+    1.63,
+    1.29,
+    1.03,
+    0.84,
+    0.72
+   ],
+   "finalDrive": 3.67,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1619,
+   "rearTyre": "295/30R20",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://tv.manualsonline.com/manuals/mfg/mercedesbenz/2011_sls_amg.html?p=424",
+   "https://en.wikipedia.org/wiki/Mercedes-Benz_SLS_AMG",
+   "https://www.carspecs.us/cars/2012/mercedes-benz/sls-amg/64981",
+   "https://emercedesbenz.com/autos/mercedes-benz/sls-amg/2011-mercedes-benz-sls-amg-gullwing-in-depth-engine-and-power-transfer",
+   "https://en.wikipedia.org/wiki/Mercedes-Benz_M156_engine"
+  ],
+  "notes": "Firing order 1-5-4-2-6-3-7-8 and 7,200 rpm 'Maximum engine speed' are from the 2011 SLS AMG owner's manual (manualsonline). Other forum sources cite 1-5-4-8-6-3-7-2 for Mercedes V8s generally; I trust the manual. Crank type not stated anywhere I read; 'cross-plane' is my inference because the order does not alternate banks, with Mercedes numbering (1-4 one bank, 5-8 other) per forum posts only: bank split and which is left/right are UNVERIFIED. Wikipedia M156 table says 7,250 rpm for M159 (conflict with 7,200; used manual). Gear ratios/final 3.67 from carspecs (and a Mercedes press table via search summary); reverse 2.79. DCT: AMG SPEEDSHIFT DCT 7-speed (Getrag 7DCL750). Curb 1,619 kg coupe (Wikipedia; carspecs 3,573 lb=1,621). Dry-sump. NOT FOUND: idle, Cd, frontal area, gear cut."
+ },
+ {
+  "id": "lamborghini-aventador-lp700-4-2012",
+  "label": "Lamborghini Aventador LP700-4 (2012, ISR)",
+  "engine": {
+   "code": "L539",
+   "layout": "V",
+   "cylinders": 12,
+   "bankAngleDeg": 60,
+   "crank": null,
+   "firingOrder": [
+    1,
+    12,
+    4,
+    9,
+    2,
+    11,
+    6,
+    7,
+    3,
+    10,
+    5,
+    8
+   ],
+   "banks": {},
+   "displacementL": 6.498,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 8500,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 515,
+   "powerRpm": 8250,
+   "torqueNm": 690,
+   "torqueRpm": 5500
+  },
+  "transmission": {
+   "type": "automated single-clutch",
+   "gears": 7,
+   "ratios": [
+    3.909,
+    2.438,
+    1.81,
+    1.458,
+    1.185,
+    0.967,
+    0.844
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1670,
+   "rearTyre": "335/30ZR20",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lamborghini_Aventador",
+   "https://autozine.org/Archive/Lamborghini/old/Aventador.html",
+   "https://www.lambocars.com/aventador-lp700-4-2/",
+   "https://uniquecarsandparts.com.au/specifications/lamborghini/2011_lamborghini_aventador_lp_700_4.htm"
+  ],
+  "notes": "Firing order from Wikipedia as listed (1,12,4,9,2,11,6,7,3,10,5,8); cylinder-to-bank assignment NOT found (banks empty). Redline: autozine says it revs to 8,500 (one other site says 9,050, treated as wrong). Gear ratios came from a secondary spec page via search summary (uniquecarsandparts); another site lists 7th 0.89. Reverse 2.929. Final drive: that page gave 2.867/3.273 (rear/front differ per axle), Motormatchup 2.86, so finalDrive left null. Weight: 1,670 kg kerb (autozine; 1,575 dry; Wikipedia 1,731 EU with fluids). Cd: Lamborghini did not publish; Motormatchup claims 0.33 unverified. NOT FOUND: idle, frontal area, gear cut. ISR is a single-clutch automated manual (well known; type from source naming 'ISR')."
+ },
+ {
+  "id": "toyota-gr86-2022-6mt",
+  "label": "Toyota GR86 (2022, 6MT)",
+  "engine": {
+   "code": "FA24D",
+   "layout": "flat",
+   "cylinders": 4,
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": [],
+   "banks": {},
+   "displacementL": 2.387,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 172,
+   "powerRpm": 7000,
+   "torqueNm": 250,
+   "torqueRpm": 3700
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 6,
+   "ratios": [
+    3.626,
+    2.189,
+    1.541,
+    1.213,
+    1.0,
+    0.767
+   ],
+   "finalDrive": 4.1,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1276,
+   "rearTyre": "215/40R18",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/220523M-GR86-Tech-Spec.pdf",
+   "https://en.wikipedia.org/wiki/Toyota_GR86"
+  ],
+  "notes": "Ratios/final/tyre/kerb weight from Toyota UK tech spec (read directly): kerb 1,276-1,316 kg (used min), tyre 215/40R18 (UK; US base car is a different tyre, unsourced). Power 172 kW @7000, torque 250 Nm @3700. NOT FOUND: firing order (Subaru FA24 is believed 1-3-2-4 but unsourced, left empty), banks, redline (peak-power rpm is 7000, no limiter figure), idle, Cd, frontal area."
+ },
+ {
+  "id": "mazda-mx5-nd2",
+  "label": "Mazda MX-5 (ND2, 2019+ 2.0, 6MT)",
+  "engine": {
+   "code": "SKYACTIV-G 2.0",
+   "layout": "inline",
+   "cylinders": 4,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [],
+   "banks": {},
+   "displacementL": 2.0,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 7500,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 135,
+   "powerRpm": 7000,
+   "torqueNm": 205,
+   "torqueRpm": 4000
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 6,
+   "ratios": [
+    5.087,
+    2.991,
+    2.035,
+    1.594,
+    1.286,
+    1.0
+   ],
+   "finalDrive": 2.866,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1052,
+   "rearTyre": "205/45R17",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://www.mazdausa.com/siteassets/pdf/owners-optimized/2019/mx-5-miata-st/2019_mazda_mx5_features_specs.pdf",
+   "https://automotivepowertraintechnologyinternational.com/features/engines-on-test-2019-mazda-mx-5-2-0-liter-skyactiv-g.html",
+   "https://zeperfs.com/en/fiche7495-mazda-mx-5-iv-2-0-skyactiv-g.htm"
+  ],
+  "notes": "Read directly from Mazda USA 2019 specs PDF: 181 hp @7000 (=135 kW), 151 lb-ft @4000 (=205 Nm), redline 7,500, ratios above, reverse 4.696, final 2.866, tyres P205/45R17 (base trim P195/50R16). Curb 1,052 kg is the claimed DIN weight from zeperfs (secondary; auto-data lists 1,025). NOT FOUND: engine code, exact displacement (2.0 nominal), firing order, idle, Cd, frontal area."
+ },
+ {
+  "id": "vw-beetle-1600-type1",
+  "label": "Volkswagen Beetle 1600 (Type 1, early 1970s, 4MT)",
+  "engine": {
+   "code": "Type 1 1600 (1584 cc dual-port)",
+   "layout": "flat",
+   "cylinders": 4,
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": [
+    1,
+    4,
+    3,
+    2
+   ],
+   "banks": {
+    "A": [
+     1,
+     2
+    ],
+    "B": [
+     3,
+     4
+    ]
+   },
+   "displacementL": 1.584,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 37,
+   "powerRpm": 4000,
+   "torqueNm": 106,
+   "torqueRpm": 2800
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 4,
+   "ratios": [
+    3.8,
+    2.06,
+    1.26,
+    0.89
+   ],
+   "finalDrive": 3.875,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 870,
+   "rearTyre": "5.60-15",
+   "cd": 0.48,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://www.kfz-tech.de/Engl/Hersteller/VW/VWKaefer13021970.htm",
+   "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
+   "https://limebug.com/?p=22",
+   "https://rerev.com/firing-orders/volkswagen/1-6l/",
+   "https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-16001600i-profile-19604"
+  ],
+  "notes": "Power/torque/mass/tyre are the 1970-72 VW 1302 data (kfz-tech): 37 kW (50 PS) @4000, 106 Nm @2800 (1600 engine), 870 kg kerb, 5.60-15 standard. Firing order 1-4-3-2 per Wikipedia firing-order table; banks 1,2 / 3,4 from ONE weak source (unverified, left/right unknown). Gear ratios 3.80/2.06/1.26/0.89 and final 3.875 are the Limebug gearbox code 'AU' (1303S/LSD) via a search summary, I could not read the full table; German 1600 factory is 3.875, but 4.375 is used on 1200/1300 and Mexican cars (conflict). 3.80/2.06 matches a Type 181 page for 1970-Feb 1973. Cd 0.48 is Wikipedia's generic Beetle figure. Idle/redline (no limiter on a Type 1), frontal area not found."
+ },
+ {
+  "id": "ram-2500-cummins-g56-2013-2018",
+  "label": "Ram 2500 Cummins 6.7 with G56 (2013-2018)",
+  "engine": {
+   "code": "Cummins 6.7 ISB",
+   "layout": "inline",
+   "cylinders": 6,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "banks": {},
+   "displacementL": 6.69,
+   "aspiration": {
+    "type": "turbo (VGT, unsourced)",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "diesel",
+   "powerKw": 261,
+   "powerRpm": 2800,
+   "torqueNm": 881,
+   "torqueRpm": 1500
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 6,
+   "ratios": [
+    5.94,
+    3.28,
+    1.98,
+    1.31,
+    1.0,
+    0.74
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": null,
+   "rearTyre": "",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://www.ramtruck.ca/en_dir/pdf/2015/specifications/2500.pdf (2013 Ram HD spec sheet, read directly)",
+   "https://www.dieselhub.com/trans/g56.html",
+   "https://www.dieselhub.com/news/2015-ram.html",
+   "https://cararac.com/spec/ram/25003500/2013-25003500-mega-cab-i-facelift-2013/"
+  ],
+  "notes": "Read directly from the 2013 Ram HD spec sheet: 6,690 cc, 16.5:1, G56 manual 350 bhp (261 kW) @2800 and 660 lb-ft (881 Nm) @1500 (2013-18 per dieselhub too), high-idle limit 3,500 rpm (governed ceiling; no redline given, so redlineRpm null), G56 ratios 5.94/3.28/1.98/1.31/1.00/0.74 reverse 5.42. Firing order 1-5-3-6-2-4 from search results (no primary read). NOT FOUND: axle ratio for G56 trucks (3.42/3.73/4.10/4.56 appear only for the automatics), curb weight (varies 3,480-3,650 kg by cab/drive, no G56-specific), tyre size, idle rpm, boost, turbo count, Cd, frontal area."
+ }
+]

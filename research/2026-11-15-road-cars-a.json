@@ -1,0 +1,689 @@
+[
+  {
+    "id": "porsche-911-gt3-992",
+    "label": "Porsche 911 GT3 (992, 2022, 7-speed PDK)",
+    "engine": {
+      "code": "EA9A2",
+      "layout": "flat (horizontally opposed)",
+      "cylinders": 6,
+      "bankAngleDeg": 180,
+      "crank": null,
+      "firingOrder": [
+        1,
+        6,
+        2,
+        4,
+        3,
+        5
+      ],
+      "banks": {
+        "left_or_A": [
+          1,
+          2,
+          3
+        ],
+        "right_or_B": [
+          4,
+          5,
+          6
+        ]
+      },
+      "displacementL": 3.996,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 9000,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 375,
+      "powerRpm": 8400,
+      "torqueNm": 470,
+      "torqueRpm": 6100
+    },
+    "transmission": {
+      "type": "dual-clutch (PDK)",
+      "gears": 7,
+      "ratios": [
+        3.75,
+        2.38,
+        1.72,
+        1.34,
+        1.11,
+        0.96,
+        0.84
+      ],
+      "finalDrive": 4.19,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1435,
+      "rearTyre": null,
+      "cd": 0.34,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Porsche_992",
+      "https://www.autodata1.com/en/car/porsche/911/911-992-gt3-40-510-hp-pdk/m:amp",
+      "https://media.porsche.com/mediakit/911-gt3-touring-package/specifications/pdk/PAG-992-911GT3-TP-PDK-WLTP-EN.pdf (read only as a search-result excerpt; the PDF is now 404)",
+      "https://www.stuttcars.com/porsche-911-gt3-with-touring-package-992-2023-specifications-performance/",
+      "https://newsroom.porsche.com/en/press-kits/911-GT3/Powertrain-and-performance.html (992.2)",
+      "https://gtsparkplugs.com/porsche-911-firing-order (search excerpt)"
+    ],
+    "notes": "Power/torque are 992.1 (Wikipedia, autodata 8400/6100 rpm); 992.2 (2025+) is 450 Nm. Gear ratios and the 4.19 rear axle ratio come from a search excerpt of Porsche's 06/2021 EU technical data sheet for the GT3 Touring PDK (PDF no longer retrievable); a Rennlist forum post gave 3.97, so the final drive is uncertain. 992.2 final drive is 8 percent shorter (Porsche newsroom). Firing order 1-6-2-4-3-5 is the common Porsche flat-six order (sources cover 964-997 generations, not the 992 specifically). Bank assignment is conflicting: sources put cylinders 1-3 on one bank and 4-6 on the other but disagree whether that bank is left or right; banks given as A=1,2,3 and B=4,5,6 with side unconfirmed. Flat-six at 180 degrees: a crank type of flat-six has 3 throws at 120 degrees (no cross/flat-plane V8 concept), left null. Rear tyre not read for 992.1 (992.2 is 315/30 ZR21 per stuttcars; 992.1 believed 305/30 ZR21 but unsourced). Redline 9000 from Porsche (992.2 press page and Wikipedia). Idle not published. Cd 0.34 from autodata (not manufacturer). Curb mass 1435 kg DIN with PDK."
+  },
+  {
+    "id": "ferrari-458-italia",
+    "label": "Ferrari 458 Italia (2010)",
+    "engine": {
+      "code": "F136 FB",
+      "layout": "V",
+      "cylinders": 8,
+      "bankAngleDeg": 90,
+      "crank": "flat-plane",
+      "firingOrder": [
+        1,
+        8,
+        3,
+        6,
+        4,
+        5,
+        2,
+        7
+      ],
+      "banks": {
+        "left_or_A": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "right_or_B": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "displacementL": 4.497,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 9000,
+      "idleRpm": null,
+      "fuel": "gasoline (direct injection)",
+      "powerKw": 419,
+      "powerRpm": 9000,
+      "torqueNm": 540,
+      "torqueRpm": 6000
+    },
+    "transmission": {
+      "type": "dual-clutch (Getrag 7DCL)",
+      "gears": 7,
+      "ratios": [
+        3.08,
+        2.18,
+        1.63,
+        1.29,
+        1.03,
+        0.84,
+        0.69
+      ],
+      "finalDrive": 5.14,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1565,
+      "rearTyre": null,
+      "cd": null,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ferrari_458",
+      "https://en.wikipedia.org/wiki/Ferrari_F136_engine",
+      "https://www.ferrarichat.com/forum/threads/458-engine-bank-1-and-bank-2.644205 (search excerpt only; page blocked)"
+    ],
+    "notes": "Firing order and bank numbering come ONLY from a FerrariChat forum post that cites the Ferrari service manual (1-8-3-6-4-5-2-7; bank 1 = cylinders 1-4, bank 2 = 5-8); another poster assumed 1-5-3-7-4-8-2-6. Not verified against a primary document, treat as uncertain. Flat-plane crank and 90 degree V confirmed by Wikipedia F136 article. Redline 9000 rpm: Wikipedia says peak power at 9000 which is also the limit. Torque 540 Nm at 6000. Curb mass 1565 kg is Wikipedia's figure (Ferrari's own dry figure is lower). Gear ratios and 5.14 final drive from Wikipedia. Gear cut not stated. Rear tyre, Cd, frontal area, idle not found."
+  },
+  {
+    "id": "lexus-lfa",
+    "label": "Lexus LFA (2012)",
+    "engine": {
+      "code": "1LR-GUE",
+      "layout": "V",
+      "cylinders": 10,
+      "bankAngleDeg": 72,
+      "crank": null,
+      "firingOrder": [],
+      "banks": {
+        "left_or_A": [],
+        "right_or_B": []
+      },
+      "displacementL": 4.805,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 9000,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 412,
+      "powerRpm": 8700,
+      "torqueNm": 480,
+      "torqueRpm": 6800
+    },
+    "transmission": {
+      "type": "automated single-clutch sequential (Aisin ASG)",
+      "gears": 6,
+      "ratios": [
+        3.231,
+        2.188,
+        1.609,
+        1.233,
+        0.97,
+        0.795
+      ],
+      "finalDrive": 3.417,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1580,
+      "rearTyre": null,
+      "cd": 0.31,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Lexus_LFA",
+      "https://www.supercars.net/blog/2010-lexus-lfa-n2410/",
+      "https://www.pistonheads.com/news/general-pistonheads/lexus-lfa-technical-specifications/22220 (search excerpt)"
+    ],
+    "notes": "Firing order and cylinder-to-bank assignment NOT found in any source read (only 'even-firing', 72 degree V10, 90 degrees would not be even). Crank type not stated. Curb mass: Wikipedia infobox 1580 kg, Wikipedia's official table 1480 kg; 1580 chosen. Redline 9000, fuel cut 9500 (Wikipedia). Tyres: Bridgestone 265 front, 305 rear (widths only; full size not read). Final drive 3.417 from supercars.net and goo-net via search; one claimed value 3.133 had no source. Gear cut not stated. Idle and frontal area not found. Cd 0.31 with rear wing retracted."
+  },
+  {
+    "id": "ford-mustang-gt-s550",
+    "label": "Ford Mustang GT (S550, 2018-2023, 6-speed manual)",
+    "engine": {
+      "code": "Coyote Gen 3 5.0 Ti-VCT",
+      "layout": "V",
+      "cylinders": 8,
+      "bankAngleDeg": 90,
+      "crank": "cross-plane",
+      "firingOrder": [
+        1,
+        5,
+        4,
+        8,
+        6,
+        3,
+        7,
+        2
+      ],
+      "banks": {
+        "left_or_A": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "right_or_B": [
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "displacementL": 5.038,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 340,
+      "powerRpm": 7000,
+      "torqueNm": 570,
+      "torqueRpm": 4250
+    },
+    "transmission": {
+      "type": "manual (Getrag MT82-D4)",
+      "gears": 6,
+      "ratios": [
+        3.24,
+        2.1,
+        1.42,
+        1.0,
+        0.81,
+        0.62
+      ],
+      "finalDrive": null,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": null,
+      "rearTyre": "275/40 R19 (performance-pack car; base GT tyre not confirmed)",
+      "cd": null,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)",
+      "https://www.cjponyparts.com/resources/2018-mustang-specs (search excerpt)",
+      "https://help.summitracing.com/knowledgebase/article/HE-04981/en-us (search excerpt)",
+      "https://rerev.com/firing-orders/ford/5-0l/ (search excerpt)",
+      "https://www.truedelta.com/Ford-Mustang/specs-92-2018 (search excerpt)"
+    ],
+    "notes": "Firing order 1-5-4-8-6-3-7-2 and bank numbering (1-4 passenger/right bank, 5-8 driver/left bank) are consistent across several sources. Cross-plane crank is NOT stated explicitly in a source read; inferred because the flat-plane GT350 has a different order (1-5-4-8-3-7-2-6) and the Coyote is well known as cross-plane. Power/torque from Wikipedia (460 hp at 7000, 420 lb-ft at 4250). Redline NOT found (a figure of about 7500 is commonly quoted but unsourced here), left null. MT82 ratios from a Ford Performance Techline lookup quoted on a forum plus the CJ Pony Parts table (1st-5th match; 6th 0.62 from the forum). Axle ratio (3.31/3.55/3.73 depending on package) not found: finalDrive null. Curb mass: Wikipedia gives only the generation range 1583-1892 kg; no GT figure found, null. Rear tyre 275/40 R19 from TrueDelta and CarExpert NZ for the GT; a plain 255/40 R19 also exists on some trims. Cd and frontal area not found."
+  },
+  {
+    "id": "chevrolet-corvette-c8-stingray-z51",
+    "label": "Chevrolet Corvette Stingray C8 (2020, Z51, 8-speed DCT)",
+    "engine": {
+      "code": "LT2",
+      "layout": "V",
+      "cylinders": 8,
+      "bankAngleDeg": 90,
+      "crank": "cross-plane",
+      "firingOrder": [
+        1,
+        8,
+        7,
+        2,
+        6,
+        5,
+        4,
+        3
+      ],
+      "banks": {
+        "left_or_A": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "right_or_B": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "displacementL": 6.162,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 6500,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 365,
+      "powerRpm": 6450,
+      "torqueNm": 630,
+      "torqueRpm": 5150
+    },
+    "transmission": {
+      "type": "dual-clutch (Tremec TR-9080 / M1L)",
+      "gears": 8,
+      "ratios": [
+        2.91,
+        1.76,
+        1.22,
+        0.88,
+        0.65,
+        0.51,
+        0.4,
+        0.33
+      ],
+      "finalDrive": 3.55,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1654,
+      "rearTyre": "305/30 ZR20",
+      "cd": null,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Chevrolet_Corvette_(C8)",
+      "https://www.corvsport.com/2020-corvette-specifications/",
+      "https://corvetteactioncenter.com/specs/c8-corvette/2020-corvette/press-release-2020-corvette-preliminary-specifications.html",
+      "https://www.mobilityengineeringtech.com/component/content/article/40895-sae-ma-00017 (search excerpt, Tremec)",
+      "https://help.summitracing.com/knowledgebase/article/HE-04970/en-us (numbering, search excerpt)",
+      "https://rerev.com/firing-orders/chevrolet/6-2l-lt4/ (search excerpt)"
+    ],
+    "notes": "Displacement 6.162 L is the nominal 6.2 L (bore/stroke 103.25 x 92 mm per press release); stored as 6.162 by calculation from that bore/stroke, not quoted. Power 490 hp standard, 495 hp with NPP sport exhaust (365/369 kW at 6450); torque 630 Nm (637 with NPP) at 5150. Firing order 1-8-7-2-6-5-4-3 is the GM LS/Gen V order; sources cover the 6.2 L family, none LT2-specific. Numbering odd=driver (left), even=passenger (right). Cross-plane stated by Wikipedia. finalDrive 3.55 is the ring and pinion only; Tremec lists a transfer gear of 1.38 (mechanical LSD, 4.9 overall) or 1.46 (electronic LSD, 5.2 overall), and the Z51 uses the eLSD, so overall is roughly 5.2 (a forum quote says 5.17). Curb mass 1654 kg (3647 lb) from Wikipedia (not Z51-specific; one leak says 3535 lb base, 3577 lb Z51). Redline 6500 from corvsport. Cd, frontal area, idle not found."
+  },
+  {
+    "id": "dodge-challenger-srt-hellcat-2015-6mt",
+    "label": "Dodge Challenger SRT Hellcat (2015, 6-speed manual)",
+    "engine": {
+      "code": "6.2 Hemi supercharged (Hellcat)",
+      "layout": "V",
+      "cylinders": 8,
+      "bankAngleDeg": 90,
+      "crank": null,
+      "firingOrder": [
+        1,
+        8,
+        4,
+        3,
+        6,
+        5,
+        7,
+        2
+      ],
+      "banks": {
+        "left_or_A": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "right_or_B": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "displacementL": 6.166,
+      "aspiration": {
+        "type": "supercharged",
+        "count": null,
+        "superchargerType": "twin-screw (IHI 2.38 L)",
+        "peakBoostBar": 0.8
+      },
+      "redlineRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 527,
+      "powerRpm": 6000,
+      "torqueNm": 881,
+      "torqueRpm": 4000
+    },
+    "transmission": {
+      "type": "manual (Tremec TR-6060)",
+      "gears": 6,
+      "ratios": [
+        2.26,
+        1.58,
+        1.19,
+        1.0,
+        0.76,
+        0.63
+      ],
+      "finalDrive": 3.7,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 2018,
+      "rearTyre": null,
+      "cd": 0.337,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Chrysler_Hemi_engine",
+      "https://en.wikipedia.org/wiki/Tremec_TR-6060_transmission",
+      "https://s3.amazonaws.com/chryslermedia.iconicweb.com/mediasite/specs/2015_DG_Challenger_SP.pdf (Cd, non-Hellcat sheet)",
+      "https://rerev.com/firing-orders/dodge/6-2l/ (search excerpt)",
+      "https://blog.consumerguide.com/hades-dodge-unleashes-707-horse-challenger-hellcat-test-drive/ (4449 lb, search excerpt)",
+      "https://www.challengertalk.com/threads/gear-ratios-for-2015-tremec-6-speed.324098/ (search excerpt)"
+    ],
+    "notes": "Boost 11.6 psi = 0.80 bar, supercharger 2380 cc twin-screw, 707 hp (527 kW) at 6000, 650 lb-ft (881 Nm) at 4000 (Wikipedia). Firing order 1-8-4-3-6-5-7-2 from several sources; bank numbering odd=left is the standard V convention but no source stated it for the Hellcat directly (one site contradicted it). 90 degree bank and cross-plane crank are not stated in sources read (crank left null). Hellcat manual ratios from Wikipedia's TR-6060 table (5th 0.76; forums say 0.77). Final drive 3.70 for the manual is from forum posts only (one gave 3.91), unverified; the 6MT standard R/T ratios 2.97/2.10/1.46 are NOT the Hellcat's. Curb mass 4449 lb with manual (Consumer Guide excerpt) = 2018 kg. Cd 0.337 is Dodge's figure for the 2015 Challenger line (SXT sheet), not Hellcat-specific. Redline/rev limit not found (about 6200 is commonly quoted, unsourced). Rear tyre (275/40ZR20) not confirmed by a source. Frontal area, idle not found."
+  },
+  {
+    "id": "honda-s2000-ap1",
+    "label": "Honda S2000 (AP1, 1999-2003)",
+    "engine": {
+      "code": "F20C",
+      "layout": "inline",
+      "cylinders": 4,
+      "bankAngleDeg": null,
+      "crank": null,
+      "firingOrder": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "banks": {
+        "left_or_A": [],
+        "right_or_B": []
+      },
+      "displacementL": 1.997,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 8800,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 177,
+      "powerRpm": 8300,
+      "torqueNm": 208,
+      "torqueRpm": 7500
+    },
+    "transmission": {
+      "type": "manual",
+      "gears": 6,
+      "ratios": [
+        3.133,
+        2.045,
+        1.481,
+        1.161,
+        0.979,
+        0.81
+      ],
+      "finalDrive": 4.1,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1274,
+      "rearTyre": "225/50 R16",
+      "cd": 0.33,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Honda_S2000",
+      "https://en.wikipedia.org/wiki/Honda_F_engine",
+      "https://support.haltech.com/portal/en/kb/articles/f20c-ap1-engine (search excerpt)",
+      "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
+    ],
+    "notes": "US/EU rating 177 kW at 8300, 208 Nm at 7500 (JDM 184 kW, 218 Nm). Redline 8800 rpm with fuel cut 9000 (Wikipedia S2000); Wikipedia's F-engine page gives a 9000 redline. Displacement 1997 cc (S2000 page) vs 1998 cc (F page). Firing order 1-3-4-2 from Haltech/spec listings, standard inline-4. Wikipedia lists a 1.160 secondary reduction in addition to the 4.100 final drive; the 4.100 may already be the overall figure so check before multiplying. 5th/6th ratios 0.979/0.810 as printed on the page (other references quote 0.971/0.811). Cd 0.33 from Wikipedia drag list (forum posters claim 0.38-0.42, unverified). Frontal area (about 1.82 m2) only an estimate, left null. Idle not found."
+  },
+  {
+    "id": "honda-civic-type-r-fl5",
+    "label": "Honda Civic Type R (FL5, 2023)",
+    "engine": {
+      "code": "K20C1",
+      "layout": "inline",
+      "cylinders": 4,
+      "bankAngleDeg": null,
+      "crank": null,
+      "firingOrder": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "banks": {
+        "left_or_A": [],
+        "right_or_B": []
+      },
+      "displacementL": 1.996,
+      "aspiration": {
+        "type": "turbocharged",
+        "count": 1,
+        "superchargerType": null,
+        "peakBoostBar": 1.74
+      },
+      "redlineRpm": 7000,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 235,
+      "powerRpm": 6500,
+      "torqueNm": 420,
+      "torqueRpm": 2600
+    },
+    "transmission": {
+      "type": "manual",
+      "gears": 6,
+      "ratios": [
+        3.625,
+        2.115,
+        1.529,
+        1.125,
+        0.911,
+        0.734
+      ],
+      "finalDrive": 3.842,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1430,
+      "rearTyre": "265/30 R19",
+      "cd": null,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://hondanews.com/en-US/honda-automobiles/releases/2023-honda-civic-type-r-specifications-features",
+      "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_(FL5)",
+      "https://en.wikipedia.org/wiki/Honda_K_engine",
+      "https://support.haltech.com/portal/en/kb/articles/thomas-te (search excerpt)"
+    ],
+    "notes": "US spec: 315 hp (235 kW) at 6500, 310 lb-ft (420 Nm) at 2600-4000, max boost 25.2 psi = 1.74 bar, redline 7000 (Honda press page). Europe/Japan rating 330 PS. Torque rpm is the start of the plateau. Firing order 1-3-4-2 is NOT confirmed for the K20C1: Haltech K-series lists 1-3-4-2 and another site says 1-3-2-4 for the K20 family; 1-3-4-2 is the usual Honda inline-4 order. Curb mass 1430 kg from Wikipedia; Honda's page lists 3188 without units (about 1446 kg if lb). Rear tyre same 265/30 R19 as front. Cd, idle, frontal area not found."
+  },
+  {
+    "id": "mazda-rx-7-fd3s-1993-us",
+    "label": "Mazda RX-7 (FD3S, 1993 US)",
+    "engine": {
+      "code": "13B-REW",
+      "layout": "rotary (Wankel)",
+      "cylinders": 2,
+      "bankAngleDeg": null,
+      "crank": null,
+      "firingOrder": [],
+      "banks": {
+        "left_or_A": [],
+        "right_or_B": []
+      },
+      "displacementL": 1.308,
+      "aspiration": {
+        "type": "turbocharged (sequential twin)",
+        "count": 2,
+        "superchargerType": null,
+        "peakBoostBar": 0.76
+      },
+      "redlineRpm": 8000,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 190,
+      "powerRpm": 6500,
+      "torqueNm": 294,
+      "torqueRpm": 5000
+    },
+    "transmission": {
+      "type": "manual (R152)",
+      "gears": 5,
+      "ratios": [
+        3.483,
+        2.015,
+        1.391,
+        1.0,
+        0.719
+      ],
+      "finalDrive": 4.1,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1271,
+      "rearTyre": "225/50 R16",
+      "cd": 0.31,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://www.supercars.net/blog/1993→1995-mazda-rx-7-jm1fd/",
+      "https://www.rx7.net.nz/jpnspc.htm",
+      "https://en.wikipedia.org/wiki/Mazda_RX-7",
+      "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
+    ],
+    "notes": "2 rotors; 1308 cc is the two-rotor nominal (654 cc each). Power 255 bhp at 6500, 217 lb-ft at 5000 (supercars.net and rx7.net.nz). Peak boost 22.4 inHg (570 mmHg) = about 0.76 bar from the JDM 1992 spec page; US 1993 value not found. Redline 8000 is supercars.net's single unverified figure; rx7.net.nz gives no rev limit. Ratios and 4.10 final drive agree on both sources (5th 0.719; a parts seller quotes 0.806). Firing sequence not meaningful as a cylinder list for a rotary; none given. Curb mass 1271 kg (2800 lb, supercars.net); JDM weights 1250-1320 kg. Cd 0.31 from Wikipedia drag list (1993 R1/R2); drag area CdA 0.52 m2 listed for the base 1993 car, frontal area left null. Idle not found."
+  },
+  {
+    "id": "toyota-supra-turbo-a80-1993-us",
+    "label": "Toyota Supra Turbo (A80, 1993-1998 US, 6-speed manual)",
+    "engine": {
+      "code": "2JZ-GTE",
+      "layout": "inline",
+      "cylinders": 6,
+      "bankAngleDeg": null,
+      "crank": null,
+      "firingOrder": [
+        1,
+        5,
+        3,
+        6,
+        2,
+        4
+      ],
+      "banks": {
+        "left_or_A": [],
+        "right_or_B": []
+      },
+      "displacementL": 2.997,
+      "aspiration": {
+        "type": "turbocharged (sequential twin)",
+        "count": 2,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline (premium)",
+      "powerKw": 239,
+      "powerRpm": 5600,
+      "torqueNm": 427,
+      "torqueRpm": 4000
+    },
+    "transmission": {
+      "type": "manual (Getrag V160)",
+      "gears": 6,
+      "ratios": [
+        3.827,
+        2.36,
+        1.685,
+        1.312,
+        1.0,
+        0.793
+      ],
+      "finalDrive": 3.266,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1565,
+      "rearTyre": "255/40 R17",
+      "cd": 0.32,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Toyota_Supra",
+      "https://en.wikipedia.org/wiki/Toyota_JZ_engine",
+      "https://www.scribd.com/doc/51722983/Ignition-Systems-2JZ-GTE (search excerpt)",
+      "https://mkivsupra.net/topic/1375-6-speed-v160-v161-differences (search excerpt)",
+      "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
+    ],
+    "notes": "Export/US rating 320 hp (239 kW) at 5600, 315 lb-ft (427 Nm) at 4000 (Wikipedia Supra). Firing order 1-5-3-6-2-4 from a Toyota service data excerpt and a GS300 manual (2JZ-GE shares it). V160 ratios and the 3.266 turbo final drive from enthusiast sources (mkivsupra forum, parts listing, a Getrag wiki mirror), not primary; one low-quality site gave different numbers and was discarded. Redline NOT found in a reliable source (an enthusiast page says 6500 factory) so left null. Peak boost not found. Curb mass 1565 kg (3450 lb) for the turbo manual, Wikipedia. Rear tyre 255/40 R17 per Wikipedia. Cd 0.32 inferred from Wikipedia's drag list entry for 1993 Supra with wing/turbo (the page does not name the generation). Idle, frontal area not found."
+  }
+]

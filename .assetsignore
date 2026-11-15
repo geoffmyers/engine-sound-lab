@@ -1,0 +1,25 @@
+wrangler.toml
+.assetsignore
+.DS_Store
+.claude/
+.wrangler/
+# Repository plumbing: a deploy from a clone must not upload its git data, and
+# the generated CI workflow is not part of the site
+.git/
+.github/
+.gitignore
+node_modules/
+package.json
+package-lock.json
+# Repository documentation, research, tooling and tests: not part of the site
+README.md
+LICENSE.md
+CONTRIBUTING.md
+ARCHITECTURE.md
+SECURITY.md
+CLAUDE.md
+AGENTS.md
+docs/
+research/
+scripts/
+tests/

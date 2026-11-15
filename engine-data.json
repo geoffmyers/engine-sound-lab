@@ -1,0 +1,5098 @@
+{
+ "_about": "Declarative data for Engine Sound Lab: engine layouts with their firing angles, intake/exhaust hardware, gearing and presets. The DSP code reads numbers from here and holds none of its own. Firing entries are [cylinder, crank angle in degrees within one cycle, bank]. A four-stroke cycle is 720 degrees of crank; a rotary's is 360 degrees of eccentric shaft.",
+ "layouts": {
+  "I1": {
+   "label": "Single cylinder",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  "I2-360": {
+   "label": "Parallel twin, 360° crank",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     360,
+     0
+    ]
+   ]
+  },
+  "I2-270": {
+   "label": "Parallel twin, 270° crank",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     270,
+     0
+    ]
+   ]
+  },
+  "I3": {
+   "label": "Inline-3",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     240,
+     0
+    ],
+    [
+     2,
+     480,
+     0
+    ]
+   ]
+  },
+  "I4": {
+   "label": "Inline-4",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     180,
+     0
+    ],
+    [
+     4,
+     360,
+     0
+    ],
+    [
+     2,
+     540,
+     0
+    ]
+   ]
+  },
+  "I4-crossplane": {
+   "label": "Inline-4, crossplane crank",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     270,
+     0
+    ],
+    [
+     2,
+     450,
+     0
+    ],
+    [
+     4,
+     540,
+     0
+    ]
+   ]
+  },
+  "I5": {
+   "label": "Inline-5",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     144,
+     0
+    ],
+    [
+     4,
+     288,
+     0
+    ],
+    [
+     5,
+     432,
+     0
+    ],
+    [
+     3,
+     576,
+     0
+    ]
+   ]
+  },
+  "I6": {
+   "label": "Inline-6",
+   "family": "inline",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     120,
+     0
+    ],
+    [
+     3,
+     240,
+     0
+    ],
+    [
+     6,
+     360,
+     0
+    ],
+    [
+     2,
+     480,
+     0
+    ],
+    [
+     4,
+     600,
+     0
+    ]
+   ]
+  },
+  "V2-45": {
+   "label": "V-twin, 45° (common pin)",
+   "family": "v",
+   "bankAngle": 45,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     405,
+     1
+    ]
+   ]
+  },
+  "V2-90": {
+   "label": "L-twin, 90°",
+   "family": "v",
+   "bankAngle": 90,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     270,
+     1
+    ]
+   ]
+  },
+  "V4-twinpulse": {
+   "label": "V4, 90° twin-pulse",
+   "family": "v",
+   "bankAngle": 90,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     90,
+     1
+    ],
+    [
+     2,
+     290,
+     0
+    ],
+    [
+     4,
+     380,
+     1
+    ]
+   ]
+  },
+  "V6-60": {
+   "label": "V6, 60°",
+   "family": "v",
+   "bankAngle": 60,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     120,
+     1
+    ],
+    [
+     3,
+     240,
+     0
+    ],
+    [
+     4,
+     360,
+     1
+    ],
+    [
+     5,
+     480,
+     0
+    ],
+    [
+     6,
+     600,
+     1
+    ]
+   ]
+  },
+  "V6-90-odd": {
+   "label": "V6, 90° odd-fire",
+   "family": "v",
+   "bankAngle": 90,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     90,
+     1
+    ],
+    [
+     5,
+     240,
+     0
+    ],
+    [
+     4,
+     330,
+     1
+    ],
+    [
+     3,
+     480,
+     0
+    ],
+    [
+     2,
+     570,
+     1
+    ]
+   ]
+  },
+  "V8-cross": {
+   "label": "V8, cross-plane crank",
+   "family": "v",
+   "bankAngle": 90,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     8,
+     90,
+     1
+    ],
+    [
+     4,
+     180,
+     1
+    ],
+    [
+     3,
+     270,
+     0
+    ],
+    [
+     6,
+     360,
+     1
+    ],
+    [
+     5,
+     450,
+     0
+    ],
+    [
+     7,
+     540,
+     0
+    ],
+    [
+     2,
+     630,
+     1
+    ]
+   ]
+  },
+  "V8-flat": {
+   "label": "V8, flat-plane crank",
+   "family": "v",
+   "bankAngle": 90,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     5,
+     90,
+     1
+    ],
+    [
+     3,
+     180,
+     0
+    ],
+    [
+     7,
+     270,
+     1
+    ],
+    [
+     4,
+     360,
+     0
+    ],
+    [
+     8,
+     450,
+     1
+    ],
+    [
+     2,
+     540,
+     0
+    ],
+    [
+     6,
+     630,
+     1
+    ]
+   ]
+  },
+  "V10": {
+   "label": "V10, 72°",
+   "family": "v",
+   "bankAngle": 72,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     72,
+     1
+    ],
+    [
+     5,
+     144,
+     0
+    ],
+    [
+     10,
+     216,
+     1
+    ],
+    [
+     2,
+     288,
+     0
+    ],
+    [
+     7,
+     360,
+     1
+    ],
+    [
+     3,
+     432,
+     0
+    ],
+    [
+     8,
+     504,
+     1
+    ],
+    [
+     4,
+     576,
+     0
+    ],
+    [
+     9,
+     648,
+     1
+    ]
+   ]
+  },
+  "V12": {
+   "label": "V12, 60°",
+   "family": "v",
+   "bankAngle": 60,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     7,
+     60,
+     1
+    ],
+    [
+     5,
+     120,
+     0
+    ],
+    [
+     11,
+     180,
+     1
+    ],
+    [
+     3,
+     240,
+     0
+    ],
+    [
+     9,
+     300,
+     1
+    ],
+    [
+     6,
+     360,
+     0
+    ],
+    [
+     12,
+     420,
+     1
+    ],
+    [
+     2,
+     480,
+     0
+    ],
+    [
+     8,
+     540,
+     1
+    ],
+    [
+     4,
+     600,
+     0
+    ],
+    [
+     10,
+     660,
+     1
+    ]
+   ]
+  },
+  "H2": {
+   "label": "Flat twin (boxer)",
+   "family": "flat",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     360,
+     1
+    ]
+   ]
+  },
+  "H4": {
+   "label": "Flat-4 (boxer)",
+   "family": "flat",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     180,
+     0
+    ],
+    [
+     2,
+     360,
+     1
+    ],
+    [
+     4,
+     540,
+     1
+    ]
+   ]
+  },
+  "H6": {
+   "label": "Flat-6 (boxer)",
+   "family": "flat",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     6,
+     120,
+     1
+    ],
+    [
+     2,
+     240,
+     0
+    ],
+    [
+     4,
+     360,
+     1
+    ],
+    [
+     3,
+     480,
+     0
+    ],
+    [
+     5,
+     600,
+     1
+    ]
+   ]
+  },
+  "R2": {
+   "label": "Two-rotor Wankel",
+   "family": "rotary",
+   "cycle": 360,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     180,
+     0
+    ]
+   ]
+  },
+  "R3": {
+   "label": "Three-rotor Wankel",
+   "family": "rotary",
+   "cycle": 360,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     120,
+     0
+    ],
+    [
+     3,
+     240,
+     0
+    ]
+   ]
+  },
+  "R4": {
+   "label": "Four-rotor Wankel",
+   "family": "rotary",
+   "cycle": 360,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     90,
+     0
+    ],
+    [
+     3,
+     180,
+     0
+    ],
+    [
+     4,
+     270,
+     0
+    ]
+   ],
+   "_note": "Even 90-degree spacing of the eccentric shaft; the R26B's rotor order is not published."
+  },
+  "V6-90-even": {
+   "label": "V6, 90° even-fire (split pins)",
+   "family": "v",
+   "bankAngle": 90,
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     120,
+     1
+    ],
+    [
+     3,
+     240,
+     0
+    ],
+    [
+     4,
+     360,
+     1
+    ],
+    [
+     5,
+     480,
+     0
+    ],
+    [
+     6,
+     600,
+     1
+    ]
+   ]
+  },
+  "Radial9": {
+   "label": "Nine-cylinder radial",
+   "family": "radial",
+   "cycle": 720,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     3,
+     80,
+     0
+    ],
+    [
+     5,
+     160,
+     0
+    ],
+    [
+     7,
+     240,
+     0
+    ],
+    [
+     9,
+     320,
+     0
+    ],
+    [
+     2,
+     400,
+     0
+    ],
+    [
+     4,
+     480,
+     0
+    ],
+    [
+     6,
+     560,
+     0
+    ],
+    [
+     8,
+     640,
+     0
+    ]
+   ],
+   "_note": "Odd-numbered radials fire every other cylinder around the case: 1-3-5-7-9-2-4-6-8, every 80 degrees."
+  },
+  "I1-2T": {
+   "label": "Single cylinder two-stroke",
+   "family": "inline",
+   "strokes": 2,
+   "cycle": 360,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ]
+   ]
+  },
+  "V8-2T": {
+   "label": "V8 two-stroke (uniflow diesel)",
+   "family": "v",
+   "strokes": 2,
+   "valves": true,
+   "bankAngle": 63.5,
+   "cycle": 360,
+   "firing": [
+    [
+     1,
+     0,
+     0
+    ],
+    [
+     2,
+     45,
+     1
+    ],
+    [
+     3,
+     90,
+     0
+    ],
+    [
+     4,
+     135,
+     1
+    ],
+    [
+     5,
+     180,
+     0
+    ],
+    [
+     6,
+     225,
+     1
+    ],
+    [
+     7,
+     270,
+     0
+    ],
+    [
+     8,
+     315,
+     1
+    ]
+   ],
+   "_note": "A two-stroke fires every cylinder once per revolution: eight cylinders fire every 45 degrees. Uniflow scavenging: ports in, poppet exhaust valves out."
+  }
+ },
+ "physics": {
+  "speedOfSoundExhaust": 520,
+  "headerLengthM": 0.75,
+  "unequalHeaderSpreadM": 0.55,
+  "logManifoldStepM": 0.18,
+  "chamberLengthM": 0.38,
+  "blowdownDeg": {
+   "petrol": 62,
+   "diesel": 50,
+   "rotary": 105,
+   "twoStroke": 45
+  },
+  "cylinderTrimSpread": 0.03,
+  "cycleVariance": {
+   "slow": 0.16,
+   "fast": 0.05,
+   "correlation": 0.9,
+   "_source": "Real S65 warm idle: cycle-energy CV 0.14 with half-orders 30-50 dB below firing, so most variation drifts over several cycles rather than jumping per firing (STE-035)."
+  },
+  "coldStart": {
+   "idleCurve": [
+    [
+     0,
+     1.55
+    ],
+    [
+     12,
+     1.45
+    ],
+    [
+     25,
+     1.43
+    ],
+    [
+     62,
+     1.0
+    ]
+   ],
+   "catHeatingDb": 9,
+   "catHeatingSec": 79,
+   "rampSec": 5,
+   "extraVariance": 0.07,
+   "_source": "STE-035 (BMW S65 cold start, rear exhaust): idle eases from 1,214 rpm to the warm 786 over ~60 s; the exhaust stays ~9 dB louder at the same rpm until ~79 s, then falls within ~6 s as catalyst heating ends; cycle CV 0.21 cold against 0.14 warm."
+  }
+ },
+ "drivetrain": {
+  "torquePerLitreNm": 105,
+  "clutchCapacityFactor": 1.6,
+  "driveFrictionScale": 0.45,
+  "_driveFriction": "The engine friction term is tuned for how fast a free-revving engine slows down, and takes 30-45% of torque at speed; a real engine loses 10-20%. Driving a car, friction is scaled by this factor (free revving is unchanged).",
+  "diffLevel": 0.004,
+  "roadLevel": 0.012,
+  "windLevel": 0.02,
+  "_gearbox": "Gear-pair mesh counts are derived, not listed: a pair on a fixed centre distance has a constant tooth sum, so per input-shaft revolution the pair for ratio g meshes pairTeethSum / (headRatio + g) times (two-shaft bike boxes: headRatio 1 and no head set). In a layshaft car box a ratio of exactly 1.000 is direct drive, with no loaded gear pair at all.",
+  "gearboxGeometries": {
+   "layshaft": {
+    "layshaft": true,
+    "headMeshPerRev": 23,
+    "headRatio": 1.4,
+    "pairTeethSum": 60,
+    "pinionTeeth": 13,
+    "_note": "In-line manual box: head set, layshaft, direct-drive top-but-one gear."
+   },
+   "transaxle": {
+    "layshaft": false,
+    "headMeshPerRev": 0,
+    "headRatio": 1,
+    "pairTeethSum": 56,
+    "pinionTeeth": 11,
+    "_note": "Two-shaft box (transaxles, dual-clutch, race sequentials): every gear is a loaded pair."
+   },
+   "bike": {
+    "layshaft": false,
+    "headMeshPerRev": 0,
+    "headRatio": 1,
+    "pairTeethSum": 48,
+    "pinionTeeth": 0,
+    "_note": "Motorcycle cassette box with chain or belt final drive (no hypoid pinion)."
+   },
+   "direct": {
+    "layshaft": false,
+    "headMeshPerRev": 0,
+    "headRatio": 1,
+    "pairTeethSum": 0,
+    "pinionTeeth": 11,
+    "_note": "No gearbox: one ratio through the rear axle only (a Top Fuel dragster)."
+   },
+   "planetary": {
+    "layshaft": false,
+    "headMeshPerRev": 0,
+    "headRatio": 1,
+    "pairTeethSum": 36,
+    "pinionTeeth": 9,
+    "_note": "Two-speed planetary (Ford Model T)."
+   }
+  },
+  "vehicles": {
+   "car": {
+    "label": "Car (E9x M3 six-speed)",
+    "group": "Generic",
+    "_source": "BMW E9x M3 Getrag six-speed ratios, 3.846 final drive, 1,650 kg, 18-inch wheels.",
+    "vehicle": {
+     "massKg": 1650,
+     "wheelRadiusM": 0.33,
+     "cdA": 0.68,
+     "crr": 0.012,
+     "brakeDecel": 9.0,
+     "mu": 1.0,
+     "drive": "rwd",
+     "rearWeight": 0.52,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     4.055,
+     2.396,
+     1.582,
+     1.192,
+     1.0,
+     0.872
+    ],
+    "finalDrive": 3.846,
+    "gearbox": {
+     "layshaft": true,
+     "headMeshPerRev": 23,
+     "headRatio": 1.4,
+     "pairTeethSum": 60,
+     "pinionTeeth": 13
+    }
+   },
+   "race-car": {
+    "label": "Single-seater race car (eight-speed)",
+    "group": "Generic",
+    "_source": "Typical open-wheel figures: 750 kg with driver, high drag from downforce, about 100 km/h in 1st and 340 km/h in 8th at 18,000 rpm.",
+    "vehicle": {
+     "massKg": 750,
+     "wheelRadiusM": 0.33,
+     "cdA": 1.2,
+     "crr": 0.015,
+     "brakeDecel": 25.0,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.56,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     3.2,
+     2.5,
+     2.05,
+     1.75,
+     1.52,
+     1.35,
+     1.22,
+     1.1
+    ],
+    "finalDrive": 6.6,
+    "gearbox": {
+     "layshaft": false,
+     "headMeshPerRev": 0,
+     "headRatio": 1,
+     "pairTeethSum": 52,
+     "pinionTeeth": 11
+    }
+   },
+   "sportbike": {
+    "label": "Sport bike (six-speed, chain)",
+    "group": "Generic",
+    "_source": "Typical litre sport bike: 260 kg with rider, primary and chain reduction folded into one final ratio.",
+    "vehicle": {
+     "massKg": 260,
+     "wheelRadiusM": 0.31,
+     "cdA": 0.32,
+     "crr": 0.015,
+     "brakeDecel": 9.5,
+     "mu": 1.0,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.45
+    },
+    "gearboxRatios": [
+     2.6,
+     1.9,
+     1.55,
+     1.33,
+     1.17,
+     1.05
+    ],
+    "finalDrive": 5.6,
+    "gearbox": {
+     "layshaft": false,
+     "headMeshPerRev": 0,
+     "headRatio": 1,
+     "pairTeethSum": 48,
+     "pinionTeeth": 0
+    }
+   },
+   "cruiser": {
+    "label": "Cruiser motorcycle (six-speed, belt)",
+    "group": "Generic",
+    "_source": "Typical big V-twin cruiser: 420 kg with rider.",
+    "vehicle": {
+     "massKg": 420,
+     "wheelRadiusM": 0.33,
+     "cdA": 0.55,
+     "crr": 0.015,
+     "brakeDecel": 8.5,
+     "mu": 0.9,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.38
+    },
+    "gearboxRatios": [
+     3.21,
+     2.21,
+     1.57,
+     1.23,
+     1.0,
+     0.86
+    ],
+    "finalDrive": 3.2,
+    "gearbox": {
+     "layshaft": false,
+     "headMeshPerRev": 0,
+     "headRatio": 1,
+     "pairTeethSum": 52,
+     "pinionTeeth": 0
+    }
+   },
+   "dirtbike": {
+    "label": "Dirt bike (five-speed, chain)",
+    "group": "Generic",
+    "_source": "Typical 450 cc motocross bike: 190 kg with rider, knobbly tyres.",
+    "vehicle": {
+     "massKg": 190,
+     "wheelRadiusM": 0.34,
+     "cdA": 0.6,
+     "crr": 0.03,
+     "brakeDecel": 7.0,
+     "mu": 0.8,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.5
+    },
+    "gearboxRatios": [
+     1.79,
+     1.43,
+     1.17,
+     0.96,
+     0.83
+    ],
+    "finalDrive": 10.9,
+    "gearbox": {
+     "layshaft": false,
+     "headMeshPerRev": 0,
+     "headRatio": 1,
+     "pairTeethSum": 44,
+     "pinionTeeth": 0
+    }
+   },
+   "real-porsche-911-gt3-992": {
+    "label": "Porsche 911 GT3 (992, PDK)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1510,
+     "wheelRadiusM": 0.362,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.2,
+     "drive": "rwd",
+     "rearWeight": 0.61,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.75,
+     2.38,
+     1.72,
+     1.34,
+     1.11,
+     0.96,
+     0.84
+    ],
+    "finalDrive": 4.19,
+    "gearbox": "transaxle"
+   },
+   "real-ferrari-458-italia": {
+    "label": "Ferrari 458 Italia (2010)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1640,
+     "wheelRadiusM": 0.357,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.58,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.08,
+     2.18,
+     1.63,
+     1.29,
+     1.03,
+     0.84,
+     0.69
+    ],
+    "finalDrive": 5.14,
+    "gearbox": "transaxle"
+   },
+   "real-lexus-lfa": {
+    "label": "Lexus LFA (2012)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1655,
+     "wheelRadiusM": 0.346,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.52,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.231,
+     2.188,
+     1.609,
+     1.233,
+     0.97,
+     0.795
+    ],
+    "finalDrive": 3.417,
+    "gearbox": "transaxle"
+   },
+   "real-ford-mustang-gt-s550": {
+    "label": "Ford Mustang GT (S550, manual)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1775,
+     "wheelRadiusM": 0.351,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.47,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.24,
+     2.1,
+     1.42,
+     1.0,
+     0.81,
+     0.62
+    ],
+    "finalDrive": 3.55,
+    "gearbox": "layshaft"
+   },
+   "real-chevrolet-corvette-c8": {
+    "label": "Chevrolet Corvette Stingray (C8, Z51)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1729,
+     "wheelRadiusM": 0.345,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.6,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     2.91,
+     1.76,
+     1.22,
+     0.88,
+     0.65,
+     0.51,
+     0.4,
+     0.33
+    ],
+    "finalDrive": 5.17,
+    "gearbox": "transaxle"
+   },
+   "real-dodge-challenger-hellcat": {
+    "label": "Dodge Challenger SRT Hellcat (2015, manual)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 2093,
+     "wheelRadiusM": 0.354,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.43,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     2.26,
+     1.58,
+     1.19,
+     1.0,
+     0.76,
+     0.63
+    ],
+    "finalDrive": 3.7,
+    "gearbox": "layshaft"
+   },
+   "real-honda-s2000-ap1": {
+    "label": "Honda S2000 (AP1)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1349,
+     "wheelRadiusM": 0.316,
+     "cdA": 0.6,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.133,
+     2.045,
+     1.481,
+     1.161,
+     0.979,
+     0.81
+    ],
+    "finalDrive": 4.756,
+    "gearbox": "layshaft"
+   },
+   "real-honda-civic-type-r-fl5": {
+    "label": "Honda Civic Type R (FL5, 2023)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1505,
+     "wheelRadiusM": 0.321,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "fwd",
+     "rearWeight": 0.38,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.625,
+     2.115,
+     1.529,
+     1.125,
+     0.911,
+     0.734
+    ],
+    "finalDrive": 3.842,
+    "gearbox": "transaxle"
+   },
+   "real-mazda-rx7-fd": {
+    "label": "Mazda RX-7 (FD3S, 1993)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1346,
+     "wheelRadiusM": 0.316,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.483,
+     2.015,
+     1.391,
+     1.0,
+     0.719
+    ],
+    "finalDrive": 4.1,
+    "gearbox": "layshaft"
+   },
+   "real-toyota-supra-a80": {
+    "label": "Toyota Supra Turbo (A80, manual)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1640,
+     "wheelRadiusM": 0.318,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.47,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.827,
+     2.36,
+     1.685,
+     1.312,
+     1.0,
+     0.793
+    ],
+    "finalDrive": 3.266,
+    "gearbox": "layshaft"
+   },
+   "real-nissan-gt-r-r35": {
+    "label": "Nissan GT-R (R35, 2009)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1815,
+     "wheelRadiusM": 0.354,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "awd",
+     "rearWeight": 0.46,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     4.056,
+     2.301,
+     1.595,
+     1.248,
+     1.001,
+     0.796
+    ],
+    "finalDrive": 3.7,
+    "gearbox": "transaxle"
+   },
+   "real-subaru-wrx-sti-grb": {
+    "label": "Subaru Impreza WRX STI (GRB, 2008)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1615,
+     "wheelRadiusM": 0.327,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "awd",
+     "rearWeight": 0.4,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.64,
+     2.23,
+     1.52,
+     1.14,
+     0.97,
+     0.76
+    ],
+    "finalDrive": 3.9,
+    "gearbox": "transaxle"
+   },
+   "real-audi-rs3-8y": {
+    "label": "Audi RS3 (8Y, 2022)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1645,
+     "wheelRadiusM": 0.321,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "awd",
+     "rearWeight": 0.41,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     4.057,
+     3.103,
+     2.373,
+     1.814,
+     1.387,
+     1.061,
+     0.811
+    ],
+    "finalDrive": 3.6,
+    "gearbox": "transaxle"
+   },
+   "real-bmw-m3-e46": {
+    "label": "BMW M3 (E46, S54)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1635,
+     "wheelRadiusM": 0.335,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     4.227,
+     2.528,
+     1.669,
+     1.226,
+     1.0,
+     0.828
+    ],
+    "finalDrive": 3.62,
+    "gearbox": "layshaft"
+   },
+   "real-mercedes-sls-amg": {
+    "label": "Mercedes-Benz SLS AMG (2011)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1694,
+     "wheelRadiusM": 0.343,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.53,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.4,
+     2.19,
+     1.63,
+     1.29,
+     1.03,
+     0.84,
+     0.72
+    ],
+    "finalDrive": 3.67,
+    "gearbox": "transaxle"
+   },
+   "real-lamborghini-aventador": {
+    "label": "Lamborghini Aventador LP700-4 (2012)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1745,
+     "wheelRadiusM": 0.354,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "awd",
+     "rearWeight": 0.57,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.909,
+     2.438,
+     1.81,
+     1.458,
+     1.185,
+     0.967,
+     0.844
+    ],
+    "finalDrive": 2.87,
+    "gearbox": "transaxle"
+   },
+   "real-toyota-gr86": {
+    "label": "Toyota GR86 (2022, manual)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1351,
+     "wheelRadiusM": 0.315,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.47,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.626,
+     2.189,
+     1.541,
+     1.213,
+     1.0,
+     0.767
+    ],
+    "finalDrive": 4.1,
+    "gearbox": "layshaft"
+   },
+   "real-mazda-mx5-nd2": {
+    "label": "Mazda MX-5 (ND2, 2019)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1127,
+     "wheelRadiusM": 0.308,
+     "cdA": 0.65,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     5.087,
+     2.991,
+     2.035,
+     1.594,
+     1.286,
+     1.0
+    ],
+    "finalDrive": 2.866,
+    "gearbox": "layshaft"
+   },
+   "real-vw-beetle-1600": {
+    "label": "Volkswagen Beetle 1600 (Type 1, 1970s)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 945,
+     "wheelRadiusM": 0.321,
+     "cdA": 0.86,
+     "crr": 0.012,
+     "brakeDecel": 9.5,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.6,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     3.8,
+     2.06,
+     1.26,
+     0.89
+    ],
+    "finalDrive": 3.875,
+    "gearbox": "transaxle"
+   },
+   "real-ram-2500-cummins": {
+    "label": "Ram 2500 Cummins 6.7 (G56 manual)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 3475,
+     "wheelRadiusM": 0.399,
+     "cdA": 1.6,
+     "crr": 0.008,
+     "brakeDecel": 6.0,
+     "mu": 0.8,
+     "drive": "rwd",
+     "rearWeight": 0.42,
+     "cgHeightOverWheelbase": 0.25
+    },
+    "gearboxRatios": [
+     5.94,
+     3.28,
+     1.98,
+     1.31,
+     1.0,
+     0.74
+    ],
+    "finalDrive": 3.42,
+    "gearbox": "layshaft"
+   },
+   "real-renault-r25": {
+    "label": "Renault R25 Formula 1 (2005)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 605,
+     "wheelRadiusM": 0.33,
+     "cdA": 1.3,
+     "crr": 0.015,
+     "brakeDecel": 30,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.55,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     17.372,
+     14.581,
+     12.239,
+     10.273,
+     8.623,
+     7.238
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-cosworth-f1-v8-2006": {
+    "label": "Cosworth CA2006 Formula 1 V8 (Williams FW28, 2006)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 600,
+     "wheelRadiusM": 0.33,
+     "cdA": 1.3,
+     "crr": 0.015,
+     "brakeDecel": 30,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.55,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     20.216,
+     17.24,
+     14.702,
+     12.538,
+     10.692,
+     9.118,
+     7.775
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-ferrari-412-t2": {
+    "label": "Ferrari 412 T2 Formula 1 (1995)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 595,
+     "wheelRadiusM": 0.33,
+     "cdA": 1.3,
+     "crr": 0.015,
+     "brakeDecel": 28,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.55,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     16.523,
+     13.756,
+     11.453,
+     9.535,
+     7.938,
+     6.609
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-nascar-next-gen": {
+    "label": "NASCAR Cup Next Gen (2022)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1542,
+     "wheelRadiusM": 0.34,
+     "cdA": 0.8,
+     "crr": 0.015,
+     "brakeDecel": 12,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.48,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     9.213,
+     7.481,
+     6.075,
+     4.933,
+     4.006
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-mazda-787b": {
+    "label": "Mazda 787B (1991 Le Mans winner)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 830,
+     "wheelRadiusM": 0.35,
+     "cdA": 0.9,
+     "crr": 0.015,
+     "brakeDecel": 18,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.55,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     8.383,
+     6.735,
+     5.411,
+     4.347,
+     3.493
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-audi-quattro-s1-e2": {
+    "label": "Audi Sport quattro S1 E2 (Group B, 1985)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1090,
+     "wheelRadiusM": 0.32,
+     "cdA": 0.85,
+     "crr": 0.015,
+     "brakeDecel": 15.0,
+     "mu": 1.7,
+     "drive": "awd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     13.983,
+     11.225,
+     9.011,
+     7.233,
+     5.806,
+     4.661
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-audi-r10-tdi": {
+    "label": "Audi R10 TDI (2006 Le Mans winner)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 925,
+     "wheelRadiusM": 0.34,
+     "cdA": 0.9,
+     "crr": 0.015,
+     "brakeDecel": 18,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.55,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     4.273,
+     3.508,
+     2.881,
+     2.365,
+     1.942
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-porsche-911-gt3-cup-992": {
+    "label": "Porsche 911 GT3 Cup (992, 2021)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1260,
+     "wheelRadiusM": 0.355,
+     "cdA": 0.85,
+     "crr": 0.015,
+     "brakeDecel": 14,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.62,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     10.874,
+     8.982,
+     7.42,
+     6.129,
+     5.063,
+     4.182
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-indycar-chevrolet": {
+    "label": "IndyCar (Chevrolet 2.2 twin-turbo V6, 2018-23)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 767,
+     "wheelRadiusM": 0.33,
+     "cdA": 1.0,
+     "crr": 0.015,
+     "brakeDecel": 25,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.58,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     9.435,
+     7.987,
+     6.761,
+     5.724,
+     4.846,
+     4.102
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-nhra-top-fuel": {
+    "label": "NHRA Top Fuel dragster",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1057,
+     "wheelRadiusM": 0.46,
+     "cdA": 1.4,
+     "crr": 0.015,
+     "brakeDecel": 12,
+     "mu": 4.0,
+     "drive": "rwd",
+     "rearWeight": 0.8,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     0.793
+    ],
+    "finalDrive": 3.2,
+    "gearbox": "direct"
+   },
+   "real-yamaha-m1-motogp": {
+    "label": "Yamaha YZR-M1 MotoGP",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 235,
+     "wheelRadiusM": 0.31,
+     "cdA": 0.3,
+     "crr": 0.015,
+     "brakeDecel": 13,
+     "mu": 1.7,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.12
+    },
+    "gearboxRatios": [
+     2.938,
+     2.51,
+     2.144,
+     1.831,
+     1.564,
+     1.336
+    ],
+    "finalDrive": 4.5,
+    "gearbox": "bike"
+   },
+   "real-harley-street-bob-114": {
+    "label": "Harley-Davidson Street Bob 114 (2023)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 377,
+     "wheelRadiusM": 0.323,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5,
+     "mu": 1.0,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.45
+    },
+    "gearboxRatios": [
+     3.3361,
+     2.3124,
+     1.7173,
+     1.3909,
+     1.1849,
+     0.9996
+    ],
+    "finalDrive": 2.791,
+    "gearbox": "bike"
+   },
+   "real-ducati-panigale-v4": {
+    "label": "Ducati Panigale V4 (2018)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 275,
+     "wheelRadiusM": 0.336,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5,
+     "mu": 1.0,
+     "drive": "rwd",
+     "rearWeight": 0.52,
+     "cgHeightOverWheelbase": 0.45
+    },
+    "gearboxRatios": [
+     2.7143,
+     2.1176,
+     1.7368,
+     1.5238,
+     1.3636,
+     1.25
+    ],
+    "finalDrive": 4.612,
+    "gearbox": "bike"
+   },
+   "real-suzuki-hayabusa": {
+    "label": "Suzuki Hayabusa (GSX1300R, 2008-2020)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 346,
+     "wheelRadiusM": 0.311,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5,
+     "mu": 1.0,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.45
+    },
+    "gearboxRatios": [
+     2.615,
+     1.937,
+     1.526,
+     1.285,
+     1.136,
+     1.043
+    ],
+    "finalDrive": 3.813,
+    "gearbox": "bike"
+   },
+   "real-ktm-250-sx": {
+    "label": "KTM 250 SX two-stroke (2022)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 176,
+     "wheelRadiusM": 0.34,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5,
+     "mu": 1.0,
+     "drive": "rwd",
+     "rearWeight": 0.5,
+     "cgHeightOverWheelbase": 0.45
+    },
+    "gearboxRatios": [
+     2.0,
+     1.625,
+     1.3333,
+     1.1429,
+     0.9545
+    ],
+    "finalDrive": 9.827,
+    "gearbox": "bike"
+   },
+   "real-ford-model-t": {
+    "label": "Ford Model T (1908-1927)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 720,
+     "wheelRadiusM": 0.381,
+     "cdA": 1.4,
+     "crr": 0.012,
+     "brakeDecel": 4,
+     "mu": 1.1,
+     "drive": "rwd",
+     "rearWeight": 0.55,
+     "cgHeightOverWheelbase": 0.19
+    },
+    "gearboxRatios": [
+     2.75,
+     1.0
+    ],
+    "finalDrive": 3.6363,
+    "gearbox": "planetary"
+   }
+  },
+  "_grip": "Tyre grip mu: road tyres about 1.0; race slicks about 1.7 before downforce; a motorcycle about 1.0 (the wheelie and traction limit is near 1 g); a Top Fuel dragster's tyres and track prep about 4.",
+  "_traction": "Grip comes from the driven axle: its static share of the weight plus load transfer (CG height over wheelbase times acceleration in g); all-wheel drive uses all of it; a rear-driven bike is also limited by the front wheel lifting."
+ },
+ "autoShift": {
+  "_about": "Automatic shifting, racing style: up at the limiter under throttle; down as soon as the lower gear would not over-rev, whenever the driver is off the throttle or braking. (Under throttle a downshift would undo the upshift just made and oscillate.)",
+  "upAtRedlineFraction": 0.985,
+  "upMinThrottle": 0.5,
+  "downWhenBelowRedlineFraction": 0.99,
+  "downMaxThrottle": 0.1
+ },
+ "transmissions": {
+  "manual": {
+   "label": "Manual, H-pattern (synchromesh)",
+   "kind": "manual",
+   "clutchOut": 0.1,
+   "lever": 0.1,
+   "synchro": 0.12,
+   "clutchIn": 0.32,
+   "launch": 0.8
+  },
+  "sequential": {
+   "label": "Sequential dog box",
+   "kind": "sequential",
+   "cut": 0.06,
+   "blip": 0.14,
+   "launch": 0.6
+  },
+  "dct": {
+   "label": "Dual-clutch",
+   "kind": "dct",
+   "cut": 0.05,
+   "blip": 0.16,
+   "handover": 0.12,
+   "launch": 0.5
+  }
+ },
+ "gearCuts": {
+  "helical": {
+   "label": "Helical",
+   "whine": 0.006,
+   "harmonics": [
+    1,
+    0.15
+   ],
+   "rattle": 0.03
+  },
+  "straight": {
+   "label": "Straight-cut",
+   "whine": 0.05,
+   "harmonics": [
+    1,
+    0.45,
+    0.25,
+    0.12
+   ],
+   "rattle": 0.12
+  }
+ },
+ "perspectives": {
+  "rear": {
+   "label": "Behind the car",
+   "basis": "measured",
+   "note": "Fitted to a recording made behind a BMW S65's tailpipes.",
+   "_source": "Octave EQ fitted by scripts/fit-perspectives.py to STE-035 (Zoom H4n behind the BMW S65's tailpipes), warm idle 95-112 s.",
+   "sources": {
+    "exhaust": 1.0,
+    "intake": 0.05,
+    "mechanical": 0.08,
+    "induction": 0.5,
+    "drivetrain": 0.5,
+    "road": 0.5
+   },
+   "eqDb": [
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.6,
+    -1.2,
+    -1.8,
+    -2.4,
+    -3.0,
+    -3.6
+   ],
+   "ground": {
+    "delayMs": 2.4,
+    "gain": 0.45
+   },
+   "reverb": {
+    "mix": 0.08,
+    "rt60": 0.5,
+    "dampHz": 3500
+   },
+   "width": 0.8,
+   "level": 0.91
+  },
+  "front": {
+   "label": "In front, at the intake",
+   "basis": "measured",
+   "note": "Fitted to a recording made at a BMW S65's front intake.",
+   "_source": "Octave EQ fitted to STE-036 (H4n at the front intake of the S65), warm idle 52-75 s. Level is matched to the rear at full throttle; in the recordings this position was 16 dB quieter than the rear at warm idle (same recorder, gain assumed unchanged).",
+   "sources": {
+    "exhaust": 0.3,
+    "intake": 1.0,
+    "mechanical": 0.6,
+    "induction": 1.0,
+    "drivetrain": 0.4,
+    "road": 0.5
+   },
+   "eqDb": [
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -3.8,
+    -7.6,
+    -11.5,
+    -15.3,
+    -19.1,
+    -22.9
+   ],
+   "ground": {
+    "delayMs": 2.4,
+    "gain": 0.45
+   },
+   "reverb": {
+    "mix": 0.08,
+    "rt60": 0.5,
+    "dampHz": 3500
+   },
+   "width": 0.6,
+   "level": 0.58
+  },
+  "bay": {
+   "label": "Engine bay, hood open",
+   "basis": "measured",
+   "note": "Fitted to a recording made in a BMW S65's open engine bay.",
+   "_source": "Octave EQ fitted to STE-037 (H4n in the S65's open engine bay), warm idle 35-78 s; below 30 Hz the take is handling noise and is not fitted. Level is matched to the rear at full throttle; in the recordings this position was 11 dB quieter than the rear at warm idle (same recorder, gain assumed unchanged).",
+   "sources": {
+    "exhaust": 0.25,
+    "intake": 0.9,
+    "mechanical": 1.0,
+    "induction": 1.0,
+    "drivetrain": 0.9,
+    "road": 0.3
+   },
+   "eqDb": [
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -3.2,
+    -6.5,
+    -9.7,
+    -12.9,
+    -16.2,
+    -19.4
+   ],
+   "ground": {
+    "delayMs": 1.2,
+    "gain": 0.3
+   },
+   "reverb": {
+    "mix": 0.05,
+    "rt60": 0.3,
+    "dampHz": 5000
+   },
+   "width": 0.5,
+   "level": 0.85
+  },
+  "cabin": {
+   "label": "Driver's seat",
+   "basis": "estimated",
+   "note": "Estimated: there is no recording from inside the car yet.",
+   "_source": "No recording: estimated. The body blocks the mid and high frequencies, the cabin booms around 60-80 Hz, and the room is small.",
+   "sources": {
+    "exhaust": 0.8,
+    "intake": 0.45,
+    "mechanical": 0.3,
+    "induction": 0.6,
+    "drivetrain": 1.0,
+    "road": 1.0
+   },
+   "eqDb": [
+    2.0,
+    4.0,
+    0.0,
+    -3.0,
+    -6.0,
+    -9.0,
+    -12.0,
+    -16.0,
+    -20.0,
+    -24.0
+   ],
+   "ground": {
+    "delayMs": 1.0,
+    "gain": 0.0
+   },
+   "reverb": {
+    "mix": 0.18,
+    "rt60": 0.12,
+    "dampHz": 2500
+   },
+   "width": 0.25,
+   "level": 1.67
+  },
+  "dry": {
+   "label": "Dry model (no listener)",
+   "basis": "model",
+   "note": "The synthesizer's raw output: every source at full level, no body, distance, ground or room.",
+   "_source": "The synthesizer's raw output with every source at full level: no body, distance, ground or room.",
+   "sources": {
+    "exhaust": 1.0,
+    "intake": 1.0,
+    "mechanical": 1.0,
+    "induction": 1.0
+   },
+   "eqDb": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "ground": {
+    "delayMs": 2.0,
+    "gain": 0.0
+   },
+   "reverb": {
+    "mix": 0.0,
+    "rt60": 0.0
+   },
+   "width": 1.0,
+   "level": 1.0
+  }
+ },
+ "mufflers": {
+  "stock": {
+   "label": "Stock (chambered)",
+   "lpHz": 760,
+   "lpQ": 0.6,
+   "gain": 0.5,
+   "pipeFeedback": 0.3,
+   "chamberFeedback": 0.38,
+   "catLpHz": 4200,
+   "rasp": 0.15
+  },
+  "sport": {
+   "label": "Sport (straight-through)",
+   "lpHz": 1900,
+   "lpQ": 0.75,
+   "gain": 0.8,
+   "pipeFeedback": 0.2,
+   "chamberFeedback": 0.22,
+   "catLpHz": 6500,
+   "rasp": 0.35
+  },
+  "glasspack": {
+   "label": "Glasspack",
+   "lpHz": 2400,
+   "lpQ": 1.4,
+   "gain": 0.9,
+   "pipeFeedback": 0.52,
+   "chamberFeedback": 0.15,
+   "catLpHz": 8000,
+   "rasp": 0.45
+  },
+  "straight": {
+   "label": "Straight pipe",
+   "lpHz": 8500,
+   "lpQ": 0.7,
+   "gain": 1.0,
+   "pipeFeedback": 0.58,
+   "chamberFeedback": 0.04,
+   "catLpHz": 15000,
+   "rasp": 0.7
+  },
+  "expansion": {
+   "label": "Two-stroke expansion chamber",
+   "lpHz": 4500,
+   "lpQ": 1.2,
+   "gain": 1.0,
+   "pipeFeedback": 0.68,
+   "chamberFeedback": 0.1,
+   "catLpHz": 15000,
+   "rasp": 0.6
+  },
+  "small-can": {
+   "label": "Small can (tools, mowers)",
+   "lpHz": 2200,
+   "lpQ": 1.5,
+   "gain": 0.9,
+   "pipeFeedback": 0.15,
+   "chamberFeedback": 0.5,
+   "catLpHz": 15000,
+   "rasp": 0.5
+  },
+  "stacks": {
+   "label": "Open stacks (aircraft, dragsters)",
+   "lpHz": 12000,
+   "lpQ": 0.7,
+   "gain": 1.0,
+   "pipeFeedback": 0.3,
+   "chamberFeedback": 0.0,
+   "catLpHz": 18000,
+   "rasp": 0.8
+  }
+ },
+ "intakes": {
+  "airbox": {
+   "label": "Stock airbox",
+   "helmHz": 210,
+   "helmQ": 2.6,
+   "roarHz": 650,
+   "roarQ": 1.2,
+   "gain": 0.35,
+   "rasp": 0.1
+  },
+  "cold-air": {
+   "label": "Open cone filter",
+   "helmHz": 330,
+   "helmQ": 1.8,
+   "roarHz": 1150,
+   "roarQ": 1.0,
+   "gain": 0.65,
+   "rasp": 0.3
+  },
+  "itb": {
+   "label": "Individual throttle bodies",
+   "helmHz": 820,
+   "helmQ": 1.1,
+   "roarHz": 2100,
+   "roarQ": 0.8,
+   "gain": 1.0,
+   "rasp": 0.6
+  }
+ },
+ "superchargers": {
+  "roots": {
+   "label": "Roots",
+   "pitch": "lobes",
+   "lobeFactor": 6,
+   "harmonics": [
+    1,
+    0.55,
+    0.35,
+    0.22,
+    0.14
+   ],
+   "level": 0.05
+  },
+  "twinscrew": {
+   "label": "Twin-screw",
+   "pitch": "lobes",
+   "lobeFactor": 5,
+   "harmonics": [
+    1,
+    0.3,
+    0.12
+   ],
+   "level": 0.045
+  },
+  "centrifugal": {
+   "label": "Centrifugal",
+   "pitch": "rpm",
+   "hzPerRpm": 1.15,
+   "harmonics": [
+    1,
+    0.15
+   ],
+   "level": 0.055
+  }
+ },
+ "scenarios": {
+  "start-and-blips": {
+   "label": "Start, idle and three blips",
+   "seconds": 9,
+   "events": [
+    [
+     0,
+     "start"
+    ],
+    [
+     2.8,
+     "throttle",
+     0.7
+    ],
+    [
+     3.1,
+     "throttle",
+     0
+    ],
+    [
+     4.4,
+     "throttle",
+     1
+    ],
+    [
+     4.85,
+     "throttle",
+     0
+    ],
+    [
+     6.2,
+     "throttle",
+     0.5
+    ],
+    [
+     6.45,
+     "throttle",
+     0
+    ]
+   ]
+  },
+  "rev-sweep": {
+   "label": "Slow sweep to the limiter and back",
+   "seconds": 12,
+   "mode": "dyno",
+   "events": [
+    [
+     0,
+     "start"
+    ],
+    [
+     1.5,
+     "hold",
+     0.12
+    ],
+    [
+     1.5,
+     "throttle",
+     0.9
+    ],
+    [
+     1.5,
+     "sweep",
+     0.12,
+     1.0,
+     7
+    ],
+    [
+     8.5,
+     "hold",
+     1.0
+    ],
+    [
+     9.2,
+     "throttle",
+     0
+    ],
+    [
+     9.2,
+     "sweep",
+     1.0,
+     0.12,
+     2.4
+    ]
+   ]
+  },
+  "pull": {
+   "label": "Pull through the gears",
+   "seconds": 16,
+   "mode": "drive",
+   "events": [
+    [
+     0,
+     "start"
+    ],
+    [
+     2.2,
+     "throttle",
+     1
+    ],
+    [
+     13.2,
+     "throttle",
+     0
+    ]
+   ]
+  },
+  "pull-and-brake": {
+   "label": "Pull through the gears, then brake to a stop",
+   "seconds": 27,
+   "mode": "drive",
+   "events": [
+    [
+     0,
+     "start"
+    ],
+    [
+     2.2,
+     "throttle",
+     1
+    ],
+    [
+     16.5,
+     "throttle",
+     0
+    ],
+    [
+     16.8,
+     "brake",
+     0.75
+    ],
+    [
+     26,
+     "brake",
+     0
+    ]
+   ]
+  },
+  "idle": {
+   "label": "Idle",
+   "seconds": 6,
+   "events": [
+    [
+     0,
+     "start"
+    ]
+   ]
+  }
+ },
+ "presetCategories": {
+  "road": "Road cars",
+  "race": "Race cars",
+  "motorcycle": "Motorcycles",
+  "aircraft": "Aircraft",
+  "machine": "Trucks, boats and machines",
+  "generic": "Generic engines"
+ },
+ "defaults": {
+  "preset": "bmw-s65",
+  "perspective": "rear",
+  "mix": {
+   "exhaust": 1.0,
+   "intake": 0.7,
+   "mechanical": 0.5,
+   "induction": 0.8,
+   "gearbox": 0.8,
+   "road": 0.5,
+   "width": 0.6,
+   "volume": 0.7
+  }
+ },
+ "presets": [
+  {
+   "id": "bmw-s65",
+   "category": "road",
+   "label": "BMW M3 (E90, S65 4.0 V8)",
+   "layout": "V8-cross",
+   "displacement": 4.0,
+   "idleRpm": 785,
+   "redline": 8400,
+   "inertia": 0.8,
+   "fuel": "petrol",
+   "camLope": 0.25,
+   "pops": 0.15,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.2
+  },
+  {
+   "id": "muscle-v8",
+   "label": "Big-cam 5.7 V8",
+   "layout": "V8-cross",
+   "displacement": 5.7,
+   "idleRpm": 800,
+   "redline": 6200,
+   "inertia": 1.4,
+   "fuel": "petrol",
+   "camLope": 0.9,
+   "pops": 0.2,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "glasspack",
+   "pipeLength": 2.6
+  },
+  {
+   "id": "flat-plane-v8",
+   "label": "Flat-plane 4.5 V8",
+   "layout": "V8-flat",
+   "displacement": 4.5,
+   "idleRpm": 950,
+   "redline": 9000,
+   "inertia": 0.6,
+   "fuel": "petrol",
+   "camLope": 0.3,
+   "pops": 0.35,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.4,
+   "transmission": "dct",
+   "gearCut": "helical"
+  },
+  {
+   "id": "twinscrew-v8",
+   "label": "Supercharged 6.2 V8 (twin-screw)",
+   "layout": "V8-cross",
+   "displacement": 6.2,
+   "idleRpm": 700,
+   "redline": 6500,
+   "inertia": 1.3,
+   "fuel": "petrol",
+   "camLope": 0.3,
+   "pops": 0.25,
+   "aspiration": "supercharger",
+   "scType": "twinscrew",
+   "boost": 0.8,
+   "scRatio": 2.4,
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 3.0
+  },
+  {
+   "id": "roots-drag",
+   "label": "Roots-blown 8.2 V8 (drag)",
+   "layout": "V8-cross",
+   "displacement": 8.2,
+   "idleRpm": 1100,
+   "redline": 7500,
+   "inertia": 1.6,
+   "fuel": "petrol",
+   "camLope": 1.0,
+   "pops": 0.5,
+   "aspiration": "supercharger",
+   "scType": "roots",
+   "boost": 1.0,
+   "scRatio": 1.9,
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.4,
+   "transmission": "sequential",
+   "gearCut": "straight"
+  },
+  {
+   "id": "vtec-i4",
+   "label": "2.0 VTEC inline-4",
+   "layout": "I4",
+   "displacement": 2.0,
+   "idleRpm": 800,
+   "redline": 8600,
+   "inertia": 0.55,
+   "fuel": "petrol",
+   "camLope": 0.15,
+   "pops": 0.1,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.6
+  },
+  {
+   "id": "boxer-turbo",
+   "label": "2.5 boxer turbo (unequal headers)",
+   "layout": "H4",
+   "displacement": 2.5,
+   "idleRpm": 750,
+   "redline": 7000,
+   "inertia": 0.9,
+   "fuel": "petrol",
+   "camLope": 0.2,
+   "pops": 0.3,
+   "aspiration": "turbo",
+   "boost": 1.1,
+   "turboSize": 0.5,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "unequal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.8
+  },
+  {
+   "id": "i6-big-turbo",
+   "label": "3.0 inline-6, big single turbo",
+   "layout": "I6",
+   "displacement": 3.0,
+   "idleRpm": 850,
+   "redline": 7500,
+   "inertia": 1.0,
+   "fuel": "petrol",
+   "camLope": 0.35,
+   "pops": 0.4,
+   "aspiration": "turbo",
+   "boost": 1.6,
+   "turboSize": 0.85,
+   "bov": "atmospheric",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 2.8
+  },
+  {
+   "id": "i5-turbo",
+   "label": "2.5 inline-5 turbo",
+   "layout": "I5",
+   "displacement": 2.5,
+   "idleRpm": 900,
+   "redline": 7000,
+   "inertia": 0.8,
+   "fuel": "petrol",
+   "camLope": 0.2,
+   "pops": 0.35,
+   "aspiration": "turbo",
+   "boost": 1.4,
+   "turboSize": 0.55,
+   "bov": "atmospheric",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.7
+  },
+  {
+   "id": "v10-supercar",
+   "label": "5.2 V10 supercar",
+   "layout": "V10",
+   "displacement": 5.2,
+   "idleRpm": 1000,
+   "redline": 8700,
+   "inertia": 0.55,
+   "fuel": "petrol",
+   "camLope": 0.25,
+   "pops": 0.3,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "xpipe",
+   "muffler": "sport",
+   "pipeLength": 2.6,
+   "transmission": "dct",
+   "gearCut": "helical"
+  },
+  {
+   "id": "v10-race",
+   "label": "3.0 V10 race engine (19,000 rpm)",
+   "layout": "V10",
+   "displacement": 3.0,
+   "idleRpm": 4200,
+   "redline": 19000,
+   "inertia": 0.25,
+   "fuel": "petrol",
+   "camLope": 0.6,
+   "pops": 0.2,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.2,
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "vehicle": "race-car"
+  },
+  {
+   "id": "v12-gt",
+   "label": "6.5 V12 GT",
+   "layout": "V12",
+   "displacement": 6.5,
+   "idleRpm": 1000,
+   "redline": 8500,
+   "inertia": 0.7,
+   "fuel": "petrol",
+   "camLope": 0.2,
+   "pops": 0.25,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.8,
+   "transmission": "dct",
+   "gearCut": "helical"
+  },
+  {
+   "id": "flat6",
+   "label": "4.0 flat-6",
+   "layout": "H6",
+   "displacement": 4.0,
+   "idleRpm": 900,
+   "redline": 9000,
+   "inertia": 0.6,
+   "fuel": "petrol",
+   "camLope": 0.25,
+   "pops": 0.3,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.2,
+   "transmission": "dct",
+   "gearCut": "helical"
+  },
+  {
+   "id": "rotary-13b",
+   "label": "1.3 two-rotor Wankel",
+   "layout": "R2",
+   "displacement": 1.3,
+   "idleRpm": 900,
+   "redline": 9000,
+   "inertia": 0.5,
+   "fuel": "petrol",
+   "camLope": 0.7,
+   "pops": 0.5,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.2
+  },
+  {
+   "id": "v-twin-45",
+   "label": "1.8 45° V-twin cruiser",
+   "layout": "V2-45",
+   "displacement": 1.8,
+   "idleRpm": 900,
+   "redline": 5600,
+   "inertia": 1.6,
+   "fuel": "petrol",
+   "camLope": 0.5,
+   "pops": 0.4,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 1.2,
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "vehicle": "cruiser"
+  },
+  {
+   "id": "l-twin-90",
+   "label": "1.2 90° L-twin sportbike",
+   "layout": "V2-90",
+   "displacement": 1.2,
+   "idleRpm": 1200,
+   "redline": 10500,
+   "inertia": 0.7,
+   "fuel": "petrol",
+   "camLope": 0.4,
+   "pops": 0.3,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.4,
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "vehicle": "sportbike"
+  },
+  {
+   "id": "crossplane-i4",
+   "label": "1.0 crossplane inline-4 superbike",
+   "layout": "I4-crossplane",
+   "displacement": 1.0,
+   "idleRpm": 1300,
+   "redline": 14000,
+   "inertia": 0.35,
+   "fuel": "petrol",
+   "camLope": 0.3,
+   "pops": 0.3,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.2,
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "vehicle": "sportbike"
+  },
+  {
+   "id": "i3-turbo",
+   "label": "1.0 inline-3 turbo",
+   "layout": "I3",
+   "displacement": 1.0,
+   "idleRpm": 850,
+   "redline": 6500,
+   "inertia": 0.7,
+   "fuel": "petrol",
+   "camLope": 0.1,
+   "pops": 0.05,
+   "aspiration": "turbo",
+   "boost": 0.9,
+   "turboSize": 0.25,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 2.6
+  },
+  {
+   "id": "odd-v6-turbo",
+   "label": "3.8 90° odd-fire V6 turbo",
+   "layout": "V6-90-odd",
+   "displacement": 3.8,
+   "idleRpm": 700,
+   "redline": 5800,
+   "inertia": 1.2,
+   "fuel": "petrol",
+   "camLope": 0.3,
+   "pops": 0.15,
+   "aspiration": "turbo",
+   "boost": 1.0,
+   "turboSize": 0.6,
+   "bov": "none",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0
+  },
+  {
+   "id": "diesel-i4",
+   "label": "2.0 diesel inline-4 turbo",
+   "layout": "I4",
+   "displacement": 2.0,
+   "idleRpm": 800,
+   "redline": 4800,
+   "inertia": 1.2,
+   "fuel": "diesel",
+   "camLope": 0.1,
+   "pops": 0.0,
+   "aspiration": "turbo",
+   "boost": 1.5,
+   "turboSize": 0.5,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 3.0
+  },
+  {
+   "id": "thumper",
+   "label": "450 single (dirt bike)",
+   "layout": "I1",
+   "displacement": 0.45,
+   "idleRpm": 1800,
+   "redline": 11500,
+   "inertia": 0.4,
+   "fuel": "petrol",
+   "camLope": 0.5,
+   "pops": 0.4,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 0.9,
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "vehicle": "dirtbike"
+  },
+  {
+   "id": "porsche-911-gt3-992",
+   "category": "road",
+   "label": "Porsche 911 GT3 (992, PDK)",
+   "real": true,
+   "layout": "H6",
+   "displacement": 3.996,
+   "redline": 9000,
+   "idleRpm": 900,
+   "firingOrder": [
+    1,
+    6,
+    2,
+    4,
+    3,
+    5
+   ],
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.2,
+   "inertia": 0.5,
+   "camLope": 0.3,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 470,
+    "peakRpm": 6100,
+    "powerKw": 375,
+    "powerRpm": 8400
+   },
+   "vehicle": "real-porsche-911-gt3-992",
+   "spec": "4.0 L flat-six, 9,000 rpm; seven-speed PDK dual-clutch, 4.19 final drive; 1,435 kg. Estimated: idle speed, wheel size, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Porsche_992",
+    "https://www.autodata1.com/en/car/porsche/911/911-992-gt3-40-510-hp-pdk/m:amp",
+    "https://media.porsche.com/mediakit/911-gt3-touring-package/specifications/pdk/PAG-992-911GT3-TP-PDK-WLTP-EN.pdf (read only as a search-result excerpt; the PDF is now 404)",
+    "https://www.stuttcars.com/porsche-911-gt3-with-touring-package-992-2023-specifications-performance/",
+    "https://newsroom.porsche.com/en/press-kits/911-GT3/Powertrain-and-performance.html (992.2)",
+    "https://gtsparkplugs.com/porsche-911-firing-order (search excerpt)"
+   ],
+   "estimated": [
+    "idle speed",
+    "wheel size",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "ferrari-458-italia",
+   "category": "road",
+   "label": "Ferrari 458 Italia (2010)",
+   "real": true,
+   "layout": "V8-flat",
+   "displacement": 4.497,
+   "redline": 9000,
+   "idleRpm": 1000,
+   "firingOrder": [
+    1,
+    8,
+    3,
+    6,
+    4,
+    5,
+    2,
+    7
+   ],
+   "banks": {
+    "1": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.4,
+   "inertia": 0.55,
+   "camLope": 0.3,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 540,
+    "peakRpm": 6000,
+    "powerKw": 419,
+    "powerRpm": 9000
+   },
+   "vehicle": "real-ferrari-458-italia",
+   "spec": "4.5 L F136 flat-plane V8, firing order 1-8-3-6-4-5-2-7, 9,000 rpm; seven-speed Getrag dual-clutch, 5.14 final drive; 1,565 kg. Estimated: idle speed, wheel size, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ferrari_458",
+    "https://en.wikipedia.org/wiki/Ferrari_F136_engine",
+    "https://www.ferrarichat.com/forum/threads/458-engine-bank-1-and-bank-2.644205 (search excerpt only; page blocked)"
+   ],
+   "estimated": [
+    "idle speed",
+    "wheel size",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "lexus-lfa",
+   "category": "road",
+   "label": "Lexus LFA (2012)",
+   "real": true,
+   "layout": "V10",
+   "displacement": 4.805,
+   "redline": 9000,
+   "idleRpm": 1000,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "xpipe",
+   "muffler": "sport",
+   "pipeLength": 2.6,
+   "inertia": 0.45,
+   "camLope": 0.25,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 480,
+    "peakRpm": 6800,
+    "powerKw": 412,
+    "powerRpm": 8700
+   },
+   "vehicle": "real-lexus-lfa",
+   "spec": "4.8 L 1LR-GUE even-firing 72° V10, 9,000 rpm; six-speed Aisin ASG automated single-clutch (modelled as a sequential box), 3.417 final drive; 1,580 kg. Estimated: idle speed, wheel size, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lexus_LFA",
+    "https://www.supercars.net/blog/2010-lexus-lfa-n2410/",
+    "https://www.pistonheads.com/news/general-pistonheads/lexus-lfa-technical-specifications/22220 (search excerpt)"
+   ],
+   "estimated": [
+    "idle speed",
+    "wheel size",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "ford-mustang-gt-s550",
+   "category": "road",
+   "label": "Ford Mustang GT (S550, manual)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 5.038,
+   "redline": 7500,
+   "idleRpm": 700,
+   "firingOrder": [
+    1,
+    5,
+    4,
+    8,
+    6,
+    3,
+    7,
+    2
+   ],
+   "banks": {
+    "1": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "xpipe",
+   "muffler": "sport",
+   "pipeLength": 3.6,
+   "inertia": 1.0,
+   "camLope": 0.35,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 570,
+    "peakRpm": 4250,
+    "powerKw": 340,
+    "powerRpm": 7000
+   },
+   "vehicle": "real-ford-mustang-gt-s550",
+   "spec": "5.0 L Coyote cross-plane V8, firing order 1-5-4-8-6-3-7-2; Getrag MT82 six-speed manual with a direct-drive fourth. Estimated: rev limit, idle speed, final drive, mass, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)",
+    "https://www.cjponyparts.com/resources/2018-mustang-specs (search excerpt)",
+    "https://help.summitracing.com/knowledgebase/article/HE-04981/en-us (search excerpt)",
+    "https://rerev.com/firing-orders/ford/5-0l/ (search excerpt)",
+    "https://www.truedelta.com/Ford-Mustang/specs-92-2018 (search excerpt)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "final drive",
+    "mass",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "chevrolet-corvette-c8",
+   "category": "road",
+   "label": "Chevrolet Corvette Stingray (C8, Z51)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 6.162,
+   "redline": 6500,
+   "idleRpm": 600,
+   "firingOrder": [
+    1,
+    8,
+    7,
+    2,
+    6,
+    5,
+    4,
+    3
+   ],
+   "banks": {
+    "1": [
+     2,
+     4,
+     6,
+     8
+    ]
+   },
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.4,
+   "inertia": 1.0,
+   "camLope": 0.3,
+   "pops": 0.25,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 630,
+    "peakRpm": 5150,
+    "powerKw": 365,
+    "powerRpm": 6450
+   },
+   "vehicle": "real-chevrolet-corvette-c8",
+   "spec": "6.2 L LT2 pushrod cross-plane V8, firing order 1-8-7-2-6-5-4-3, 6,500 rpm; Tremec eight-speed dual-clutch; 1,654 kg. Estimated: idle speed, drive layout and weight split. Corrected from the research: the 3.55 is the ring-and-pinion only; the Z51's overall final drive is 5.17.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chevrolet_Corvette_(C8)",
+    "https://www.corvsport.com/2020-corvette-specifications/",
+    "https://corvetteactioncenter.com/specs/c8-corvette/2020-corvette/press-release-2020-corvette-preliminary-specifications.html",
+    "https://www.mobilityengineeringtech.com/component/content/article/40895-sae-ma-00017 (search excerpt, Tremec)",
+    "https://help.summitracing.com/knowledgebase/article/HE-04970/en-us (numbering, search excerpt)",
+    "https://rerev.com/firing-orders/chevrolet/6-2l-lt4/ (search excerpt)"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "dodge-challenger-hellcat",
+   "category": "road",
+   "label": "Dodge Challenger SRT Hellcat (2015, manual)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 6.166,
+   "redline": 6200,
+   "idleRpm": 700,
+   "firingOrder": [
+    1,
+    8,
+    4,
+    3,
+    6,
+    5,
+    7,
+    2
+   ],
+   "banks": {
+    "1": [
+     2,
+     4,
+     6,
+     8
+    ]
+   },
+   "aspiration": "supercharger",
+   "scType": "twinscrew",
+   "scRatio": 2.4,
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 3.4,
+   "inertia": 1.3,
+   "camLope": 0.3,
+   "pops": 0.25,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 881,
+    "peakRpm": 4000,
+    "powerKw": 527,
+    "powerRpm": 6000
+   },
+   "boost": 0.8,
+   "vehicle": "real-dodge-challenger-hellcat",
+   "spec": "6.2 L supercharged Hemi V8 (IHI 2.38 L twin-screw, 0.80 bar), firing order 1-8-4-3-6-5-7-2; Tremec TR-6060 six-speed manual with a direct-drive fourth, 3.70 axle; 2,018 kg. Estimated: rev limit, idle speed, wheel size, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Chrysler_Hemi_engine",
+    "https://en.wikipedia.org/wiki/Tremec_TR-6060_transmission",
+    "https://s3.amazonaws.com/chryslermedia.iconicweb.com/mediasite/specs/2015_DG_Challenger_SP.pdf (Cd, non-Hellcat sheet)",
+    "https://rerev.com/firing-orders/dodge/6-2l/ (search excerpt)",
+    "https://blog.consumerguide.com/hades-dodge-unleashes-707-horse-challenger-hellcat-test-drive/ (4449 lb, search excerpt)",
+    "https://www.challengertalk.com/threads/gear-ratios-for-2015-tremec-6-speed.324098/ (search excerpt)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "wheel size",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "honda-s2000-ap1",
+   "category": "road",
+   "label": "Honda S2000 (AP1)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 1.997,
+   "redline": 8800,
+   "idleRpm": 800,
+   "firingOrder": [
+    1,
+    3,
+    4,
+    2
+   ],
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.8,
+   "inertia": 0.5,
+   "camLope": 0.2,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 208,
+    "peakRpm": 7500,
+    "powerKw": 177,
+    "powerRpm": 8300
+   },
+   "vehicle": "real-honda-s2000-ap1",
+   "spec": "2.0 L F20C inline-four, 8,800 rpm redline; six-speed manual; 1,274 kg. Estimated: idle speed, drive layout and weight split. Corrected from the research: the 4.100 final drive is multiplied by the 1.160 secondary reduction (4.756 overall).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Honda_S2000",
+    "https://en.wikipedia.org/wiki/Honda_F_engine",
+    "https://support.haltech.com/portal/en/kb/articles/f20c-ap1-engine (search excerpt)",
+    "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "honda-civic-type-r-fl5",
+   "category": "road",
+   "label": "Honda Civic Type R (FL5, 2023)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 1.996,
+   "redline": 7000,
+   "idleRpm": 750,
+   "firingOrder": [
+    1,
+    3,
+    4,
+    2
+   ],
+   "aspiration": "turbo",
+   "turboSize": 0.45,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0,
+   "inertia": 0.6,
+   "camLope": 0.1,
+   "pops": 0.15,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 420,
+    "peakRpm": 2600,
+    "powerKw": 235,
+    "powerRpm": 6500
+   },
+   "boost": 1.74,
+   "vehicle": "real-honda-civic-type-r-fl5",
+   "spec": "2.0 L K20C1 turbocharged inline-four, 1.74 bar, 7,000 rpm; six-speed manual, 3.842 final drive; 1,430 kg. Estimated: idle speed, drive layout and weight split.",
+   "sources": [
+    "https://hondanews.com/en-US/honda-automobiles/releases/2023-honda-civic-type-r-specifications-features",
+    "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_(FL5)",
+    "https://en.wikipedia.org/wiki/Honda_K_engine",
+    "https://support.haltech.com/portal/en/kb/articles/thomas-te (search excerpt)"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "mazda-rx7-fd",
+   "category": "road",
+   "label": "Mazda RX-7 (FD3S, 1993)",
+   "real": true,
+   "layout": "R2",
+   "displacement": 1.308,
+   "redline": 8000,
+   "idleRpm": 800,
+   "aspiration": "turbo",
+   "turboSize": 0.4,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0,
+   "inertia": 0.45,
+   "camLope": 0.6,
+   "pops": 0.4,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 294,
+    "peakRpm": 5000,
+    "powerKw": 190,
+    "powerRpm": 6500
+   },
+   "boost": 0.76,
+   "vehicle": "real-mazda-rx7-fd",
+   "spec": "1.3 L 13B-REW sequential twin-turbo two-rotor Wankel, 0.76 bar, 8,000 rpm; five-speed manual with a direct-drive fourth, 4.10 final drive; 1,271 kg. Estimated: idle speed, drive layout and weight split.",
+   "sources": [
+    "https://www.supercars.net/blog/1993→1995-mazda-rx-7-jm1fd/",
+    "https://www.rx7.net.nz/jpnspc.htm",
+    "https://en.wikipedia.org/wiki/Mazda_RX-7",
+    "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "toyota-supra-a80",
+   "category": "road",
+   "label": "Toyota Supra Turbo (A80, manual)",
+   "real": true,
+   "layout": "I6",
+   "displacement": 2.997,
+   "redline": 6800,
+   "idleRpm": 800,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "aspiration": "turbo",
+   "turboSize": 0.5,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.2,
+   "inertia": 0.9,
+   "camLope": 0.2,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 427,
+    "peakRpm": 4000,
+    "powerKw": 239,
+    "powerRpm": 5600
+   },
+   "boost": 0.9,
+   "vehicle": "real-toyota-supra-a80",
+   "spec": "3.0 L 2JZ-GTE sequential twin-turbo inline-six, firing order 1-5-3-6-2-4; Getrag V160 six-speed manual with a direct-drive fifth, 3.266 final drive; 1,565 kg. Estimated: rev limit, idle speed, boost, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Toyota_Supra",
+    "https://en.wikipedia.org/wiki/Toyota_JZ_engine",
+    "https://www.scribd.com/doc/51722983/Ignition-Systems-2JZ-GTE (search excerpt)",
+    "https://mkivsupra.net/topic/1375-6-speed-v160-v161-differences (search excerpt)",
+    "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "nissan-gt-r-r35",
+   "category": "road",
+   "label": "Nissan GT-R (R35, 2009)",
+   "real": true,
+   "layout": "V6-60",
+   "displacement": 3.799,
+   "redline": 7000,
+   "idleRpm": 700,
+   "firingOrder": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "banks": {
+    "1": [
+     2,
+     4,
+     6
+    ]
+   },
+   "aspiration": "turbo",
+   "turboSize": 0.55,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "xpipe",
+   "muffler": "sport",
+   "pipeLength": 3.4,
+   "inertia": 0.9,
+   "camLope": 0.15,
+   "pops": 0.15,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 588,
+    "peakRpm": 3200,
+    "powerKw": 357,
+    "powerRpm": 6400
+   },
+   "boost": 0.7,
+   "vehicle": "real-nissan-gt-r-r35",
+   "spec": "3.8 L VR38DETT twin-turbo 60° V6, 7,000 rpm; GR6 six-speed dual-clutch transaxle, 3.7 final drive; 1,740 kg. Estimated: idle speed, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nissan_GT-R",
+    "https://en.wikipedia.org/wiki/Nissan_VR_engine",
+    "https://www.manualsdir.com/manuals/192484/nissan-r35-d-2009-gt-r.html?page=289",
+    "https://rerev.com/firing-orders/nissan/3-8l/",
+    "https://autoprove.net (Japanese spec sheet via search summary; GR6 ratios)",
+    "https://j-garage.com/nissan/gtr35spec2.html",
+    "https://www3.nissan.co.jp/content/dam/Nissan/jp/vehicles/GT-R/pdf/gt-r_nismo_specification.pdf",
+    "https://www.carexpert.com.au/nissan/gt-r/2009/base/powertrain-and-performance"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "subaru-wrx-sti-grb",
+   "category": "road",
+   "label": "Subaru Impreza WRX STI (GRB, 2008)",
+   "real": true,
+   "layout": "H4",
+   "displacement": 2.457,
+   "redline": 6700,
+   "idleRpm": 750,
+   "firingOrder": [
+    1,
+    3,
+    2,
+    4
+   ],
+   "banks": {
+    "1": [
+     2,
+     4
+    ]
+   },
+   "aspiration": "turbo",
+   "turboSize": 0.5,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "unequal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0,
+   "inertia": 0.9,
+   "camLope": 0.2,
+   "pops": 0.25,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 393,
+    "peakRpm": 4000,
+    "powerKw": 227,
+    "powerRpm": 6000
+   },
+   "boost": 1.0,
+   "vehicle": "real-subaru-wrx-sti-grb",
+   "spec": "2.5 L EJ257 turbocharged flat-four with unequal-length headers, 6,700 rpm; six-speed manual, 3.9 final drive; 1,540 kg. Estimated: idle speed, boost, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Subaru_EJ_engine",
+    "https://www.carspecs.us/cars/2008/subaru/impreza/90786",
+    "https://www.autopadre.com/tire-and-wheel-sizes/subaru-impreza/2008-wrx-sti-6-spd-43619",
+    "https://rerev.com/firing-orders/subaru/2-5l/"
+   ],
+   "estimated": [
+    "idle speed",
+    "boost",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "audi-rs3-8y",
+   "category": "road",
+   "label": "Audi RS3 (8Y, 2022)",
+   "real": true,
+   "layout": "I5",
+   "displacement": 2.48,
+   "redline": 7000,
+   "idleRpm": 750,
+   "firingOrder": [
+    1,
+    2,
+    4,
+    5,
+    3
+   ],
+   "aspiration": "turbo",
+   "turboSize": 0.55,
+   "bov": "recirculating",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0,
+   "inertia": 0.75,
+   "camLope": 0.15,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 500,
+    "peakRpm": 2250,
+    "powerKw": 294,
+    "powerRpm": 5600
+   },
+   "boost": 1.4,
+   "vehicle": "real-audi-rs3-8y",
+   "spec": "2.5 L TFSI turbocharged inline-five, firing order 1-2-4-5-3; seven-speed S tronic dual-clutch; 1,570 kg. Estimated: rev limit, idle speed, boost, final drive, gear ratios (spread to 290 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://www.audi.com/en/high-performance-redefined-audi-rs-3-sportback-and-rs-3-sedan-2021-14310/facts-and-figures-14311",
+    "https://www.auto-data.net/en/audi-rs3-sportback-8y-2.5-tfsi-400hp-quattro-s-tronic-44005",
+    "https://cararac.com/spec/audi/rs3/rs-3-sportback-8y/"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost",
+    "final drive",
+    "gear ratios (spread to 290 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "bmw-m3-e46",
+   "category": "road",
+   "label": "BMW M3 (E46, S54)",
+   "real": true,
+   "layout": "I6",
+   "displacement": 3.246,
+   "redline": 8000,
+   "idleRpm": 850,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.2,
+   "inertia": 0.7,
+   "camLope": 0.25,
+   "pops": 0.15,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 365,
+    "peakRpm": 4900,
+    "powerKw": 252,
+    "powerRpm": 7900
+   },
+   "vehicle": "real-bmw-m3-e46",
+   "spec": "3.2 L S54 inline-six with individual throttle bodies, 8,000 rpm; Getrag six-speed manual; 1,560 kg. Estimated: idle speed, final drive, wheel size, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/BMW_S54",
+    "https://en.wikipedia.org/wiki/BMW_M3",
+    "https://en.wikipedia.org/wiki/Getrag_420G_transmission",
+    "https://archive.org/download/BMWTechnicalTrainingDocuments/ST501%20New%20Engine%20Technology/02_Engine%20Diagnosis.pdf",
+    "https://www.bimmernut.com/forum/showthread.php/45233-BMW-engines-firing-orders"
+   ],
+   "estimated": [
+    "idle speed",
+    "final drive",
+    "wheel size",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "mercedes-sls-amg",
+   "category": "road",
+   "label": "Mercedes-Benz SLS AMG (2011)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 6.208,
+   "redline": 7200,
+   "idleRpm": 650,
+   "firingOrder": [
+    1,
+    5,
+    4,
+    2,
+    6,
+    3,
+    7,
+    8
+   ],
+   "banks": {
+    "1": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "xpipe",
+   "muffler": "sport",
+   "pipeLength": 3.4,
+   "inertia": 1.0,
+   "camLope": 0.3,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 650,
+    "peakRpm": 4750,
+    "powerKw": 420,
+    "powerRpm": 6800
+   },
+   "vehicle": "real-mercedes-sls-amg",
+   "spec": "6.2 L M159 cross-plane V8, firing order 1-5-4-2-6-3-7-8, 7,200 rpm; seven-speed dual-clutch transaxle, 3.67 final drive; 1,619 kg. Estimated: idle speed, drive layout and weight split.",
+   "sources": [
+    "https://tv.manualsonline.com/manuals/mfg/mercedesbenz/2011_sls_amg.html?p=424",
+    "https://en.wikipedia.org/wiki/Mercedes-Benz_SLS_AMG",
+    "https://www.carspecs.us/cars/2012/mercedes-benz/sls-amg/64981",
+    "https://emercedesbenz.com/autos/mercedes-benz/sls-amg/2011-mercedes-benz-sls-amg-gullwing-in-depth-engine-and-power-transfer",
+    "https://en.wikipedia.org/wiki/Mercedes-Benz_M156_engine"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "lamborghini-aventador",
+   "category": "road",
+   "label": "Lamborghini Aventador LP700-4 (2012)",
+   "real": true,
+   "layout": "V12",
+   "displacement": 6.498,
+   "redline": 8500,
+   "idleRpm": 900,
+   "firingOrder": [
+    1,
+    12,
+    4,
+    9,
+    2,
+    11,
+    6,
+    7,
+    3,
+    10,
+    5,
+    8
+   ],
+   "banks": {
+    "1": [
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ]
+   },
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.4,
+   "inertia": 0.7,
+   "camLope": 0.25,
+   "pops": 0.4,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 690,
+    "peakRpm": 5500,
+    "powerKw": 515,
+    "powerRpm": 8250
+   },
+   "vehicle": "real-lamborghini-aventador",
+   "spec": "6.5 L L539 V12, firing order 1-12-4-9-2-11-6-7-3-10-5-8, 8,500 rpm; seven-speed ISR automated single-clutch (modelled as a sequential box); 1,670 kg. Estimated: idle speed, final drive, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lamborghini_Aventador",
+    "https://autozine.org/Archive/Lamborghini/old/Aventador.html",
+    "https://www.lambocars.com/aventador-lp700-4-2/",
+    "https://uniquecarsandparts.com.au/specifications/lamborghini/2011_lamborghini_aventador_lp_700_4.htm"
+   ],
+   "estimated": [
+    "idle speed",
+    "final drive",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "toyota-gr86",
+   "category": "road",
+   "label": "Toyota GR86 (2022, manual)",
+   "real": true,
+   "layout": "H4",
+   "displacement": 2.387,
+   "redline": 7400,
+   "idleRpm": 700,
+   "firingOrder": [
+    1,
+    3,
+    2,
+    4
+   ],
+   "banks": {
+    "1": [
+     2,
+     4
+    ]
+   },
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0,
+   "inertia": 0.7,
+   "camLope": 0.15,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 250,
+    "peakRpm": 3700,
+    "powerKw": 172,
+    "powerRpm": 7000
+   },
+   "vehicle": "real-toyota-gr86",
+   "spec": "2.4 L FA24 flat-four, equal-length headers; six-speed manual with a direct-drive fifth, 4.1 final drive; 1,276 kg. Estimated: rev limit, idle speed, firing order, drive layout and weight split.",
+   "sources": [
+    "https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/220523M-GR86-Tech-Spec.pdf",
+    "https://en.wikipedia.org/wiki/Toyota_GR86"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "firing order",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "mazda-mx5-nd2",
+   "category": "road",
+   "label": "Mazda MX-5 (ND2, 2019)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 2.0,
+   "redline": 7500,
+   "idleRpm": 700,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 2.8,
+   "inertia": 0.6,
+   "camLope": 0.1,
+   "pops": 0.05,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 205,
+    "peakRpm": 4000,
+    "powerKw": 135,
+    "powerRpm": 7000
+   },
+   "vehicle": "real-mazda-mx5-nd2",
+   "spec": "2.0 L Skyactiv-G inline-four, 7,500 rpm; six-speed manual with a direct-drive sixth, 2.866 final drive; 1,052 kg. Estimated: idle speed, drive layout and weight split.",
+   "sources": [
+    "https://www.mazdausa.com/siteassets/pdf/owners-optimized/2019/mx-5-miata-st/2019_mazda_mx5_features_specs.pdf",
+    "https://automotivepowertraintechnologyinternational.com/features/engines-on-test-2019-mazda-mx-5-2-0-liter-skyactiv-g.html",
+    "https://zeperfs.com/en/fiche7495-mazda-mx-5-iv-2-0-skyactiv-g.htm"
+   ],
+   "estimated": [
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "vw-beetle-1600",
+   "category": "road",
+   "label": "Volkswagen Beetle 1600 (Type 1, 1970s)",
+   "real": true,
+   "layout": "H4",
+   "displacement": 1.584,
+   "redline": 4500,
+   "idleRpm": 850,
+   "firingOrder": [
+    1,
+    4,
+    3,
+    2
+   ],
+   "banks": {
+    "1": [
+     3,
+     4
+    ]
+   },
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 0.9,
+   "inertia": 1.0,
+   "camLope": 0.15,
+   "pops": 0.05,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 106,
+    "peakRpm": 2800,
+    "powerKw": 37,
+    "powerRpm": 4000
+   },
+   "vehicle": "real-vw-beetle-1600",
+   "spec": "1.6 L air-cooled flat-four, firing order 1-4-3-2; four-speed manual transaxle, 3.875 final drive; 870 kg. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "sources": [
+    "https://www.kfz-tech.de/Engl/Hersteller/VW/VWKaefer13021970.htm",
+    "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
+    "https://limebug.com/?p=22",
+    "https://rerev.com/firing-orders/volkswagen/1-6l/",
+    "https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-16001600i-profile-19604"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "ram-2500-cummins",
+   "category": "machine",
+   "label": "Ram 2500 Cummins 6.7 (G56 manual)",
+   "real": true,
+   "layout": "I6",
+   "displacement": 6.69,
+   "redline": 3200,
+   "idleRpm": 750,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "aspiration": "turbo",
+   "turboSize": 0.7,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 4.0,
+   "inertia": 1.8,
+   "camLope": 0.05,
+   "pops": 0,
+   "fuel": "diesel",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 881,
+    "peakRpm": 1500,
+    "powerKw": 261,
+    "powerRpm": 2800
+   },
+   "boost": 2.0,
+   "vehicle": "real-ram-2500-cummins",
+   "spec": "6.7 L Cummins turbodiesel inline-six; G56 six-speed manual with a direct-drive fifth. Estimated: rev limit, idle speed, boost, final drive, wheel size, mass, drive layout and weight split.",
+   "sources": [
+    "https://www.ramtruck.ca/en_dir/pdf/2015/specifications/2500.pdf (2013 Ram HD spec sheet, read directly)",
+    "https://www.dieselhub.com/trans/g56.html",
+    "https://www.dieselhub.com/news/2015-ram.html",
+    "https://cararac.com/spec/ram/25003500/2013-25003500-mega-cab-i-facelift-2013/"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost",
+    "final drive",
+    "wheel size",
+    "mass",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "renault-r25",
+   "category": "race",
+   "label": "Renault R25 Formula 1 (2005)",
+   "real": true,
+   "layout": "V10",
+   "displacement": 3.0,
+   "redline": 19200,
+   "idleRpm": 4500,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.0,
+   "inertia": 0.22,
+   "camLope": 0.6,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 330,
+    "peakRpm": 14250,
+    "powerKw": 597,
+    "powerRpm": 19000
+   },
+   "vehicle": "real-renault-r25",
+   "spec": "3.0 L Renault RS25 72° V10, peak power near 19,000 rpm; six-speed paddle-shift sequential; 605 kg with driver. Estimated: rev limit, idle speed, peak torque (derived from power), wheel size, gear ratios (spread to 330 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Renault_R25"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "peak torque (derived from power)",
+    "wheel size",
+    "gear ratios (spread to 330 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "cosworth-f1-v8-2006",
+   "category": "race",
+   "label": "Cosworth CA2006 Formula 1 V8 (Williams FW28, 2006)",
+   "real": true,
+   "layout": "V8-flat",
+   "displacement": 2.4,
+   "redline": 20000,
+   "idleRpm": 4500,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.0,
+   "inertia": 0.2,
+   "camLope": 0.6,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 307,
+    "peakRpm": 14438,
+    "powerKw": 563,
+    "powerRpm": 19250
+   },
+   "vehicle": "real-cosworth-f1-v8-2006",
+   "spec": "2.4 L Cosworth CA2006 90° V8, just over 20,000 rpm, the highest-revving F1 engine of its year. Estimated: idle speed, peak torque (derived from power), gear count, wheel size, gear ratios (spread to 320 km/h at the rev limit), mass, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine",
+    "https://f1technical.net/features/18858"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)",
+    "gear count",
+    "wheel size",
+    "gear ratios (spread to 320 km/h at the rev limit)",
+    "mass",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "ferrari-412-t2",
+   "category": "race",
+   "label": "Ferrari 412 T2 Formula 1 (1995)",
+   "real": true,
+   "layout": "V12",
+   "displacement": 2.997,
+   "redline": 17000,
+   "idleRpm": 4000,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.1,
+   "inertia": 0.25,
+   "camLope": 0.5,
+   "pops": 0.25,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 318,
+    "peakRpm": 12750,
+    "powerKw": 515,
+    "powerRpm": 17000
+   },
+   "vehicle": "real-ferrari-412-t2",
+   "spec": "3.0 L Ferrari Tipo 044 75° V12, peak power at 17,000 rpm (modelled with an even-firing V12 layout); six-speed sequential; 595 kg. Estimated: idle speed, peak torque (derived from power), wheel size, gear ratios (spread to 320 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ferrari_412_T2",
+    "https://f1technical.net/f1db/cars/766/ferrari-412t2"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)",
+    "wheel size",
+    "gear ratios (spread to 320 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "nascar-next-gen",
+   "category": "race",
+   "label": "NASCAR Cup Next Gen (2022)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 5.86,
+   "redline": 10000,
+   "idleRpm": 1200,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.6,
+   "inertia": 0.6,
+   "camLope": 0.8,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 584,
+    "peakRpm": 6750,
+    "powerKw": 500,
+    "powerRpm": 9000
+   },
+   "vehicle": "real-nascar-next-gen",
+   "spec": "5.86 L (358 cu in) pushrod V8, around 10,000 rpm; Xtrac five-speed sequential transaxle; 1,542 kg with driver and fuel. Estimated: idle speed, power rpm, peak torque (derived from power), wheel size, gear ratios (spread to 320 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Next_Gen_(NASCAR)",
+    "https://nhra.com/news/2020/engine-wars-f1-vs-indycar-vs-pro-stock-vs-nascar-vs-top-fuel"
+   ],
+   "estimated": [
+    "idle speed",
+    "power rpm",
+    "peak torque (derived from power)",
+    "wheel size",
+    "gear ratios (spread to 320 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "mazda-787b",
+   "category": "race",
+   "label": "Mazda 787B (1991 Le Mans winner)",
+   "real": true,
+   "layout": "R4",
+   "displacement": 2.616,
+   "redline": 9000,
+   "idleRpm": 2000,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 1.4,
+   "inertia": 0.4,
+   "camLope": 0.8,
+   "pops": 0.6,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 608,
+    "peakRpm": 6500,
+    "powerKw": 515,
+    "powerRpm": 9000
+   },
+   "vehicle": "real-mazda-787b",
+   "spec": "2.6 L R26B four-rotor Wankel, 9,000 rpm; five-speed H-pattern manual; 830 kg. Estimated: idle speed, gear ratios (spread to 340 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mazda_787B",
+    "https://www.mazda.com/en/experience/mspr/motorsports/lemans/r26b/"
+   ],
+   "estimated": [
+    "idle speed",
+    "gear ratios (spread to 340 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "audi-quattro-s1-e2",
+   "category": "race",
+   "label": "Audi Sport quattro S1 E2 (Group B, 1985)",
+   "real": true,
+   "layout": "I5",
+   "displacement": 2.11,
+   "redline": 8500,
+   "idleRpm": 1200,
+   "firingOrder": [
+    1,
+    2,
+    4,
+    5,
+    3
+   ],
+   "aspiration": "turbo",
+   "turboSize": 0.7,
+   "bov": "atmospheric",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 1.8,
+   "inertia": 0.6,
+   "camLope": 0.5,
+   "pops": 1.0,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 590,
+    "peakRpm": 5500,
+    "powerKw": 440,
+    "powerRpm": 8000
+   },
+   "boost": 1.6,
+   "vehicle": "real-audi-quattro-s1-e2",
+   "spec": "2.1 L turbocharged inline-five with anti-lag, 440 kW at 8,000 rpm; six-speed manual; 1,090 kg. Estimated: rev limit, idle speed, firing order, boost, wheel size, gear ratios (spread to 220 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Audi_Sport_Quattro_S1",
+    "https://www.audi-mediacenter.com:443/en/photos/detail/audi-sport-quattro-s1-e2-model-year-1987-37237"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "firing order",
+    "boost",
+    "wheel size",
+    "gear ratios (spread to 220 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "audi-r10-tdi",
+   "category": "race",
+   "label": "Audi R10 TDI (2006 Le Mans winner)",
+   "real": true,
+   "layout": "V12",
+   "displacement": 5.5,
+   "redline": 5000,
+   "idleRpm": 900,
+   "aspiration": "turbo",
+   "turboSize": 0.75,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 1.6,
+   "inertia": 0.9,
+   "camLope": 0.1,
+   "pops": 0,
+   "fuel": "diesel",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 1100,
+    "peakRpm": 3000,
+    "powerKw": 478,
+    "powerRpm": 4500
+   },
+   "boost": 2.94,
+   "vehicle": "real-audi-r10-tdi",
+   "spec": "5.5 L twin-turbo 90° V12 diesel, shifted around 5,000 rpm, boost limited to 2.94 bar absolute; Xtrac five-speed sequential; 925 kg. Estimated: idle speed, power rpm, torque rpm, wheel size, gear ratios (spread to 330 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Audi_R10_TDI",
+    "https://audi-mediacenter.com/en/press-releases/audi-competes-with-diesel-sports-car-at-le-mans-8299"
+   ],
+   "estimated": [
+    "idle speed",
+    "power rpm",
+    "torque rpm",
+    "wheel size",
+    "gear ratios (spread to 330 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "porsche-911-gt3-cup-992",
+   "category": "race",
+   "label": "Porsche 911 GT3 Cup (992, 2021)",
+   "real": true,
+   "layout": "H6",
+   "displacement": 3.996,
+   "redline": 8750,
+   "idleRpm": 1100,
+   "firingOrder": [
+    1,
+    6,
+    2,
+    4,
+    3,
+    5
+   ],
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.6,
+   "inertia": 0.45,
+   "camLope": 0.45,
+   "pops": 0.4,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 470,
+    "peakRpm": 6150,
+    "powerKw": 375,
+    "powerRpm": 8400
+   },
+   "vehicle": "real-porsche-911-gt3-cup-992",
+   "spec": "4.0 L flat-six, 375 kW at 8,400 rpm, 8,750 rpm limit; six-speed sequential dog box; about 1,260 kg. Estimated: idle speed, firing order, gear ratios (spread to 280 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://www.stuttcars.com/porsche-911-gt3-cup-992-specifications-performance/"
+   ],
+   "estimated": [
+    "idle speed",
+    "firing order",
+    "gear ratios (spread to 280 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "indycar-chevrolet",
+   "category": "race",
+   "label": "IndyCar (Chevrolet 2.2 twin-turbo V6, 2018-23)",
+   "real": true,
+   "layout": "V6-90-even",
+   "displacement": 2.2,
+   "redline": 12200,
+   "idleRpm": 3000,
+   "aspiration": "turbo",
+   "turboSize": 0.45,
+   "bov": "recirculating",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 1.2,
+   "inertia": 0.25,
+   "camLope": 0.5,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 443,
+    "peakRpm": 8625,
+    "powerKw": 485,
+    "powerRpm": 11500
+   },
+   "boost": 0.5,
+   "vehicle": "real-indycar-chevrolet",
+   "spec": "2.2 L twin-turbo 90° V6, 12,200 rpm; Xtrac six-speed paddle-shift sequential; 767 kg on road courses. Estimated: idle speed, power rpm, peak torque (derived from power), boost, wheel size, gear ratios (spread to 370 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Dallara_IR-18",
+    "https://nhra.com/news/2020/engine-wars-f1-vs-indycar-vs-pro-stock-vs-nascar-vs-top-fuel"
+   ],
+   "estimated": [
+    "idle speed",
+    "power rpm",
+    "peak torque (derived from power)",
+    "boost",
+    "wheel size",
+    "gear ratios (spread to 370 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "nhra-top-fuel",
+   "category": "race",
+   "label": "NHRA Top Fuel dragster",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 8.2,
+   "redline": 7900,
+   "idleRpm": 2000,
+   "aspiration": "supercharger",
+   "scType": "roots",
+   "scRatio": 1.4,
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "stacks",
+   "pipeLength": 0.6,
+   "inertia": 0.9,
+   "camLope": 1.0,
+   "pops": 1.0,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 11485,
+    "peakRpm": 5625,
+    "powerKw": 8200,
+    "powerRpm": 7500
+   },
+   "boost": 2.5,
+   "vehicle": "real-nhra-top-fuel",
+   "spec": "8.2 L (500 cu in) Hemi V8 on nitromethane with a 14-71 Roots supercharger, 7,900 rpm limit; no gearbox, a multi-disc clutch straight to the rear axle. Estimated: idle speed, power rpm, peak torque (derived from power), boost, final drive, wheel size, gear ratios (spread to 540 km/h at the rev limit), mass, drive layout and weight split.",
+   "sources": [
+    "https://nhra.com/news/2020/engine-wars-f1-vs-indycar-vs-pro-stock-vs-nascar-vs-top-fuel",
+    "https://ihra.com/sites/default/files/2026-01/2026%20IHRA%20Top%20Fuel_0.pdf"
+   ],
+   "estimated": [
+    "idle speed",
+    "power rpm",
+    "peak torque (derived from power)",
+    "boost",
+    "final drive",
+    "wheel size",
+    "gear ratios (spread to 540 km/h at the rev limit)",
+    "mass",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "yamaha-m1-motogp",
+   "category": "race",
+   "label": "Yamaha YZR-M1 MotoGP",
+   "real": true,
+   "layout": "I4-crossplane",
+   "displacement": 0.998,
+   "redline": 18000,
+   "idleRpm": 2000,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 0.8,
+   "inertia": 0.18,
+   "camLope": 0.5,
+   "pops": 0.4,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 113,
+    "peakRpm": 12750,
+    "powerKw": 183,
+    "powerRpm": 17000
+   },
+   "vehicle": "real-yamaha-m1-motogp",
+   "spec": "1.0 L crossplane inline-four firing at 270-180-90-180 degrees; six-speed cassette gearbox, chain final drive; 160 kg minimum without rider. Estimated: rev limit, idle speed, power rpm, peak torque (derived from power), final drive, wheel size, gear ratios (spread to 350 km/h at the rev limit), drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Yamaha_YZR-M1",
+    "https://en.wikipedia.org/wiki/Crossplane"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "power rpm",
+    "peak torque (derived from power)",
+    "final drive",
+    "wheel size",
+    "gear ratios (spread to 350 km/h at the rev limit)",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "harley-street-bob-114",
+   "category": "motorcycle",
+   "label": "Harley-Davidson Street Bob 114 (2023)",
+   "real": true,
+   "layout": "V2-45",
+   "displacement": 1.868,
+   "redline": 5600,
+   "idleRpm": 900,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "glasspack",
+   "pipeLength": 1.3,
+   "inertia": 1.5,
+   "camLope": 0.45,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 161,
+    "peakRpm": 3000,
+    "powerKw": 70,
+    "powerRpm": 4750
+   },
+   "vehicle": "real-harley-street-bob-114",
+   "spec": "1.87 L Milwaukee-Eight 114 45° V-twin, single crankpin, so it fires at 315 and 405 degrees; six-speed, belt final drive; 297 kg. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "sources": [
+    "https://h-dmediakit.com/epapi-get/pdf/bikepages/specs/2023/fxbbs/specifications_fxbbs_us.pdf",
+    "https://en.wikipedia.org/wiki/Harley-Davidson_Milwaukee-Eight_engine",
+    "https://serviceinfo.harley-davidson.com/sip/service/procedure/2194585103748144855/BLAISE/473445/en_US?nid=4866"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "ducati-panigale-v4",
+   "category": "motorcycle",
+   "label": "Ducati Panigale V4 (2018)",
+   "real": true,
+   "layout": "V4-twinpulse",
+   "displacement": 1.103,
+   "redline": 14500,
+   "idleRpm": 1300,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.0,
+   "inertia": 0.35,
+   "camLope": 0.4,
+   "pops": 0.4,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 124,
+    "peakRpm": 10000,
+    "powerKw": 157.5,
+    "powerRpm": 13000
+   },
+   "vehicle": "real-ducati-panigale-v4",
+   "spec": "1.1 L Desmosedici Stradale 90° V4 with 70° crankpin offset (Twin Pulse); six-speed with quickshifter; 195 kg wet. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "sources": [
+    "https://www.moto-data.net/ducati/panigale-v4-2018",
+    "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
+    "https://www.ducati.com/au/en/bikes/panigale/panigale-v4/engine (via search result text only; direct fetch was 403)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "suzuki-hayabusa",
+   "category": "motorcycle",
+   "label": "Suzuki Hayabusa (GSX1300R, 2008-2020)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 1.34,
+   "redline": 11000,
+   "idleRpm": 1100,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.2,
+   "inertia": 0.4,
+   "camLope": 0.2,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 155,
+    "peakRpm": 7200,
+    "powerKw": 145,
+    "powerRpm": 9500
+   },
+   "vehicle": "real-suzuki-hayabusa",
+   "spec": "1.34 L inline-four; six-speed, chain final drive; 266 kg wet. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "sources": [
+    "https://suzukicycles.org/Hayabusa/GSX1300R-Hayabusa-2.shtml",
+    "https://en.wikipedia.org/wiki/Suzuki_Hayabusa",
+    "https://motorcyclespecs.co.za/model/suzu/suzuki_gsxr1300r 08.htm",
+    "bikeswiki gear ratio list (seen only via search snippet; fetch failed)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "ktm-250-sx",
+   "category": "motorcycle",
+   "label": "KTM 250 SX two-stroke (2022)",
+   "real": true,
+   "layout": "I1-2T",
+   "displacement": 0.249,
+   "redline": 10000,
+   "idleRpm": 1800,
+   "firingOrder": [
+    1
+   ],
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "expansion",
+   "pipeLength": 1.1,
+   "inertia": 0.25,
+   "camLope": 0.6,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 45,
+    "peakRpm": 7500,
+    "powerKw": 35,
+    "powerRpm": 8500
+   },
+   "vehicle": "real-ktm-250-sx",
+   "spec": "249 cc two-stroke single (fires every revolution) with an expansion chamber; five-speed, chain final drive; 95.5 kg. Estimated: rev limit, idle speed, peak power, power rpm, peak torque, torque rpm, drive layout and weight split.",
+   "sources": [
+    "https://www.ktm.com/language-masters/en/mx-mediainformation/MY22%20KTM%20SX%20Range%20-%20Tech%20Data.pdf"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "peak power",
+    "power rpm",
+    "peak torque",
+    "torque rpm",
+    "drive layout and weight split"
+   ]
+  },
+  {
+   "id": "stihl-ms-462",
+   "category": "machine",
+   "label": "Stihl MS 462 C-M chainsaw",
+   "real": true,
+   "layout": "I1-2T",
+   "displacement": 0.072,
+   "redline": 13500,
+   "idleRpm": 2800,
+   "firingOrder": [
+    1
+   ],
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "small-can",
+   "pipeLength": 0.2,
+   "inertia": 0.25,
+   "camLope": 0.5,
+   "pops": 0,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 6.8,
+    "peakRpm": 7000,
+    "powerKw": 4.4,
+    "powerRpm": 9500
+   },
+   "vehicle": "none",
+   "spec": "72 cc two-stroke single, idles at 2,800 rpm, about 13,500 rpm flat out; centrifugal clutch to the chain. Estimated: power rpm, torque rpm.",
+   "sources": [
+    "https://ssc.stihl.com/tsa/techdoc-documents/DVS_STIHL%2FZBA%2FZBA%2F0458-790-7521-B_ZBA_05_01.pdf (official MS 462 C-M manual, section 19.1, German)",
+    "https://fireandsaw.com/stihl-ms-462-chainsaw/"
+   ],
+   "estimated": [
+    "power rpm",
+    "torque rpm"
+   ]
+  },
+  {
+   "id": "briggs-625exi",
+   "category": "machine",
+   "label": "Briggs & Stratton 625EXi lawn mower",
+   "real": true,
+   "layout": "I1",
+   "displacement": 0.15,
+   "redline": 3300,
+   "idleRpm": 2900,
+   "firingOrder": [
+    1
+   ],
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "small-can",
+   "pipeLength": 0.15,
+   "inertia": 1.6,
+   "camLope": 0.3,
+   "pops": 0,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 8.48,
+    "peakRpm": 2600,
+    "powerKw": 2.6,
+    "powerRpm": 3000
+   },
+   "vehicle": "none",
+   "spec": "150 cc OHV single, blade on the vertical crankshaft; the governor holds the speed. Estimated: rev limit, idle speed, peak power, power rpm.",
+   "sources": [
+    "https://www.briggsandstratton.com/en-gb/products/625exi-series"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "peak power",
+    "power rpm"
+   ]
+  },
+  {
+   "id": "rr-merlin-66",
+   "category": "aircraft",
+   "label": "Rolls-Royce Merlin 66 (Spitfire LF Mk IX)",
+   "real": true,
+   "layout": "V12",
+   "displacement": 27.0,
+   "redline": 3000,
+   "idleRpm": 600,
+   "aspiration": "supercharger",
+   "scType": "centrifugal",
+   "scRatio": 2.0,
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "stacks",
+   "pipeLength": 0.4,
+   "inertia": 2.0,
+   "camLope": 0.3,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 4492,
+    "peakRpm": 2250,
+    "powerKw": 1283,
+    "powerRpm": 3000
+   },
+   "boost": 1.72,
+   "vehicle": "none",
+   "propeller": {
+    "blades": 4,
+    "reduction": 0.477,
+    "diameterM": 3.3,
+    "level": 0.06
+   },
+   "spec": "27 L 60° V12 with a two-stage, two-speed supercharger, 3,000 rpm rated; 0.477:1 propeller reduction. Estimated: idle speed, peak torque (derived from power).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Rolls-Royce_Merlin",
+    "https://en.wikipedia.org/wiki/Supermarine_Spitfire_variants:_specifications,_performance_and_armament",
+    "https://dingeraviation.net/spitfire/meandgr.htm",
+    "https://mnealon.eosc.edu/SpitfirePropSpeed.htm (0.477 seen only in search snippet)"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)"
+   ]
+  },
+  {
+   "id": "pw-r1340-wasp",
+   "category": "aircraft",
+   "label": "Pratt & Whitney R-1340 Wasp (T-6 Texan)",
+   "real": true,
+   "layout": "Radial9",
+   "displacement": 22.02,
+   "redline": 2250,
+   "idleRpm": 600,
+   "aspiration": "supercharger",
+   "scType": "centrifugal",
+   "scRatio": 2.0,
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stacks",
+   "pipeLength": 0.8,
+   "inertia": 2.2,
+   "camLope": 0.4,
+   "pops": 0.4,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 2087,
+    "peakRpm": 1688,
+    "powerKw": 447,
+    "powerRpm": 2250
+   },
+   "boost": 0.4,
+   "vehicle": "none",
+   "propeller": {
+    "blades": 2,
+    "reduction": 1.0,
+    "diameterM": 2.74,
+    "level": 0.07
+   },
+   "spec": "22 L nine-cylinder radial, firing every other cylinder (1-3-5-7-9-2-4-6-8), 2,250 rpm, direct-drive propeller whose tips near the speed of sound. Estimated: idle speed, peak torque (derived from power), boost.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pratt_%26_Whitney_R-1340_Wasp",
+    "https://en.wikipedia.org/wiki/North_American_T-6_Texan",
+    "https://www.enginehistory.org/Piston/P&W/R-1340/r-1340.shtml",
+    "https://powerplants.warbirdsresourcegroup.org/unitedstates_powerplants_P-W_R-1340_Wasp.html",
+    "https://si.edu/object/pratt-whitney-wasp-r-1340-50-radial-9-engine:nasm_A19860278000"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)",
+    "boost"
+   ]
+  },
+  {
+   "id": "lycoming-o-360",
+   "category": "aircraft",
+   "label": "Lycoming O-360 (Piper PA-28-180)",
+   "real": true,
+   "layout": "H4",
+   "displacement": 5.9,
+   "redline": 2700,
+   "idleRpm": 650,
+   "firingOrder": [
+    1,
+    3,
+    2,
+    4
+   ],
+   "banks": {
+    "1": [
+     2,
+     4
+    ]
+   },
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 0.8,
+   "inertia": 2.0,
+   "camLope": 0.2,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 521,
+    "peakRpm": 2025,
+    "powerKw": 134,
+    "powerRpm": 2700
+   },
+   "vehicle": "none",
+   "propeller": {
+    "blades": 2,
+    "reduction": 1.0,
+    "diameterM": 1.93,
+    "level": 0.05
+   },
+   "spec": "5.9 L flat-four, firing order 1-3-2-4, 2,700 rpm, direct-drive propeller. Estimated: idle speed, peak torque (derived from power).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Lycoming_O-360",
+    "https://pilotfriend.com/aero_engines/engine_specs/Lycoming%200%20360.htm",
+    "https://en.wikipedia.org/wiki/Piper_PA-28_Cherokee",
+    "https://en.wikipedia.org/wiki/Cessna_172"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)"
+   ]
+  },
+  {
+   "id": "detroit-8v71",
+   "category": "machine",
+   "label": "Detroit Diesel 8V-71 (two-stroke)",
+   "real": true,
+   "layout": "V8-2T",
+   "displacement": 9.3,
+   "redline": 2100,
+   "idleRpm": 550,
+   "aspiration": "supercharger",
+   "scType": "roots",
+   "scRatio": 2.0,
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 2.0,
+   "inertia": 2.0,
+   "camLope": 0.1,
+   "pops": 0,
+   "fuel": "diesel",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 1085,
+    "peakRpm": 1600,
+    "powerKw": 227,
+    "powerRpm": 2100
+   },
+   "boost": 0.35,
+   "vehicle": "none",
+   "spec": "9.3 L two-stroke V8 diesel with a gear-driven Roots blower for scavenging, governed at 2,100 rpm, idling about 550; fires every 45 degrees. Estimated: boost.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Detroit_Diesel_Series_71",
+    "https://dieselhub.com/specs/detroit-71-series-two-stroke-diesel.html",
+    "https://dieselpro.com/blog/?p=894 (search snippet)"
+   ],
+   "estimated": [
+    "boost"
+   ]
+  },
+  {
+   "id": "ford-model-t",
+   "category": "road",
+   "label": "Ford Model T (1908-1927)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 2.9,
+   "redline": 1900,
+   "idleRpm": 400,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 1.5,
+   "inertia": 2.2,
+   "camLope": 0.2,
+   "pops": 0.05,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 112,
+    "peakRpm": 900,
+    "powerKw": 14.9,
+    "powerRpm": 1600
+   },
+   "vehicle": "real-ford-model-t",
+   "spec": "2.9 L inline-four; two-speed planetary transmission (low 2.75, high direct) and a 3.6363 rear axle; about 645 kg. Estimated: rev limit, idle speed, power rpm, peak torque, torque rpm, wheel size, drive layout and weight split.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ford_Model_T_engine",
+    "https://en.wikipedia.org/wiki/Ford_Model_T",
+    "https://www.thesahb.com/technical-talk-14-the-ford-model-t/"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "power rpm",
+    "peak torque",
+    "torque rpm",
+    "wheel size",
+    "drive layout and weight split"
+   ]
+  }
+ ]
+}
