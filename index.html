@@ -72,7 +72,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .brand { display: flex; align-items: baseline; gap: 12px; margin-right: auto; min-width: 0; }
 h1 { font: 800 30px/1 var(--font-display); letter-spacing: 0.02em; text-transform: uppercase; margin: 0; }
 .brand small { color: var(--muted); font-size: 13px; }
-.preset { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.preset { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
 .preset label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
 select, button { font: inherit; color: inherit; }
 select {
@@ -80,6 +80,7 @@ select {
   padding: 7px 10px; max-width: 100%; min-width: 0;
 }
 .preset select { width: min(320px, 60vw); }
+.preset .btn { white-space: nowrap; }
 .ignition {
   border: 0; border-radius: 999px; padding: 10px 22px; cursor: pointer;
   background: var(--accent); color: var(--accent-ink);
@@ -206,6 +207,7 @@ a { color: var(--accent-text); }
     <div class="preset">
       <label for="preset">Engine</label>
       <select id="preset"></select>
+      <button class="btn" id="resetBtn" type="button" title="Put every setting, the mixer, the mode and the steady throttle back to their defaults">Reset to defaults</button>
     </div>
     <button class="ignition" id="ignition" type="button" aria-pressed="false"><span class="lamp"></span><span id="ignitionText">Start engine</span></button>
   </header>
@@ -377,6 +379,7 @@ a { color: var(--accent-text); }
         <div class="field"><label for="mix-intake">Intake</label><input type="range" id="mix-intake" data-key="mix.intake" min="0" max="1.5" step="0.05"><output data-for="mix-intake"></output></div>
         <div class="field"><label for="mix-mechanical">Mechanical</label><input type="range" id="mix-mechanical" data-key="mix.mechanical" min="0" max="1.5" step="0.05"><output data-for="mix-mechanical"></output></div>
         <div class="field"><label for="mix-induction">Turbo / blower</label><input type="range" id="mix-induction" data-key="mix.induction" min="0" max="1.5" step="0.05"><output data-for="mix-induction"></output></div>
+        <div class="field"><label for="mix-pops">Pops and crackles</label><input type="range" id="mix-pops" data-key="mix.pops" min="0" max="1.5" step="0.05"><output data-for="mix-pops"></output></div>
         <div class="field"><label for="mix-gearbox">Gearbox</label><input type="range" id="mix-gearbox" data-key="mix.gearbox" min="0" max="1.5" step="0.05"><output data-for="mix-gearbox"></output></div>
         <div class="field"><label for="mix-road">Road and wind</label><input type="range" id="mix-road" data-key="mix.road" min="0" max="1.5" step="0.05"><output data-for="mix-road"></output></div>
         <div class="field"><label for="mix-width">Stereo width</label><input type="range" id="mix-width" data-key="mix.width" min="0" max="1" step="0.05"><output data-for="mix-width"></output></div>

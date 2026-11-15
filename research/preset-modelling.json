@@ -22,10 +22,8 @@
     "wheelRadiusM": 0.362,
     "_why": {
      "idleRpm": "not published",
-     "wheelRadiusM": "315/30 ZR21 rear assumed",
-     "mu": "track-focused tyres"
-    },
-    "mu": 1.2
+     "wheelRadiusM": "315/30 ZR21 rear assumed"
+    }
    },
    "model": {
     "aspiration": "na",
@@ -40,10 +38,6 @@
     "fuel": "petrol",
     "transmission": "dct",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.61
    }
   },
   {
@@ -85,10 +79,6 @@
     "fuel": "petrol",
     "transmission": "dct",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.58
    }
   },
   {
@@ -121,10 +111,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.52
    }
   },
   {
@@ -169,10 +155,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.47
    }
   },
   {
@@ -217,10 +199,6 @@
     "fuel": "petrol",
     "transmission": "dct",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.6
    }
   },
   {
@@ -266,10 +244,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.43
    }
   },
   {
@@ -308,10 +282,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -344,10 +314,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "fwd",
-    "rearWeight": 0.38
    }
   },
   {
@@ -379,10 +345,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -419,10 +381,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.47
    }
   },
   {
@@ -462,10 +420,6 @@
     "fuel": "petrol",
     "transmission": "dct",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "awd",
-    "rearWeight": 0.46
    }
   },
   {
@@ -506,10 +460,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "awd",
-    "rearWeight": 0.4
    }
   },
   {
@@ -550,10 +500,6 @@
     "fuel": "petrol",
     "transmission": "dct",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "awd",
-    "rearWeight": 0.41
    }
   },
   {
@@ -588,10 +534,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -630,10 +572,6 @@
     "fuel": "petrol",
     "transmission": "dct",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.53
    }
   },
   {
@@ -677,10 +615,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "awd",
-    "rearWeight": 0.57
    }
   },
   {
@@ -725,10 +659,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.47
    }
   },
   {
@@ -758,10 +688,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -802,10 +728,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.6
    }
   },
   {
@@ -849,10 +771,6 @@
     "fuel": "diesel",
     "transmission": "manual",
     "gearCut": "helical"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.42
    }
   },
   {
@@ -890,10 +808,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.55
    }
   },
   {
@@ -932,10 +846,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.55
    }
   },
   {
@@ -971,10 +881,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.55
    }
   },
   {
@@ -1013,10 +919,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.48
    }
   },
   {
@@ -1053,10 +955,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.55
    }
   },
   {
@@ -1104,10 +1002,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "awd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -1150,10 +1044,6 @@
     "fuel": "diesel",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.55
    }
   },
   {
@@ -1205,10 +1095,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.62
    }
   },
   {
@@ -1250,10 +1136,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.58
    }
   },
   {
@@ -1280,11 +1162,9 @@
      "finalDrive": "about 3.2:1 rear ends are typical",
      "boost": "not published; modelled high",
      "wheelRadiusM": "36-inch rear slicks",
-     "powerRpm": "not published",
-     "mu": "prepared track and Top Fuel slicks: about 4 g of grip"
+     "powerRpm": "not published"
     },
-    "powerRpm": 7500,
-    "mu": 4.0
+    "powerRpm": 7500
    },
    "model": {
     "aspiration": "supercharger",
@@ -1301,10 +1181,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.8
    }
   },
   {
@@ -1346,10 +1222,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -1382,10 +1254,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -1418,10 +1286,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.52
    }
   },
   {
@@ -1453,10 +1317,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -1493,10 +1353,6 @@
     "fuel": "petrol",
     "transmission": "sequential",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.5
    }
   },
   {
@@ -1758,10 +1614,6 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "straight"
-   },
-   "chassis": {
-    "drive": "rwd",
-    "rearWeight": 0.55
    }
   }
  ]

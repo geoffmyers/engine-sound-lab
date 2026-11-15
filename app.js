@@ -289,6 +289,19 @@ $("preset").addEventListener("change", (e) => {
   if (mode === "dyno") { $("holdRpm").value = Math.round(settings.redline * 0.45 / 50) * 50; $("holdRpmOut").textContent = `${fmtInt($("holdRpm").value)} rpm`; sendControl(); }
 });
 
+// Reset to defaults: the default preset with the default mixer, listening position and shift
+// settings, Free rev, no steady throttle and the hold speed the page loads with. The engine keeps
+// running if it is running.
+$("resetBtn").addEventListener("click", () => {
+  settings = settingsFromPreset(data, presetById[data.defaults.preset]);
+  mode = "free";
+  for (const id of ["throttle", "holdRpm"]) $(id).value = $(id).defaultValue;
+  $("throttleOut").textContent = `${Math.round($("throttle").value * 100)} %`;
+  $("holdRpmOut").textContent = `${fmtInt($("holdRpm").value)} rpm`;
+  $("scenario").selectedIndex = 0;
+  syncControls(); sendConfig(); sendControl();
+});
+
 $("ignition").addEventListener("click", async () => {
   const running = snap.state === "running" || snap.state === "cranking";
   if (!running) {

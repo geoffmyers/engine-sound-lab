@@ -964,11 +964,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 0.68,
      "crr": 0.012,
-     "brakeDecel": 9.0,
-     "mu": 1.0,
-     "drive": "rwd",
-     "rearWeight": 0.52,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.0
     },
     "gearboxRatios": [
      4.055,
@@ -996,11 +992,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 1.2,
      "crr": 0.015,
-     "brakeDecel": 25.0,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.56,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 25.0
     },
     "gearboxRatios": [
      3.2,
@@ -1030,11 +1022,7 @@
      "wheelRadiusM": 0.31,
      "cdA": 0.32,
      "crr": 0.015,
-     "brakeDecel": 9.5,
-     "mu": 1.0,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.45
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      2.6,
@@ -1062,11 +1050,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 0.55,
      "crr": 0.015,
-     "brakeDecel": 8.5,
-     "mu": 0.9,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.38
+     "brakeDecel": 8.5
     },
     "gearboxRatios": [
      3.21,
@@ -1094,11 +1078,7 @@
      "wheelRadiusM": 0.34,
      "cdA": 0.6,
      "crr": 0.03,
-     "brakeDecel": 7.0,
-     "mu": 0.8,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.5
+     "brakeDecel": 7.0
     },
     "gearboxRatios": [
      1.79,
@@ -1125,11 +1105,7 @@
      "wheelRadiusM": 0.362,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.2,
-     "drive": "rwd",
-     "rearWeight": 0.61,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.75,
@@ -1152,11 +1128,7 @@
      "wheelRadiusM": 0.357,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.58,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.08,
@@ -1179,11 +1151,7 @@
      "wheelRadiusM": 0.346,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.52,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.231,
@@ -1205,11 +1173,7 @@
      "wheelRadiusM": 0.351,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.47,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.24,
@@ -1231,11 +1195,7 @@
      "wheelRadiusM": 0.345,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.6,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      2.91,
@@ -1259,11 +1219,7 @@
      "wheelRadiusM": 0.354,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.43,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      2.26,
@@ -1285,11 +1241,7 @@
      "wheelRadiusM": 0.316,
      "cdA": 0.6,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.133,
@@ -1311,11 +1263,7 @@
      "wheelRadiusM": 0.321,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "fwd",
-     "rearWeight": 0.38,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.625,
@@ -1337,11 +1285,7 @@
      "wheelRadiusM": 0.316,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.483,
@@ -1362,11 +1306,7 @@
      "wheelRadiusM": 0.318,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.47,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.827,
@@ -1388,11 +1328,7 @@
      "wheelRadiusM": 0.354,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "awd",
-     "rearWeight": 0.46,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      4.056,
@@ -1414,11 +1350,7 @@
      "wheelRadiusM": 0.327,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "awd",
-     "rearWeight": 0.4,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.64,
@@ -1440,11 +1372,7 @@
      "wheelRadiusM": 0.321,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "awd",
-     "rearWeight": 0.41,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      4.057,
@@ -1467,11 +1395,7 @@
      "wheelRadiusM": 0.335,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      4.227,
@@ -1493,11 +1417,7 @@
      "wheelRadiusM": 0.343,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.53,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.4,
@@ -1520,11 +1440,7 @@
      "wheelRadiusM": 0.354,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "awd",
-     "rearWeight": 0.57,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.909,
@@ -1547,11 +1463,7 @@
      "wheelRadiusM": 0.315,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.47,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.626,
@@ -1573,11 +1485,7 @@
      "wheelRadiusM": 0.308,
      "cdA": 0.65,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      5.087,
@@ -1599,11 +1507,7 @@
      "wheelRadiusM": 0.321,
      "cdA": 0.86,
      "crr": 0.012,
-     "brakeDecel": 9.5,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.6,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.8,
@@ -1623,11 +1527,7 @@
      "wheelRadiusM": 0.399,
      "cdA": 1.6,
      "crr": 0.008,
-     "brakeDecel": 6.0,
-     "mu": 0.8,
-     "drive": "rwd",
-     "rearWeight": 0.42,
-     "cgHeightOverWheelbase": 0.25
+     "brakeDecel": 6.0
     },
     "gearboxRatios": [
      5.94,
@@ -1649,11 +1549,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 1.3,
      "crr": 0.015,
-     "brakeDecel": 30,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.55,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 30
     },
     "gearboxRatios": [
      17.372,
@@ -1675,11 +1571,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 1.3,
      "crr": 0.015,
-     "brakeDecel": 30,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.55,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 30
     },
     "gearboxRatios": [
      20.216,
@@ -1702,11 +1594,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 1.3,
      "crr": 0.015,
-     "brakeDecel": 28,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.55,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 28
     },
     "gearboxRatios": [
      16.523,
@@ -1728,11 +1616,7 @@
      "wheelRadiusM": 0.34,
      "cdA": 0.8,
      "crr": 0.015,
-     "brakeDecel": 12,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.48,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 12
     },
     "gearboxRatios": [
      9.213,
@@ -1753,11 +1637,7 @@
      "wheelRadiusM": 0.35,
      "cdA": 0.9,
      "crr": 0.015,
-     "brakeDecel": 18,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.55,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 18
     },
     "gearboxRatios": [
      8.383,
@@ -1778,11 +1658,7 @@
      "wheelRadiusM": 0.32,
      "cdA": 0.85,
      "crr": 0.015,
-     "brakeDecel": 15.0,
-     "mu": 1.7,
-     "drive": "awd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 15.0
     },
     "gearboxRatios": [
      13.983,
@@ -1804,11 +1680,7 @@
      "wheelRadiusM": 0.34,
      "cdA": 0.9,
      "crr": 0.015,
-     "brakeDecel": 18,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.55,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 18
     },
     "gearboxRatios": [
      4.273,
@@ -1829,11 +1701,7 @@
      "wheelRadiusM": 0.355,
      "cdA": 0.85,
      "crr": 0.015,
-     "brakeDecel": 14,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.62,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 14
     },
     "gearboxRatios": [
      10.874,
@@ -1855,11 +1723,7 @@
      "wheelRadiusM": 0.33,
      "cdA": 1.0,
      "crr": 0.015,
-     "brakeDecel": 25,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.58,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 25
     },
     "gearboxRatios": [
      9.435,
@@ -1881,11 +1745,7 @@
      "wheelRadiusM": 0.46,
      "cdA": 1.4,
      "crr": 0.015,
-     "brakeDecel": 12,
-     "mu": 4.0,
-     "drive": "rwd",
-     "rearWeight": 0.8,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 12
     },
     "gearboxRatios": [
      0.793
@@ -1902,11 +1762,7 @@
      "wheelRadiusM": 0.31,
      "cdA": 0.3,
      "crr": 0.015,
-     "brakeDecel": 13,
-     "mu": 1.7,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.12
+     "brakeDecel": 13
     },
     "gearboxRatios": [
      2.938,
@@ -1928,11 +1784,7 @@
      "wheelRadiusM": 0.323,
      "cdA": 0.35,
      "crr": 0.015,
-     "brakeDecel": 9.5,
-     "mu": 1.0,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.45
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      3.3361,
@@ -1954,11 +1806,7 @@
      "wheelRadiusM": 0.336,
      "cdA": 0.35,
      "crr": 0.015,
-     "brakeDecel": 9.5,
-     "mu": 1.0,
-     "drive": "rwd",
-     "rearWeight": 0.52,
-     "cgHeightOverWheelbase": 0.45
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      2.7143,
@@ -1980,11 +1828,7 @@
      "wheelRadiusM": 0.311,
      "cdA": 0.35,
      "crr": 0.015,
-     "brakeDecel": 9.5,
-     "mu": 1.0,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.45
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      2.615,
@@ -2006,11 +1850,7 @@
      "wheelRadiusM": 0.34,
      "cdA": 0.35,
      "crr": 0.015,
-     "brakeDecel": 9.5,
-     "mu": 1.0,
-     "drive": "rwd",
-     "rearWeight": 0.5,
-     "cgHeightOverWheelbase": 0.45
+     "brakeDecel": 9.5
     },
     "gearboxRatios": [
      2.0,
@@ -2031,11 +1871,7 @@
      "wheelRadiusM": 0.381,
      "cdA": 1.4,
      "crr": 0.012,
-     "brakeDecel": 4,
-     "mu": 1.1,
-     "drive": "rwd",
-     "rearWeight": 0.55,
-     "cgHeightOverWheelbase": 0.19
+     "brakeDecel": 4
     },
     "gearboxRatios": [
      2.75,
@@ -2589,6 +2425,7 @@
    "intake": 0.7,
    "mechanical": 0.5,
    "induction": 0.8,
+   "pops": 0.25,
    "gearbox": 0.8,
    "road": 0.5,
    "width": 0.6,
@@ -3067,7 +2904,7 @@
     "powerRpm": 8400
    },
    "vehicle": "real-porsche-911-gt3-992",
-   "spec": "4.0 L flat-six, 9,000 rpm; seven-speed PDK dual-clutch, 4.19 final drive; 1,435 kg. Estimated: idle speed, wheel size, drive layout and weight split.",
+   "spec": "4.0 L flat-six, 9,000 rpm; seven-speed PDK dual-clutch, 4.19 final drive; 1,435 kg. Estimated: idle speed, wheel size.",
    "sources": [
     "https://en.wikipedia.org/wiki/Porsche_992",
     "https://www.autodata1.com/en/car/porsche/911/911-992-gt3-40-510-hp-pdk/m:amp",
@@ -3078,8 +2915,7 @@
    ],
    "estimated": [
     "idle speed",
-    "wheel size",
-    "drive layout and weight split"
+    "wheel size"
    ]
   },
   {
@@ -3128,7 +2964,7 @@
     "powerRpm": 9000
    },
    "vehicle": "real-ferrari-458-italia",
-   "spec": "4.5 L F136 flat-plane V8, firing order 1-8-3-6-4-5-2-7, 9,000 rpm; seven-speed Getrag dual-clutch, 5.14 final drive; 1,565 kg. Estimated: idle speed, wheel size, drive layout and weight split.",
+   "spec": "4.5 L F136 flat-plane V8, firing order 1-8-3-6-4-5-2-7, 9,000 rpm; seven-speed Getrag dual-clutch, 5.14 final drive; 1,565 kg. Estimated: idle speed, wheel size.",
    "sources": [
     "https://en.wikipedia.org/wiki/Ferrari_458",
     "https://en.wikipedia.org/wiki/Ferrari_F136_engine",
@@ -3136,8 +2972,7 @@
    ],
    "estimated": [
     "idle speed",
-    "wheel size",
-    "drive layout and weight split"
+    "wheel size"
    ]
   },
   {
@@ -3168,7 +3003,7 @@
     "powerRpm": 8700
    },
    "vehicle": "real-lexus-lfa",
-   "spec": "4.8 L 1LR-GUE even-firing 72° V10, 9,000 rpm; six-speed Aisin ASG automated single-clutch (modelled as a sequential box), 3.417 final drive; 1,580 kg. Estimated: idle speed, wheel size, drive layout and weight split.",
+   "spec": "4.8 L 1LR-GUE even-firing 72° V10, 9,000 rpm; six-speed Aisin ASG automated single-clutch (modelled as a sequential box), 3.417 final drive; 1,580 kg. Estimated: idle speed, wheel size.",
    "sources": [
     "https://en.wikipedia.org/wiki/Lexus_LFA",
     "https://www.supercars.net/blog/2010-lexus-lfa-n2410/",
@@ -3176,8 +3011,7 @@
    ],
    "estimated": [
     "idle speed",
-    "wheel size",
-    "drive layout and weight split"
+    "wheel size"
    ]
   },
   {
@@ -3226,7 +3060,7 @@
     "powerRpm": 7000
    },
    "vehicle": "real-ford-mustang-gt-s550",
-   "spec": "5.0 L Coyote cross-plane V8, firing order 1-5-4-8-6-3-7-2; Getrag MT82 six-speed manual with a direct-drive fourth. Estimated: rev limit, idle speed, final drive, mass, drive layout and weight split.",
+   "spec": "5.0 L Coyote cross-plane V8, firing order 1-5-4-8-6-3-7-2; Getrag MT82 six-speed manual with a direct-drive fourth. Estimated: rev limit, idle speed, final drive, mass.",
    "sources": [
     "https://en.wikipedia.org/wiki/Ford_Mustang_(sixth_generation)",
     "https://www.cjponyparts.com/resources/2018-mustang-specs (search excerpt)",
@@ -3238,8 +3072,7 @@
     "rev limit",
     "idle speed",
     "final drive",
-    "mass",
-    "drive layout and weight split"
+    "mass"
    ]
   },
   {
@@ -3288,7 +3121,7 @@
     "powerRpm": 6450
    },
    "vehicle": "real-chevrolet-corvette-c8",
-   "spec": "6.2 L LT2 pushrod cross-plane V8, firing order 1-8-7-2-6-5-4-3, 6,500 rpm; Tremec eight-speed dual-clutch; 1,654 kg. Estimated: idle speed, drive layout and weight split. Corrected from the research: the 3.55 is the ring-and-pinion only; the Z51's overall final drive is 5.17.",
+   "spec": "6.2 L LT2 pushrod cross-plane V8, firing order 1-8-7-2-6-5-4-3, 6,500 rpm; Tremec eight-speed dual-clutch; 1,654 kg. Estimated: idle speed. Corrected from the research: the 3.55 is the ring-and-pinion only; the Z51's overall final drive is 5.17.",
    "sources": [
     "https://en.wikipedia.org/wiki/Chevrolet_Corvette_(C8)",
     "https://www.corvsport.com/2020-corvette-specifications/",
@@ -3298,8 +3131,7 @@
     "https://rerev.com/firing-orders/chevrolet/6-2l-lt4/ (search excerpt)"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -3351,7 +3183,7 @@
    },
    "boost": 0.8,
    "vehicle": "real-dodge-challenger-hellcat",
-   "spec": "6.2 L supercharged Hemi V8 (IHI 2.38 L twin-screw, 0.80 bar), firing order 1-8-4-3-6-5-7-2; Tremec TR-6060 six-speed manual with a direct-drive fourth, 3.70 axle; 2,018 kg. Estimated: rev limit, idle speed, wheel size, drive layout and weight split.",
+   "spec": "6.2 L supercharged Hemi V8 (IHI 2.38 L twin-screw, 0.80 bar), firing order 1-8-4-3-6-5-7-2; Tremec TR-6060 six-speed manual with a direct-drive fourth, 3.70 axle; 2,018 kg. Estimated: rev limit, idle speed, wheel size.",
    "sources": [
     "https://en.wikipedia.org/wiki/Chrysler_Hemi_engine",
     "https://en.wikipedia.org/wiki/Tremec_TR-6060_transmission",
@@ -3363,8 +3195,7 @@
    "estimated": [
     "rev limit",
     "idle speed",
-    "wheel size",
-    "drive layout and weight split"
+    "wheel size"
    ]
   },
   {
@@ -3401,7 +3232,7 @@
     "powerRpm": 8300
    },
    "vehicle": "real-honda-s2000-ap1",
-   "spec": "2.0 L F20C inline-four, 8,800 rpm redline; six-speed manual; 1,274 kg. Estimated: idle speed, drive layout and weight split. Corrected from the research: the 4.100 final drive is multiplied by the 1.160 secondary reduction (4.756 overall).",
+   "spec": "2.0 L F20C inline-four, 8,800 rpm redline; six-speed manual; 1,274 kg. Estimated: idle speed. Corrected from the research: the 4.100 final drive is multiplied by the 1.160 secondary reduction (4.756 overall).",
    "sources": [
     "https://en.wikipedia.org/wiki/Honda_S2000",
     "https://en.wikipedia.org/wiki/Honda_F_engine",
@@ -3409,8 +3240,7 @@
     "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -3450,7 +3280,7 @@
    },
    "boost": 1.74,
    "vehicle": "real-honda-civic-type-r-fl5",
-   "spec": "2.0 L K20C1 turbocharged inline-four, 1.74 bar, 7,000 rpm; six-speed manual, 3.842 final drive; 1,430 kg. Estimated: idle speed, drive layout and weight split.",
+   "spec": "2.0 L K20C1 turbocharged inline-four, 1.74 bar, 7,000 rpm; six-speed manual, 3.842 final drive; 1,430 kg. Estimated: idle speed.",
    "sources": [
     "https://hondanews.com/en-US/honda-automobiles/releases/2023-honda-civic-type-r-specifications-features",
     "https://en.wikipedia.org/wiki/Honda_Civic_Type_R_(FL5)",
@@ -3458,8 +3288,7 @@
     "https://support.haltech.com/portal/en/kb/articles/thomas-te (search excerpt)"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -3493,7 +3322,7 @@
    },
    "boost": 0.76,
    "vehicle": "real-mazda-rx7-fd",
-   "spec": "1.3 L 13B-REW sequential twin-turbo two-rotor Wankel, 0.76 bar, 8,000 rpm; five-speed manual with a direct-drive fourth, 4.10 final drive; 1,271 kg. Estimated: idle speed, drive layout and weight split.",
+   "spec": "1.3 L 13B-REW sequential twin-turbo two-rotor Wankel, 0.76 bar, 8,000 rpm; five-speed manual with a direct-drive fourth, 4.10 final drive; 1,271 kg. Estimated: idle speed.",
    "sources": [
     "https://www.supercars.net/blog/1993→1995-mazda-rx-7-jm1fd/",
     "https://www.rx7.net.nz/jpnspc.htm",
@@ -3501,8 +3330,7 @@
     "https://en.wikipedia.org/wiki/List_of_automobile_drag_coefficients"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -3544,7 +3372,7 @@
    },
    "boost": 0.9,
    "vehicle": "real-toyota-supra-a80",
-   "spec": "3.0 L 2JZ-GTE sequential twin-turbo inline-six, firing order 1-5-3-6-2-4; Getrag V160 six-speed manual with a direct-drive fifth, 3.266 final drive; 1,565 kg. Estimated: rev limit, idle speed, boost, drive layout and weight split.",
+   "spec": "3.0 L 2JZ-GTE sequential twin-turbo inline-six, firing order 1-5-3-6-2-4; Getrag V160 six-speed manual with a direct-drive fifth, 3.266 final drive; 1,565 kg. Estimated: rev limit, idle speed, boost.",
    "sources": [
     "https://en.wikipedia.org/wiki/Toyota_Supra",
     "https://en.wikipedia.org/wiki/Toyota_JZ_engine",
@@ -3555,8 +3383,7 @@
    "estimated": [
     "rev limit",
     "idle speed",
-    "boost",
-    "drive layout and weight split"
+    "boost"
    ]
   },
   {
@@ -3605,7 +3432,7 @@
    },
    "boost": 0.7,
    "vehicle": "real-nissan-gt-r-r35",
-   "spec": "3.8 L VR38DETT twin-turbo 60° V6, 7,000 rpm; GR6 six-speed dual-clutch transaxle, 3.7 final drive; 1,740 kg. Estimated: idle speed, drive layout and weight split.",
+   "spec": "3.8 L VR38DETT twin-turbo 60° V6, 7,000 rpm; GR6 six-speed dual-clutch transaxle, 3.7 final drive; 1,740 kg. Estimated: idle speed.",
    "sources": [
     "https://en.wikipedia.org/wiki/Nissan_GT-R",
     "https://en.wikipedia.org/wiki/Nissan_VR_engine",
@@ -3617,8 +3444,7 @@
     "https://www.carexpert.com.au/nissan/gt-r/2009/base/powertrain-and-performance"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -3664,7 +3490,7 @@
    },
    "boost": 1.0,
    "vehicle": "real-subaru-wrx-sti-grb",
-   "spec": "2.5 L EJ257 turbocharged flat-four with unequal-length headers, 6,700 rpm; six-speed manual, 3.9 final drive; 1,540 kg. Estimated: idle speed, boost, drive layout and weight split.",
+   "spec": "2.5 L EJ257 turbocharged flat-four with unequal-length headers, 6,700 rpm; six-speed manual, 3.9 final drive; 1,540 kg. Estimated: idle speed, boost.",
    "sources": [
     "https://en.wikipedia.org/wiki/Subaru_EJ_engine",
     "https://www.carspecs.us/cars/2008/subaru/impreza/90786",
@@ -3673,8 +3499,7 @@
    ],
    "estimated": [
     "idle speed",
-    "boost",
-    "drive layout and weight split"
+    "boost"
    ]
   },
   {
@@ -3715,7 +3540,7 @@
    },
    "boost": 1.4,
    "vehicle": "real-audi-rs3-8y",
-   "spec": "2.5 L TFSI turbocharged inline-five, firing order 1-2-4-5-3; seven-speed S tronic dual-clutch; 1,570 kg. Estimated: rev limit, idle speed, boost, final drive, gear ratios (spread to 290 km/h at the rev limit), drive layout and weight split.",
+   "spec": "2.5 L TFSI turbocharged inline-five, firing order 1-2-4-5-3; seven-speed S tronic dual-clutch; 1,570 kg. Estimated: rev limit, idle speed, boost, final drive, gear ratios (spread to 290 km/h at the rev limit).",
    "sources": [
     "https://www.audi.com/en/high-performance-redefined-audi-rs-3-sportback-and-rs-3-sedan-2021-14310/facts-and-figures-14311",
     "https://www.auto-data.net/en/audi-rs3-sportback-8y-2.5-tfsi-400hp-quattro-s-tronic-44005",
@@ -3726,8 +3551,7 @@
     "idle speed",
     "boost",
     "final drive",
-    "gear ratios (spread to 290 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 290 km/h at the rev limit)"
    ]
   },
   {
@@ -3766,7 +3590,7 @@
     "powerRpm": 7900
    },
    "vehicle": "real-bmw-m3-e46",
-   "spec": "3.2 L S54 inline-six with individual throttle bodies, 8,000 rpm; Getrag six-speed manual; 1,560 kg. Estimated: idle speed, final drive, wheel size, drive layout and weight split.",
+   "spec": "3.2 L S54 inline-six with individual throttle bodies, 8,000 rpm; Getrag six-speed manual; 1,560 kg. Estimated: idle speed, final drive, wheel size.",
    "sources": [
     "https://en.wikipedia.org/wiki/BMW_S54",
     "https://en.wikipedia.org/wiki/BMW_M3",
@@ -3777,8 +3601,7 @@
    "estimated": [
     "idle speed",
     "final drive",
-    "wheel size",
-    "drive layout and weight split"
+    "wheel size"
    ]
   },
   {
@@ -3827,7 +3650,7 @@
     "powerRpm": 6800
    },
    "vehicle": "real-mercedes-sls-amg",
-   "spec": "6.2 L M159 cross-plane V8, firing order 1-5-4-2-6-3-7-8, 7,200 rpm; seven-speed dual-clutch transaxle, 3.67 final drive; 1,619 kg. Estimated: idle speed, drive layout and weight split.",
+   "spec": "6.2 L M159 cross-plane V8, firing order 1-5-4-2-6-3-7-8, 7,200 rpm; seven-speed dual-clutch transaxle, 3.67 final drive; 1,619 kg. Estimated: idle speed.",
    "sources": [
     "https://tv.manualsonline.com/manuals/mfg/mercedesbenz/2011_sls_amg.html?p=424",
     "https://en.wikipedia.org/wiki/Mercedes-Benz_SLS_AMG",
@@ -3836,8 +3659,7 @@
     "https://en.wikipedia.org/wiki/Mercedes-Benz_M156_engine"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -3892,7 +3714,7 @@
     "powerRpm": 8250
    },
    "vehicle": "real-lamborghini-aventador",
-   "spec": "6.5 L L539 V12, firing order 1-12-4-9-2-11-6-7-3-10-5-8, 8,500 rpm; seven-speed ISR automated single-clutch (modelled as a sequential box); 1,670 kg. Estimated: idle speed, final drive, drive layout and weight split.",
+   "spec": "6.5 L L539 V12, firing order 1-12-4-9-2-11-6-7-3-10-5-8, 8,500 rpm; seven-speed ISR automated single-clutch (modelled as a sequential box); 1,670 kg. Estimated: idle speed, final drive.",
    "sources": [
     "https://en.wikipedia.org/wiki/Lamborghini_Aventador",
     "https://autozine.org/Archive/Lamborghini/old/Aventador.html",
@@ -3901,8 +3723,7 @@
    ],
    "estimated": [
     "idle speed",
-    "final drive",
-    "drive layout and weight split"
+    "final drive"
    ]
   },
   {
@@ -3945,7 +3766,7 @@
     "powerRpm": 7000
    },
    "vehicle": "real-toyota-gr86",
-   "spec": "2.4 L FA24 flat-four, equal-length headers; six-speed manual with a direct-drive fifth, 4.1 final drive; 1,276 kg. Estimated: rev limit, idle speed, firing order, drive layout and weight split.",
+   "spec": "2.4 L FA24 flat-four, equal-length headers; six-speed manual with a direct-drive fifth, 4.1 final drive; 1,276 kg. Estimated: rev limit, idle speed, firing order.",
    "sources": [
     "https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/220523M-GR86-Tech-Spec.pdf",
     "https://en.wikipedia.org/wiki/Toyota_GR86"
@@ -3953,8 +3774,7 @@
    "estimated": [
     "rev limit",
     "idle speed",
-    "firing order",
-    "drive layout and weight split"
+    "firing order"
    ]
   },
   {
@@ -3985,15 +3805,14 @@
     "powerRpm": 7000
    },
    "vehicle": "real-mazda-mx5-nd2",
-   "spec": "2.0 L Skyactiv-G inline-four, 7,500 rpm; six-speed manual with a direct-drive sixth, 2.866 final drive; 1,052 kg. Estimated: idle speed, drive layout and weight split.",
+   "spec": "2.0 L Skyactiv-G inline-four, 7,500 rpm; six-speed manual with a direct-drive sixth, 2.866 final drive; 1,052 kg. Estimated: idle speed.",
    "sources": [
     "https://www.mazdausa.com/siteassets/pdf/owners-optimized/2019/mx-5-miata-st/2019_mazda_mx5_features_specs.pdf",
     "https://automotivepowertraintechnologyinternational.com/features/engines-on-test-2019-mazda-mx-5-2-0-liter-skyactiv-g.html",
     "https://zeperfs.com/en/fiche7495-mazda-mx-5-iv-2-0-skyactiv-g.htm"
    ],
    "estimated": [
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -4036,7 +3855,7 @@
     "powerRpm": 4000
    },
    "vehicle": "real-vw-beetle-1600",
-   "spec": "1.6 L air-cooled flat-four, firing order 1-4-3-2; four-speed manual transaxle, 3.875 final drive; 870 kg. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "spec": "1.6 L air-cooled flat-four, firing order 1-4-3-2; four-speed manual transaxle, 3.875 final drive; 870 kg. Estimated: rev limit, idle speed.",
    "sources": [
     "https://www.kfz-tech.de/Engl/Hersteller/VW/VWKaefer13021970.htm",
     "https://en.wikipedia.org/wiki/Volkswagen_Beetle",
@@ -4046,8 +3865,7 @@
    ],
    "estimated": [
     "rev limit",
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -4089,7 +3907,7 @@
    },
    "boost": 2.0,
    "vehicle": "real-ram-2500-cummins",
-   "spec": "6.7 L Cummins turbodiesel inline-six; G56 six-speed manual with a direct-drive fifth. Estimated: rev limit, idle speed, boost, final drive, wheel size, mass, drive layout and weight split.",
+   "spec": "6.7 L Cummins turbodiesel inline-six; G56 six-speed manual with a direct-drive fifth. Estimated: rev limit, idle speed, boost, final drive, wheel size, mass.",
    "sources": [
     "https://www.ramtruck.ca/en_dir/pdf/2015/specifications/2500.pdf (2013 Ram HD spec sheet, read directly)",
     "https://www.dieselhub.com/trans/g56.html",
@@ -4102,8 +3920,7 @@
     "boost",
     "final drive",
     "wheel size",
-    "mass",
-    "drive layout and weight split"
+    "mass"
    ]
   },
   {
@@ -4134,7 +3951,7 @@
     "powerRpm": 19000
    },
    "vehicle": "real-renault-r25",
-   "spec": "3.0 L Renault RS25 72° V10, peak power near 19,000 rpm; six-speed paddle-shift sequential; 605 kg with driver. Estimated: rev limit, idle speed, peak torque (derived from power), wheel size, gear ratios (spread to 330 km/h at the rev limit), drive layout and weight split.",
+   "spec": "3.0 L Renault RS25 72° V10, peak power near 19,000 rpm; six-speed paddle-shift sequential; 605 kg with driver. Estimated: rev limit, idle speed, peak torque (derived from power), wheel size, gear ratios (spread to 330 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Renault_R25"
    ],
@@ -4143,8 +3960,7 @@
     "idle speed",
     "peak torque (derived from power)",
     "wheel size",
-    "gear ratios (spread to 330 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 330 km/h at the rev limit)"
    ]
   },
   {
@@ -4175,7 +3991,7 @@
     "powerRpm": 19250
    },
    "vehicle": "real-cosworth-f1-v8-2006",
-   "spec": "2.4 L Cosworth CA2006 90° V8, just over 20,000 rpm, the highest-revving F1 engine of its year. Estimated: idle speed, peak torque (derived from power), gear count, wheel size, gear ratios (spread to 320 km/h at the rev limit), mass, drive layout and weight split.",
+   "spec": "2.4 L Cosworth CA2006 90° V8, just over 20,000 rpm, the highest-revving F1 engine of its year. Estimated: idle speed, peak torque (derived from power), gear count, wheel size, gear ratios (spread to 320 km/h at the rev limit), mass.",
    "sources": [
     "https://en.wikipedia.org/wiki/Cosworth_TJ_/_CA_engine",
     "https://f1technical.net/features/18858"
@@ -4186,8 +4002,7 @@
     "gear count",
     "wheel size",
     "gear ratios (spread to 320 km/h at the rev limit)",
-    "mass",
-    "drive layout and weight split"
+    "mass"
    ]
   },
   {
@@ -4218,7 +4033,7 @@
     "powerRpm": 17000
    },
    "vehicle": "real-ferrari-412-t2",
-   "spec": "3.0 L Ferrari Tipo 044 75° V12, peak power at 17,000 rpm (modelled with an even-firing V12 layout); six-speed sequential; 595 kg. Estimated: idle speed, peak torque (derived from power), wheel size, gear ratios (spread to 320 km/h at the rev limit), drive layout and weight split.",
+   "spec": "3.0 L Ferrari Tipo 044 75° V12, peak power at 17,000 rpm (modelled with an even-firing V12 layout); six-speed sequential; 595 kg. Estimated: idle speed, peak torque (derived from power), wheel size, gear ratios (spread to 320 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Ferrari_412_T2",
     "https://f1technical.net/f1db/cars/766/ferrari-412t2"
@@ -4227,8 +4042,7 @@
     "idle speed",
     "peak torque (derived from power)",
     "wheel size",
-    "gear ratios (spread to 320 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 320 km/h at the rev limit)"
    ]
   },
   {
@@ -4259,7 +4073,7 @@
     "powerRpm": 9000
    },
    "vehicle": "real-nascar-next-gen",
-   "spec": "5.86 L (358 cu in) pushrod V8, around 10,000 rpm; Xtrac five-speed sequential transaxle; 1,542 kg with driver and fuel. Estimated: idle speed, power rpm, peak torque (derived from power), wheel size, gear ratios (spread to 320 km/h at the rev limit), drive layout and weight split.",
+   "spec": "5.86 L (358 cu in) pushrod V8, around 10,000 rpm; Xtrac five-speed sequential transaxle; 1,542 kg with driver and fuel. Estimated: idle speed, power rpm, peak torque (derived from power), wheel size, gear ratios (spread to 320 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Next_Gen_(NASCAR)",
     "https://nhra.com/news/2020/engine-wars-f1-vs-indycar-vs-pro-stock-vs-nascar-vs-top-fuel"
@@ -4269,8 +4083,7 @@
     "power rpm",
     "peak torque (derived from power)",
     "wheel size",
-    "gear ratios (spread to 320 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 320 km/h at the rev limit)"
    ]
   },
   {
@@ -4301,15 +4114,14 @@
     "powerRpm": 9000
    },
    "vehicle": "real-mazda-787b",
-   "spec": "2.6 L R26B four-rotor Wankel, 9,000 rpm; five-speed H-pattern manual; 830 kg. Estimated: idle speed, gear ratios (spread to 340 km/h at the rev limit), drive layout and weight split.",
+   "spec": "2.6 L R26B four-rotor Wankel, 9,000 rpm; five-speed H-pattern manual; 830 kg. Estimated: idle speed, gear ratios (spread to 340 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Mazda_787B",
     "https://www.mazda.com/en/experience/mspr/motorsports/lemans/r26b/"
    ],
    "estimated": [
     "idle speed",
-    "gear ratios (spread to 340 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 340 km/h at the rev limit)"
    ]
   },
   {
@@ -4350,7 +4162,7 @@
    },
    "boost": 1.6,
    "vehicle": "real-audi-quattro-s1-e2",
-   "spec": "2.1 L turbocharged inline-five with anti-lag, 440 kW at 8,000 rpm; six-speed manual; 1,090 kg. Estimated: rev limit, idle speed, firing order, boost, wheel size, gear ratios (spread to 220 km/h at the rev limit), drive layout and weight split.",
+   "spec": "2.1 L turbocharged inline-five with anti-lag, 440 kW at 8,000 rpm; six-speed manual; 1,090 kg. Estimated: rev limit, idle speed, firing order, boost, wheel size, gear ratios (spread to 220 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Audi_Sport_Quattro_S1",
     "https://www.audi-mediacenter.com:443/en/photos/detail/audi-sport-quattro-s1-e2-model-year-1987-37237"
@@ -4361,8 +4173,7 @@
     "firing order",
     "boost",
     "wheel size",
-    "gear ratios (spread to 220 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 220 km/h at the rev limit)"
    ]
   },
   {
@@ -4396,7 +4207,7 @@
    },
    "boost": 2.94,
    "vehicle": "real-audi-r10-tdi",
-   "spec": "5.5 L twin-turbo 90° V12 diesel, shifted around 5,000 rpm, boost limited to 2.94 bar absolute; Xtrac five-speed sequential; 925 kg. Estimated: idle speed, power rpm, torque rpm, wheel size, gear ratios (spread to 330 km/h at the rev limit), drive layout and weight split.",
+   "spec": "5.5 L twin-turbo 90° V12 diesel, shifted around 5,000 rpm, boost limited to 2.94 bar absolute; Xtrac five-speed sequential; 925 kg. Estimated: idle speed, power rpm, torque rpm, wheel size, gear ratios (spread to 330 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Audi_R10_TDI",
     "https://audi-mediacenter.com/en/press-releases/audi-competes-with-diesel-sports-car-at-le-mans-8299"
@@ -4406,8 +4217,7 @@
     "power rpm",
     "torque rpm",
     "wheel size",
-    "gear ratios (spread to 330 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 330 km/h at the rev limit)"
    ]
   },
   {
@@ -4453,15 +4263,14 @@
     "powerRpm": 8400
    },
    "vehicle": "real-porsche-911-gt3-cup-992",
-   "spec": "4.0 L flat-six, 375 kW at 8,400 rpm, 8,750 rpm limit; six-speed sequential dog box; about 1,260 kg. Estimated: idle speed, firing order, gear ratios (spread to 280 km/h at the rev limit), drive layout and weight split.",
+   "spec": "4.0 L flat-six, 375 kW at 8,400 rpm, 8,750 rpm limit; six-speed sequential dog box; about 1,260 kg. Estimated: idle speed, firing order, gear ratios (spread to 280 km/h at the rev limit).",
    "sources": [
     "https://www.stuttcars.com/porsche-911-gt3-cup-992-specifications-performance/"
    ],
    "estimated": [
     "idle speed",
     "firing order",
-    "gear ratios (spread to 280 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 280 km/h at the rev limit)"
    ]
   },
   {
@@ -4495,7 +4304,7 @@
    },
    "boost": 0.5,
    "vehicle": "real-indycar-chevrolet",
-   "spec": "2.2 L twin-turbo 90° V6, 12,200 rpm; Xtrac six-speed paddle-shift sequential; 767 kg on road courses. Estimated: idle speed, power rpm, peak torque (derived from power), boost, wheel size, gear ratios (spread to 370 km/h at the rev limit), drive layout and weight split.",
+   "spec": "2.2 L twin-turbo 90° V6, 12,200 rpm; Xtrac six-speed paddle-shift sequential; 767 kg on road courses. Estimated: idle speed, power rpm, peak torque (derived from power), boost, wheel size, gear ratios (spread to 370 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Dallara_IR-18",
     "https://nhra.com/news/2020/engine-wars-f1-vs-indycar-vs-pro-stock-vs-nascar-vs-top-fuel"
@@ -4506,8 +4315,7 @@
     "peak torque (derived from power)",
     "boost",
     "wheel size",
-    "gear ratios (spread to 370 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 370 km/h at the rev limit)"
    ]
   },
   {
@@ -4541,7 +4349,7 @@
    },
    "boost": 2.5,
    "vehicle": "real-nhra-top-fuel",
-   "spec": "8.2 L (500 cu in) Hemi V8 on nitromethane with a 14-71 Roots supercharger, 7,900 rpm limit; no gearbox, a multi-disc clutch straight to the rear axle. Estimated: idle speed, power rpm, peak torque (derived from power), boost, final drive, wheel size, gear ratios (spread to 540 km/h at the rev limit), mass, drive layout and weight split.",
+   "spec": "8.2 L (500 cu in) Hemi V8 on nitromethane with a 14-71 Roots supercharger, 7,900 rpm limit; no gearbox, a multi-disc clutch straight to the rear axle. Estimated: idle speed, power rpm, peak torque (derived from power), boost, final drive, wheel size, gear ratios (spread to 540 km/h at the rev limit), mass.",
    "sources": [
     "https://nhra.com/news/2020/engine-wars-f1-vs-indycar-vs-pro-stock-vs-nascar-vs-top-fuel",
     "https://ihra.com/sites/default/files/2026-01/2026%20IHRA%20Top%20Fuel_0.pdf"
@@ -4554,8 +4362,7 @@
     "final drive",
     "wheel size",
     "gear ratios (spread to 540 km/h at the rev limit)",
-    "mass",
-    "drive layout and weight split"
+    "mass"
    ]
   },
   {
@@ -4586,7 +4393,7 @@
     "powerRpm": 17000
    },
    "vehicle": "real-yamaha-m1-motogp",
-   "spec": "1.0 L crossplane inline-four firing at 270-180-90-180 degrees; six-speed cassette gearbox, chain final drive; 160 kg minimum without rider. Estimated: rev limit, idle speed, power rpm, peak torque (derived from power), final drive, wheel size, gear ratios (spread to 350 km/h at the rev limit), drive layout and weight split.",
+   "spec": "1.0 L crossplane inline-four firing at 270-180-90-180 degrees; six-speed cassette gearbox, chain final drive; 160 kg minimum without rider. Estimated: rev limit, idle speed, power rpm, peak torque (derived from power), final drive, wheel size, gear ratios (spread to 350 km/h at the rev limit).",
    "sources": [
     "https://en.wikipedia.org/wiki/Yamaha_YZR-M1",
     "https://en.wikipedia.org/wiki/Crossplane"
@@ -4598,8 +4405,7 @@
     "peak torque (derived from power)",
     "final drive",
     "wheel size",
-    "gear ratios (spread to 350 km/h at the rev limit)",
-    "drive layout and weight split"
+    "gear ratios (spread to 350 km/h at the rev limit)"
    ]
   },
   {
@@ -4630,7 +4436,7 @@
     "powerRpm": 4750
    },
    "vehicle": "real-harley-street-bob-114",
-   "spec": "1.87 L Milwaukee-Eight 114 45° V-twin, single crankpin, so it fires at 315 and 405 degrees; six-speed, belt final drive; 297 kg. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "spec": "1.87 L Milwaukee-Eight 114 45° V-twin, single crankpin, so it fires at 315 and 405 degrees; six-speed, belt final drive; 297 kg. Estimated: rev limit, idle speed.",
    "sources": [
     "https://h-dmediakit.com/epapi-get/pdf/bikepages/specs/2023/fxbbs/specifications_fxbbs_us.pdf",
     "https://en.wikipedia.org/wiki/Harley-Davidson_Milwaukee-Eight_engine",
@@ -4638,8 +4444,7 @@
    ],
    "estimated": [
     "rev limit",
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -4670,7 +4475,7 @@
     "powerRpm": 13000
    },
    "vehicle": "real-ducati-panigale-v4",
-   "spec": "1.1 L Desmosedici Stradale 90° V4 with 70° crankpin offset (Twin Pulse); six-speed with quickshifter; 195 kg wet. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "spec": "1.1 L Desmosedici Stradale 90° V4 with 70° crankpin offset (Twin Pulse); six-speed with quickshifter; 195 kg wet. Estimated: rev limit, idle speed.",
    "sources": [
     "https://www.moto-data.net/ducati/panigale-v4-2018",
     "https://en.wikipedia.org/wiki/Ducati_Panigale_V4",
@@ -4678,8 +4483,7 @@
    ],
    "estimated": [
     "rev limit",
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -4710,7 +4514,7 @@
     "powerRpm": 9500
    },
    "vehicle": "real-suzuki-hayabusa",
-   "spec": "1.34 L inline-four; six-speed, chain final drive; 266 kg wet. Estimated: rev limit, idle speed, drive layout and weight split.",
+   "spec": "1.34 L inline-four; six-speed, chain final drive; 266 kg wet. Estimated: rev limit, idle speed.",
    "sources": [
     "https://suzukicycles.org/Hayabusa/GSX1300R-Hayabusa-2.shtml",
     "https://en.wikipedia.org/wiki/Suzuki_Hayabusa",
@@ -4719,8 +4523,7 @@
    ],
    "estimated": [
     "rev limit",
-    "idle speed",
-    "drive layout and weight split"
+    "idle speed"
    ]
   },
   {
@@ -4754,7 +4557,7 @@
     "powerRpm": 8500
    },
    "vehicle": "real-ktm-250-sx",
-   "spec": "249 cc two-stroke single (fires every revolution) with an expansion chamber; five-speed, chain final drive; 95.5 kg. Estimated: rev limit, idle speed, peak power, power rpm, peak torque, torque rpm, drive layout and weight split.",
+   "spec": "249 cc two-stroke single (fires every revolution) with an expansion chamber; five-speed, chain final drive; 95.5 kg. Estimated: rev limit, idle speed, peak power, power rpm, peak torque, torque rpm.",
    "sources": [
     "https://www.ktm.com/language-masters/en/mx-mediainformation/MY22%20KTM%20SX%20Range%20-%20Tech%20Data.pdf"
    ],
@@ -4764,8 +4567,7 @@
     "peak power",
     "power rpm",
     "peak torque",
-    "torque rpm",
-    "drive layout and weight split"
+    "torque rpm"
    ]
   },
   {
@@ -5078,7 +4880,7 @@
     "powerRpm": 1600
    },
    "vehicle": "real-ford-model-t",
-   "spec": "2.9 L inline-four; two-speed planetary transmission (low 2.75, high direct) and a 3.6363 rear axle; about 645 kg. Estimated: rev limit, idle speed, power rpm, peak torque, torque rpm, wheel size, drive layout and weight split.",
+   "spec": "2.9 L inline-four; two-speed planetary transmission (low 2.75, high direct) and a 3.6363 rear axle; about 645 kg. Estimated: rev limit, idle speed, power rpm, peak torque, torque rpm, wheel size.",
    "sources": [
     "https://en.wikipedia.org/wiki/Ford_Model_T_engine",
     "https://en.wikipedia.org/wiki/Ford_Model_T",
@@ -5090,8 +4892,7 @@
     "power rpm",
     "peak torque",
     "torque rpm",
-    "wheel size",
-    "drive layout and weight split"
+    "wheel size"
    ]
   }
  ]

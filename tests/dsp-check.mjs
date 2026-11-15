@@ -165,5 +165,25 @@ for (const tx of ["sequential", "dct"]) {
   if (maxGear !== 0 || moved > 0.5) fail("manual shift mode left neutral without being asked");
 }
 
+{
+  // The pops have their own mixer channel: at 0 they are gone, doubling it doubles them, and it
+  // never changes anything else (the random sequence is drawn the same way at every level).
+  const blips = (m) => { const s = s65(); s.pops = 0.6; s.mix.pops = m; return renderScenario(data, s, "start-and-blips", SR).L; };
+  const a0 = blips(0), a1 = blips(data.defaults.mix.pops), a2 = blips(2 * data.defaults.mix.pops);
+  let pk0 = 0, pkP = 0, nonlin = 0;
+  for (let i = 0; i < a0.length; i++) {
+    const p1 = a1[i] - a0[i], p2 = a2[i] - a0[i];
+    pk0 = Math.max(pk0, Math.abs(a0[i])); pkP = Math.max(pkP, Math.abs(p1)); nonlin = Math.max(nonlin, Math.abs(p2 - 2 * p1));
+  }
+  const W = 2400, loud = (f) => { let m = 0; for (let i = 0; i + W < a0.length; i += 600) { let e = 0; for (let j = i; j < i + W; j++) { const v = f(j); e += v * v; } m = Math.max(m, Math.sqrt(e / W)); } return m; };
+  const lE = loud(i => a0[i]), lP = loud(i => a1[i] - a0[i]);
+  console.log(`  pops channel, loudest 50 ms: engine ${db(lE)} dBFS, pops ${db(lP)} dBFS`);
+  if (lP > lE) fail("pops at the default mixer level are louder than the engine at its loudest");
+  console.log(`  pops channel: engine peak ${db(pk0)} dBFS, pops at the default ${db(pkP)} dBFS, doubling error ${db(nonlin)} dB re full scale`);
+  if (pkP < 1e-4) fail("the pops channel at its default made no pops");
+  if (pkP > 2.5 * pk0) fail("pops at the default mixer level are more than 8 dB above the engine's peak");
+  if (nonlin > 0.25 * pkP) fail("the pops channel does not scale the pops linearly");
+}
+
 console.log(failures ? `\n${failures} failure(s)` : "\nall checks passed");
 process.exit(failures ? 1 : 0);

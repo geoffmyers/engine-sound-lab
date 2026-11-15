@@ -396,11 +396,15 @@ export class EngineDSP {
 
       // Afterfire: unburnt fuel lighting off in a hot exhaust during fuel cut.
       // An ignition-cut shift (sequential, dual-clutch) crackles the same way.
+      // Its level is its own mixer channel (mix.pops), applied here because the pops travel the
+      // exhaust path with everything else; the Exhaust channel still scales them on top.
+      const popMix = c.mix.pops ?? 0.25;
       if (!this.combust && this.fuelOn && (this.dfco || this.limiterCut || this.ignCut) && c.pops > 0 &&
           rng.unit() < c.pops * (this.dfco ? 0.3 : this.ignCut ? 0.5 : 0.18) * clamp(x * 1.6, 0, 1)) {
         const dly = e.delay + Math.round((0.003 + 0.03 * rng.unit()) * this.sr);
-        const pamp = (0.5 + 0.9 * rng.unit()) * 1.6 * Math.sqrt(c.pops) * Math.pow(c.cylVol / 0.5, 0.25);
-        this.spawn(EXH, rng.unit() < 0.5 ? 0 : 1, dly, pamp, 0.00005, 0.0013, 0.004, 0.12, 1.7);
+        const pamp = popMix * (0.5 + 0.9 * rng.unit()) * 1.6 * Math.sqrt(c.pops) * Math.pow(c.cylVol / 0.5, 0.25);
+        const bank = rng.unit() < 0.5 ? 0 : 1;   // drawn either way, so the mixer never shifts the random sequence
+        if (popMix > 0) this.spawn(EXH, bank, dly, pamp, 0.00005, 0.0013, 0.004, 0.12, 1.7);
       }
       if (c.diesel && this.combust) {
         this.spawn(CLATTER, 0, 0, 0.55 * (1 - 0.5 * loadN) * c.cylScale, 0.00003, 0.0011, 0, 0, 1);

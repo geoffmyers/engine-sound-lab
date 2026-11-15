@@ -60,8 +60,10 @@ export function boostAgreement(p) {
 }
 
 // Tolerances: the torque table must reproduce the published peaks; the DSP's boost must
-// match the shared formula the table divides out; 0-60 mph is checked loosely because the
-// launch, tyres and weight split are modelled, not measured.
+// match the shared formula the table divides out. 0-60 mph is checked one way only: the
+// tyres have full traction (no wheelspin is simulated), so a car is expected to beat its
+// magazine time, which grip limits; one SLOWER than 125% of it points at the torque, the
+// gearing or the shifts.
 const TOL = { torque: 0.03, power: 0.04, boost: 0.03, zeroTo60: 0.25 };
 
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -83,7 +85,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     if (inconsistent) console.log(`  note ${p.id}: published torque implies ${(T.peakNm * w(T.peakRpm) / 1000).toFixed(1)} kW at ${T.peakRpm} rpm, above the rated ${T.powerKw} kW; power not checked`);
     else if (Math.abs(cal.pkP / T.powerKw - 1) > TOL.power) fail(`${p.id}: peak power ${cal.pkP.toFixed(0)} vs ${T.powerKw} kW`);
     if (bo && Math.abs(bo.got - bo.want) > TOL.boost * Math.max(1, bo.want)) fail(`${p.id}: DSP boost ${bo.got.toFixed(2)} vs formula ${bo.want.toFixed(2)} bar`);
-    if (t60 != null && Math.abs(t60 / target[p.id] - 1) > TOL.zeroTo60) fail(`${p.id}: 0-60 mph ${t60.toFixed(1)} s vs ${target[p.id]} s`);
+    if (t60 != null && t60 / target[p.id] - 1 > TOL.zeroTo60) fail(`${p.id}: 0-60 mph ${t60.toFixed(1)} s, slower than the real ${target[p.id]} s by more than ${TOL.zeroTo60 * 100}%`);
   }
   console.log(failures ? `\n${failures} failure(s)` : "\nall calibration checks passed");
   process.exitCode = failures ? 1 : 0;

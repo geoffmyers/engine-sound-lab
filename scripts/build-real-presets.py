@@ -31,8 +31,6 @@ RESEARCH = os.path.join(ROOT, "research")
 DEFAULT_CDA = {"road": 0.65, "race": 0.9, "motorcycle": 0.35, "machine": 1.6}
 DEFAULT_CRR = {"road": 0.012, "race": 0.015, "motorcycle": 0.015, "machine": 0.008}
 DEFAULT_BRAKE = {"road": 9.5, "race": 15.0, "motorcycle": 9.5, "machine": 6.0}
-DEFAULT_MU = {"road": 1.1, "race": 1.7, "motorcycle": 1.0, "machine": 0.8}   # tyre grip (summer road tyres ~1.1)
-DEFAULT_HL = {"road": 0.19, "race": 0.12, "motorcycle": 0.45, "machine": 0.25}  # CG height / wheelbase
 ADD_DRIVER_KG = {"road": 75, "machine": 75, "motorcycle": 80, "race": 0}
 
 
@@ -206,16 +204,10 @@ def build(model, research):
             vehicles[vid] = {
                 "label": m["label"], "group": "Real vehicles", "real": True,
                 "vehicle": {"massKg": round(mass), "wheelRadiusM": radius, "cdA": cda,
-                            "crr": est.get("crr", DEFAULT_CRR[cat]), "brakeDecel": est.get("brakeDecel", DEFAULT_BRAKE[cat]),
-                            "mu": est.get("mu", DEFAULT_MU[cat]),
-                            # Drive layout and weight split (estimates: not in the research).
-                            "drive": m.get("chassis", {}).get("drive", "rwd"),
-                            "rearWeight": m.get("chassis", {}).get("rearWeight", 0.5),
-                            "cgHeightOverWheelbase": m.get("chassis", {}).get("hL", DEFAULT_HL[cat])},
+                            "crr": est.get("crr", DEFAULT_CRR[cat]), "brakeDecel": est.get("brakeDecel", DEFAULT_BRAKE[cat])},
                 "gearboxRatios": ratios, "finalDrive": fd, "gearbox": m["gearbox"],
             }
             p["vehicle"] = vid
-            estimated.append("drive layout and weight split")
         if m.get("propeller"):
             p["propeller"] = m["propeller"]
 

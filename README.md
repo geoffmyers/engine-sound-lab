@@ -81,13 +81,13 @@ These were captured in headless Chromium with the engine running
   Roots, twin-screw and centrifugal supercharger whine, a starter motor, overrun pops, a
   cold start with fast idle, and propellers for the aircraft engines.
 - **Drive it:** a clutch that slips or locks, a gearbox and final drive, the car's mass, drag,
-  rolling resistance, brakes and tyre grip on the driven axle. Manual (clutch, synchro,
+  rolling resistance and brakes, with full traction (no wheelspin is simulated). Manual (clutch, synchro,
   clunk), sequential dog box (ignition-cut flat shifts) and dual-clutch gearboxes, with
   helical or straight-cut gear whine, rattle, shifter clicks, driveline shunt, road and wind.
 - **Racing-style automatic shifting** (up at the limiter, down the moment the lower gear
   fits under the redline, rev-matched) or shift by hand; over-revving downshifts are refused.
 - **42 real presets** with each engine's torque curve calibrated to its published peak
-  torque and power, so a GT3 runs 0-60 mph in 2.7 s, as the real car does.
+  torque and power.
 - **Listening positions:** behind the car, at the intake, in the engine bay (fitted to
   recordings of a real BMW S65), the driver's seat, or the dry model.
 - **Instruments:** tachometer with boost, readouts, an animated cylinder map, a firing
@@ -143,7 +143,13 @@ holds its launch speed until you release the brake.
 Pick a preset from the **Engine** menu, grouped as road cars, race cars, motorcycles,
 aircraft, machines and generic engines. A real preset shows its specification and sources
 under the engine settings, and names every value that had to be estimated. Every setting can
-then be changed; the preset becomes a custom build.
+then be changed; the preset becomes a custom build. **Reset to defaults**, beside the menu, puts
+every setting, the mixer, the mode and the steady throttle back to how the page first loads.
+
+**Mix** sets the level of each part of the sound on its own: exhaust, intake, mechanical noise,
+turbo or blower, the pops and crackles on overrun and ignition-cut shifts, gearbox, and road and
+wind. (The engine's **Overrun pops** setting decides how often it pops; the mixer decides how
+loud.)
 
 **Listening position** chooses what reaches you: behind the car, in front at the intake, in
 the open engine bay, in the driver's seat, or the synthesizer's dry output. The page marks

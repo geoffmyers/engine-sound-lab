@@ -21,7 +21,7 @@ Everything is synthesized; there are no samples.
 | Exhaust system | Turbine damping (more spool, more muffled), catalyst, a muffler chamber resonance, the tailpipe as a delay-line waveguide whose open end reflects inverted, the muffler's low-pass, then tailpipe radiation. |
 | Intake | Intake-stroke pulses ring the airbox's Helmholtz resonance, plus induction roar; individual throttle bodies are loud and raspy. |
 | Extras | Valve seating clicks, diesel combustion clatter, turbo whistle and hiss, blow-off valve (vented, recirculating, or compressor-surge flutter with none), supercharger whine at its lobe frequency (Roots, twin-screw) or impeller speed (centrifugal), starter motor. |
-| Physics | Throttle plate lag, idle air control, manifold load, torque curve, friction and pumping losses, flywheel inertia, hard-cut rev limiter, deceleration fuel cut with afterfire pops, turbo spool and lag, a six-speed gearbox with shifts at the limiter. |
+| Physics | Throttle plate lag, idle air control, manifold load, torque curve, friction and pumping losses, flywheel inertia, hard-cut rev limiter, deceleration fuel cut with afterfire pops (scaled by their own mixer channel, `mix.pops`, before the exhaust path), turbo spool and lag, a six-speed gearbox with shifts at the limiter. |
 
 All layout, hardware, gearing, scenario and preset numbers live in `engine-data.json`; the
 code holds none of its own.
@@ -72,18 +72,19 @@ crank torque at full throttle reproduces the figures while turbo lag and part th
 still act through manifold load. Generic presets keep a per-litre estimate.
 
 Acceleration then comes from that torque through the clutch, gear ratios and final drive
-against mass, drag, rolling resistance and grip. Grip comes from the driven axle only (its
-static share plus load transfer; all-wheel drive uses all of it; a bike is also limited by
-its front wheel lifting). A two-pedal launch control holds the clutch and launch rpm under
-brake and full throttle. Automatic upshifts follow road speed, not a wheelspinning engine.
+against mass, drag and rolling resistance. The tyres have full traction, deliberately: no
+wheelspin and no wheelies are simulated, so whatever torque the clutch passes moves the car.
+A two-pedal launch control holds the clutch and launch rpm under brake and full throttle.
+Automatic upshifts follow road speed, not an engine racing ahead on a slipping clutch.
 
 `node scripts/check-acceleration.mjs` (part of `npm run check`) verifies every real preset:
-peak torque within 3% and peak power within 4% of its spec, the DSP's boost within 3% of
-the formula the calibration assumes, and 0-60 mph, run magazine style (launch control,
-first foot of roll-out excluded), within 25% of the sourced times in
-`research/2026-11-15-acceleration.json`. On 2026-11-15, 13 of 18 cars were within 10%;
-light manual cars run 7-15% quick (an idealized launch) and the Aventador 23% quick (perfect
-all-wheel-drive grip and fast shifts, against a rear-biased car with a slow single-clutch box).
+peak torque within 3% and peak power within 4% of its spec, and the DSP's boost within 3% of
+the formula the calibration assumes. It also runs 0-60 mph magazine style (launch control,
+first foot of roll-out excluded) against the sourced times in
+`research/2026-11-15-acceleration.json`, but one way only: with perfect traction a car beats
+its grip-limited real time (on 2026-11-15 by 15-40%: a GT3 2.1 s against 2.7 s), so only a
+car more than 25% SLOWER than its real time fails, which would mean wrong torque, gearing or
+shifts.
 
 ## Driving: clutch, gearbox, car, brakes
 

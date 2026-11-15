@@ -37,7 +37,7 @@ export class Drivetrain {
   reset() {
     this.gear = 0; this.v = 0; this.c = 1; this.cTarget = 1; this.cRate = 4; this.locked = false;
     this.shift = null; this.wi = 0; this.Tc = 0; this.lastTc = 0; this.brake = 0; this.refused = null;
-    this.dogCap = 1; this.dogCapT = 0; this.cut = false; this.accel = 0; this.launchArmed = false;
+    this.dogCap = 1; this.dogCapT = 0; this.cut = false; this.launchArmed = false;
   }
 
   configure(d) {
@@ -81,7 +81,7 @@ export class Drivetrain {
         const A = d.autoShift;
         if (this.gear === 0 && eng.thr > 0.1 && this.v < 1) this.req.push("up");
         // Upshift on ROAD speed (the rpm the wheels imply in this gear), not engine rpm: in
-        // wheelspin the engine races ahead of the car and would shift at a crawl.
+        // a slipping-clutch launch the engine races ahead of the car and would shift at a crawl.
         else if (this.gear > 0 && this.gear < N && Math.min(eng.rpm, this.wheelW(this.gear) * RPM) > A.upAtRedlineFraction * eng.redline && eng.thr > A.upMinThrottle) this.req.push("up");
         // Racing downshifts: the moment the next gear down fits under the redline, take it.
         else if (this.gear > 1 && (eng.thr < A.downMaxThrottle || this.brake > 0.05) &&
@@ -205,25 +205,17 @@ export class Drivetrain {
   integrate(dt, Te, rpm) {
     const d = this.d, V = d.vehicle, m = V.massKg, r = V.wheelRadiusM, Je = d.Je;
     let we = rpm / RPM;
-    const sub = 4, h = dt / sub, v0 = this.v;
+    const sub = 4, h = dt / sub;
     const Tc0 = this.Tc;
     for (let s = 0; s < sub; s++) {
       const v = this.v;
       const moving = v > 0.01;
       const Fres = (moving ? 0.6 * V.cdA * v * v + V.crr * m * 9.81 : 0) + (moving ? this.brake * m * V.brakeDecel : 0);
       const g = this.gear, R = this.ratio(g);
-      // What reaches the road is limited by the clutch and by the tyres: past mu x weight the
-      // driven wheels spin, which (at the engine) behaves like one more slipping clutch.
-      // Only the driven axle's load counts: its static share plus the weight that shifts back
-      // under acceleration (forward under braking). A rear-driven bike also cannot pull harder
-      // than the point where the front wheel lifts.
-      const drive = V.drive || "rwd", rw = V.rearWeight ?? 0.5, hL = V.cgHeightOverWheelbase ?? 0.19;
-      const tr = hL * clamp(this.accel / 9.81, -1.5, 2);
-      const share = drive === "awd" ? 1 : drive === "fwd" ? clamp(1 - rw - tr, 0.05, 1) : clamp(rw + tr, 0.05, 1);
-      let tyreForce = (V.mu ?? 1.0) * m * 9.81 * share;
-      if (drive === "rwd") tyreForce = Math.min(tyreForce, m * 9.81 * (1 - rw) / hL);
-      const tyreCap = g > 0 ? tyreForce * r / R : Infinity;
-      const cap = Math.min(d.clutchCapacity * this.c * this.dogCap, tyreCap);
+      // What reaches the road is limited only by the clutch. The tyres have full traction (a
+      // deliberate simplification): no wheelspin, no wheelies, every newton the clutch passes
+      // moves the car.
+      const cap = d.clutchCapacity * this.c * this.dogCap;
       if (g === 0 || this.c <= 0.001) {
         this.locked = false; this.Tc = 0;
         we = Math.max(0, we + Te / Je * h);
@@ -234,7 +226,7 @@ export class Drivetrain {
         const Jeq = Je + m * (r / R) * (r / R);
         const dw = (Te - Fres * r / R) / Jeq;
         const Tc = Te - Je * dw;
-        if (Math.abs(Tc) <= cap * 1.02 && this.c >= 0.98 && Math.abs(Tc) < tyreCap) {
+        if (Math.abs(Tc) <= cap * 1.02 && this.c >= 0.98) {
           we = Math.max(0, we + dw * h);
           this.v = we / R * r; this.Tc = Tc;
           continue;
@@ -246,9 +238,8 @@ export class Drivetrain {
       we = Math.max(0, we + (Te - Tc) / Je * h);
       this.v = Math.max(0, v + (Tc * R / r - Fres) / m * h);
       this.Tc = Tc;
-      if (this.c >= 0.98 && Math.abs(we - this.v / r * R) < 2 && Math.abs(Te) < tyreCap) this.locked = true;
+      if (this.c >= 0.98 && Math.abs(we - this.v / r * R) < 2) this.locked = true;
     }
-    this.accel += ((this.v - v0) / dt - this.accel) * 0.3;
     // Driveline shunt: torque through the gears reverses sharply (on/off throttle, a shift).
     if (this.gear > 0 && Math.sign(this.Tc) !== Math.sign(Tc0) && Math.abs(this.Tc - Tc0) > 0.2 * d.Tmax) {
       this.voice("shunt", Math.min(1, Math.abs(this.Tc - Tc0) / d.Tmax) * 0.6);
