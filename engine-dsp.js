@@ -126,8 +126,8 @@ export class EngineDSP {
     const cyc = cfg.cycle;
     const ev = [];
     for (const e of cfg.events) {
-      ev.push({ kind: EXH, angle: e.angle % cyc, cyl: e.cyl, bank: e.bank, delay: Math.round(e.delaySec * sr), trim: e.trim });
-      ev.push({ kind: INTAKE, angle: (e.angle + cfg.intakeFrac * cyc) % cyc, cyl: e.cyl, bank: e.bank, delay: 0, trim: e.trim });
+      ev.push({ kind: EXH, angle: e.angle % cyc, cyl: e.cyl, bank: e.bank, delay: Math.round(e.delaySec * sr), trim: e.trim, uAmp: e.uAmp ?? 0, uTime: e.uTime ?? 0 });
+      ev.push({ kind: INTAKE, angle: (e.angle + cfg.intakeFrac * cyc) % cyc, cyl: e.cyl, bank: e.bank, delay: 0, trim: e.trim, uAmp: e.uAmp ?? 0, uTime: e.uTime ?? 0 });
       if (cfg.valves) {
         // Valve seating clicks: exhaust valve closes, then intake valve closes (385 and 590
         // degrees after firing in a four-stroke's 720).
@@ -349,6 +349,16 @@ export class EngineDSP {
     if (k >= this.pHigh) this.pHigh = k + 1;
   }
 
+  // How far this cylinder's pulse may differ from the others now (physics.loadUnevenness):
+  // nothing without combustion, growing with load and, steeply near the limit, with speed.
+  unevenness(x, loadN) {
+    const U = this.cfg.loadUnevenness;
+    if (!U || !this.combust) return null;
+    const ramp = Math.pow(clamp((x - U.fromSpeed) / (U.fullSpeed - U.fromSpeed), 0, 1), U.curve ?? 1);
+    const w = loadN * ((U.base ?? 0) + (1 - (U.base ?? 0)) * ramp);
+    return { amp: U.amp * w, timing: U.timing * w };
+  }
+
   trigger(e, rpm) {
     const c = this.cfg, rng = this.rng;
     const x = rpm / c.redline;
@@ -380,6 +390,15 @@ export class EngineDSP {
       // louder with revs rather than just more frequent.
       amp *= c.cylScale * e.trim * spin * Math.pow(0.3 + 0.7 * Math.min(x, 1.05), 0.9) * (this.catGain || 1);
       if (c.aspiration === "turbo") amp *= 1 - 0.3 * this.omega;
+      // Cylinder-to-cylinder differences grow with load and speed: at idle the pulses are nearly
+      // alike (the real S65 from behind: half orders 30-52 dB down), at full load near the limit
+      // they differ enough to put the half orders ~10 dB under the firing order (GT7's recordings).
+      let delay = e.delay;
+      const uw = this.unevenness(x, loadN);
+      if (uw) {
+        amp *= 1 + uw.amp * e.uAmp;
+        delay = Math.max(0, delay + Math.round(uw.timing * e.uTime * Trev * (c.cycle / 360) / c.events.length * this.sr));
+      }
       const Tb = c.blowdownDeg / 360 * Trev;
       const d1 = clamp(Tb / 2.2, 0.00035, 0.009);
       // Blowdown is sharp only when the valve opens against high cylinder pressure: at light
@@ -392,7 +411,7 @@ export class EngineDSP {
       // Ports snap open: rotaries and two-strokes are raspier and their pulses shorter.
       const portRasp = c.rotary ? 0.35 : (c.twoStroke && !c.valves) ? 0.3 : 0;
       const noise = c.exhaust.rasp * (0.01 + 0.99 * loadN * loadN) * (0.3 + 0.7 * Math.min(x, 1)) + portRasp;
-      this.spawn(EXH, e.bank, e.delay, amp, rise, d1, d2, portRasp ? 0.15 : 0.25, noise);
+      this.spawn(EXH, e.bank, delay, amp, rise, d1, d2, portRasp ? 0.15 : 0.25, noise);
 
       // Afterfire: unburnt fuel lighting off in a hot exhaust during fuel cut.
       // An ignition-cut shift (sequential, dual-clutch) crackles the same way.
@@ -410,9 +429,16 @@ export class EngineDSP {
         this.spawn(CLATTER, 0, 0, 0.55 * (1 - 0.5 * loadN) * c.cylScale, 0.00003, 0.0011, 0, 0, 1);
       }
     } else if (e.kind === INTAKE) {
-      const amp = -(0.15 + 0.85 * this.te) * (0.35 + 0.65 * Math.min(x, 1)) * c.cylScale * e.trim * spin;
+      let amp = -(0.15 + 0.85 * this.te) * (0.35 + 0.65 * Math.min(x, 1)) * c.cylScale * e.trim * spin;
       const Tb = 1.8 * c.blowdownDeg / 360 * Trev;
-      this.spawn(INTAKE, 0, 0, amp, 0.0004, clamp(Tb / 2, 0.0006, 0.012), 0, 0, c.intake.rasp + 0.15);
+      // Intake runners differ per cylinder too: the same load- and speed-scaled differences.
+      let delay = 0;
+      const uw = this.unevenness(x, loadN);
+      if (uw) {
+        amp *= 1 + uw.amp * e.uAmp;
+        delay = Math.round(0.5 * (1 + e.uTime) * uw.timing * Trev * (c.cycle / 360) / c.events.length * this.sr);
+      }
+      this.spawn(INTAKE, 0, delay, amp, 0.0004, clamp(Tb / 2, 0.0006, 0.012), 0, 0, c.intake.rasp + 0.15);
     } else if (e.kind === CLICK) {
       const amp = 0.05 * (0.5 + 0.5 * Math.min(x, 1)) * (0.8 + 0.4 * rng.unit()) * e.trim * spin;
       this.spawn(CLICK, 0, 0, amp, 0.00002, 0.00045, 0, 0, 1);

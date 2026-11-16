@@ -133,6 +133,18 @@ light load, cycle-to-cycle variation, and a **cold start** (idle curve and catal
 loudness) offered as a checkbox. Findings, before/after numbers, mistakes caught and what
 is still unmatched: [docs/2026-11-15-s65-recording-analysis.md](docs/2026-11-15-s65-recording-analysis.md).
 
+Those recordings are of an idling car only. Under load, the synth was measured against the
+engine recordings in Gran Turismo 5, 6 and 7 for every preset whose engine (or the nearest one)
+the games recorded: 22 presets, with GT7's five microphones per engine checking all four
+listening positions. Two things changed from it: **cylinder-to-cylinder differences now grow
+with load and speed** (`physics.loadUnevenness`: each cylinder's pulse strength and arrival
+differ a little, scaled by load and rpm, so the half orders rise from about -28 dB at idle to
+about -10 dB at full load near the limit, as in GT7, where the synth had been a near-pure
+firing tone), and the **straight pipe is darker** (it had made every straight-piped preset 0.4
+to 2.8 octaves too bright). Behind the car, at the intake and in the cabin, the synth's
+brightness came out within 0.2 octave of GT7. The comparison tooling reads game data, so it is
+not part of this repository.
+
 | Tool | Does |
 |------|------|
 | `scripts/analyze-recording.py` | Measures a real recording and a synth render the same way: rpm from the firing line, engine-order spectrum, 1/3-octave shape, cycle variation, brightness. |
@@ -178,7 +190,9 @@ node scripts/capture-screenshots.mjs http://localhost:8000/ docs/screenshots
 
 `dsp-check` fails on non-finite samples, an idle louder than full throttle, a pull that
 never reaches the limiter, an idle that settles more than 12% off target, or (for
-even-firing layouts) a firing frequency more than 12 dB below the strongest engine order.
+even-firing layouts) a firing frequency more than 12 dB below the strongest engine order,
+and if the S65's orders below the firing order are not clean at idle (under -20 dB) and near
+-10 dB at full load near the limit (between -18 and -4 dB).
 The drivetrain checks: a pull reaches 4th and 120 km/h then brakes to a stop with
 automatic downshifts and no stall; straight-cut is at least 10 dB louder than helical; the
 whine stands at the predicted mesh frequency; an over-revving downshift is refused; the

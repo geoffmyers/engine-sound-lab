@@ -178,6 +178,10 @@ export function buildConfig(data, s) {
       cyl, angle, bank,
       delaySec: Math.max(0.05, len) / c,
       trim: 1 + (hash01(cyl * 13 + 1) - 0.5) * P.cylinderTrimSpread, // no two cylinders burn exactly alike
+      // Under load each cylinder's pulse also differs in strength and arrival (runner waves,
+      // breathing, mixture): fixed per cylinder, scaled at run time by load and speed.
+      uAmp: hash01(cyl * 29 + 5) * 2 - 1,
+      uTime: hash01(cyl * 31 + 11) * 2 - 1,
     };
   });
 
@@ -236,6 +240,7 @@ export function buildConfig(data, s) {
     intake: { ...intake },
     mix: { ...data.defaults.mix, ...s.mix },
     cycleVariance: P.cycleVariance,
+    loadUnevenness: P.loadUnevenness,
     coldStart: s.coldStart ? { ...P.coldStart } : null,
     perspective: resolvePerspective(data, s.perspective),
   };

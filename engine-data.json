@@ -871,6 +871,15 @@
    "twoStroke": 45
   },
   "cylinderTrimSpread": 0.03,
+  "loadUnevenness": {
+   "amp": 0.5,
+   "timing": 0.18,
+   "base": 0.3,
+   "fromSpeed": 0.0,
+   "fullSpeed": 1.0,
+   "curve": 4,
+   "_source": "Gran Turismo 7's engine recordings, 19 engines matched to presets: from behind, the orders below the firing order rise from about -22 dB at idle to about -10 dB above 70% of the rev limit at full load, where the synth had them flat near -30. Each cylinder gets a fixed pulse-strength (amp) and arrival (timing, a fraction of the firing interval) difference, scaled by load x (base + (1 - base) x speed^curve); at idle load it all but vanishes, keeping the idle as clean as the real S65 (half orders 30-52 dB down)."
+  },
   "cycleVariance": {
    "slow": 0.16,
    "fast": 0.05,
@@ -2156,13 +2165,14 @@
   },
   "straight": {
    "label": "Straight pipe",
-   "lpHz": 8500,
+   "lpHz": 3000,
    "lpQ": 0.7,
    "gain": 1.0,
    "pipeFeedback": 0.58,
    "chamberFeedback": 0.04,
    "catLpHz": 15000,
-   "rasp": 0.7
+   "rasp": 0.5,
+   "_source": "Was lpHz 8500 / rasp 0.7: every straight-piped preset measured against Gran Turismo's recordings came out too bright from behind (787B +2.8 octaves against GT7, NASCAR +1.8 and Formula 1 +1.0 against GT5/GT6, quattro S1 +0.4). 3000 / 0.5 puts the 787B and quattro within 0.7 octave of GT7, the spread between two microphones on one recording."
   },
   "expansion": {
    "label": "Two-stroke expansion chamber",

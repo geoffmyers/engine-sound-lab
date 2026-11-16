@@ -166,6 +166,29 @@ for (const tx of ["sequential", "dct"]) {
 }
 
 {
+  // Cylinder-to-cylinder differences grow with load and speed (loadUnevenness, calibrated to
+  // GT7's recordings): from behind, the orders below the firing order stay well down at idle
+  // (the real S65: 30-52 dB) and come up to about 10 dB under the firing order at full load near
+  // the limit, where a perfectly even synth had them 30-40 dB down.
+  const peakAt = (a, from, to, f) => { let m = 0; for (let d = -0.012; d <= 0.012; d += 0.004) m = Math.max(m, goertzel(a, from, to, f * (1 + d))); return m; };
+  const subOrders = (rpmFrac, idle) => {
+    const s = s65(); s.perspective = "rear";
+    data.scenarios._uneven = idle ? { seconds: 4, mode: "free", events: [[0, "start"]] }
+      : { seconds: 4, mode: "dyno", events: [[0, "start"], [0.01, "hold", rpmFrac], [1.0, "throttle", 1]] };
+    const r = renderScenario(data, s, "_uneven", SR);
+    const tr = r.trace.slice(Math.floor(r.trace.length * 0.6));
+    const rpm = tr.reduce((t, x) => t + x.rpm, 0) / tr.length, fc = rpm / 120;
+    const mid = r.L.map((v, i) => 0.5 * (v + r.R[i])), from = Math.round(2.2 * SR), to = Math.round(3.9 * SR);
+    const fire = peakAt(mid, from, to, 8 * fc) ** 2;
+    let sub = 0; for (let k = 1; k < 8; k++) sub += peakAt(mid, from, to, k * fc) ** 2;
+    return { rpm, db: 10 * Math.log10(sub / 7 / fire) };
+  };
+  const idle = subOrders(0, true), top = subOrders(0.85, false);
+  console.log(`  S65 orders below firing, from behind: idle ${idle.db.toFixed(1)} dB at ${Math.round(idle.rpm)} rpm, full load ${top.db.toFixed(1)} dB at ${Math.round(top.rpm)} rpm`);
+  if (idle.db > -20) fail("the S65's idle is no longer clean (orders below firing above -20 dB)");
+  if (top.db < -18 || top.db > -4) fail("at full load near the limit the S65's orders below firing are not near -10 dB");
+}
+{
   // The pops have their own mixer channel: at 0 they are gone, doubling it doubles them, and it
   // never changes anything else (the random sequence is drawn the same way at every level).
   const blips = (m) => { const s = s65(); s.pops = 0.6; s.mix.pops = m; return renderScenario(data, s, "start-and-blips", SR).L; };
