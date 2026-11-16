@@ -185,6 +185,25 @@ export function buildConfig(data, s) {
     };
   });
 
+  // The per-cylinder differences, read in firing order, carry none of the slowest patterns (once
+  // or twice per cycle): those put their energy in the lowest half orders, below where real
+  // engines' half orders sit (Gran Turismo's recordings: the 63 Hz octave from behind came out
+  // up to 9 dB high with them). The pattern keeps its overall size.
+  const lowOrders = P.loadUnevenness?.removeLowOrders ?? 0;
+  for (const key of lowOrders > 0 && events.length > 2 ? ["uAmp", "uTime"] : []) {
+    const n = events.length, v = events.map(e => e[key]);
+    const rms0 = Math.sqrt(v.reduce((t, x) => t + x * x, 0) / n);
+    let w = v.slice();
+    // Remove the k-per-cycle components, k = 1 .. lowOrders, keeping at least two free orders.
+    for (let k = 1; k <= lowOrders && 2 * k < n - 1; k++) {
+      let re = 0, im = 0;
+      w.forEach((x, i) => { re += x * Math.cos(2 * Math.PI * k * i / n); im += x * Math.sin(2 * Math.PI * k * i / n); });
+      w = w.map((x, i) => x - (2 / n) * (re * Math.cos(2 * Math.PI * k * i / n) + im * Math.sin(2 * Math.PI * k * i / n)));
+    }
+    const rms1 = Math.sqrt(w.reduce((t, x) => t + x * x, 0) / n) || 1;
+    w.forEach((x, i) => { events[i][key] = x * rms0 / rms1; });
+  }
+
   const routing = info.banks < 2 ? "single" : s.routing;
   const fuelKind = info.rotary ? "rotary" : (info.twoStroke && !info.valves) ? "twoStroke" : s.fuel;
   const sc = s.aspiration === "supercharger" ? data.superchargers[s.scType || "roots"] : null;
@@ -241,6 +260,7 @@ export function buildConfig(data, s) {
     mix: { ...data.defaults.mix, ...s.mix },
     cycleVariance: P.cycleVariance,
     loadUnevenness: P.loadUnevenness,
+    blockNoise: P.blockNoise,
     coldStart: s.coldStart ? { ...P.coldStart } : null,
     perspective: resolvePerspective(data, s.perspective),
   };

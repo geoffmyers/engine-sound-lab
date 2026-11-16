@@ -77,14 +77,17 @@ is one smooth tilt above 250 Hz, fitted only on bands with at least 10 dB SNR:
 
 | Position | Basis | Tilt above 250 Hz | Residual |
 |----------|-------|-------------------|----------|
-| Behind the car | STE-035, catalyst-heating stretch 68-84 s at 786 rpm | -0.6 dB/oct | 1.5 dB over 5 bands |
-| In front, at the intake | STE-036, 52-75 s | -3.8 dB/oct | 6.0 dB over 7 bands |
-| Engine bay, hood open | STE-037, 35-78 s | -3.2 dB/oct | 5.6 dB over 8 bands |
+| Behind the car | STE-035, catalyst-heating stretch 68-84 s at 786 rpm | -0.2 dB/oct | 2.2 dB over 5 bands |
+| In front, at the intake | STE-036, 52-75 s | -3.2 dB/oct | 5.5 dB over 7 bands |
+| Engine bay, hood open | STE-037, 35-78 s | -2.6 dB/oct | 4.9 dB over 8 bands |
 | Driver's seat | Estimated, no recording | hand-set | - |
 | Dry model | The raw synth | flat | - |
 
 All positions are level-matched at full throttle so switching changes character, not
-volume.
+volume. The fit was re-run (same day) after the load-dependent changes calibrated against Gran
+Turismo's recordings (darker individual throttle bodies, block noise, per-cylinder
+differences); the figures above are that refit. Before it: behind -0.6 dB/oct, 1.5 dB; in
+front -3.8 dB/oct, 6.0 dB; in the bay -3.2 dB/oct, 5.6 dB.
 
 ## Mistakes caught on the way
 

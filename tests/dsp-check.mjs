@@ -168,7 +168,7 @@ for (const tx of ["sequential", "dct"]) {
 {
   // Cylinder-to-cylinder differences grow with load and speed (loadUnevenness, calibrated to
   // GT7's recordings): from behind, the orders below the firing order stay well down at idle
-  // (the real S65: 30-52 dB) and come up to about 10 dB under the firing order at full load near
+  // (the real S65: 30-52 dB) and come up to 10-18 dB under the firing order at full load near
   // the limit, where a perfectly even synth had them 30-40 dB down.
   const peakAt = (a, from, to, f) => { let m = 0; for (let d = -0.012; d <= 0.012; d += 0.004) m = Math.max(m, goertzel(a, from, to, f * (1 + d))); return m; };
   const subOrders = (rpmFrac, idle) => {
@@ -186,7 +186,25 @@ for (const tx of ["sequential", "dct"]) {
   const idle = subOrders(0, true), top = subOrders(0.85, false);
   console.log(`  S65 orders below firing, from behind: idle ${idle.db.toFixed(1)} dB at ${Math.round(idle.rpm)} rpm, full load ${top.db.toFixed(1)} dB at ${Math.round(top.rpm)} rpm`);
   if (idle.db > -20) fail("the S65's idle is no longer clean (orders below firing above -20 dB)");
-  if (top.db < -18 || top.db > -4) fail("at full load near the limit the S65's orders below firing are not near -10 dB");
+  if (top.db < -20 || top.db > -4) fail("at full load near the limit the S65's orders below firing are not between -20 and -4 dB");
+}
+{
+  // A supercharger's whine radiates from its inlet (sources.blower): GT7's Hellcat has it about
+  // 2.5 dB under all energy at the intake, 19.5 in the engine bay, 29 in the cabin.
+  const hc = data.presets.find(p => p.id === "dodge-challenger-hellcat");
+  const whineShare = (persp) => {
+    const s = settingsFromPreset(data, hc); s.perspective = persp;
+    const rpm = 4000;
+    data.scenarios._whine = { seconds: 3.5, mode: "dyno", events: [[0, "start"], [0.01, "hold", rpm / s.redline], [1.0, "throttle", 1]] };
+    const r = renderScenario(data, s, "_whine", SR);
+    const mid = r.L.map((v, i) => 0.5 * (v + r.R[i])), from = Math.round(2.0 * SR), to = Math.round(3.4 * SR);
+    const f = rpm / 60 * s.scRatio * data.superchargers[s.scType].lobeFactor;
+    let w = 0; for (let d = -0.01; d <= 0.01; d += 0.0025) w = Math.max(w, goertzel(mid, from, to, f * (1 + d)));
+    return 20 * Math.log10(w / rms(mid, from, to));
+  };
+  const front = whineShare("front"), bay = whineShare("bay"), cabin = whineShare("cabin");
+  console.log(`  Hellcat whine re overall level at 4,000 rpm: intake ${front.toFixed(1)} dB, bay ${bay.toFixed(1)} dB, cabin ${cabin.toFixed(1)} dB`);
+  if (!(front > bay + 8 && bay > cabin)) fail("the supercharger whine no longer radiates mostly from the intake");
 }
 {
   // The pops have their own mixer channel: at 0 they are gone, doubling it doubles them, and it

@@ -871,14 +871,25 @@
    "twoStroke": 45
   },
   "cylinderTrimSpread": 0.03,
+  "blockNoise": {
+   "level": 1.4,
+   "loadExp": 2,
+   "centreHz": 2500,
+   "q": 0.5,
+   "lowpassHz": 7000,
+   "decayMs": 2.0,
+   "_source": "Combustion noise radiated by the block and heads, one short noise burst per firing scaled by load^loadExp (so the idle, fitted to the real S65, is untouched). Calibrated against Gran Turismo 7's engine-bay microphones (calibrate.py --vs bay --layer Eng), where airbox and cone-filter engines had come out up to 2.5 octaves too dark."
+  },
   "loadUnevenness": {
-   "amp": 0.5,
-   "timing": 0.18,
+   "amp": 0.7,
+   "timing": 0.22,
    "base": 0.3,
    "fromSpeed": 0.0,
    "fullSpeed": 1.0,
    "curve": 4,
-   "_source": "Gran Turismo 7's engine recordings, 19 engines matched to presets: from behind, the orders below the firing order rise from about -22 dB at idle to about -10 dB above 70% of the rev limit at full load, where the synth had them flat near -30. Each cylinder gets a fixed pulse-strength (amp) and arrival (timing, a fraction of the firing interval) difference, scaled by load x (base + (1 - base) x speed^curve); at idle load it all but vanishes, keeping the idle as clean as the real S65 (half orders 30-52 dB down)."
+   "_source": "Gran Turismo 7's engine recordings, 19 engines matched to presets: from behind, the orders below the firing order rise from about -22 dB at idle to about -10 dB above 70% of the rev limit at full load, where the synth had them flat near -30. Each cylinder gets a fixed pulse-strength (amp) and arrival (timing, a fraction of the firing interval) difference, scaled by load x (base + (1 - base) x speed^curve); at idle load it all but vanishes, keeping the idle as clean as the real S65 (half orders 30-52 dB down). The pattern has its once- and twice-per-cycle components removed (removeLowOrders), which kept the 63 Hz octave from behind from rising up to 9 dB above GT7's. Intake pulses get intakeScale times the difference: GT7's intake microphones hear stronger half orders than its exhaust ones, while its engine-bay microphones hear weaker ones; 2 keeps both within 6 dB.",
+   "intakeScale": 2.0,
+   "removeLowOrders": 2
   },
   "cycleVariance": {
    "slow": 0.16,
@@ -1960,20 +1971,11 @@
     "mechanical": 0.08,
     "induction": 0.5,
     "drivetrain": 0.5,
-    "road": 0.5
+    "road": 0.5,
+    "block": 0.05,
+    "blower": 0.2
    },
-   "eqDb": [
-    -0.0,
-    -0.0,
-    -0.0,
-    -0.0,
-    -0.6,
-    -1.2,
-    -1.8,
-    -2.4,
-    -3.0,
-    -3.6
-   ],
+   "eqDb": [-0.0, -0.0, -0.0, -0.0, -0.2, -0.3, -0.5, -0.7, -0.9, -1.0],
    "ground": {
     "delayMs": 2.4,
     "gain": 0.45
@@ -1984,7 +1986,7 @@
     "dampHz": 3500
    },
    "width": 0.8,
-   "level": 0.91
+   "level": 0.89
   },
   "front": {
    "label": "In front, at the intake",
@@ -1997,20 +1999,11 @@
     "mechanical": 0.6,
     "induction": 1.0,
     "drivetrain": 0.4,
-    "road": 0.5
+    "road": 0.5,
+    "block": 0.35,
+    "blower": 11.6
    },
-   "eqDb": [
-    -0.0,
-    -0.0,
-    -0.0,
-    -0.0,
-    -3.8,
-    -7.6,
-    -11.5,
-    -15.3,
-    -19.1,
-    -22.9
-   ],
+   "eqDb": [-0.0, -0.0, -0.0, -0.0, -3.2, -6.3, -9.5, -12.6, -15.8, -19.0],
    "ground": {
     "delayMs": 2.4,
     "gain": 0.45
@@ -2021,7 +2014,7 @@
     "dampHz": 3500
    },
    "width": 0.6,
-   "level": 0.58
+   "level": 0.61
   },
   "bay": {
    "label": "Engine bay, hood open",
@@ -2034,20 +2027,11 @@
     "mechanical": 1.0,
     "induction": 1.0,
     "drivetrain": 0.9,
-    "road": 0.3
+    "road": 0.3,
+    "block": 1.0,
+    "blower": 0.66
    },
-   "eqDb": [
-    -0.0,
-    -0.0,
-    -0.0,
-    -0.0,
-    -3.2,
-    -6.5,
-    -9.7,
-    -12.9,
-    -16.2,
-    -19.4
-   ],
+   "eqDb": [-0.0, -0.0, -0.0, -0.0, -2.6, -5.2, -7.9, -10.5, -13.1, -15.7],
    "ground": {
     "delayMs": 1.2,
     "gain": 0.3
@@ -2058,7 +2042,7 @@
     "dampHz": 5000
    },
    "width": 0.5,
-   "level": 0.85
+   "level": 0.67
   },
   "cabin": {
    "label": "Driver's seat",
@@ -2071,20 +2055,11 @@
     "mechanical": 0.3,
     "induction": 0.6,
     "drivetrain": 1.0,
-    "road": 1.0
+    "road": 1.0,
+    "block": 0.25,
+    "blower": 0.33
    },
-   "eqDb": [
-    2.0,
-    4.0,
-    0.0,
-    -3.0,
-    -6.0,
-    -9.0,
-    -12.0,
-    -16.0,
-    -20.0,
-    -24.0
-   ],
+   "eqDb": [2.0, 4.0, 0.0, -3.0, -6.0, -9.0, -12.0, -16.0, -20.0, -24.0],
    "ground": {
     "delayMs": 1.0,
     "gain": 0.0
@@ -2095,7 +2070,7 @@
     "dampHz": 2500
    },
    "width": 0.25,
-   "level": 1.67
+   "level": 1.64
   },
   "dry": {
    "label": "Dry model (no listener)",
@@ -2106,7 +2081,9 @@
     "exhaust": 1.0,
     "intake": 1.0,
     "mechanical": 1.0,
-    "induction": 1.0
+    "induction": 1.0,
+    "block": 1.0,
+    "blower": 1.0
    },
    "eqDb": [
     0,
@@ -2228,10 +2205,10 @@
    "label": "Individual throttle bodies",
    "helmHz": 820,
    "helmQ": 1.1,
-   "roarHz": 2100,
+   "roarHz": 1300,
    "roarQ": 0.8,
    "gain": 1.0,
-   "rasp": 0.6
+   "rasp": 0.35
   }
  },
  "superchargers": {
@@ -2246,7 +2223,7 @@
     0.22,
     0.14
    ],
-   "level": 0.05
+   "level": 0.0188
   },
   "twinscrew": {
    "label": "Twin-screw",
@@ -2257,7 +2234,8 @@
     0.3,
     0.12
    ],
-   "level": 0.045
+   "level": 0.0169,
+   "_source": "Whine levels were cut 8.5 dB (2026-11-15) when the whine got its own per-position weight (perspectives sources.blower): against Gran Turismo 7's Hellcat, the twin-screw's whine is about 2.5 dB under all energy at the blower inlet but 19.5 dB under it in the engine bay and 29 dB under it in the cabin."
   },
   "centrifugal": {
    "label": "Centrifugal",
@@ -2267,7 +2245,7 @@
     1,
     0.15
    ],
-   "level": 0.055
+   "level": 0.0207
   }
  },
  "scenarios": {
@@ -2435,9 +2413,9 @@
    "intake": 0.7,
    "mechanical": 0.5,
    "induction": 0.8,
-   "pops": 0.25,
-   "gearbox": 0.8,
-   "road": 0.5,
+   "pops": 0.1,
+   "gearbox": 0.5,
+   "road": 0.0,
    "width": 0.6,
    "volume": 0.7
   }
@@ -3173,7 +3151,7 @@
    },
    "aspiration": "supercharger",
    "scType": "twinscrew",
-   "scRatio": 2.4,
+   "scRatio": 2.32,
    "intake": "cold-air",
    "headers": "equal",
    "routing": "dual",

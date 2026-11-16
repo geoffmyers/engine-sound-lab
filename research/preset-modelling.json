@@ -232,7 +232,7 @@
    "model": {
     "aspiration": "supercharger",
     "scType": "twinscrew",
-    "scRatio": 2.4,
+    "scRatio": 2.32,
     "intake": "cold-air",
     "headers": "equal",
     "routing": "dual",
@@ -244,7 +244,8 @@
     "fuel": "petrol",
     "transmission": "manual",
     "gearCut": "helical"
-   }
+   },
+   "_scRatioSource": "Measured, not published: Gran Turismo 7's recording of the Hellcat (and its intake microphone above all) has the twin-screw whine at 11.6x crank speed, the 5-lobe twin-screw model's lobe factor times 2.32. It was 2.4, which put the whine exactly on the V8's 12th order."
   },
   {
    "id": "honda-s2000-ap1",

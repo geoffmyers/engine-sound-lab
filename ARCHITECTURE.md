@@ -136,14 +136,29 @@ is still unmatched: [docs/2026-11-15-s65-recording-analysis.md](docs/2026-11-15-
 Those recordings are of an idling car only. Under load, the synth was measured against the
 engine recordings in Gran Turismo 5, 6 and 7 for every preset whose engine (or the nearest one)
 the games recorded: 22 presets, with GT7's five microphones per engine checking all four
-listening positions. Two things changed from it: **cylinder-to-cylinder differences now grow
-with load and speed** (`physics.loadUnevenness`: each cylinder's pulse strength and arrival
-differ a little, scaled by load and rpm, so the half orders rise from about -28 dB at idle to
-about -10 dB at full load near the limit, as in GT7, where the synth had been a near-pure
-firing tone), and the **straight pipe is darker** (it had made every straight-piped preset 0.4
-to 2.8 octaves too bright). Behind the car, at the intake and in the cabin, the synth's
-brightness came out within 0.2 octave of GT7. The comparison tooling reads game data, so it is
-not part of this repository.
+listening positions. What changed from it:
+
+- **Cylinder-to-cylinder differences grow with load and speed** (`physics.loadUnevenness`):
+  each cylinder's exhaust and intake pulse differs a little in strength and arrival, scaled by
+  load and rpm, so the half orders rise from about -28 dB at idle to about -10 dB at full load
+  near the limit, as in GT7, where the synth had been a near-pure firing tone. The pattern
+  carries none of the once- or twice-per-cycle variation, which would pile its energy into the
+  lowest octave; intake pulses get twice the difference (GT7's intake microphones hear stronger
+  half orders than its exhaust ones).
+- **Block-radiated combustion noise** (`physics.blockNoise`, with its own weight per position,
+  `sources.block`): a short burst per firing that grows with load, which an engine bay hears
+  whatever the intake. Without it, engines with an airbox or cone filter had bays up to 2.5
+  octaves darker than GT7's.
+- **The supercharger's whine radiates from its inlet** (`sources.blower`): loud at the intake,
+  much quieter in the bay, the cabin and behind the car, matching GT7's Hellcat at all four
+  within 1 dB. The Hellcat's drive ratio comes from that recording (whine at 11.6x crank speed).
+- **Individual throttle bodies are darker** (roar 2.1 to 1.3 kHz, rasp 0.6 to 0.35), and the
+  **straight pipe is darker** (low-pass 8.5 to 3 kHz, rasp 0.7 to 0.5): both had made their
+  engines 0.5 to 3 octaves too bright.
+
+Each time, the measured positions were re-fitted to the S65 recordings
+(`scripts/fit-perspectives.py`), so the idle still matches the real car. The comparison
+tooling reads game data, so it is not part of this repository.
 
 | Tool | Does |
 |------|------|
@@ -191,8 +206,9 @@ node scripts/capture-screenshots.mjs http://localhost:8000/ docs/screenshots
 `dsp-check` fails on non-finite samples, an idle louder than full throttle, a pull that
 never reaches the limiter, an idle that settles more than 12% off target, or (for
 even-firing layouts) a firing frequency more than 12 dB below the strongest engine order,
-and if the S65's orders below the firing order are not clean at idle (under -20 dB) and near
--10 dB at full load near the limit (between -18 and -4 dB).
+if the S65's orders below the firing order are not clean at idle (under -20 dB) and between
+-20 and -4 dB at full load near the limit, and if the Hellcat's supercharger whine stops
+radiating mostly from the intake (at least 8 dB stronger there than in the bay).
 The drivetrain checks: a pull reaches 4th and 120 km/h then brakes to a stop with
 automatic downshifts and no stall; straight-cut is at least 10 dB louder than helical; the
 whine stands at the predicted mesh frequency; an over-revving downshift is refused; the

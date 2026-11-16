@@ -27,7 +27,7 @@ const EQ_CENTERS = [31.5, 63, 125, 250, 500, 1000, 2000, 4000, 8000, 16000];
 const FDN_MS = [29.7, 37.1, 41.1, 43.7];
 
 // Pulse kinds
-const EXH = 0, INTAKE = 1, CLICK = 2, CLATTER = 3;
+const EXH = 0, INTAKE = 1, CLICK = 2, CLATTER = 3, BLOCK = 4;
 
 export class EngineDSP {
   constructor(sampleRate, seed = 1) {
@@ -76,7 +76,7 @@ export class EngineDSP {
       muf: new Biquad(), dc: new Biquad(), radPrev: 0,
     }));
     this.helm = new Biquad(); this.roar = new Biquad(); this.raspHP = new Biquad();
-    this.clickBP = new Biquad(); this.clatterHP = new Biquad();
+    this.clickBP = new Biquad(); this.clatterHP = new Biquad(); this.blockBP = new Biquad(); this.blockLP = new Biquad();
     this.hissBP = new Biquad(); this.bovBP = new Biquad(); this.bovHP = new Biquad();
     this.scNoise = new Biquad(); this.outDC = [new Biquad(), new Biquad()];
     this.whPh = 0; this.scPh = 0; this.stPh = 0; this.flPh = 0;
@@ -179,6 +179,8 @@ export class EngineDSP {
     this.raspHP.set("hp", 1600, 0.7, sr);
     this.clickBP.set("bp", 3900, 1.6, sr);
     this.clatterHP.set("hp", 2800, 0.8, sr);
+    const BN = cfg.blockNoise;
+    if (BN) { this.blockBP.set("bp", BN.centreHz, BN.q, sr); this.blockLP.set("lp", BN.lowpassHz, 0.7, sr); }
     this.bovBP.set("bp", cfg.bov === "recirculating" ? 1300 : cfg.bov === "none" ? 950 : 2300, cfg.bov === "none" ? 1.6 : 0.8, sr);
     this.bovHP.set("hp", cfg.bov === "recirculating" ? 500 : 900, 0.7, sr);
     this.outDC[0].set("hp", 18, 0.707, sr); this.outDC[1].set("hp", 18, 0.707, sr);
@@ -417,13 +419,18 @@ export class EngineDSP {
       // An ignition-cut shift (sequential, dual-clutch) crackles the same way.
       // Its level is its own mixer channel (mix.pops), applied here because the pops travel the
       // exhaust path with everything else; the Exhaust channel still scales them on top.
-      const popMix = c.mix.pops ?? 0.25;
+      const popMix = c.mix.pops ?? 0.1;
       if (!this.combust && this.fuelOn && (this.dfco || this.limiterCut || this.ignCut) && c.pops > 0 &&
           rng.unit() < c.pops * (this.dfco ? 0.3 : this.ignCut ? 0.5 : 0.18) * clamp(x * 1.6, 0, 1)) {
         const dly = e.delay + Math.round((0.003 + 0.03 * rng.unit()) * this.sr);
         const pamp = popMix * (0.5 + 0.9 * rng.unit()) * 1.6 * Math.sqrt(c.pops) * Math.pow(c.cylVol / 0.5, 0.25);
         const bank = rng.unit() < 0.5 ? 0 : 1;   // drawn either way, so the mixer never shifts the random sequence
         if (popMix > 0) this.spawn(EXH, bank, dly, pamp, 0.00005, 0.0013, 0.004, 0.12, 1.7);
+      }
+      const BN = c.blockNoise;
+      if (BN && this.combust) {
+        const bAmp = BN.level * Math.pow(loadN, BN.loadExp) * (0.25 + 0.75 * Math.min(x, 1)) * c.cylScale * spin;
+        this.spawn(BLOCK, 0, 0, bAmp, 0.00004, BN.decayMs / 1000, 0, 0, 1);
       }
       if (c.diesel && this.combust) {
         this.spawn(CLATTER, 0, 0, 0.55 * (1 - 0.5 * loadN) * c.cylScale, 0.00003, 0.0011, 0, 0, 1);
@@ -435,8 +442,9 @@ export class EngineDSP {
       let delay = 0;
       const uw = this.unevenness(x, loadN);
       if (uw) {
-        amp *= 1 + uw.amp * e.uAmp;
-        delay = Math.round(0.5 * (1 + e.uTime) * uw.timing * Trev * (c.cycle / 360) / c.events.length * this.sr);
+        const k = c.loadUnevenness.intakeScale ?? 1;
+        amp *= Math.max(0.1, 1 + k * uw.amp * e.uAmp);
+        delay = Math.round(0.5 * (1 + e.uTime) * k * uw.timing * Trev * (c.cycle / 360) / c.events.length * this.sr);
       }
       this.spawn(INTAKE, 0, delay, amp, 0.0004, clamp(Tb / 2, 0.0006, 0.012), 0, 0, c.intake.rasp + 0.15);
     } else if (e.kind === CLICK) {
@@ -497,6 +505,7 @@ export class EngineDSP {
     const V = c.perspective, src = V.sources;
     const gE = mix.exhaust * EXHAUST_GAIN * X.gain * src.exhaust;
     const gI = mix.intake * src.intake, gM = mix.mechanical * src.mechanical, gInd = mix.induction * src.induction;
+    const gBlk = mix.mechanical * (src.block ?? 0), gBlow = mix.induction * (src.blower ?? src.induction);
     const vol = mix.volume * MASTER_GAIN * V.level, w = mix.width * V.width;
     this.dt.blockAudio();
     // Propeller: blade-pass tone and harmonics, and a rasp once the tips near Mach 1.
@@ -509,7 +518,7 @@ export class EngineDSP {
       prNoise = prAmp * 1.5 * smoothstep(0.6, 0.95, tipMach);
       if (prF > 20) this.propBP.set("bp", Math.min(prF * 6, sr * 0.4), 1.2, sr);
     }
-    const gGb = (mix.gearbox ?? 0.8) * src.drivetrain, gRd = (mix.road ?? 0.5) * src.road, drv = this.dt;
+    const gGb = (mix.gearbox ?? 0.5) * src.drivetrain, gRd = (mix.road ?? 0) * src.road, drv = this.dt;
     const gG = V.ground.gain, gD = this.groundD, rvMix = V.reverb.mix, eqL = this.eq[0], eqR = this.eq[1], fdn = this.fdn;
     const cyc = c.cycle, cyl = c.cylinders, ev = this.ev, gap = this.gap, nev = ev.length;
     const ripBase = this.state === "cranking" && !this.combust ? 0.3 : 0.05 * clamp(Math.pow(c.idleRpm / Math.max(rpm1, 1), 2), 0, 1);
@@ -537,7 +546,7 @@ export class EngineDSP {
 
       // Sum the live pulses.
       const nz = rng.uni();
-      let b0 = 0, b1 = 0, inS = 0, clk = 0, clat = 0;
+      let b0 = 0, b1 = 0, inS = 0, clk = 0, clat = 0, blk = 0;
       for (let k = 0; k < this.pHigh; k++) {
         if (!this.pAct[k]) continue;
         if (this.pDelay[k] > 0) { this.pDelay[k]--; continue; }
@@ -554,6 +563,7 @@ export class EngineDSP {
         if (kind === EXH) { if (this.pBank[k]) b1 += v; else b0 += v; }
         else if (kind === INTAKE) inS += v;
         else if (kind === CLICK) clk += v;
+        else if (kind === BLOCK) blk += v;
         else clat += v;
       }
       while (this.pHigh > 0 && !this.pAct[this.pHigh - 1]) this.pHigh--;
@@ -573,6 +583,9 @@ export class EngineDSP {
       const th = this.phi * toRad;
       const mech = this.clickBP.run(clk) * 2.2 + this.clatterHP.run(clat) * 1.4 +
         mechHum * (Math.sin(th * 2) + 0.6 * Math.sin(th * 4) + 0.25 * Math.sin(th * 2 * 23));
+      // Combustion noise radiated by the block and heads: what an engine bay hears whatever the
+      // intake, growing with cylinder pressure (load). Its own weight per listening position.
+      const block = c.blockNoise ? this.blockLP.run(this.blockBP.run(blk)) : 0;
 
       // Forced induction.
       let ind = 0;
@@ -596,11 +609,14 @@ export class EngineDSP {
         for (let h = 1; h <= 10; h++) if (prF * h < sr * 0.45) s += Math.sin(TAU * this.prPh * h) / Math.pow(h, 0.8);
         ind += prAmp * s + prNoise * this.propBP.run(rng.uni());
       }
+      // The supercharger's whine radiates mostly from its inlet: its own weight per listening
+      // position (sources.blower), loud at the intake and much quieter in the bay or cabin.
+      let blow = 0;
       if (scAmp > 0) {
         this.scPh += scF / sr; if (this.scPh > 1) this.scPh -= 1;
         let s = 0;
         for (let h = 0; h < harm.length; h++) if (scF * (h + 1) < sr * 0.45) s += harm[h] * Math.sin(TAU * this.scPh * (h + 1));
-        ind += scAmp * (s * (1 + 0.15 * Math.sin(th)) + 0.8 * this.scNoise.run(rng.uni()));
+        blow = scAmp * (s * (1 + 0.15 * Math.sin(th)) + 0.8 * this.scNoise.run(rng.uni()));
       }
 
       // Starter motor: brushed-motor buzz plus pinion whine, loaded by each compression.
@@ -612,7 +628,7 @@ export class EngineDSP {
       }
 
       drv.tick();
-      const center = intake * gI + mech * gM + ind * gInd + st + drv.outGear * gGb + drv.outRoad * gRd;
+      const center = intake * gI + mech * gM + block * gBlk + ind * gInd + blow * gBlow + st + drv.outGear * gGb + drv.outRoad * gRd;
       const mid = (y0 + y1) * 0.5 * gE, side = (y0 - y1) * 0.5 * gE * w;
       let L = mid + side + center, Rr = mid - side + center;
       // Ground reflection: the same sound arriving again a few milliseconds later.
