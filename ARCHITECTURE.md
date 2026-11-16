@@ -15,12 +15,12 @@ Everything is synthesized; there are no samples.
 | Stage | What it models |
 |-------|----------------|
 | Crank | The crank angle advances every sample at the current rpm, with a compression and per-firing speed ripple (the idle "chug", the lope of a big cam). |
-| Firing | Each cylinder fires at its own angle from `engine-data.json` (a 720° cycle, or 360° of eccentric shaft for a rotary). A firing makes an exhaust blowdown pulse: fast rise, decay set by the valve-open time at this rpm, a tail for the exhaust stroke, turbulent noise that grows with load. Combustion varies cycle to cycle. |
+| Firing | Each cylinder fires at its own angle from `engine-data.json` (a 720° cycle, or 360° of eccentric shaft for a rotary). A firing makes an exhaust blowdown pulse: fast rise, decay set by the valve-open time at this rpm, a tail for the exhaust stroke, turbulent noise (band-limited at 2 kHz) that grows with load. The pulse carries one cylinder's charge, so as it shortens with rpm its peak flow grows (`physics.pulseFlow`): that, not just more pulses per second, is why an engine gets so much louder with revs. Combustion varies cycle to cycle. |
 | Headers | Each cylinder's pulse is delayed by its runner length: equal, unequal (the boxer rumble) or a log manifold. |
 | Banks and routing | Two-bank engines keep two exhaust streams: one collector, an X-pipe, or true dual (bank A left speaker, bank B right). This is why a cross-plane V8 burbles (each bank fires 90-180-270-180°) and a flat-plane V8 does not. |
-| Exhaust system | Turbine damping (more spool, more muffled), catalyst, a muffler chamber resonance, the tailpipe as a delay-line waveguide whose open end reflects inverted, the muffler's low-pass, then tailpipe radiation. |
+| Exhaust system | Turbine damping (more spool, more muffled), catalyst, a muffler chamber resonance, the tailpipe as a delay-line waveguide whose open end reflects inverted, the muffler's low-pass, then tailpipe radiation: a derivative of the flow that stops rising above the pipe's ka ≈ 1 knee, about 2 kHz (`physics.radiation`). |
 | Intake | Intake-stroke pulses ring the airbox's Helmholtz resonance, plus induction roar; individual throttle bodies are loud and raspy. |
-| Extras | Valve seating clicks, diesel combustion clatter, turbo whistle and hiss, blow-off valve (vented, recirculating, or compressor-surge flutter with none), supercharger whine at its lobe frequency (Roots, twin-screw) or impeller speed (centrifugal), starter motor. |
+| Extras | Valve seating clicks (broadband metal impacts around 8 kHz), diesel combustion clatter, turbo whistle and hiss, blow-off valve (vented, recirculating, or compressor-surge flutter with none), supercharger whine at its lobe frequency (Roots, twin-screw) or impeller speed (centrifugal), starter motor. |
 | Physics | Throttle plate lag, idle air control, manifold load, torque curve, friction and pumping losses, flywheel inertia, hard-cut rev limiter, deceleration fuel cut with afterfire pops (scaled by their own mixer channel, `mix.pops`, before the exhaust path), turbo spool and lag, a six-speed gearbox with shifts at the limiter. |
 
 All layout, hardware, gearing, scenario and preset numbers live in `engine-data.json`; the
@@ -156,6 +156,31 @@ listening positions. What changed from it:
   **straight pipe is darker** (low-pass 8.5 to 3 kHz, rasp 0.7 to 0.5): both had made their
   engines 0.5 to 3 octaves too bright.
 
+A third round (2026-11-16) came from reading how related open-source engine synthesizers work
+([review](docs/2026-11-16-related-projects-review.md)), measured against both references:
+
+- **Loudness grows with speed by conserving each pulse's charge** (`physics.pulseFlow`), and
+  valve clicks' clatter, block noise, intake roar and gear rattle share the same law, so the
+  balance between sources holds from idle to the limit. The S65 now grows 18 dB from idle to a
+  full-throttle pull (it was 5 dB), and its fast idle comes within 1.2 dB of the real car's level
+  relative to warm idle (it was 3.8 dB off).
+- **Tailpipe radiation has a knee** (`physics.radiation`), and **the flow noise in the pulses and
+  the intake roar is band-limited at 2 kHz** (`physics.pulseNoise`) instead of white to 22 kHz.
+- **The block noise was the main source of every position's 4-8 kHz under load**: centred at
+  1.5 kHz and low-passed at 4.5 kHz (was 2.5 and 7 kHz) it keeps the engine bay within 0.4
+  octave of GT7.
+- **Valve clicks are broadband** (`physics.valveClicks`, around 8 kHz, a constant strength): the
+  band-limited flow noise had taken away the 8-16 kHz ticking the real S65 has at idle.
+
+Together, from behind the car under load the 4 and 8 kHz octaves went from 4-10 dB above GT7
+to 0.5-6 dB, in the bay to -3 to +3 dB and in the cabin to -5 to +2 dB. The cost:
+- **Intake:** its 4 kHz stayed about 7 dB above GT7 and its 2 kHz octave rose.
+- **Centroid behind the car and at the intake:** it moved further above GT7's (+0.44 and +0.62
+  octave, from +0.26 and +0.33).
+
+The idle refit, which matches the real S65 better, gave those two positions brighter tilts. `scripts/block-rate-check.mjs` found
+no artefact from the levels set once per 128-sample block.
+
 Each time, the measured positions were re-fitted to the S65 recordings
 (`scripts/fit-perspectives.py`), so the idle still matches the real car. The comparison
 tooling reads game data, so it is not part of this repository.
@@ -165,6 +190,8 @@ tooling reads game data, so it is not part of this repository.
 | `scripts/analyze-recording.py` | Measures a real recording and a synth render the same way: rpm from the firing line, engine-order spectrum, 1/3-octave shape, cycle variation, brightness. |
 | `scripts/render-preset.mjs` | Renders a preset at a given idle or held rpm, with any setting overridden. |
 | `scripts/fit-perspectives.py` | Fits each measured position's EQ tilt (bands with >= 10 dB SNR only) and level, and writes them into `engine-data.json`. |
+| `scripts/source-bands.mjs` | Octave bands of each mixer channel soloed at a hold, to trace a spectral excess to the stage that makes it (`--patch` tries a change without editing the data). |
+| `scripts/block-rate-check.mjs` | Folds minute-long renders at the 128-sample block length against a 96-sample control, to catch a parameter stepping once per block. |
 
 ```bash
 # with your three recordings in tests/out/ref/ (gitignored; the originals are not published)

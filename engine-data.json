@@ -874,11 +874,30 @@
   "blockNoise": {
    "level": 1.4,
    "loadExp": 2,
-   "centreHz": 2500,
+   "centreHz": 1500,
    "q": 0.5,
-   "lowpassHz": 7000,
+   "lowpassHz": 4500,
    "decayMs": 2.0,
-   "_source": "Combustion noise radiated by the block and heads, one short noise burst per firing scaled by load^loadExp (so the idle, fitted to the real S65, is untouched). Calibrated against Gran Turismo 7's engine-bay microphones (calibrate.py --vs bay --layer Eng), where airbox and cone-filter engines had come out up to 2.5 octaves too dark."
+   "_source": "Combustion noise radiated by the block and heads, one short noise burst per firing scaled by load^loadExp (so the idle, fitted to the real S65, is untouched). Calibrated against Gran Turismo 7's engine-bay microphones (calibrate.py --vs bay --layer Eng), where airbox and cone-filter engines had come out up to 2.5 octaves too dark. Its spectrum was first centred at 2.5 kHz and low-passed at 7 kHz, which made it the main source of every position's 4-8 kHz octaves under load (4-6 dB above GT7 in the bay); centred at 1.5 kHz and low-passed at 4.5 kHz it keeps the bay's centroid within 0.2 octave of GT7 and its 4 kHz octave within 1.6 dB (2026-11-16)."
+  },
+  "radiation": {
+   "kneeHz": 2000,
+   "_source": "A tailpipe radiates like a differentiator (+6 dB/octave) only while ka << 1; above ka ~ 1 (about 2 kHz for a 55 mm pipe) the radiation load flattens (Levine & Schwinger's unflanged pipe; EngineLab's PipeRadiationModel; Engine_Sim's measured 'radiation knee'). The derivative part of the radiation is low-passed here. Without it, every engine measured 4-12 dB too strong in the 4 and 8 kHz octaves against Gran Turismo 7's recordings at all four positions."
+  },
+  "pulseNoise": {
+   "lowpassHz": 2000,
+   "_source": "The turbulent rasp inside each exhaust and intake pulse, and the intake roar, are noise band-limited at this frequency (two-pole), not white to 22 kHz (engine-sim low-passes its flow noise at 2 kHz)."
+  },
+  "pulseFlow": {
+   "rpmExp": 1,
+   "_source": "Each exhaust and intake pulse carries one cylinder's charge, and its length is set by the valve-open time (it shortens as 1/rpm), so at a given load its peak flow grows as 1/length: rpmExp 1 conserves the charge (1.0 at the rev limit). The old fitted law, (0.3 + 0.7 x rpm/limit)^0.9, let the exhaust grow only ~5 dB from idle to full throttle near the limit and made the S65's 1,128 rpm fast idle 4.6 dB quieter than its 786 rpm idle, where the real car (STE-035, same catalyst heating) is 0.8 dB quieter; this law gives 2.0 dB and ~17 dB of growth to full throttle at 6,000 rpm (2026-11-16)."
+  },
+  "valveClicks": {
+   "centreHz": 8000,
+   "q": 0.5,
+   "level": 0.236,
+   "speedExp": 0,
+   "_source": "Valve seating is a broadband metal impact. A narrow band at 3.9 kHz (Q 1.6) left the idle without the 8-16 kHz ticking the real S65 has at every microphone once the pulse noise was band-limited (physics.pulseNoise); 8 kHz at Q 0.5 refits the S65 idle to 1.2 / 5.4 / 4.4 dB rms behind / at the intake / in the bay, against 2.2 / 5.5 / 4.9 before. The clicks keep the same strength at every speed (speedExp 0; level is set so the idle matches): growing with speed like the gas pulses (speedExp 1) or as its square root put 8 kHz under load 2-5 dB further above Gran Turismo 7's recordings (2026-11-16)."
   },
   "loadUnevenness": {
    "amp": 0.7,
@@ -1975,7 +1994,7 @@
     "block": 0.05,
     "blower": 0.2
    },
-   "eqDb": [-0.0, -0.0, -0.0, -0.0, -0.2, -0.3, -0.5, -0.7, -0.9, -1.0],
+   "eqDb": [0.0, 0.0, 0.0, 0.0, 0.5, 0.9, 1.4, 1.8, 2.3, 2.7],
    "ground": {
     "delayMs": 2.4,
     "gain": 0.45
@@ -1986,7 +2005,7 @@
     "dampHz": 3500
    },
    "width": 0.8,
-   "level": 0.89
+   "level": 0.84
   },
   "front": {
    "label": "In front, at the intake",
@@ -2003,7 +2022,7 @@
     "block": 0.35,
     "blower": 11.6
    },
-   "eqDb": [-0.0, -0.0, -0.0, -0.0, -3.2, -6.3, -9.5, -12.6, -15.8, -19.0],
+   "eqDb": [-0.0, -0.0, -0.0, -0.0, -2.1, -4.3, -6.4, -8.6, -10.7, -12.9],
    "ground": {
     "delayMs": 2.4,
     "gain": 0.45
@@ -2014,7 +2033,7 @@
     "dampHz": 3500
    },
    "width": 0.6,
-   "level": 0.61
+   "level": 0.55
   },
   "bay": {
    "label": "Engine bay, hood open",
@@ -2031,7 +2050,7 @@
     "block": 1.0,
     "blower": 0.66
    },
-   "eqDb": [-0.0, -0.0, -0.0, -0.0, -2.6, -5.2, -7.9, -10.5, -13.1, -15.7],
+   "eqDb": [-0.0, -0.0, -0.0, -0.0, -2.1, -4.1, -6.2, -8.2, -10.3, -12.4],
    "ground": {
     "delayMs": 1.2,
     "gain": 0.3
@@ -2042,7 +2061,7 @@
     "dampHz": 5000
    },
    "width": 0.5,
-   "level": 0.67
+   "level": 0.66
   },
   "cabin": {
    "label": "Driver's seat",
@@ -2070,7 +2089,7 @@
     "dampHz": 2500
    },
    "width": 0.25,
-   "level": 1.64
+   "level": 1.79
   },
   "dry": {
    "label": "Dry model (no listener)",

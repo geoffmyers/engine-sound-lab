@@ -77,17 +77,20 @@ is one smooth tilt above 250 Hz, fitted only on bands with at least 10 dB SNR:
 
 | Position | Basis | Tilt above 250 Hz | Residual |
 |----------|-------|-------------------|----------|
-| Behind the car | STE-035, catalyst-heating stretch 68-84 s at 786 rpm | -0.2 dB/oct | 2.2 dB over 5 bands |
-| In front, at the intake | STE-036, 52-75 s | -3.2 dB/oct | 5.5 dB over 7 bands |
-| Engine bay, hood open | STE-037, 35-78 s | -2.6 dB/oct | 4.9 dB over 8 bands |
+| Behind the car | STE-035, catalyst-heating stretch 68-84 s at 786 rpm | +0.5 dB/oct | 1.2 dB over 5 bands |
+| In front, at the intake | STE-036, 52-75 s | -2.1 dB/oct | 5.4 dB over 7 bands |
+| Engine bay, hood open | STE-037, 35-78 s | -2.1 dB/oct | 4.4 dB over 8 bands |
 | Driver's seat | Estimated, no recording | hand-set | - |
 | Dry model | The raw synth | flat | - |
 
 All positions are level-matched at full throttle so switching changes character, not
 volume. The fit was re-run (same day) after the load-dependent changes calibrated against Gran
 Turismo's recordings (darker individual throttle bodies, block noise, per-cylinder
-differences); the figures above are that refit. Before it: behind -0.6 dB/oct, 1.5 dB; in
-front -3.8 dB/oct, 6.0 dB; in the bay -3.2 dB/oct, 5.6 dB.
+differences): behind -0.2 dB/oct, 2.2 dB; in front -3.2 dB/oct, 5.5 dB; in the bay -2.6 dB/oct,
+4.9 dB (before it: -0.6, 1.5; -3.8, 6.0; -3.2, 5.6). It was re-run again on 2026-11-16 after the
+third round ([related projects](2026-11-16-related-projects-review.md)): the speed law, the radiation knee,
+band-limited flow noise and broadband valve clicks. The table above is that refit, better at all
+three positions.
 
 ## Mistakes caught on the way
 
@@ -102,10 +105,16 @@ front -3.8 dB/oct, 6.0 dB; in the bay -3.2 dB/oct, 5.6 dB.
 ## Still unmatched
 
 
-- A broadband floor in the 250-500 Hz octave about 17 dB above the real idle (order 32 at
-  -37 dB against -54 dB).
-- During the cold fast idle the synth is about 4.5 dB quieter than the real car relative
-  to warm idle; the cause is not identified.
-- Full throttle is uncalibrated: from behind, the synth is only about 7 dB louder at
-  7,000 rpm than at idle. A recording of a rev sweep and a pull, with the same mic
-  positions, is what would settle that.
+- The 250-500 Hz octave behind the car at idle is about 7.5 dB above the real take (order 32
+  at -37 dB against -54 dB). It is not a noise floor: muting the pulse rasp or the
+  cycle-to-cycle variation moves it by under 0.5 dB, and the energy between the orders stands
+  to the energy on them as in the real take (7.4 against 7.6 dB). It is the idle pulse's shape
+  in that octave, where the real take is also close to its ambient noise (SNR 9.5-10 dB).
+- Cold fast idle (resolved in part, 2026-11-16). At the same catalyst heating, the real car is
+  0.8 dB quieter at its 1,128 rpm fast idle than at 786 rpm. The synth was 4.6 dB quieter,
+  because its pulses grew with speed by a fitted law that conserved nothing. With the pulse flow
+  conserving each cylinder's charge (`physics.pulseFlow`) it is 2.0 dB quieter.
+- Full throttle is still uncalibrated against this car. From behind, the synth grows 18 dB
+  from idle to a full-throttle pull (it was 5 dB), set by charge conservation rather than by a
+  recording. A recording of a rev sweep and a pull, with the same mic positions, is what would
+  settle it.

@@ -73,12 +73,13 @@ export class EngineDSP {
       turbo: new OnePole(), cat: new OnePole(),
       chDL: new DelayLine(maxPipe), chLP: new OnePole(),
       pipeDL: new DelayLine(maxPipe), pipeLP: new OnePole(),
-      muf: new Biquad(), dc: new Biquad(), radPrev: 0,
+      muf: new Biquad(), dc: new Biquad(), radPrev: 0, radLP: new OnePole(),
     }));
     this.helm = new Biquad(); this.roar = new Biquad(); this.raspHP = new Biquad();
     this.clickBP = new Biquad(); this.clatterHP = new Biquad(); this.blockBP = new Biquad(); this.blockLP = new Biquad();
     this.hissBP = new Biquad(); this.bovBP = new Biquad(); this.bovHP = new Biquad();
     this.scNoise = new Biquad(); this.outDC = [new Biquad(), new Biquad()];
+    this.nzLP = new Biquad(); this.roarLP = new Biquad();
     this.whPh = 0; this.scPh = 0; this.stPh = 0; this.flPh = 0;
     // Listener perspective: ground reflection, octave EQ, small reverb (per channel).
     this.eq = [[], []];
@@ -172,12 +173,16 @@ export class EngineDSP {
       s.pipeD = Math.max(2, X.pipeDelaySec[i] * sr);
       s.muf.set("lp", X.lpHz, X.lpQ, sr);
       s.dc.set("hp", 24, 0.707, sr);
+      s.radLP.set(cfg.radiation?.kneeHz ?? sr / 2, sr);
     }
+    this.nzLP.set("lp", cfg.pulseNoise?.lowpassHz ?? sr * 0.45, 0.707, sr);
+    this.roarLP.set("lp", cfg.pulseNoise?.roarLowpassHz ?? cfg.pulseNoise?.lowpassHz ?? sr * 0.45, 0.707, sr);
     const I = cfg.intake;
     this.helm.set("bp", I.helmHz, I.helmQ, sr);
     this.roar.set("bp", I.roarHz, I.roarQ, sr);
     this.raspHP.set("hp", 1600, 0.7, sr);
-    this.clickBP.set("bp", 3900, 1.6, sr);
+    const VC = cfg.valveClicks || { centreHz: 3900, q: 1.6, level: 1 };
+    this.clickBP.set("bp", VC.centreHz, VC.q, sr);
     this.clatterHP.set("hp", 2800, 0.8, sr);
     const BN = cfg.blockNoise;
     if (BN) { this.blockBP.set("bp", BN.centreHz, BN.q, sr); this.blockLP.set("lp", BN.lowpassHz, 0.7, sr); }
@@ -353,6 +358,20 @@ export class EngineDSP {
 
   // How far this cylinder's pulse may differ from the others now (physics.loadUnevenness):
   // nothing without combustion, growing with load and, steeply near the limit, with speed.
+  // How a pulse's peak flow grows with engine speed. A cycle's charge leaves (or enters) in a
+  // pulse whose length is set by the valve-open time, so at a given load the peak flow goes as
+  // 1 / pulse length (physics.pulseFlow.rpmExp 1 conserves the charge; it is 1 at the rev limit).
+  // d is this pulse's decay time, dRed the same at the rev limit before clamping.
+  flowGain(d, dRed, lo = 0.00035, hi = 0.009) {
+    return Math.pow(clamp(dRed, lo, hi) / d, this.cfg.pulseFlow?.rpmExp ?? 1);
+  }
+
+  // The same growth with speed for the sources that are not flow pulses (valve seating velocity,
+  // combustion noise, intake roar), so the balance between sources holds from idle to the limit.
+  speedGain(x) {
+    return Math.pow(clamp(x, 0.02, 1.1), this.cfg.pulseFlow?.rpmExp ?? 1);
+  }
+
   unevenness(x, loadN) {
     const U = this.cfg.loadUnevenness;
     if (!U || !this.combust) return null;
@@ -371,7 +390,7 @@ export class EngineDSP {
 
     if (e.kind === EXH) {
       if (this.fired.length < 64) this.fired.push(e.cyl);
-      if (this.mode !== "dyno") this.dt.onFiring(rpm, c.redline);
+      if (this.mode !== "dyno") this.dt.onFiring(rpm, c.redline, this.speedGain(rpm / c.redline));
       const idleW = Math.pow(clamp(1 - (x - 0.06) / 0.35, 0, 1), 2);
       let amp;
       if (this.combust) {
@@ -390,7 +409,9 @@ export class EngineDSP {
       }
       // Gas leaves faster at higher speed: pulse pressure grows with rpm, so the exhaust gets
       // louder with revs rather than just more frequent.
-      amp *= c.cylScale * e.trim * spin * Math.pow(0.3 + 0.7 * Math.min(x, 1.05), 0.9) * (this.catGain || 1);
+      const Tb = c.blowdownDeg / 360 * Trev;
+      const d1 = clamp(Tb / 2.2, 0.00035, 0.009);
+      amp *= c.cylScale * e.trim * spin * this.flowGain(d1, c.blowdownDeg / 360 * 60 / c.redline / 2.2) * (this.catGain || 1);
       if (c.aspiration === "turbo") amp *= 1 - 0.3 * this.omega;
       // Cylinder-to-cylinder differences grow with load and speed: at idle the pulses are nearly
       // alike (the real S65 from behind: half orders 30-52 dB down), at full load near the limit
@@ -401,8 +422,6 @@ export class EngineDSP {
         amp *= 1 + uw.amp * e.uAmp;
         delay = Math.max(0, delay + Math.round(uw.timing * e.uTime * Trev * (c.cycle / 360) / c.events.length * this.sr));
       }
-      const Tb = c.blowdownDeg / 360 * Trev;
-      const d1 = clamp(Tb / 2.2, 0.00035, 0.009);
       // Blowdown is sharp only when the valve opens against high cylinder pressure: at light
       // load the pulse rises slowly, which is why an idle is dark and a full-throttle pull bright.
       const soft = 1 + 8 * (1 - loadN) * (1 - loadN);
@@ -429,15 +448,16 @@ export class EngineDSP {
       }
       const BN = c.blockNoise;
       if (BN && this.combust) {
-        const bAmp = BN.level * Math.pow(loadN, BN.loadExp) * (0.25 + 0.75 * Math.min(x, 1)) * c.cylScale * spin;
+        const bAmp = BN.level * Math.pow(loadN, BN.loadExp) * this.speedGain(x) * c.cylScale * spin;
         this.spawn(BLOCK, 0, 0, bAmp, 0.00004, BN.decayMs / 1000, 0, 0, 1);
       }
       if (c.diesel && this.combust) {
-        this.spawn(CLATTER, 0, 0, 0.55 * (1 - 0.5 * loadN) * c.cylScale, 0.00003, 0.0011, 0, 0, 1);
+        this.spawn(CLATTER, 0, 0, 0.55 * (1 - 0.5 * loadN) * this.speedGain(x) * c.cylScale, 0.00003, 0.0011, 0, 0, 1);
       }
     } else if (e.kind === INTAKE) {
-      let amp = -(0.15 + 0.85 * this.te) * (0.35 + 0.65 * Math.min(x, 1)) * c.cylScale * e.trim * spin;
-      const Tb = 1.8 * c.blowdownDeg / 360 * Trev;
+      const Tb = 1.8 * c.blowdownDeg / 360 * Trev, dIn = clamp(Tb / 2, 0.0006, 0.012);
+      const flow = this.flowGain(dIn, 1.8 * c.blowdownDeg / 360 * 60 / c.redline / 2, 0.0006, 0.012);
+      let amp = -(0.15 + 0.85 * this.te) * flow * c.cylScale * e.trim * spin;
       // Intake runners differ per cylinder too: the same load- and speed-scaled differences.
       let delay = 0;
       const uw = this.unevenness(x, loadN);
@@ -446,9 +466,9 @@ export class EngineDSP {
         amp *= Math.max(0.1, 1 + k * uw.amp * e.uAmp);
         delay = Math.round(0.5 * (1 + e.uTime) * k * uw.timing * Trev * (c.cycle / 360) / c.events.length * this.sr);
       }
-      this.spawn(INTAKE, 0, delay, amp, 0.0004, clamp(Tb / 2, 0.0006, 0.012), 0, 0, c.intake.rasp + 0.15);
+      this.spawn(INTAKE, 0, delay, amp, 0.0004, dIn, 0, 0, c.intake.rasp + 0.15);
     } else if (e.kind === CLICK) {
-      const amp = 0.05 * (0.5 + 0.5 * Math.min(x, 1)) * (0.8 + 0.4 * rng.unit()) * e.trim * spin;
+      const amp = 0.05 * Math.pow(clamp(x, 0.02, 1.1), c.valveClicks?.speedExp ?? c.pulseFlow?.rpmExp ?? 1) * (0.8 + 0.4 * rng.unit()) * e.trim * spin;
       this.spawn(CLICK, 0, 0, amp, 0.00002, 0.00045, 0, 0, 1);
     }
   }
@@ -488,7 +508,7 @@ export class EngineDSP {
     if (turbo) { const fc = 2600 - 1700 * this.omega; this.ex[0].turbo.set(fc, sr); this.ex[1].turbo.set(fc, sr); }
 
     // Per-block levels for the continuous sources.
-    const roarAmp = c.intake.gain * 0.16 * Math.pow(this.te, 1.5) * (0.2 + 0.8 * Math.min(x, 1)) * (this.fuelOn ? 1 : 0.3) * (rpm1 > 50 ? 1 : 0);
+    const roarAmp = c.intake.gain * 0.16 * Math.pow(this.te, 1.5) * this.speedGain(x) * (this.fuelOn ? 1 : 0.3) * (rpm1 > 50 ? 1 : 0);
     const whF = 1200 + 6800 * Math.pow(this.omega, 1.2);
     const whAmp = turbo ? 0.05 * this.omega * this.omega * (0.25 + 0.75 * clamp(this.boost / Math.max(c.maxBoost, 0.01), 0, 1)) : 0;
     const hissAmp = turbo ? 0.5 * this.omega * this.omega * (0.3 + 0.7 * this.te) : 0;
@@ -545,7 +565,8 @@ export class EngineDSP {
       }
 
       // Sum the live pulses.
-      const nz = rng.uni();
+      // Turbulence inside the pulses: band-limited noise (physics.pulseNoise), not white.
+      const nz = this.nzLP.run(rng.uni());
       let b0 = 0, b1 = 0, inS = 0, clk = 0, clat = 0, blk = 0;
       for (let k = 0; k < this.pHigh; k++) {
         if (!this.pAct[k]) continue;
@@ -576,12 +597,12 @@ export class EngineDSP {
       const y1 = single ? y0 : this.pipe(this.ex[1], s1, turbo, X);
 
       // Intake: pulses plus roar through the airbox and filter resonances.
-      const inX = inS + roarAmp * rng.uni();
+      const inX = inS + roarAmp * this.roarLP.run(rng.uni());
       const intake = (this.helm.run(inX) * 1.6 + this.roar.run(inX) * 1.2 + this.raspHP.run(inX) * c.intake.rasp * 0.7) * c.intake.gain;
 
       // Mechanical: valvetrain clicks, diesel clatter, rotating hum.
       const th = this.phi * toRad;
-      const mech = this.clickBP.run(clk) * 2.2 + this.clatterHP.run(clat) * 1.4 +
+      const mech = this.clickBP.run(clk) * 2.2 * (c.valveClicks?.level ?? 1) + this.clatterHP.run(clat) * 1.4 +
         mechHum * (Math.sin(th * 2) + 0.6 * Math.sin(th * 4) + 0.25 * Math.sin(th * 2 * 23));
       // Combustion noise radiated by the block and heads: what an engine bay hears whatever the
       // intake, growing with cylinder pressure (load). Its own weight per listening position.
@@ -662,8 +683,9 @@ export class EngineDSP {
     const p = ch - X.pipeFeedback * s.pipeLP.run(s.pipeDL.read(s.pipeD));
     s.pipeDL.write(p);
     const y = s.muf.run(p);
-    // A tailpipe radiates roughly the derivative of its flow; blending keeps the bass.
-    const rad = y * 0.55 + (y - s.radPrev) * 2.2;
+    // A tailpipe radiates roughly the derivative of its flow (blending keeps the bass), but only
+    // while ka << 1: above the knee (physics.radiation) the derivative stops rising.
+    const rad = y * 0.55 + s.radLP.run(y - s.radPrev) * 2.2;
     s.radPrev = y;
     return s.dc.run(rad);
   }

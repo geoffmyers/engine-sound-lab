@@ -258,13 +258,14 @@ export class Drivetrain {
   followEngine(rpm) { this.gear = 0; this.v = 0; this.c = 1; this.cTarget = 1; this.Tc = 0; this.shift = null; this.wi = rpm / RPM; }
 
   // A firing event: unloaded gears rattle against their backlash when the crank speed jerks.
-  onFiring(rpm, redline) {
+  // gain scales the rattle with the engine's own pulses (EngineDSP.speedGain).
+  onFiring(rpm, redline, gain = 1) {
     const d = this.d;
     if (this.wi < 20 || this.c < 0.5) return;
     const unloaded = clamp(1 - Math.abs(this.Tc) / (0.06 * d.Tmax), 0, 1);
     const lowRev = clamp(1 - rpm / (0.5 * redline), 0, 1);
     const p = unloaded * lowRev;
-    if (p > 0.02 && this.rng.unit() < 0.7) this.voice("rattle", d.gearCut.rattle * p * (0.5 + this.rng.unit()));
+    if (p > 0.02 && this.rng.unit() < 0.7) this.voice("rattle", d.gearCut.rattle * gain * p * (0.5 + this.rng.unit()));
   }
 
   // ---- audio ---------------------------------------------------------------------

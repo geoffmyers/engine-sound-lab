@@ -78,8 +78,8 @@ These were captured in headless Chromium with the engine running
   collector, an X-pipe, or true dual pipes in stereo).
 - **Exhaust, intake and the rest:** a muffler chamber and a waveguide tailpipe, airbox
   resonance and induction roar, valve clicks, diesel clatter, turbo whistle and blow-off,
-  Roots, twin-screw and centrifugal supercharger whine, a starter motor, overrun pops, a
-  cold start with fast idle, and propellers for the aircraft engines.
+  Roots, twin-screw and centrifugal supercharger whine, a starter motor, overrun pops (their
+  own mixer channel), a cold start with fast idle, and propellers for the aircraft engines.
 - **Drive it:** a clutch that slips or locks, a gearbox and final drive, the car's mass, drag,
   rolling resistance and brakes, with full traction (no wheelspin is simulated). Manual (clutch, synchro,
   clunk), sequential dog box (ignition-cut flat shifts) and dual-clutch gearboxes, with
@@ -89,7 +89,11 @@ These were captured in headless Chromium with the engine running
 - **42 real presets** with each engine's torque curve calibrated to its published peak
   torque and power.
 - **Listening positions:** behind the car, at the intake, in the engine bay (fitted to
-  recordings of a real BMW S65), the driver's seat, or the dry model.
+  recordings of a real BMW S65), the driver's seat, or the dry model. Under load, all four
+  were checked against the engine recordings in Gran Turismo 5, 6 and 7 (22 presets):
+  cylinder-to-cylinder differences that grow with load, combustion noise from the block in
+  the engine bay, and a supercharger whine heard mostly at the intake all came from that
+  comparison.
 - **Instruments:** tachometer with boost, readouts, an animated cylinder map, a firing
   timeline per bank, and a live spectrum and waveform.
 - **WAV export** of scripted runs (start and blips, a rev sweep, a pull through the gears, a

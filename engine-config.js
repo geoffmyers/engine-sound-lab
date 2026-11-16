@@ -261,6 +261,10 @@ export function buildConfig(data, s) {
     cycleVariance: P.cycleVariance,
     loadUnevenness: P.loadUnevenness,
     blockNoise: P.blockNoise,
+    radiation: P.radiation,
+    valveClicks: P.valveClicks,
+    pulseNoise: P.pulseNoise,
+    pulseFlow: P.pulseFlow,
     coldStart: s.coldStart ? { ...P.coldStart } : null,
     perspective: resolvePerspective(data, s.perspective),
   };
