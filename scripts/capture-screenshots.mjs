@@ -15,9 +15,9 @@ const browser = await chromium.connectOverCDP(process.env.CDP_URL || "http://loc
 async function page(viewport, scheme) {
   const ctx = await browser.newContext({ viewport, colorScheme: scheme, ignoreHTTPSErrors: true, deviceScaleFactor: 1 });
   if (process.argv[2] === "disk") url = await serveFromDisk(ctx);
-  // These pictures are published: keep Gran Turismo 7's renders (live site only) out of them,
+  // These pictures are published: keep the Gran Turismo pictures (live site only) out of them,
   // so every card shows the page's own engine render, as in a public clone.
-  await ctx.route("**/img/gt7/**", (r) => r.abort());
+  await ctx.route("**/img/gt/**", (r) => r.abort());
   const p = await ctx.newPage();
   await p.goto(url, { waitUntil: "networkidle" });
   await p.evaluate(() => { try { localStorage.clear(); } catch {} });

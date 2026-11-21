@@ -37,14 +37,16 @@ function fillSelect(sel, items) {
 }
 const FAMILY = { inline: "Inline", v: "V and L", flat: "Flat (boxer)", rotary: "Rotary" };
 // ---- preset picker ------------------------------------------------------------------
-// A card per preset with a 3D rendering: the car's Gran Turismo 7 studio render where GT7 has
-// the same model (img/gt7/index.json; the live site only, never in the public repository),
+// A card per preset with a 3D rendering: the car as Gran Turismo 7 (or, where only it has the
+// car, GT6) draws it (img/gt/index.json; the live site only, never in the public repository),
 // otherwise a render of the preset's own 3D engine (img/presets/).
 const CATS = data.presetCategories || {};
 const catOf = (p) => p.category || "generic";
 const engineImg = (id) => `img/presets/${id}.webp`;
-let gt7 = {};
-const imgFor = (id) => gt7[id] ? `img/gt7/${id}.webp` : engineImg(id);
+let gt = {};
+const imgFor = (id) => gt[id] ? `img/gt/${id}.webp` : engineImg(id);
+const GAME = { gt7: "Gran Turismo 7", gt6: "Gran Turismo 6" };
+const gtLabel = (g) => `${GAME[g.game] || "Gran Turismo"}: ${g.car}${g.match === "exact" ? "" : ` (${g.match})`}`;
 const ASP = { turbo: "turbo", supercharger: "supercharged" };
 function presetSub(p) {
   const L = data.layouts[p.layout];
@@ -55,8 +57,8 @@ function presetSub(p) {
 }
 function thumb(holder, img, id) {
   holder.classList.remove("none");
-  // A missing GT7 render falls back to the engine render, and that to the placeholder.
-  img.onerror = () => { if (id && img.src.includes("/gt7/")) img.src = engineImg(id); else holder.classList.add("none"); };
+  // A missing Gran Turismo picture falls back to the engine render, and that to the placeholder.
+  img.onerror = () => { if (id && img.src.includes("/img/gt/")) img.src = engineImg(id); else holder.classList.add("none"); };
   if (id) img.src = imgFor(id); else holder.classList.add("none");
 }
 const sortedPresets = [...data.presets].sort((a, b) =>
@@ -80,9 +82,9 @@ function renderPicker() {
     const fig = document.createElement("span"); fig.className = "pcard-img";
     const img = document.createElement("img"); img.alt = ""; img.loading = "lazy"; img.decoding = "async"; img.width = 480; img.height = 300;
     fig.append(img); thumb(fig, img, p.id);
-    const tag = catOf(p) === "generic" ? "Generic" : gt7[p.id] ? "" : "Engine";
+    const tag = catOf(p) === "generic" ? "Generic" : gt[p.id] ? "" : "Engine";
     if (tag) { const t = document.createElement("span"); t.className = "tag"; t.textContent = tag; fig.append(t); }
-    if (gt7[p.id]) b.title = `Gran Turismo 7: ${gt7[p.id].car}`;
+    if (gt[p.id]) b.title = gtLabel(gt[p.id]);
     const tx = document.createElement("span"); tx.className = "pcard-text";
     const nm = document.createElement("b"); nm.textContent = p.label;
     const sub = document.createElement("small"); sub.textContent = presetSub(p);
@@ -105,11 +107,11 @@ function renderTabs() {
 }
 function renderCredits() {
   const ul = $("pickerCredits"); ul.textContent = "";
-  $("pickerCreditsBox").hidden = !Object.keys(gt7).length;
+  $("pickerCreditsBox").hidden = !Object.keys(gt).length;
   for (const p of sortedPresets) {
-    const g = gt7[p.id]; if (!g) continue;
+    const g = gt[p.id]; if (!g) continue;
     const li = document.createElement("li");
-    li.textContent = `${p.label}: ${g.car}${g.match === "exact" ? "" : ` (${g.match})`}`;
+    li.textContent = `${p.label}: ${gtLabel(g)}`;
     ul.append(li);
   }
 }
@@ -139,7 +141,7 @@ $("pickerGrid").addEventListener("click", (e) => {
   $("presetDialog").close();
   applyPreset(b.dataset.id);
 });
-fetch("img/gt7/index.json").then(r => r.ok ? r.json() : {}).then(g => { gt7 = g; renderCredits(); updatePresetButton(); presetSpec(); }).catch(() => {});
+fetch("img/gt/index.json").then(r => r.ok ? r.json() : {}).then(g => { gt = g; renderCredits(); updatePresetButton(); presetSpec(); }).catch(() => {});
 fillSelect($("layout"), Object.entries(data.layouts).map(([id, L]) => [id, L.label, FAMILY[L.family]]));
 fillSelect($("intake"), Object.entries(data.intakes).map(([id, v]) => [id, v.label]));
 fillSelect($("muffler"), Object.entries(data.mufflers).map(([id, v]) => [id, v.label]));
@@ -199,12 +201,12 @@ function syncOutputs() {
 }
 function presetSpec() {
   const p = presetById[settings.preset];
-  // The car's Gran Turismo 7 render, named (the engine already has its own 3D view).
-  const g = p && gt7[p.id], fig = $("presetPhoto");
+  // The car's Gran Turismo picture, named (the engine already has its own 3D view).
+  const g = p && gt[p.id], fig = $("presetPhoto");
   fig.hidden = !g;
   if (g) {
-    $("presetPhotoImg").src = imgFor(p.id); $("presetPhotoImg").alt = `${p.label}, rendered in Gran Turismo 7`;
-    $("presetPhotoCredit").textContent = `Gran Turismo 7: ${g.car}${g.match === "exact" ? "" : ` (${g.match})`}`;
+    $("presetPhotoImg").src = imgFor(p.id); $("presetPhotoImg").alt = `${p.label}, as drawn in ${GAME[g.game] || "Gran Turismo"}`;
+    $("presetPhotoCredit").textContent = gtLabel(g);
   }
   const el = $("presetSpec"); el.textContent = "";
   if (!p || !p.spec) { el.hidden = true; return; }

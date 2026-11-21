@@ -74,7 +74,7 @@ picker that shows each one as a 3D rendering. It runs live at
 These were captured in Chromium with the engine running (`scripts/capture-screenshots.mjs`;
 the 3D engine needs a browser with a GPU, and `scripts/preview-3d.mjs` shoots a single preset).
 They show the cards as this repository has them, each with a render of its own engine; the
-live site also shows Gran Turismo 7 renders of the cars GT7 has.
+live site also shows the cars as Gran Turismo 7 or GT6 draws them, where either has the car.
 
 ## Features
 
@@ -100,8 +100,8 @@ live site also shows Gran Turismo 7 renders of the cars GT7 has.
   fits under the redline, rev-matched) or shift by hand; over-revving downshifts are refused.
 - **70 real presets** with each engine's torque curve calibrated to its published peak
   torque and power, chosen from a **visual picker**: a card per preset with a 3D rendering
-  (a render of the preset's own 3D engine; on the live site, the car's Gran Turismo 7 studio
-  render where GT7 has that model), with category tabs and search.
+  (a render of the preset's own 3D engine; on the live site, the car as Gran Turismo 7 or,
+  for cars only it has, GT6 draws it), with category tabs and search.
 - **Listening positions:** behind the car, at the intake, in the engine bay (fitted to
   recordings of a real BMW S65), the driver's seat, or the dry model. Under load, all four
   were checked against the engine recordings in Gran Turismo 5, 6 and 7 (22 presets):
@@ -237,7 +237,8 @@ torque calibration and the checks.
   `research/2026-11-15-acceleration.json` and `research/2026-11-21-acceleration.json`.
 - The picker's pictures in this repository are renders of the page's own 3D engine
   (`scripts/render-engine-thumbs.mjs`). The live site also shows Gran Turismo 7 studio renders
-  of the cars GT7 has, by Polyphony Digital and Sony Interactive Entertainment; they are not
+  and Gran Turismo 6 car thumbnails of the cars those games have (37 of the 70), by Polyphony
+  Digital and Sony Interactive Entertainment; they are not
   part of this repository or its licence, and the page works without them.
 
 ## Contributing

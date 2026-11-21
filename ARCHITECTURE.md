@@ -52,11 +52,14 @@ consistent with that source's torque.
 
 Each preset has a picture in `img/presets/<id>.webp` (480 x 300, 16:10): a render of the
 preset's own 3D engine, made in a GPU browser by `scripts/render-engine-thumbs.mjs` and
-`scripts/convert-renders.py`. On the live site, a car that Gran Turismo 7 has in the same model
-and generation shows GT7's studio render instead (`img/gt7/<id>.webp`, listed in
-`img/gt7/index.json`, which the page reads at start). Those renders are not in this repository;
-without the index every card shows its engine, and a card whose GT7 file fails falls back to
-the engine too.
+`scripts/convert-renders.py`. On the live site, a car that Gran Turismo has in the same model
+and generation shows the game's picture instead: GT7's studio render where GT7 has it (32), and
+otherwise GT6's own car thumbnail (5: the GRB Impreza, R10 TDI, W204 C 63, GNX and 2CV, which
+GT7 lacks), decoded from its PS3 TXS3 texture and set on a matching studio backdrop. They are
+`img/gt/<id>.webp`, listed in `img/gt/index.json`, which the page reads at start; the mapping
+and how close each car is are in `research/preset-gran-turismo.json`, built by
+`scripts/build-gt-thumbs.py`. Those pictures are not in this repository; without the index every
+card shows its engine, and a card whose picture fails falls back to the engine too.
 
 Each preset carries its real layout, displacement, rev limit, firing order and bank
 numbering where published, aspiration, gearbox type and gear count, ratios, final drive,
