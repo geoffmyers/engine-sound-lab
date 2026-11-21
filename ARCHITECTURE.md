@@ -226,7 +226,7 @@ python3 scripts/analyze-recording.py out.json --cylinders 8 --rpm 650:950 \
 |------|------|
 | `index.html` | The page (styles inline). |
 | `app.js` | Controls, the preset picker, audio graph, tachometer, firing timeline, spectrum; drives the 3D engine and its slow motion. |
-| `img/presets/` | One picture per preset (`<id>.webp`) and `credits.json`, the photos' authors, licences and sources. |
+| `img/presets/` | One picture per preset (`<id>.webp`, 480 x 300): a render of its own 3D engine. |
 | `engine-3d.js` | The 3D cutaway engine (three.js): builds the crank, cylinders, valvetrain and castings from a layout's firing angles and bank angles, and poses them from the crank angle. Loaded after the page, so the sound works without WebGL. |
 | `lib/three/` | three.js r170 and two of its add-ons, vendored (MIT). |
 | `engine-dsp.js` | The DSP and engine physics. Plain JS, no Web Audio, so it also runs under Node. |
@@ -237,6 +237,9 @@ python3 scripts/analyze-recording.py out.json --cylinders 8 --rpm 650:950 \
 | `render.js` | Offline render of a scripted run plus a WAV encoder (the page's **Render WAV**, and the tests). |
 | `engine-data.json` | Layouts with firing angles, mufflers, intakes, superchargers, gearing, scripted runs, presets, listening positions, cold-start data. Real-vehicle presets are generated. |
 | `research/` | Sourced specifications of the real vehicles, and the modelling file the generator reads. |
+| `scripts/render-engine-thumbs.mjs`, `scripts/convert-renders.py` | Draw every preset's picture from the 3D engine in a GPU browser over CDP, then size it to 480 x 300 WebP. |
+| `scripts/preview-3d.mjs`, `scripts/disk-origin.mjs` | Screenshot one preset (the 3D panel, or the picker) in a remote GPU browser, loading the working copy straight from disk with no server. |
+| `scripts/preset-image-sheet.py` | Tiles every preset picture into one labelled sheet for review. |
 
 
 ## Tests
@@ -251,6 +254,10 @@ node tests/dsp-check.mjs tests/out   # the DSP checks, also writing idle / blips
 python3 -m http.server 8000
 node tests/smoke.mjs http://localhost:8000/ tests/out
 node scripts/capture-screenshots.mjs http://localhost:8000/ docs/screenshots
+# With a remote GPU browser that cannot reach a local server, pass "disk" as the URL: the
+# working copy is served to it from disk (scripts/disk-origin.mjs). The smoke test also drives
+# the preset picker (open, search, a category tab, a card).
+CDP_URL=http://host:9223 node tests/smoke.mjs disk tests/out
 ```
 
 `dsp-check` fails on non-finite samples, an idle louder than full throttle, a pull that

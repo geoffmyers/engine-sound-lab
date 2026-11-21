@@ -65,8 +65,16 @@ picker that shows each one as a 3D rendering. It runs live at
 
 <p align="center"><em>Left: the T-6 Texan's Pratt &amp; Whitney R-1340 radial, firing 1-3-5-7-9-2-4-6-8. Right: a phone-sized screen.</em></p>
 
+<p align="center">
+  <img src="docs/screenshots/picker.png" width="100%" alt="The preset picker on its Race cars tab: fifteen cards, each with a 3D render of the preset's engine, its name and its layout, displacement and aspiration, with category tabs and a search box above">
+</p>
+
+<p align="center"><em>The preset picker, on the race cars: 90 presets in six categories plus generic engines, searchable by name, layout or fuel.</em></p>
+
 These were captured in Chromium with the engine running (`scripts/capture-screenshots.mjs`;
 the 3D engine needs a browser with a GPU, and `scripts/preview-3d.mjs` shoots a single preset).
+They show the cards as this repository has them, each with a render of its own engine; the
+live site also shows Gran Turismo 7 renders of the cars GT7 has.
 
 ## Features
 
@@ -159,11 +167,13 @@ holds its launch speed until you release the brake.
 
 ### Presets and listening positions
 
-Pick a preset from the **Engine** menu, grouped as road cars, race cars, motorcycles,
-aircraft, machines and generic engines. A real preset shows its specification and sources
-under the engine settings, and names every value that had to be estimated. Every setting can
-then be changed; the preset becomes a custom build. **Reset to defaults**, beside the menu, puts
-every setting, the mixer, the mode and the steady throttle back to how the page first loads.
+Press the **Engine** button to open the preset picker: a card per preset, with tabs for road
+cars, race cars, motorcycles, aircraft, trucks and machines and generic engines, and a search
+box that matches names, layouts and fuels (try "V12", "diesel" or "radial"). A real preset
+shows its specification and sources under the engine settings, and names every value that
+had to be estimated. Every setting can then be changed; the preset becomes a custom build.
+**Reset to defaults**, beside the picker, puts every setting, the mixer, the mode and the
+steady throttle back to how the page first loads.
 
 **Mix** sets the level of each part of the sound on its own: exhaust, intake, mechanical noise,
 turbo or blower, the pops and crackles on overrun and ignition-cut shifts, gearbox, and road and
@@ -197,8 +207,10 @@ npx wrangler@4 deploy
 
 ## Architecture
 
-`index.html` and `app.js` are the page and its instruments; `engine-worklet.js` runs the
-synthesizer in an AudioWorklet. The synthesizer (`engine-dsp.js`), the drivetrain
+`index.html` and `app.js` are the page, its instruments and the preset picker; `engine-3d.js`
+draws the 3D cutaway engine with three.js (vendored in `lib/three/`), and `img/presets/` holds
+each preset's picture, a render of that engine; `engine-worklet.js` runs the synthesizer in an
+AudioWorklet. The synthesizer (`engine-dsp.js`), the drivetrain
 (`drivetrain.js`) and the shared filters (`dsp-util.js`) are plain JavaScript, so they also
 render offline and run under Node in the tests. All engine, vehicle and preset data is in
 `engine-data.json`; the real-vehicle presets are generated from the sourced research in

@@ -15,6 +15,9 @@ const browser = await chromium.connectOverCDP(process.env.CDP_URL || "http://loc
 async function page(viewport, scheme) {
   const ctx = await browser.newContext({ viewport, colorScheme: scheme, ignoreHTTPSErrors: true, deviceScaleFactor: 1 });
   if (process.argv[2] === "disk") url = await serveFromDisk(ctx);
+  // These pictures are published: keep Gran Turismo 7's renders (live site only) out of them,
+  // so every card shows the page's own engine render, as in a public clone.
+  await ctx.route("**/img/gt7/**", (r) => r.abort());
   const p = await ctx.newPage();
   await p.goto(url, { waitUntil: "networkidle" });
   await p.evaluate(() => { try { localStorage.clear(); } catch {} });
@@ -61,6 +64,16 @@ const hold = async (p, key, ms) => { await p.keyboard.down(key); await p.waitFor
   await hold(p, "Space", 700);
   await p.screenshot({ path: `${out}/phone.png` });
   await p.keyboard.up("Space"); await ctx.close();
+}
+// 5. The preset picker, every category, while an F40 runs.
+{
+  const { ctx, p } = await page({ width: 1280, height: 900 }, "dark");
+  await p.evaluate((id) => window.choosePreset(id), "ferrari-f40");
+  await p.click("#ignition"); await p.waitForTimeout(1500);
+  await p.click("#presetBtn"); await p.click('#pickerTabs button[data-cat="race"]');
+  await p.waitForTimeout(1500);
+  await p.screenshot({ path: `${out}/picker.png` });
+  await ctx.close();
 }
 await browser.close();
 console.log(`screenshots written to ${out}`);
