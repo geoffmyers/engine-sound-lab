@@ -1,0 +1,266 @@
+[
+ {
+  "id": "ford-f150-35-ecoboost-2017-2020",
+  "label": "Ford F-150 3.5 EcoBoost with 10R80 (2017-2020)",
+  "engine": {
+   "code": "3.5 EcoBoost (second generation, D35)",
+   "layout": "V",
+   "cylinders": 6,
+   "bankAngleDeg": 60,
+   "crank": null,
+   "firingOrder": [
+    1,
+    4,
+    2,
+    5,
+    3,
+    6
+   ],
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "displacementL": 3.497,
+   "aspiration": {
+    "type": "twin turbo",
+    "count": 2,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "petrol",
+   "powerKw": 279.6,
+   "powerRpm": 5000,
+   "torqueNm": 637,
+   "torqueRpm": 3500
+  },
+  "transmission": {
+   "type": "automatic (torque converter)",
+   "gears": 10,
+   "ratios": [
+    4.69,
+    2.98,
+    2.14,
+    1.76,
+    1.52,
+    1.27,
+    1.0,
+    0.85,
+    0.68,
+    0.63
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 2163,
+   "rearTyre": "",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ford_EcoBoost_engine (read: 60 degree V6, 3,497 cc, 92.51 x 86.7 mm, twin turbo, port + direct injection)",
+   "https://www.f150hub.com/trans/10r80.html (read: all ten ratios and reverse 4.86)",
+   "search excerpt: Yahoo Autos / Ford Authority / Wards, 2017 F-150 3.5 EcoBoost 375 hp @5,000 and 470 lb-ft @3,500",
+   "search excerpt: rerev.com, fordmasterx.com, carscounsel.com (firing order 1-4-2-5-3-6; cylinders 1-3 passenger bank, 4-6 driver bank)",
+   "search excerpt: jdpower.com 2018 F-150 crew cab XL 4WD specs (curb weight 4,769 lb = 2,163 kg)",
+   "search excerpt: Digital Trends (3.55 rear axle ratio on the max-tow configuration)"
+  ],
+  "notes": "Power 375 hp = 279.6 kW, torque 470 lb-ft = 637 N.m. Firing order is from low-quality secondary sites; no Ford primary document found, and they disagree on which bank is bank 1 (banks here follow the source that numbers 1-3 passenger side, 4-6 driver side; the result is the same alternation either way). Curb mass varies 4,602-5,701 lb by cab, drive and trim; 2,163 kg is the 4x4 crew cab XL from one listing. Axle ratio (3.55 only confirmed for max tow; others exist), tyre size, boost, redline, idle, Cd and frontal area NOT FOUND. Reverse 4.86. The 10R80 is a torque-converter automatic."
+ },
+ {
+  "id": "peterbilt-379-cat-c15-eaton-fuller-18",
+  "label": "Peterbilt 379 with Caterpillar C15 and Eaton Fuller RTLO-18918B",
+  "engine": {
+   "code": "Caterpillar C15 (on-highway, ACERT-era and earlier ratings)",
+   "layout": "inline",
+   "cylinders": 6,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "banks": {},
+   "displacementL": 15.2,
+   "aspiration": {
+    "type": "turbo, aftercooled",
+    "count": 1,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 2100,
+   "idleRpm": null,
+   "fuel": "diesel",
+   "powerKw": 410,
+   "powerRpm": 2100,
+   "torqueNm": 2508,
+   "torqueRpm": 1200
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 18,
+   "ratios": [
+    14.4,
+    12.29,
+    8.56,
+    7.3,
+    6.05,
+    5.16,
+    4.38,
+    3.74,
+    3.2,
+    2.73,
+    2.29,
+    1.95,
+    1.62,
+    1.38,
+    1.17,
+    1.0,
+    0.86,
+    0.73
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": null,
+   "rearTyre": "",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "search excerpt: Caterpillar C15 on-highway spec sheet copy, 435-550 hp @2,100 rpm, 1550-1850 lb-ft @1,200 rpm, governed speed 2,100, bore 5.4 in (137 mm), stroke 6.75 in (171 mm)",
+   "search excerpt: cat.com C15 industrial pages (5.4 in bore, 6.7 in stroke, 17:1, turbocharged-aftercooled; current ratings peak at 1,400 rpm)",
+   "search excerpt: theautoinsiderblog.com C15 specs (firing order 1-5-3-6-2-4, 15.2 L inline-six)",
+   "https://www.globaltransmissionsupply.com/?p=12170 (read: RTLO-18918B ratio pairs, overall 19.72, splitter 17%, 1,850 lb-ft)",
+   "search excerpt: generaltruckparts.com RTLO-18918 (1st 14.40, 2nd 12.54 conflicting, 17th 0.86, 18th 0.73)",
+   "search excerpt: Overdrive Peterbilt 379 articles (no 379 curb weight, Cd or area found)"
+  ],
+  "notes": "Used the top on-highway rating, 550 hp (410 kW) @2,100 and 1,850 lb-ft (2,508 N.m) @1,200; the engine was sold at many ratings from 435 hp up. 18-speed ratios: the nine pairs on the supplier page (12.29/14.40, 7.30/8.56, 5.16/6.05, 3.74/4.38, 2.73/3.20, 1.95/2.29, 1.38/1.62, 1.00/1.17, 0.73/0.86) interleave with a 17% splitter into 14.40 down to 0.73 (14.40/0.73 = 19.72 overall, matching the page); one other listing gives 12.54 for 2nd, a conflict. Firing order is from a secondary site. Rear axle ratio, tyre, tractor mass, Cd/frontal area, idle, boost NOT FOUND (an unconfirmed Overdrive test unit lists 18,370 lb dry)."
+ },
+ {
+  "id": "willys-mb-1941-1945",
+  "label": "Willys MB (1941-1945)",
+  "engine": {
+   "code": "Willys L134 Go Devil",
+   "layout": "inline",
+   "cylinders": 4,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [
+    1,
+    3,
+    4,
+    2
+   ],
+   "banks": {},
+   "displacementL": 2.199,
+   "aspiration": {
+    "type": "na",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": 600,
+   "fuel": "petrol",
+   "powerKw": 44.7,
+   "powerRpm": 4000,
+   "torqueNm": 142,
+   "torqueRpm": 2000
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 3,
+   "ratios": [
+    2.94,
+    1.94,
+    1.0
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1113,
+   "rearTyre": "",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Willys_Go_Devil_engine (read: 3.125 x 4.375 in, 134.2 cu in, 60 hp @4,000, 105 lb-ft @2,000, 6.48:1)",
+   "https://en.wikipedia.org/wiki/Willys_MB (read: 54 hp net, curb 2,453 lb = 1,113 kg, 3-speed x 2-range transfer case)",
+   "https://www.offroaders.com/tech/jeep/transmission-factory-t84.htm (read: T-84 2.94 / 1.94 / 1.00)",
+   "search excerpt: kaiserwillys.com MB specs (firing order 1-3-4-2, idle 600 rpm, peak torque 2,000 rpm); 42fordgpw.com; TM 9-803 / TM 9-1803A (search excerpts only: speeds per gear, no ratios)"
+  ],
+  "notes": "60 hp gross = 44.7 kW; 105 lb-ft = 142 N.m. Conflict: the T-90 (successor) is 2.798/1.551/1.00, so T-84 figures rest on one site and a secondary pair of listings. NOT FOUND: governed rpm, Dana 18 transfer case ratios (high is direct by design), axle ratio (the MB's Dana 25/23-2 axles are commonly quoted 5.38:1, unsourced here), tyre size (6.00-16 commonly quoted, unsourced), Cd, frontal area, reverse."
+ },
+ {
+  "id": "toyota-land-cruiser-70-1hz",
+  "label": "Toyota Land Cruiser 70 with 1HZ (HZJ79)",
+  "engine": {
+   "code": "Toyota 1HZ",
+   "layout": "inline",
+   "cylinders": 6,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "banks": {},
+   "displacementL": 4.164,
+   "aspiration": {
+    "type": "na",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 4400,
+   "idleRpm": 650,
+   "fuel": "diesel",
+   "powerKw": 96,
+   "powerRpm": 3800,
+   "torqueNm": 285,
+   "torqueRpm": 2200
+  },
+  "transmission": {
+   "type": "manual",
+   "gears": 5,
+   "ratios": [
+    4.313,
+    2.33,
+    1.436,
+    1.0,
+    0.838
+   ],
+   "finalDrive": 4.3,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 2090,
+   "rearTyre": "",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Toyota_HZ_engine (read: 4.2 L, 94 x 100 mm, 22.4:1, 96 kW @3,800, 285 N.m @2,200, max engine speed 4,400)",
+   "search excerpt: Pakistani forum and parts listing (5-speed 4.313/2.330/1.436/1.000/0.838, reverse 4.220, 4.300 final drive, transfer high 1.000 low 1.960)",
+   "search excerpt: Toyota repair manual excerpts via manualslib (1HZ manual idle 600-700 rpm); carscounsel.com (firing order 1-5-3-6-2-4)",
+   "search excerpt: toyota-gib.com, pktrucks.com HZJ79 listings (7.50R16 tyres, kerb 2,020-2,280 kg, single cab 2,090)"
+  ],
+  "notes": "CONFLICTS: firing order 1-5-3-6-2-4 from one explainer site, another source says 1-4-2-6-3-5; no manual page seen. The 4.300 final drive is ambiguous (the same listing family shows 4.111 on other 70 Series; 4.556 not found), and the HZJ79 reportedly uses the R151 gearbox, whose ratios may differ from the set found. Max engine speed 4,400 is Wikipedia's figure, not a stated governor. Tyre 7.50R16 confirmed but its size string does not parse in the build script. Cd and frontal area NOT FOUND."
+ }
+]

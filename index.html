@@ -79,7 +79,64 @@ select {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
   padding: 7px 10px; max-width: 100%; min-width: 0;
 }
-.preset select { width: min(320px, 60vw); }
+.preset-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.preset-btn { display: flex; align-items: center; gap: 10px; width: min(380px, 70vw); min-width: 0; padding: 4px 10px 4px 4px; cursor: pointer; text-align: left;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.preset-btn:hover { border-color: var(--accent); }
+.preset-thumb { flex: none; width: 64px; height: 40px; border-radius: 4px; overflow: hidden; background: var(--glass-2); display: grid; place-items: center; }
+.preset-thumb img, .pcard-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.preset-thumb.none img, .pcard-img.none img { display: none; }
+.preset-thumb.none::after, .pcard-img.none::after { content: ""; width: 45%; height: 60%; opacity: 0.5;
+  background: var(--glass-dim); -webkit-mask: var(--engine-icon) center / contain no-repeat; mask: var(--engine-icon) center / contain no-repeat; }
+.preset-btn-text { display: grid; min-width: 0; flex: 1; line-height: 1.25; }
+.preset-btn-text > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+.preset-btn-text small { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.preset-btn .chev { flex: none; color: var(--muted); }
+:root { --engine-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 3h10v2h-4v2h5l3 3v8h-3l-2 2H8l-2-3H3v-6h3l1-2h4V5H7z'/%3E%3C/svg%3E"); }
+
+/* Preset picker */
+.picker { width: min(1080px, calc(100vw - 32px)); max-height: min(860px, calc(100vh - 32px)); padding: 0; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); color: var(--fg); display: none; flex-direction: column; overflow: hidden; }
+.picker[open] { display: flex; }
+.picker::backdrop { background: rgba(8, 10, 13, 0.6); backdrop-filter: blur(2px); }
+.picker-head { flex: none; display: flex; align-items: center; gap: 12px; padding: 14px 16px 10px; }
+.picker-head h2 { font: 800 24px/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; margin: 0; white-space: nowrap; }
+.picker-head input { flex: 1; min-width: 0; font: inherit; color: inherit; padding: 8px 12px; border-radius: var(--r); border: 1px solid var(--line); background: var(--surface); }
+.picker-close { flex: none; border: 0; background: none; cursor: pointer; padding: 8px; border-radius: var(--r); color: var(--muted); }
+.picker-close:hover { color: var(--fg); background: var(--surface); }
+.picker-tabs { flex: none; display: flex; gap: 6px; padding: 0 16px 12px; overflow-x: auto; scrollbar-width: thin; border-bottom: 1px solid var(--line); }
+.picker-tabs button { flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; cursor: pointer; font-size: 13px; white-space: nowrap; }
+.picker-tabs button b { font-weight: 500; color: var(--muted); margin-left: 4px; font-family: var(--font-data); font-size: 11px; }
+.picker-tabs button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.picker-tabs button[aria-pressed="true"] b { color: inherit; }
+.picker-body { flex: 1; min-height: 0; overflow-y: auto; padding: 14px 16px 16px; }
+.picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.picker-section { grid-column: 1 / -1; font: 700 17px/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 8px 0 -2px; }
+.picker-section:first-child { margin-top: 0; }
+.pcard { display: flex; flex-direction: column; text-align: left; padding: 0; cursor: pointer; overflow: hidden; min-width: 0;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface); transition: border-color 0.12s, transform 0.12s; }
+.pcard:hover { border-color: var(--accent); transform: translateY(-1px); }
+.pcard[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.pcard-img { aspect-ratio: 16 / 10; background: var(--glass-2); display: grid; place-items: center; position: relative; }
+.pcard-img .tag { position: absolute; left: 6px; top: 6px; font: 600 10px/1 var(--font-data); letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 4px 6px; border-radius: 3px; background: rgba(17, 19, 23, 0.78); color: #dbe0e7; }
+.pcard-text { display: grid; gap: 2px; padding: 8px 10px 10px; min-width: 0; }
+.pcard-text b { font-weight: 500; font-size: 14px; line-height: 1.25; }
+.pcard-text small { color: var(--muted); font-size: 12px; line-height: 1.3; }
+.picker-empty { color: var(--muted); text-align: center; padding: 30px 0; }
+.picker-credits { margin-top: 18px; font-size: 12px; color: var(--muted); }
+.picker-credits summary { cursor: pointer; }
+.picker-credits ul { columns: 2 320px; padding-left: 18px; margin: 8px 0 0; }
+.picker-credits li { break-inside: avoid; margin-bottom: 4px; }
+.picker-credits a, .preset-photo a { color: var(--accent-text); }
+@media (max-width: 560px) {
+  .picker { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border-radius: 0; border: 0; }
+  .picker-head h2 { display: none; }
+  .picker-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+}
+.preset-photo { margin: 0 0 10px; }
+.preset-photo img { width: 100%; max-width: 300px; aspect-ratio: 16 / 10; height: auto; object-fit: cover; border-radius: 6px; display: block; background: var(--glass-2); }
+.preset-photo figcaption { font-size: 11px; color: var(--muted); margin-top: 4px; }
 .preset .btn { white-space: nowrap; }
 .ignition {
   border: 0; border-radius: 999px; padding: 10px 22px; cursor: pointer;
@@ -113,7 +170,23 @@ canvas { display: block; width: 100%; max-width: 100%; }
 .chip[data-s="cranking"] { color: var(--bank-a); }
 .panel-title { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font: 500 11px/1.2 var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; color: var(--glass-dim); margin-bottom: 6px; }
 .panel-title em { font-style: normal; font-family: var(--font-data); letter-spacing: 0; text-transform: none; color: var(--glass-ink); }
-#engine { height: 170px; }
+/* 3D cutaway engine */
+.engine3d { position: relative; height: clamp(240px, 36vw, 340px); border-radius: 8px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, var(--glass-2), var(--glass) 75%); }
+.engine3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; cursor: grab; }
+.engine3d-canvas:active { cursor: grabbing; }
+.engine3d-labels { position: absolute; inset: 0; pointer-events: none; }
+.engine3d-label { position: absolute; left: 0; top: 0; --heat: 0;
+  font: 600 10px/1 var(--font-data); padding: 3px 5px; border-radius: 3px; color: var(--glass);
+  background: color-mix(in srgb, var(--bank-a) calc(45% + var(--heat) * 55%), var(--glass-2));
+  box-shadow: 0 0 calc(var(--heat) * 12px) var(--bank-a); }
+.engine3d-label.b1 { background: color-mix(in srgb, var(--bank-b) calc(45% + var(--heat) * 55%), var(--glass-2)); box-shadow: 0 0 calc(var(--heat) * 12px) var(--bank-b); }
+.engine3d-btn { position: absolute; top: 8px; right: 8px; z-index: 1; font: 500 11px/1 var(--font-body); letter-spacing: 0.06em;
+  padding: 6px 9px; border-radius: 4px; border: 1px solid var(--glass-grid); background: color-mix(in srgb, var(--glass) 70%, transparent); color: var(--glass-dim); cursor: pointer; }
+.engine3d-btn[aria-pressed="true"] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+.engine3d-note { position: absolute; left: 10px; bottom: 6px; margin: 0; font-size: 11px; color: var(--glass-dim); pointer-events: none; }
+.engine3d[data-state="failed"] .engine3d-note { inset: 0; display: grid; place-items: center; padding: 16px; text-align: center; font-size: 13px; }
+.engine3d[data-state="failed"] .engine3d-btn { display: none; }
 #timeline { height: 92px; }
 #spectrum { height: 150px; }
 .firing-notes { font-size: 13px; color: var(--glass-dim); margin: 6px 0 0; }
@@ -205,12 +278,36 @@ a { color: var(--accent-text); }
       <small>Build an engine, then hear it.</small>
     </div>
     <div class="preset">
-      <label for="preset">Engine</label>
-      <select id="preset"></select>
+      <span class="preset-title" id="presetTitle">Engine</span>
+      <button class="preset-btn" id="presetBtn" type="button" aria-haspopup="dialog" aria-labelledby="presetTitle presetBtnName">
+        <span class="preset-thumb"><img id="presetBtnImg" alt="" width="64" height="40"></span>
+        <span class="preset-btn-text"><span id="presetBtnName">Custom build</span><small id="presetBtnSub"></small></span>
+        <svg class="chev" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
       <button class="btn" id="resetBtn" type="button" title="Put every setting, the mixer, the mode and the steady throttle back to their defaults">Reset to defaults</button>
     </div>
     <button class="ignition" id="ignition" type="button" aria-pressed="false"><span class="lamp"></span><span id="ignitionText">Start engine</span></button>
   </header>
+
+  <dialog class="picker" id="presetDialog" aria-labelledby="pickerTitle">
+    <div class="picker-head">
+      <h2 id="pickerTitle">Choose an engine</h2>
+      <input type="search" id="pickerSearch" placeholder="Search: Ferrari, V12, diesel, radial..." aria-label="Search the engines" autocomplete="off">
+      <button class="picker-close" id="pickerClose" type="button" aria-label="Close">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="picker-tabs" role="group" aria-label="Show a category" id="pickerTabs"></div>
+    <div class="picker-body">
+      <div class="picker-grid" id="pickerGrid"></div>
+      <p class="picker-empty" id="pickerEmpty" hidden>No engine matches that search.</p>
+      <details class="picker-credits" id="pickerCreditsBox" hidden>
+        <summary>About the renders</summary>
+        <p>Car renders are studio shots from Gran Turismo 7, by Polyphony Digital and Sony Interactive Entertainment, shown to illustrate each preset; this site is not affiliated with either. Cards marked Engine or Generic show this page's own 3D engine. Where GT7 has a close relative rather than the exact car, it says so:</p>
+        <ul id="pickerCredits"></ul>
+      </details>
+    </div>
+  </dialog>
 
   <main class="grid">
     <section class="cluster" aria-label="Instruments">
@@ -230,8 +327,11 @@ a { color: var(--accent-text); }
       </div>
 
       <div>
-        <div class="panel-title"><span>Cylinders, crank angle and firing</span><em id="layoutName"></em></div>
-        <canvas id="engine" aria-label="Cylinder diagram"></canvas>
+        <div class="panel-title"><span>Cutaway engine and firing</span><em id="layoutName"></em></div>
+        <div class="engine3d" id="engine3d" role="img" aria-label="Cutaway 3D engine: pistons, connecting rods, crankshaft and valves moving with the crank, each cylinder lighting as it fires">
+          <button class="engine3d-btn" id="slowMo" type="button" aria-pressed="false" title="Show the engine at 1/40 of its real speed, so each stroke can be followed">Slow motion</button>
+          <p class="engine3d-note" id="engine3dNote">Drag to turn · click, then scroll to zoom · double-click to reset</p>
+        </div>
         <canvas id="timeline" aria-label="Firing timeline over one engine cycle"></canvas>
         <p class="firing-notes" id="firingNotes"></p>
       </div>
@@ -289,6 +389,7 @@ a { color: var(--accent-text); }
 
       <fieldset>
         <legend>Engine</legend>
+        <figure class="preset-photo" id="presetPhoto" hidden><img id="presetPhotoImg" alt="" width="480" height="300"><figcaption id="presetPhotoCredit"></figcaption></figure>
         <p class="note spec" id="presetSpec" hidden></p>
         <div class="field span2"><label for="layout">Layout</label><select id="layout" data-key="layout"></select></div>
         <div class="field"><label for="displacement">Displacement</label><input type="range" id="displacement" data-key="displacement" min="0.05" max="28" step="0.01"><output data-for="displacement"></output></div>

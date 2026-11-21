@@ -28,15 +28,35 @@ code holds none of its own.
 
 ## Real vehicles and engines
 
-42 presets reproduce real vehicles' engine and drivetrain configurations, grouped on the
-page as road cars (Porsche 911 GT3, Ferrari 458, Lexus LFA, Corvette C8, Mustang GT, Hellcat,
-GT-R, S2000, Civic Type R, RX-7, Supra, STI, RS3, E46 M3, SLS AMG, Aventador, GR86, MX-5,
-Beetle, Model T), race cars (2005 Renault R25 V10, 2006 Cosworth F1 V8, Ferrari 412 T2 V12,
-NASCAR Next Gen, Mazda 787B four-rotor, Audi S1 E2, Audi R10 TDI, 911 GT3 Cup, IndyCar,
-Top Fuel dragster, Yamaha M1), motorcycles (Harley Milwaukee-Eight, Ducati Panigale V4,
-Hayabusa, KTM 250 SX two-stroke), aircraft (Merlin with propeller reduction, R-1340 Wasp
-radial, Lycoming O-360) and machines (Ram Cummins, Detroit Diesel 8V-71 two-stroke,
-Stihl chainsaw, Briggs & Stratton mower).
+69 generated presets (plus the hand-tuned BMW S65) reproduce real vehicles' engine and
+drivetrain configurations, grouped on the page as road cars (Porsche 911 GT3, Ferrari 458 and
+F40, Lexus LFA, McLaren F1, Porsche Carrera GT, Corvette C8, Mustang GT, Hellcat, GT-R R35 and
+Skyline R34, S2000, Civic Type R, RX-7, Supra, STI, RS3, E46 M3, C63 AMG, SLS AMG, Aventador,
+Ford GT, Buick GNX, GR Yaris, AE86, GR86, MX-5, 2CV, Beetle, Model T), race cars (2005
+Renault R25 V10, 2006 Cosworth F1 V8, 2020 Mercedes W11 hybrid V6, Ferrari 412 T2 V12, NASCAR
+Next Gen, Mazda 787B four-rotor, Ford GT40 Mk II, Porsche 962C, Audi S1 E2, Lancia Delta
+Integrale, Audi R10 TDI, 911 GT3 Cup, IndyCar, Top Fuel dragster, Yamaha M1), motorcycles
+(Harley Milwaukee-Eight, Ducati Panigale V4 and 1299, BMW R 1250 GS boxer, Yamaha MT-07 270°
+twin, Triumph Street Triple 765, Honda CBR600RR, Hayabusa, KTM 250 SX and Vespa PX
+two-strokes), aircraft (Merlin with propeller reduction, R-1340 Wasp and B-17's R-1820
+Cyclone radials, Lycoming O-360, Continental IO-550 and A-65) and trucks and machines (Ram
+Cummins, F-150 EcoBoost, Peterbilt 379 with a Cat C15 and 18-speed, Willys MB, Land Cruiser
+70 1HZ, Detroit Diesel 8V-71 two-stroke, Stihl chainsaw, Briggs & Stratton mower).
+
+The 2026-11-21 additions were researched to the same standard (sources per vehicle, nulls
+where nothing was found, guesses only as labelled estimates). Where a figure could not be
+modelled as published it says so: automatics (the GNX's 200-4R, the F-150's 10R80) run as the
+closest box the drivetrain has, the GR Yaris's split final drive is entered as overall
+ratios, and the Lancia uses the upper end of its source's 330-365 hp, the only figure
+consistent with that source's torque.
+
+Each preset has a picture in `img/presets/<id>.webp` (480 x 300, 16:10): a render of the
+preset's own 3D engine, made in a GPU browser by `scripts/render-engine-thumbs.mjs` and
+`scripts/convert-renders.py`. On the live site, a car that Gran Turismo 7 has in the same model
+and generation shows GT7's studio render instead (`img/gt7/<id>.webp`, listed in
+`img/gt7/index.json`, which the page reads at start). Those renders are not in this repository;
+without the index every card shows its engine, and a card whose GT7 file fails falls back to
+the engine too.
 
 Each preset carries its real layout, displacement, rev limit, firing order and bank
 numbering where published, aspiration, gearbox type and gear count, ratios, final drive,
@@ -205,7 +225,10 @@ python3 scripts/analyze-recording.py out.json --cylinders 8 --rpm 650:950 \
 | File | Role |
 |------|------|
 | `index.html` | The page (styles inline). |
-| `app.js` | Controls, audio graph, tachometer, cylinder map, firing timeline, spectrum. |
+| `app.js` | Controls, the preset picker, audio graph, tachometer, firing timeline, spectrum; drives the 3D engine and its slow motion. |
+| `img/presets/` | One picture per preset (`<id>.webp`) and `credits.json`, the photos' authors, licences and sources. |
+| `engine-3d.js` | The 3D cutaway engine (three.js): builds the crank, cylinders, valvetrain and castings from a layout's firing angles and bank angles, and poses them from the crank angle. Loaded after the page, so the sound works without WebGL. |
+| `lib/three/` | three.js r170 and two of its add-ons, vendored (MIT). |
 | `engine-dsp.js` | The DSP and engine physics. Plain JS, no Web Audio, so it also runs under Node. |
 | `drivetrain.js` | Clutch, gearbox, vehicle, brakes, shift sequencing, and gear, shift, road and wind sounds. |
 | `dsp-util.js` | Filters, delay line and random numbers shared by the engine and the drivetrain. |

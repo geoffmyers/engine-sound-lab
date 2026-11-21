@@ -1,0 +1,290 @@
+[
+ {
+  "id": "toyota-gr-yaris-2020",
+  "label": "Toyota GR Yaris (2020, G16E-GTS, 6-speed manual)",
+  "engine": {
+   "code": "G16E-GTS",
+   "layout": "inline",
+   "cylinders": "3",
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": null,
+   "banks": null,
+   "displacementL": 1.618,
+   "aspiration": {
+    "type": "turbocharged",
+    "count": 1,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline (premium, D-4ST direct + port injection)",
+   "powerKw": 200,
+   "powerRpm": 6500,
+   "torqueNm": 370,
+   "torqueRpm": 4600
+  },
+  "transmission": {
+   "type": "manual (Toyota iMT, EA67F/EA60)",
+   "gears": 6,
+   "ratios": [
+    13.943,
+    8.819,
+    6.049,
+    4.579,
+    3.621,
+    3.022
+   ],
+   "finalDrive": 3.941,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1280,
+   "rearTyre": "225/40ZR18",
+   "cd": 0.352,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Toyota_GR_Yaris",
+   "https://www.carexpert.com.au/toyota/yaris/2021/gr/powertrain-and-performance",
+   "https://mag.toyota.co.uk/gr-yaris-drivetrain-how-it-is-bespoke/",
+   "https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/240704-GR-Yaris-Tech-Specs.pdf (July 2024 facelift sheet, downloaded and read with pdftotext)",
+   "https://www.enginelabs.com/?p=5882"
+  ],
+  "notes": "Gear ratios and final drives are from Toyota UK's July 2024 tech sheet (facelift car, 276 bhp): 1st 3.538, 2nd 2.238, 3rd 1.535, 4th 1.162, 5th 1.081, 6th 0.902, with a split final drive of 3.941 (gears 1-4) and 3.350 (gears 5-6 and reverse). A search excerpt said the original 2020 sheets give the same ratios; not confirmed from a 2020 document. The synthesizer has one final drive, so 'ratios' here are OVERALL ratios (gear x its own final drive: 13.943, 8.819, 6.049, 4.579 with 3.941; 3.621, 3.022 with 3.350) and finalDrive 3.941 is the first four gears' value (use ratiosAreOverall). Power 200 kW @ 6,500 and 370 N.m @ 4,600 are the Australian rating (carexpert); Europe is 192 kW (261 PS) / 360 N.m (257 bhp @ 6,500, 360 N.m from 3,000 to 4,600 per Toyota UK magazine and enginelabs); the 2024 facelift is 206 kW / 390 N.m. Curb mass 1,280 kg is the RZ per Wikipedia (RS 1,130, RS light 1,110). Cd 0.352 and 225/40ZR18 Michelin Pilot Sport 4S are from the 2024 UK sheet, not read for the 2020 car. Redline, boost, idle, firing order and frontal area not found. Firing order of the layout default is 1-3-2 (unsourced for this engine)."
+ },
+ {
+  "id": "toyota-ae86-gts-1985-us",
+  "label": "Toyota Corolla GT-S (AE86, 1985, US, 4A-GEC, 5-speed)",
+  "engine": {
+   "code": "4A-GEC (4A-GE)",
+   "layout": "inline",
+   "cylinders": "4",
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": null,
+   "banks": null,
+   "displacementL": 1.587,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 7500,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 84,
+   "powerRpm": 6600,
+   "torqueNm": 132,
+   "torqueRpm": 4800
+  },
+  "transmission": {
+   "type": "manual (Toyota T50)",
+   "gears": 5,
+   "ratios": [
+    3.587,
+    2.022,
+    1.384,
+    1.0,
+    0.861
+   ],
+   "finalDrive": 4.3,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1043,
+   "rearTyre": "185/60HR14",
+   "cd": 0.35,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Toyota_AE86",
+   "https://en.wikipedia.org/wiki/Toyota_A_engine",
+   "https://aeu86.org/?p=142",
+   "https://blog.consumerguide.com/1985-1987-toyota-corolla-gt-s/",
+   "https://autozine.org/Archive/Toyota/classic/AE86.html",
+   "Wikipedia 'Toyota T transmission' and a Cusco close-ratio listing (search excerpts only; they agree with aeu86 on the T50 ratios)"
+  ],
+  "notes": "Modelled as the US-market GT-S: 112 bhp (84 kW, 114 PS) @ 6,600 rpm, 132 N.m @ 4,800 (Wikipedia; Consumer Guide 97 lb-ft), tachometer redline 7,500 (Wikipedia, Consumer Guide). Japanese 4A-GEU is 130 PS / 149 N.m @ 5,200, European 124 PS / 142 N.m. aeu86 gives a maximum engine speed of 7,700. T50 ratios and the 4.30 final drive from aeu86.org (matching search excerpts). Curb mass conflict: Wikipedia 998-1,043 kg for North America, Consumer Guide 2,450 lb (1,111 kg), aeu86 970 kg hatch / 950 coupe (non-US); 1,043 kg used. Tyres 185/60HR14 Bridgestone Potenza (Consumer Guide, Wikipedia). Cd 0.35 is the liftback (coupe 0.38). Firing order (1-3-4-2 is the usual 4A-GE order) and idle not found. 4A-GE crank is a standard inline-four, left null."
+ },
+ {
+  "id": "citroen-2cv6-602cc",
+  "label": "Citroen 2CV6 (602 cc, 4-speed)",
+  "engine": {
+   "code": "M28 (602 cc flat-twin)",
+   "layout": "flat (horizontally opposed)",
+   "cylinders": "2",
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": null,
+   "banks": null,
+   "displacementL": 0.602,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 21.6,
+   "powerRpm": 5750,
+   "torqueNm": 41.4,
+   "torqueRpm": 3500
+  },
+  "transmission": {
+   "type": "manual (4-speed, front-mounted)",
+   "gears": 4,
+   "ratios": [
+    5.2,
+    2.65,
+    1.78,
+    1.31
+   ],
+   "finalDrive": 4.125,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 601,
+   "rearTyre": "125/15",
+   "cd": 0.51,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://citroenet.org.uk/passenger-cars/michelin/2cv/1975-autocar.html (Autocar 8 March 1975 road test, read in full)",
+   "https://en.wikipedia.org/wiki/Citro%C3%ABn_2CV",
+   "https://autozine.org/Archive/Citroen/classic/2CV.html",
+   "search excerpt: uniquecarsandparts.com.au 1979 2CV6, carbaze, ultimatespecs (74 x 70 mm bore and stroke, 29 PS @ 5,750)"
+  ],
+  "notes": "Gearbox ratios are Autocar's (top 1.31, third 1.78, second 2.65, first 5.20, 4.125 final drive); the speeds per 1,000 rpm Autocar printed (12.43 mph top) check against a roughly 0.29 m wheel. Autocar printed 28.5 bhp DIN at 6,750 rpm and 30.5 lb-ft at 3,500; 6,750 looks like a misprint, since other sources give 29 PS (21.6 kW) at 5,750 and the Autocar top speed of 69 mph corresponds to about 5,550 rpm in top. Power here is 21.6 kW @ 5,750 from search excerpts, torque 41.4 N.m (30.5 lb-ft) @ 3,500 from Autocar. Torque elsewhere is 39 N.m (4 kgm) at 3,000-3,500. Autocar kerb weight 601 kg (11.85 cwt); Autozine 590 kg. Tyre Michelin 125/15 radial (aspect ratio not stated). Cd 0.51 is the 2CV body in general (Wikipedia). Redline, idle, firing order not found. Output varied over the years (28 hp, 25 hp after 1975 emissions, 29 hp Charleston); this is the mid-1970s 2CV6."
+ },
+ {
+  "id": "ford-gt-2017",
+  "label": "Ford GT (2017, 3.5 EcoBoost, 7-speed DCT)",
+  "engine": {
+   "code": "3.5 EcoBoost (Ford GT, high-output)",
+   "layout": "V",
+   "cylinders": "6",
+   "bankAngleDeg": 60,
+   "crank": null,
+   "firingOrder": null,
+   "banks": null,
+   "displacementL": 3.5,
+   "aspiration": {
+    "type": "turbocharged",
+    "count": 2,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline (premium)",
+   "powerKw": 482,
+   "powerRpm": 6250,
+   "torqueNm": 746,
+   "torqueRpm": 5900
+  },
+  "transmission": {
+   "type": "dual-clutch (Getrag 7DCL750)",
+   "gears": 7,
+   "ratios": [
+    3.397,
+    2.186,
+    1.626,
+    1.285,
+    1.029,
+    0.839,
+    0.634
+   ],
+   "finalDrive": 3.667,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1521,
+   "rearTyre": "325/30ZR20",
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ford_GT",
+   "https://www.0-60specs.com/ford-gt-0-60-times/",
+   "https://media.ford.com/content/dam/fordmedia/Europe/documents/en/2017_GT_Tech_Specs_EU.pdf (search excerpt only; the file would not download)",
+   "https://gearpatrol.com/2017/01/25/ford-gt-official-specs/ (search excerpt)"
+  ],
+  "notes": "647 hp (482 kW) @ 6,250 and 550 lb-ft (746 N.m) @ 5,900 are SAE values (Wikipedia; Ford EU sheet excerpt); 2020 and later cars are 660 hp. Gear ratios and the 3.667 final drive come from a search excerpt of Ford's EU tech sheet (3.397, 2.186, 1.626, 1.285, 1.029, 0.839, 0.634), and one report says the AMG GT uses identical ratios; the PDF itself was not read. Curb mass 1,521 kg (3,354 lb) from Wikipedia; Ford's 3,054 lb is a DRY figure. Tyres Michelin Pilot Sport Cup 2, 245/35R20 front, 325/30R20 rear. Redline, boost, idle, bank firing order, Cd and frontal area not found; the racing GT's limit is 7,300 rpm (search excerpt). The 3.5 EcoBoost is a 60 degree V6; the layout default firing order is used."
+ },
+ {
+  "id": "buick-regal-gnx-1987",
+  "label": "Buick Regal GNX (1987, 3.8 turbo V6, 200-4R automatic)",
+  "engine": {
+   "code": "LC2 (Buick 3.8 turbo, GNX tune)",
+   "layout": "V",
+   "cylinders": "6",
+   "bankAngleDeg": 90,
+   "crank": "split-pin (even-fire) crank, introduced by Buick in 1977; not confirmed for the turbo on the page read",
+   "firingOrder": [
+    1,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   "banks": {
+    "left_or_A": [
+     1,
+     3,
+     5
+    ],
+    "right_or_B": [
+     2,
+     4,
+     6
+    ]
+   },
+   "displacementL": 3.791,
+   "aspiration": {
+    "type": "turbocharged",
+    "count": 1,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 206,
+   "powerRpm": 4400,
+   "torqueNm": 488,
+   "torqueRpm": 3000
+  },
+  "transmission": {
+   "type": "automatic (GM Turbo Hydramatic 200-4R, torque converter, overdrive)",
+   "gears": 4,
+   "ratios": [
+    2.74,
+    1.57,
+    1.0,
+    0.67
+   ],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "curbMassKg": 1600,
+   "rearTyre": null,
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Buick_Regal",
+   "https://en.wikipedia.org/wiki/Buick_V6_engine",
+   "https://ateupwithmotor.com/?p=1001",
+   "https://gearstar.com/tag/200-4r and https://gearstar.com/gm-200r4-transmissions/ (search excerpts: 200-4R ratios)",
+   "https://edmunds.com/car-reviews/track-tests/1987-buick-regal-grand-national-track-test.html (search excerpt)"
+  ],
+  "notes": "Buick rated the GNX 276 hp (206 kW) @ 4,400 and 360 lb-ft (488 N.m) @ 3,000 (Wikipedia Regal; ateupwithmotor); real output was about 300 hp / 420 lb-ft, and Wikipedia's Buick V6 page lists 300 hp for the GNX. Bore and stroke 3.8 x 3.4 in (96.5 x 86.4 mm), 231.4 cu in = 3.791 L. Firing order 1-6-5-4-3-2 with 1-3-5 left and 2-4-6 right is the Buick V6 family order (Wikipedia). 200-4R ratios from search excerpts of gearstar (most sources 0.67 overdrive, one 0.69). Final drive: only the 3.42 axle of the 1984-85 Grand National was found; the GNX axle was not read. Mass: 'a bit over 3,500 lb (1,600 kg)' for the Grand National in general (ateupwithmotor); search excerpts gave 3,545 and 3,552 lb for the GNX and Edmunds 3,599 lb for a Grand National. Tyres not found (the GNX had 16-inch wheels with VR-rated tyres). Redline, boost, idle, Cd, frontal area not found. Top speed electronically limited to 124 mph."
+ }
+]

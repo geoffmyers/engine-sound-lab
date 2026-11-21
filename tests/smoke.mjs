@@ -5,8 +5,10 @@
 //   Serve the site first (python3 -m http.server 8000), start Chromium with
 //   --remote-debugging-port=9222, and set CDP_URL if it listens elsewhere. AudioWorklet needs a
 //   secure context: over plain HTTP on anything but localhost the page uses its ScriptProcessor fallback.
+//   url "disk" loads the working copy with no server (scripts/disk-origin.mjs), for a remote browser.
 import { chromium } from "playwright-core";
-const url = process.argv[2] || "http://localhost:8000/";
+import { serveFromDisk } from "../scripts/disk-origin.mjs";
+let url = process.argv[2] || "http://localhost:8000/";
 const out = process.argv[3] || ".";
 const browser = await chromium.connectOverCDP(process.env.CDP_URL || "http://localhost:9222");
 let failed = false;
@@ -17,6 +19,7 @@ for (const [label, viewport, scheme] of [
   ["phone-light", { width: 390, height: 844 }, "light"],
 ]) {
   const ctx = await browser.newContext({ viewport, colorScheme: scheme, ignoreHTTPSErrors: true });
+  if (process.argv[2] === "disk") url = await serveFromDisk(ctx);
   const page = await ctx.newPage();
   const errors = [];
   page.on("console", m => { if (m.type() === "error") errors.push(m.text()); });
@@ -39,7 +42,10 @@ for (const [label, viewport, scheme] of [
     bases.push(await page.$eval("#perspectiveNote .basis", el => el.textContent));
   }
   // A turbo boxer in Drive: pull away (automatic shifting), gain speed, then brake.
-  await page.selectOption("#preset", "boxer-turbo");
+  // Through the picker, as a visitor would: open it, search, click the card.
+  await page.click("#presetBtn");
+  await page.fill("#pickerSearch", "boxer turbo");
+  await page.click('.pcard[data-id="boxer-turbo"]');
   await page.keyboard.press("3");
   await page.waitForTimeout(1500);
   await page.keyboard.down("Space");
@@ -62,15 +68,23 @@ for (const [label, viewport, scheme] of [
   await page.waitForTimeout(300);
   drive.toast = await page.$eval("#toast", el => el.hidden ? "" : el.textContent);
   // Real presets: a radial aircraft engine (no Drive, sources shown) and a two-stroke.
-  await page.selectOption("#preset", "pw-r1340-wasp");
+  await page.click("#presetBtn");
+  const pickerInfo = await page.evaluate(() => ({
+    groups: [...document.querySelectorAll("#pickerTabs button")].map(b => b.firstChild.textContent),
+    cards: document.querySelectorAll("#pickerGrid .pcard").length,
+  }));
+  await page.click('#pickerTabs button[data-cat="aircraft"]');
+  await page.click('.pcard[data-id="pw-r1340-wasp"]');
   await page.waitForTimeout(1200);
   const real = await page.evaluate(() => ({
     driveDisabled: document.getElementById("mode-drive").disabled,
     spec: document.getElementById("presetSpec").textContent,
-    groups: [...document.querySelectorAll("#preset optgroup")].map(g => g.label),
+    picture: document.getElementById("presetBtnImg").naturalWidth,
+    button: document.getElementById("presetBtnName").textContent,
   }));
+  Object.assign(real, pickerInfo);
   if (label === "desktop-light") await page.screenshot({ path: `${out}/smoke-radial.png` });
-  await page.selectOption("#preset", "ktm-250-sx");
+  await page.evaluate(() => window.choosePreset("ktm-250-sx"));
   await page.keyboard.down("Space"); await page.waitForTimeout(800); await page.keyboard.up("Space");
   real.twoStrokeRpm = await page.evaluate(() => Math.round(window.engineState.rpm));
   const info = await page.evaluate(() => ({
@@ -81,7 +95,7 @@ for (const [label, viewport, scheme] of [
     hidden: [...document.querySelectorAll("#turboSub,#scSub,#holdField")].map(e => getComputedStyle(e).display),
   }));
   const ok = errors.length === 0 && !info.hScroll && bases.length === 5 && idle > 300 && revving > idle + 500 && /Too fast/.test(drive.toast) &&
-    real.driveDisabled && /Sources:/.test(real.spec) && real.groups.length >= 5 && real.twoStrokeRpm > 2000 &&
+    real.driveDisabled && /Sources:/.test(real.spec) && real.picture > 0 && real.groups.length >= 5 && real.twoStrokeRpm > 2000 &&
     parseInt(drive.gear) >= 2 && drive.kmh > 60 && drive.braked < drive.kmh - 25 && parseFloat(drive.boost) > 0.3;
   if (!ok) failed = true;
   console.log(`${ok ? "ok  " : "FAIL"} ${label}: idle ${idle} rpm, on throttle ${revving} rpm, state ${info.state}, order ${info.order}, hScroll ${info.hScroll}, worklet ${info.worklet}, bases ${bases.join("/")}, drive gear ${drive.gear} at ${drive.kmh} km/h, boost ${drive.boost}, braked to ${drive.braked} km/h, real presets ${JSON.stringify({ ...real, spec: real.spec.slice(0, 60) })}, toast "${drive.toast}" (before ${JSON.stringify(drive.before)} after ${JSON.stringify(drive.after)}), panels ${info.hidden}`);

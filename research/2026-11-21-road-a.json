@@ -1,0 +1,263 @@
+[
+  {
+    "id": "mclaren-f1-1994",
+    "label": "McLaren F1 (1994, BMW S70/2 V12, 6-speed manual)",
+    "engine": {
+      "code": "BMW S70/2",
+      "layout": "V",
+      "cylinders": 12,
+      "bankAngleDeg": 60,
+      "crank": null,
+      "firingOrder": null,
+      "banks": null,
+      "displacementL": 6.064,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 7500,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 461,
+      "powerRpm": 7400,
+      "torqueNm": 650,
+      "torqueRpm": 5600
+    },
+    "transmission": {
+      "type": "manual (transverse)",
+      "gears": 6,
+      "ratios": [
+        3.23,
+        2.19,
+        1.71,
+        1.39,
+        1.16,
+        0.93
+      ],
+      "finalDrive": 2.37,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1260,
+      "rearTyre": "315/45 ZR17",
+      "cd": 0.32,
+      "frontalAreaM2": 1.79
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/McLaren_F1 (read, first 100,000 characters)",
+      "https://www.motor-car.net/bmw-engines/item/16057-m70-engine (search excerpt: M70 firing order only)",
+      "https://www.0-60specs.com/mclaren-f1-0-60-times (search excerpt)"
+    ],
+    "notes": "Wikipedia: 461 kW at 7,400, 650 N·m at 5,600, limiter 7,500, 86 x 87 mm. Firing order for the S70/2 not found: the M70 order 1-7-5-11-3-9-6-12-2-8-4-10 appeared in a search excerpt but Wikipedia calls the S70/2 largely unrelated to the M70, so it is not recorded. Bank assignment unknown. Final drive 2.37 is as printed on Wikipedia but is inconsistent with the car's 386 km/h top speed at the 7,500 rpm limiter in 6th (it would imply about 458 km/h); the modelling file overrides it. Idle not published. The 1.79 m2 is frontal area (Cd 0.32 x 1.79 = 0.57 m2 CdA). Kerb weight 1,260 kg (1,140 dry)."
+  },
+  {
+    "id": "ferrari-f40-1987",
+    "label": "Ferrari F40 (1987, F120A twin-turbo V8, 5-speed manual)",
+    "engine": {
+      "code": "F120A / F120D",
+      "layout": "V",
+      "cylinders": 8,
+      "bankAngleDeg": 90,
+      "crank": null,
+      "firingOrder": null,
+      "banks": null,
+      "displacementL": 2.936,
+      "aspiration": {
+        "type": "twin turbocharged",
+        "count": 2,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": null,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 352,
+      "powerRpm": 7000,
+      "torqueNm": 577,
+      "torqueRpm": 4000
+    },
+    "transmission": {
+      "type": "manual",
+      "gears": 5,
+      "ratios": [],
+      "finalDrive": null,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1254,
+      "rearTyre": "335/35 ZR17",
+      "cd": 0.34,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Ferrari_F40 (read)",
+      "https://www.ferrarichat.com/forum/posts/137586048 (search excerpt only; page returned 403): a 335/35 ZR17 tyre and a forum-suggested 7750 rpm limiter",
+      "https://www.ferrarichat.com/forum/posts/137481052 (search excerpt): flat-plane crank question, unsettled"
+    ],
+    "notes": "Wikipedia: 478 PS (352 kW) at 7,000, 577 N·m at 4,000, 1,254 kg Europe (1,369 US), Cd 0.34. Not found: gear ratios, final drive, boost, redline, idle, firing order, banks, bank angle (90 degrees per Wikipedia; crank type is NOT stated there). Crank type is uncertain: the brief said flat-plane, but Ferrari's first flat-plane road V8 is usually credited to the F355 (1994) and the F40 forum thread did not settle it, so crank is left null. The 335/35 ZR17 rear size is a forum search excerpt, not a manufacturer document. Mid-1988 Sport Auto measured 321 km/h top speed (R&T 315, C&D 317)."
+  },
+  {
+    "id": "porsche-carrera-gt-2004",
+    "label": "Porsche Carrera GT (2004, 5.7 L 68 degree V10, 6-speed manual)",
+    "engine": {
+      "code": "Porsche 5.7 V10 (68 degree)",
+      "layout": "V",
+      "cylinders": 10,
+      "bankAngleDeg": 68,
+      "crank": null,
+      "firingOrder": null,
+      "banks": null,
+      "displacementL": 5.733,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 8400,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 450,
+      "powerRpm": 8000,
+      "torqueNm": 590,
+      "torqueRpm": 5750
+    },
+    "transmission": {
+      "type": "manual",
+      "gears": 6,
+      "ratios": [
+        3.2,
+        1.87,
+        1.36,
+        1.07,
+        0.9,
+        0.75
+      ],
+      "finalDrive": 4.44,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1380,
+      "rearTyre": "335/30 ZR20",
+      "cd": 0.39,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Porsche_Carrera_GT (read)",
+      "https://rennlist.com/forums/porsche-supercars-carrera-gt-918-960/845743-cgt-gearbox-details.html (read: tooth counts only, ratios computed by the fetch tool)",
+      "https://www.autobytel.com/porsche/carrera-gt/2004/ (search excerpt: final drive 4.44, 3rd to 6th match the tooth-count ratios)",
+      "https://www.conceptcarz.com/s6946/porsche-carrera-gt.aspx (search excerpt: ratios and 335/30 ZR20 rear)"
+    ],
+    "notes": "Wikipedia: 450 kW (612 PS) at 8,000, 590 N·m at 5,750, redline 8,400, 1,380 kg, Cd 0.39, 68 degree V10. Gear ratios are from a forum tooth-count post (15/48, 23/43, 25/34, 28/30, 30/27, 36/27, final pair 30/58 = 1.93) that the ConceptCarz excerpt matches (3.20, 1.87, 1.36, 1.07, 0.90, 0.75); the 4.44 final drive is from an Autobytel excerpt and does not match the 1.93 pair on the forum (a further reduction probably sits in between), but 4.44 with 6th gives about 337 km/h at 8,400 rpm, consistent with the 330 km/h top speed. Firing order, banks and idle not found. Rear tyre from a search excerpt. A 68 degree V10 is uneven-firing in practice; the lab's V10 layout is the even-firing 72 degree one."
+  },
+  {
+    "id": "nissan-skyline-gt-r-r34-1999",
+    "label": "Nissan Skyline GT-R (R34, 1999, RB26DETT, Getrag 6-speed)",
+    "engine": {
+      "code": "RB26DETT",
+      "layout": "inline",
+      "cylinders": 6,
+      "bankAngleDeg": 0,
+      "crank": null,
+      "firingOrder": null,
+      "banks": null,
+      "displacementL": 2.568,
+      "aspiration": {
+        "type": "twin turbocharged",
+        "count": 2,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 8000,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 206,
+      "powerRpm": 6800,
+      "torqueNm": null,
+      "torqueRpm": 4400
+    },
+    "transmission": {
+      "type": "manual (Getrag)",
+      "gears": 6,
+      "ratios": [
+        3.827,
+        2.36,
+        1.685,
+        1.312,
+        1.0,
+        0.793
+      ],
+      "finalDrive": 3.545,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1560,
+      "rearTyre": "245/40 ZR18",
+      "cd": null,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Nissan_Skyline_GT-R (read, first 100,000 characters)",
+      "https://www.supercars.net/blog/1999-nissan-skyline-gtr (read: ratios, final drive, 245/40W18, 8,000 rpm, 276 bhp at 6,800; its torque figure of 293 N·m is clearly wrong and ignored)",
+      "https://www.nissan-global.com/EN/HERITAGE_COLLECTION/skyline_gt-r_2000.html (read: Nur page, not the standard car)"
+    ],
+    "notes": "Wikipedia: 2.6 L twin-turbo, published 206 kW (280 PS) (about 327 hp measured), 1,560 kg, 0-100 km/h 4.4 s, boost gauge shows 1.2 bar max. Displacement is 2,568 cc (RB26 bore and stroke, not read on a page this session). Ratios and final drive are from supercars.net (also in a search excerpt). Torque at 4,400 rpm is given as 397 N·m in a search excerpt and the figure Nissan published is, to my memory, 392 N·m (40 kgm), but neither was read on a page, so peak torque is left null and estimated. The supercars.net weight of 1,666 kg conflicts with Wikipedia's 1,560 kg; 1,560 used. Tyre 245/40 ZR18 is the V-Spec II size from search excerpts; base cars may differ. Firing order (RB26 is 1-5-3-6-2-4 as for all RB inline-sixes) not read from a source; layout default used. Peak boost, idle, Cd, frontal area not found. Getrag designation conflicts (233 vs V160)."
+  },
+  {
+    "id": "mercedes-c63-amg-w204-2008",
+    "label": "Mercedes-Benz C63 AMG (W204, 2008, M156 6.2 V8, AMG Speedshift MCT 7)",
+    "engine": {
+      "code": "M156 (M156 KE 63)",
+      "layout": "V",
+      "cylinders": 8,
+      "bankAngleDeg": 90,
+      "crank": null,
+      "firingOrder": null,
+      "banks": null,
+      "displacementL": 6.208,
+      "aspiration": {
+        "type": "naturally aspirated",
+        "count": null,
+        "superchargerType": null,
+        "peakBoostBar": null
+      },
+      "redlineRpm": 7200,
+      "idleRpm": null,
+      "fuel": "gasoline",
+      "powerKw": 336,
+      "powerRpm": 6800,
+      "torqueNm": 600,
+      "torqueRpm": 5000
+    },
+    "transmission": {
+      "type": "automatic (AMG Speedshift MCT, wet clutch)",
+      "gears": 7,
+      "ratios": [
+        4.38,
+        2.86,
+        1.92,
+        1.37,
+        1.0,
+        0.82,
+        0.73
+      ],
+      "finalDrive": 3.06,
+      "gearCut": null
+    },
+    "vehicle": {
+      "curbMassKg": 1655,
+      "rearTyre": "255/35 R18",
+      "cd": null,
+      "frontalAreaM2": null
+    },
+    "sources": [
+      "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_(W204) (read, first 100,000 characters)",
+      "https://evo.co.uk/mercedes/c-class/c63-amg (read: 1,655 kg, tacho redline 7,200)",
+      "https://mbworld.org/forums/c63-amg-w204/551344-mct-gear-ratios.html (read: ratios; final drive disputed 2.82 vs 3.06)",
+      "https://www.media.mbusa.com/releases/2017-mercedes-amg-c63-sedan-and-c63-s-sedan-specifications (search excerpt)"
+    ],
+    "notes": "Wikipedia: 457 PS (336 kW) at 6,800, 600 N·m at 5,000, 6,208 cc; Car and Driver (Dec 2007) 0-60 mph 3.9 s. Redline 7,200 is the tachometer redline (evo). Ratios 4.38/2.86/1.92/1.37/1.00/0.82/0.73 from the AMG data as quoted in the thread. Final drive: 3.06 (Mercedes-Benz Canada 2012 sedan data, via a forum post) vs 2.82 (Black Series sheet): 3.06 used. 255/35 R18 is the facelift size per Wikipedia; the 2008 car's size was not found. Kerb weight 1,655 kg is the evo table (its text also says 1,730 kg). Firing order not found (forum answers were images only). Bank angle 90 degrees. Idle, Cd (0.25 on Wikipedia applies to BlueEFFICIENCY models), frontal area not found."
+  }
+]

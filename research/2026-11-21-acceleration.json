@@ -1,0 +1,152 @@
+[
+ {
+  "id": "bmw-r1250gs",
+  "vehicle": "BMW R 1250 GS (2019)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.36,
+  "kind": "instrumented test",
+  "transmission": "6-speed manual",
+  "source": "https://www.bennetts.co.uk/bikesocial/reviews/bikes/group-tests/bmw-r1250gs-vs-r1300gs-review",
+  "notes": "0-60 mph from the Bennetts BikeSocial R 1250 GS vs R 1300 GS group test (search excerpt only, the article was not read; the R 1250 GS may be a later model year than 2019). No Cycle World or Motorcyclist figure found."
+ },
+ {
+  "id": "yamaha-mt-07",
+  "vehicle": "Yamaha MT-07 (2018)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.8,
+  "kind": "instrumented test",
+  "transmission": "6-speed manual",
+  "source": "https://en.wikipedia.org/wiki/Yamaha_MT-07",
+  "notes": "0-60 mph 3.80 s and 0-100 mph 10.51 s attributed by Wikipedia to Motorcycle Consumer News testing; the magazine article was not read and the model year is not stated."
+ },
+ {
+  "id": "triumph-street-triple-765-rs",
+  "vehicle": "Triumph Street Triple 765 RS (2017)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.1,
+  "kind": "third-party aggregator",
+  "transmission": "6-speed manual",
+  "source": "https://motostatz.com/triumph-street-triple-rs-top-speed-acceleration/",
+  "notes": "0-60 mph 3.10 s and quarter mile 10.79 s at 132 mph from Motostatz (search excerpt); it does not name the tester, so treat as weak. No instrumented magazine time found."
+ },
+ {
+  "id": "ducati-1299-panigale",
+  "vehicle": "Ducati 1299 Panigale (2015)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.33,
+  "kind": "instrumented test",
+  "transmission": "6-speed with quickshifter",
+  "source": "https://fastestlaps.com/tests/928rjppsecau",
+  "notes": "Cycle World figure as relayed by FastestLaps (search excerpt; page returned 403), 0-60 mph 3.33 s, quarter mile 9.97 s at 151.8 mph, from the Turn and Burn II shootout. It is probably the 1299 Panigale S (same engine, 2015). Accelerationtimes lists 3.1 s."
+ },
+ {
+  "id": "honda-cbr600rr",
+  "vehicle": "Honda CBR600RR (2013)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.74,
+  "kind": "instrumented test",
+  "transmission": "6-speed manual",
+  "source": "https://magazine.cyclenews.com/i/159279/91",
+  "notes": "Cycle News August 2013 middleweight shootout: 0-60 mph 3.74 s, quarter mile 11.12 s (search excerpt only). CONFLICT: Wikipedia lists 2.9 s for 2013 attributed to Cycle World, which I could not verify."
+ },
+ {
+  "id": "mclaren-f1",
+  "vehicle": "McLaren F1 (1994)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.2,
+  "kind": "instrumented test",
+  "transmission": "6-speed manual",
+  "source": "https://www.0-60specs.com/mclaren-f1-0-60-times",
+  "notes": "0-60 mph, Car and Driver 1994 (3.2 s, 0-100 mph 6.3 s), read as a search excerpt of the aggregator; Revs Institute lists 3.4 s. fastestlaps.com lists 3.2 s 0-100 km/h but not as a named test."
+ },
+ {
+  "id": "ferrari-f40",
+  "vehicle": "Ferrari F40 (1987)",
+  "zeroTo100KmhS": 4.7,
+  "zeroTo60MphS": 4.2,
+  "kind": "instrumented test",
+  "transmission": "5-speed manual",
+  "source": "https://en.wikipedia.org/wiki/Ferrari_F40",
+  "notes": "0-100 km/h 4.7 s is Sport Auto, September 1988 (Wikipedia). 0-60 mph 4.2 s is Car and Driver per a Wikipedia mirror seen in a search excerpt; Road & Track is listed at 3.8 s (0-60specs.com excerpt). The two columns come from different tests."
+ },
+ {
+  "id": "porsche-carrera-gt",
+  "vehicle": "Porsche Carrera GT (2004)",
+  "zeroTo100KmhS": 3.57,
+  "zeroTo60MphS": 3.5,
+  "kind": "instrumented test",
+  "transmission": "6-speed manual",
+  "source": "https://en.wikipedia.org/wiki/Porsche_Carrera_GT",
+  "notes": "0-60 mph 3.5 s Car and Driver June 2004; 0-100 km/h 3.57 s Auto Magazine 11/2008, both as given on Wikipedia (originals not read)."
+ },
+ {
+  "id": "nissan-skyline-gt-r-r34",
+  "vehicle": "Nissan Skyline GT-R (R34, 1999)",
+  "zeroTo100KmhS": 4.4,
+  "zeroTo60MphS": null,
+  "kind": "instrumented test",
+  "transmission": "6-speed manual",
+  "source": "https://en.wikipedia.org/wiki/Nissan_Skyline_GT-R",
+  "notes": "0-100 km/h 4.4 s 'from automotive publication tests' with no tester named (Wikipedia); quarter mile 12.2 s. supercars.net lists about 5.2 s 0-60 mph, which looks like a different car or method and is not used."
+ },
+ {
+  "id": "mercedes-c63-amg-w204",
+  "vehicle": "Mercedes-Benz C63 AMG (W204, 2008)",
+  "zeroTo100KmhS": 4.4,
+  "zeroTo60MphS": 3.9,
+  "kind": "instrumented test",
+  "transmission": "7-speed AMG Speedshift MCT",
+  "source": "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_(W204)",
+  "notes": "0-60 mph 3.9 s Car and Driver December 2007 (Wikipedia). 4.4 s is the 0-100 km/h figure listed for the facelift Performance package on Wikipedia and 0-62 mph in evo's table, not a separate test of this car; treat as manufacturer-class."
+ },
+ {
+  "id": "toyota-gr-yaris",
+  "vehicle": "Toyota GR Yaris (2020, manual)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 5.31,
+  "kind": "independent timing (Carwow, not a magazine instrumented test)",
+  "transmission": "6-speed manual",
+  "source": "https://www.motor1.com/news/453556/toyota-yaris-gr-acceleration-test/",
+  "notes": "0-60 mph 5.31 s timed by Carwow's Mat Watson (via Motor1), conditions not described. Search excerpts: The Drive 5.2 s, WhichCar one run 4.89 s, Motor1 later 5.06 s (not read in full). Manufacturer claims 5.5 s 0-100 km/h (original) and 5.2 s 0-100 km/h (carexpert, 2024 UK sheet 0-62 mph 5.2 s). No Car and Driver or Motor Trend test found."
+ },
+ {
+  "id": "toyota-ae86",
+  "vehicle": "Toyota Corolla GT-S (AE86, 1985, US)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 9.5,
+  "kind": "instrumented test",
+  "transmission": "5-speed manual",
+  "source": "https://blog.consumerguide.com/1985-1987-toyota-corolla-gt-s/",
+  "notes": "Car and Driver September 1984 per Consumer Guide (top speed 113 mph); the magazine article itself was not read. Other: Autozine lists 8.6 s (Autocar) / 8.7 s (Motor) for the European 124 PS car; a forum post quotes Road & Track at 10.5 s (secondhand)."
+ },
+ {
+  "id": "citroen-2cv6",
+  "vehicle": "Citroen 2CV6 (602 cc, mid-1970s)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 32.7,
+  "kind": "instrumented test",
+  "transmission": "4-speed manual",
+  "source": "https://citroenet.org.uk/passenger-cars/michelin/2cv/1975-autocar.html",
+  "notes": "Autocar 8 March 1975 road test: 0-50 mph 18.1 s, 0-60 mph 32.7 s, top speed 69 mph mean. Autozine lists 31.7 s for Autocar's test, which conflicts with the 32.7 s printed in the test reproduction itself."
+ },
+ {
+  "id": "ford-gt-2017",
+  "vehicle": "Ford GT (2017, 7-speed DCT)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 3.0,
+  "kind": "instrumented test",
+  "transmission": "7-speed dual-clutch",
+  "source": "https://www.0-60specs.com/ford-gt-0-60-times/",
+  "notes": "Car and Driver 3.0 s and Motor Trend 3.0 s, Road & Track 3.2 s, as listed by the 0-60specs.com aggregator (the magazine pages were not read). Ford claims 3.0 s 0-60 per Wikipedia."
+ },
+ {
+  "id": "buick-gnx",
+  "vehicle": "Buick Regal GNX (1987)",
+  "zeroTo100KmhS": null,
+  "zeroTo60MphS": 4.7,
+  "kind": "instrumented test",
+  "transmission": "4-speed automatic (200-4R)",
+  "source": "https://ateupwithmotor.com/?p=1001",
+  "notes": "Car and Driver July 1987 per ateupwithmotor: 0-60 mph 4.7 s, quarter mile 13.5 s at 102 mph. Search excerpts also gave 4.6 and 4.4 s from other sources, unverified."
+ }
+]

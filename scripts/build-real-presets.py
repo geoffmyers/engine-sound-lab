@@ -61,7 +61,7 @@ def tyre_radius(t):
 def load_research():
     out = {}
     for f in sorted(os.listdir(RESEARCH)):
-        if f.endswith(".json") and f != "preset-modelling.json" and "acceleration" not in f:
+        if f.endswith(".json") and not f.startswith("preset-") and "acceleration" not in f:
             for item in json.load(open(os.path.join(RESEARCH, f))):
                 out[item["id"]] = item
     return out

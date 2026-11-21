@@ -1918,6 +1918,539 @@
     ],
     "finalDrive": 3.6363,
     "gearbox": "planetary"
+   },
+   "real-bmw-r1250gs": {
+    "label": "BMW R 1250 GS (2019)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 329,
+     "wheelRadiusM": 0.318,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     2.438,
+     1.714,
+     1.296,
+     1.059,
+     0.943,
+     0.848
+    ],
+    "finalDrive": 4.65,
+    "gearbox": "bike"
+   },
+   "real-yamaha-mt-07": {
+    "label": "Yamaha MT-07 (2018)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 263,
+     "wheelRadiusM": 0.315,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     2.846,
+     2.125,
+     1.632,
+     1.3,
+     1.091,
+     0.964
+    ],
+    "finalDrive": 5.174,
+    "gearbox": "bike"
+   },
+   "real-triumph-street-triple-765-rs": {
+    "label": "Triumph Street Triple 765 RS (2017)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 262,
+     "wheelRadiusM": 0.315,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     2.62,
+     1.95,
+     1.57,
+     1.35,
+     1.24,
+     1.14
+    ],
+    "finalDrive": 5.34,
+    "gearbox": "bike"
+   },
+   "real-ducati-1299-panigale": {
+    "label": "Ducati 1299 Panigale (2015)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 270,
+     "wheelRadiusM": 0.326,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     2.4667,
+     1.875,
+     1.5,
+     1.25,
+     1.0909,
+     0.9583
+    ],
+    "finalDrive": 4.602,
+    "gearbox": "bike"
+   },
+   "real-honda-cbr600rr": {
+    "label": "Honda CBR600RR (2013)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 266,
+     "wheelRadiusM": 0.315,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     2.75,
+     2.0,
+     1.666,
+     1.444,
+     1.304,
+     1.208
+    ],
+    "finalDrive": 5.408,
+    "gearbox": "bike"
+   },
+   "real-vespa-px-125": {
+    "label": "Vespa PX 125",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 198,
+     "wheelRadiusM": 0.209,
+     "cdA": 0.35,
+     "crr": 0.015,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     16.4,
+     11.0,
+     7.5,
+     5.8
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "bike"
+   },
+   "real-mercedes-f1-w11": {
+    "label": "Mercedes-AMG F1 W11 EQ Performance (2020)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 746,
+     "wheelRadiusM": 0.335,
+     "cdA": 1.0,
+     "crr": 0.015,
+     "brakeDecel": 40
+    },
+    "gearboxRatios": [
+     14.614,
+     12.681,
+     11.003,
+     9.548,
+     8.285,
+     7.189,
+     6.238,
+     5.413
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-ford-gt40-mk2": {
+    "label": "Ford GT40 Mk II (1966 Le Mans)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1207,
+     "wheelRadiusM": 0.34,
+     "cdA": 0.7,
+     "crr": 0.015,
+     "brakeDecel": 12
+    },
+    "gearboxRatios": [
+     2.22,
+     1.43,
+     1.19,
+     1.0
+    ],
+    "finalDrive": 2.77,
+    "gearbox": "transaxle"
+   },
+   "real-lancia-delta-integrale-group-a": {
+    "label": "Lancia Delta HF Integrale Evoluzione (Group A rally)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1100,
+     "wheelRadiusM": 0.305,
+     "cdA": 0.85,
+     "crr": 0.015,
+     "brakeDecel": 13
+    },
+    "gearboxRatios": [
+     3.182,
+     2.286,
+     1.706,
+     1.35,
+     1.13,
+     0.96
+    ],
+    "finalDrive": 4.272,
+    "gearbox": "transaxle"
+   },
+   "real-porsche-962c": {
+    "label": "Porsche 962C (Group C, 1988)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 900,
+     "wheelRadiusM": 0.335,
+     "cdA": 0.75,
+     "crr": 0.015,
+     "brakeDecel": 16
+    },
+    "gearboxRatios": [
+     7.8,
+     6.203,
+     4.933,
+     3.923,
+     3.12
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "transaxle"
+   },
+   "real-mclaren-f1": {
+    "label": "McLaren F1 (1994)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1335,
+     "wheelRadiusM": 0.358,
+     "cdA": 0.573,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     3.23,
+     2.19,
+     1.71,
+     1.39,
+     1.16,
+     0.93
+    ],
+    "finalDrive": 2.37,
+    "gearbox": "layshaft"
+   },
+   "real-ferrari-f40": {
+    "label": "Ferrari F40 (1987)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1329,
+     "wheelRadiusM": 0.333,
+     "cdA": 0.62,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     10.911,
+     7.921,
+     5.751,
+     4.175,
+     3.031
+    ],
+    "finalDrive": 1.0,
+    "gearbox": "layshaft"
+   },
+   "real-porsche-carrera-gt": {
+    "label": "Porsche Carrera GT (2004)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1455,
+     "wheelRadiusM": 0.354,
+     "cdA": 0.74,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     3.2,
+     1.87,
+     1.36,
+     1.07,
+     0.9,
+     0.75
+    ],
+    "finalDrive": 4.44,
+    "gearbox": "layshaft"
+   },
+   "real-nissan-skyline-gt-r-r34": {
+    "label": "Nissan Skyline GT-R (R34, 1999)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1635,
+     "wheelRadiusM": 0.327,
+     "cdA": 0.7,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     3.827,
+     2.36,
+     1.685,
+     1.312,
+     1.0,
+     0.793
+    ],
+    "finalDrive": 3.545,
+    "gearbox": "layshaft"
+   },
+   "real-mercedes-c63-amg-w204": {
+    "label": "Mercedes-Benz C63 AMG (W204, 2008)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1730,
+     "wheelRadiusM": 0.318,
+     "cdA": 0.7,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     4.38,
+     2.86,
+     1.92,
+     1.37,
+     1.0,
+     0.82,
+     0.73
+    ],
+    "finalDrive": 3.06,
+    "gearbox": "transaxle"
+   },
+   "real-toyota-gr-yaris": {
+    "label": "Toyota GR Yaris (2020, manual)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1355,
+     "wheelRadiusM": 0.319,
+     "cdA": 0.651,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     3.5379,
+     2.2378,
+     1.5349,
+     1.1619,
+     0.9188,
+     0.7668
+    ],
+    "finalDrive": 3.941,
+    "gearbox": "layshaft"
+   },
+   "real-toyota-ae86": {
+    "label": "Toyota Corolla GT-S (AE86, 1985, US)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1118,
+     "wheelRadiusM": 0.289,
+     "cdA": 0.6,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     3.587,
+     2.022,
+     1.384,
+     1.0,
+     0.861
+    ],
+    "finalDrive": 4.3,
+    "gearbox": "layshaft"
+   },
+   "real-citroen-2cv6": {
+    "label": "Citroen 2CV6 (602 cc)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 676,
+     "wheelRadiusM": 0.293,
+     "cdA": 0.89,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     5.2,
+     2.65,
+     1.78,
+     1.31
+    ],
+    "finalDrive": 4.125,
+    "gearbox": "transaxle"
+   },
+   "real-ford-gt-2017": {
+    "label": "Ford GT (2017, 7-speed DCT)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1596,
+     "wheelRadiusM": 0.351,
+     "cdA": 0.7,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     3.397,
+     2.186,
+     1.626,
+     1.285,
+     1.029,
+     0.839,
+     0.634
+    ],
+    "finalDrive": 3.667,
+    "gearbox": "transaxle"
+   },
+   "real-buick-gnx": {
+    "label": "Buick Regal GNX (1987, automatic)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1675,
+     "wheelRadiusM": 0.326,
+     "cdA": 0.8,
+     "crr": 0.012,
+     "brakeDecel": 9.5
+    },
+    "gearboxRatios": [
+     2.74,
+     1.57,
+     1.0,
+     0.67
+    ],
+    "finalDrive": 3.42,
+    "gearbox": "planetary"
+   },
+   "real-ford-f150-ecoboost": {
+    "label": "Ford F-150 3.5 EcoBoost (10R80)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 2238,
+     "wheelRadiusM": 0.408,
+     "cdA": 1.2,
+     "crr": 0.008,
+     "brakeDecel": 6.0
+    },
+    "gearboxRatios": [
+     4.69,
+     2.98,
+     2.14,
+     1.76,
+     1.52,
+     1.27,
+     1.0,
+     0.85,
+     0.68,
+     0.63
+    ],
+    "finalDrive": 3.55,
+    "gearbox": "layshaft"
+   },
+   "real-peterbilt-379-cat-c15": {
+    "label": "Peterbilt 379 Cat C15 (Eaton Fuller 18-speed)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 8375,
+     "wheelRadiusM": 0.5,
+     "cdA": 5.0,
+     "crr": 0.008,
+     "brakeDecel": 6.0
+    },
+    "gearboxRatios": [
+     14.4,
+     12.29,
+     8.56,
+     7.3,
+     6.05,
+     5.16,
+     4.38,
+     3.74,
+     3.2,
+     2.73,
+     2.29,
+     1.95,
+     1.62,
+     1.38,
+     1.17,
+     1.0,
+     0.86,
+     0.73
+    ],
+    "finalDrive": 3.7,
+    "gearbox": "layshaft"
+   },
+   "real-willys-mb": {
+    "label": "Willys MB (1941-45 jeep)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 1188,
+     "wheelRadiusM": 0.343,
+     "cdA": 1.4,
+     "crr": 0.008,
+     "brakeDecel": 6.0
+    },
+    "gearboxRatios": [
+     2.94,
+     1.94,
+     1.0
+    ],
+    "finalDrive": 5.375,
+    "gearbox": "layshaft"
+   },
+   "real-toyota-land-cruiser-70-1hz": {
+    "label": "Toyota Land Cruiser 70 1HZ (5-speed)",
+    "group": "Real vehicles",
+    "real": true,
+    "vehicle": {
+     "massKg": 2165,
+     "wheelRadiusM": 0.41,
+     "cdA": 1.7,
+     "crr": 0.008,
+     "brakeDecel": 6.0
+    },
+    "gearboxRatios": [
+     4.313,
+     2.33,
+     1.436,
+     1.0,
+     0.838
+    ],
+    "finalDrive": 4.3,
+    "gearbox": "layshaft"
    }
   },
   "_grip": "Tyre grip mu: road tyres about 1.0; race slicks about 1.7 before downforce; a motorcycle about 1.0 (the wheelie and traction limit is near 1 g); a Top Fuel dragster's tyres and track prep about 4.",
@@ -1994,7 +2527,18 @@
     "block": 0.05,
     "blower": 0.2
    },
-   "eqDb": [0.0, 0.0, 0.0, 0.0, 0.5, 0.9, 1.4, 1.8, 2.3, 2.7],
+   "eqDb": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.9,
+    1.4,
+    1.8,
+    2.3,
+    2.7
+   ],
    "ground": {
     "delayMs": 2.4,
     "gain": 0.45
@@ -2022,7 +2566,18 @@
     "block": 0.35,
     "blower": 11.6
    },
-   "eqDb": [-0.0, -0.0, -0.0, -0.0, -2.1, -4.3, -6.4, -8.6, -10.7, -12.9],
+   "eqDb": [
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -2.1,
+    -4.3,
+    -6.4,
+    -8.6,
+    -10.7,
+    -12.9
+   ],
    "ground": {
     "delayMs": 2.4,
     "gain": 0.45
@@ -2050,7 +2605,18 @@
     "block": 1.0,
     "blower": 0.66
    },
-   "eqDb": [-0.0, -0.0, -0.0, -0.0, -2.1, -4.1, -6.2, -8.2, -10.3, -12.4],
+   "eqDb": [
+    -0.0,
+    -0.0,
+    -0.0,
+    -0.0,
+    -2.1,
+    -4.1,
+    -6.2,
+    -8.2,
+    -10.3,
+    -12.4
+   ],
    "ground": {
     "delayMs": 1.2,
     "gain": 0.3
@@ -2078,7 +2644,18 @@
     "block": 0.25,
     "blower": 0.33
    },
-   "eqDb": [2.0, 4.0, 0.0, -3.0, -6.0, -9.0, -12.0, -16.0, -20.0, -24.0],
+   "eqDb": [
+    2.0,
+    4.0,
+    0.0,
+    -3.0,
+    -6.0,
+    -9.0,
+    -12.0,
+    -16.0,
+    -20.0,
+    -24.0
+   ],
    "ground": {
     "delayMs": 1.0,
     "gain": 0.0
@@ -2431,7 +3008,7 @@
    "exhaust": 1.0,
    "intake": 0.7,
    "mechanical": 0.5,
-   "induction": 0.8,
+   "induction": 0.1,
    "pops": 0.1,
    "gearbox": 0.5,
    "road": 0.0,
@@ -4899,6 +5476,1284 @@
     "power rpm",
     "peak torque",
     "torque rpm",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "bmw-r1250gs",
+   "category": "motorcycle",
+   "label": "BMW R 1250 GS (2019)",
+   "real": true,
+   "layout": "H2",
+   "displacement": 1.254,
+   "redline": 8500,
+   "idleRpm": 1200,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 1.4,
+   "inertia": 0.9,
+   "camLope": 0.2,
+   "pops": 0.05,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 143,
+    "peakRpm": 6250,
+    "powerKw": 100,
+    "powerRpm": 7750
+   },
+   "vehicle": "real-bmw-r1250gs",
+   "spec": "1.25 L ShiftCam boxer twin firing evenly at 360 degrees; six-speed with helical gears, shaft final drive; 249 kg wet. Estimated: rev limit, idle speed.",
+   "sources": [
+    "https://www.moto-data.net/bmw/r-1250gs-2019",
+    "https://www.moto-data.net/bmw/r-1250gs-2019/m:amp (search excerpt)",
+    "BMW Motorrad press material, press.bmwgroup.com T0405138FR (search excerpt only: secondary ratio 2.818; page itself redirected and was not read)",
+    "https://www.bennetts.co.uk/bikesocial/reviews/bikes/group-tests/bmw-r1250gs-vs-r1300gs-review (search excerpt)",
+    "https://www.bmwmotorcycles.com/en/engineering/detail/motor-drivetrain/twin-cylinder-boxer-1250.html (search excerpt)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed"
+   ]
+  },
+  {
+   "id": "yamaha-mt-07",
+   "category": "motorcycle",
+   "label": "Yamaha MT-07 (2018)",
+   "real": true,
+   "layout": "I2-270",
+   "displacement": 0.689,
+   "redline": 10500,
+   "idleRpm": 1500,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 1.1,
+   "inertia": 0.5,
+   "camLope": 0.25,
+   "pops": 0.12,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 68,
+    "peakRpm": 6500,
+    "powerKw": 55,
+    "powerRpm": 9000
+   },
+   "vehicle": "real-yamaha-mt-07",
+   "spec": "0.69 L CP2 parallel twin with a 270-degree crank (fires at 0 and 270 degrees); six-speed, chain final drive; 183 kg. Estimated: rev limit, idle speed.",
+   "sources": [
+    "https://www.moto-data.net/yamaha/mt-07-2018",
+    "https://www.manualslib.com/manual/837941/Yamaha-Mt-07.html?page=97 (owner's manual, primary and secondary reduction)",
+    "https://www.bikesinfotech.com/specifications-658.html (owner's manual copy: all six gear ratios, 180/55 ZR17, 183 kg curb)",
+    "https://en.wikipedia.org/wiki/Yamaha_MT-07 (270-degree crossplane, 0-60 mph)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed"
+   ]
+  },
+  {
+   "id": "triumph-street-triple-765-rs",
+   "category": "motorcycle",
+   "label": "Triumph Street Triple 765 RS (2017)",
+   "real": true,
+   "layout": "I3",
+   "displacement": 0.765,
+   "redline": 12500,
+   "idleRpm": 1300,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.0,
+   "inertia": 0.3,
+   "camLope": 0.2,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 77,
+    "peakRpm": 10800,
+    "powerKw": 90,
+    "powerRpm": 11700
+   },
+   "vehicle": "real-triumph-street-triple-765-rs",
+   "spec": "0.77 L inline-three firing every 240 degrees; six-speed close-ratio gearbox, chain final drive; 182 kg wet. Estimated: rev limit, idle speed, final drive.",
+   "sources": [
+    "https://www.motorcyclespecs.co.za/model/triu/triumph_street_triple_765RS_17.htm (power, torque, tyre, dry weight, compression)",
+    "https://www.cyclechaos.com/wiki/Triumph_STREET_TRIPLE_765RS (power, torque, tyre)",
+    "https://en.wikipedia.org/wiki/Triumph_Street_Triple (wet weight 182 kg, search excerpt level; table not tied clearly to the 2017 RS)",
+    "https://motoinst.ru/en/Triumph/Street-Triple/4/owner/intro/113772 (search excerpt only: primary 1.848 = 85/46 and tooth counts)",
+    "https://www.team-bhp.com/forum/superbikes-imports/187193-triumph-street-triple-765-launched-rs-8-50-lakh-4.html (search excerpt only: overall ratios 13.97/10.39/8.4/7.2/6.61/6.1)",
+    "Triumph spec pages (search excerpt: 'Street Triple 765 RS' later years 130 PS at 12,000 rpm)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "final drive"
+   ]
+  },
+  {
+   "id": "ducati-1299-panigale",
+   "category": "motorcycle",
+   "label": "Ducati 1299 Panigale (2015)",
+   "real": true,
+   "layout": "V2-90",
+   "displacement": 1.285,
+   "redline": 11500,
+   "idleRpm": 1300,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.0,
+   "inertia": 0.45,
+   "camLope": 0.35,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 144.6,
+    "peakRpm": 8750,
+    "powerKw": 150.8,
+    "powerRpm": 10500
+   },
+   "vehicle": "real-ducati-1299-panigale",
+   "spec": "1.285 L Superquadro 90-degree L-twin firing at 270 and 450 degrees; six-speed with quickshifter, chain final drive; 190.5 kg wet. Estimated: rev limit, idle speed.",
+   "sources": [
+    "https://www.moto-data.net/ducati/1299-panigale-2015",
+    "https://en.wikipedia.org/wiki/Ducati_Superquadro_engine (145 kW @10,500, 137 N·m @9000 listed for the 1285 variant)",
+    "https://www.fastbikesmag.com/?p=49149 (search excerpt: 25.6 m/s piston speed at 11,500 rpm)",
+    "https://www.wikipedia.org/wiki/Ducati_V-twin_engine (search excerpt: 270-degree L-twin firing)",
+    "https://motorcyclemojo.com/?p=54610 (search excerpt: 270/450 pulse spacing of a 90-degree V-twin)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed"
+   ]
+  },
+  {
+   "id": "honda-cbr600rr",
+   "category": "motorcycle",
+   "label": "Honda CBR600RR (2013)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 0.599,
+   "redline": 15400,
+   "idleRpm": 1400,
+   "aspiration": "na",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 1.0,
+   "inertia": 0.25,
+   "camLope": 0.2,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 66,
+    "peakRpm": 11250,
+    "powerKw": 88.1,
+    "powerRpm": 13500
+   },
+   "vehicle": "real-honda-cbr600rr",
+   "spec": "0.6 L inline-four revving to a 15,400 rpm limit; close-ratio six-speed, chain final drive; 186 kg. Estimated: idle speed.",
+   "sources": [
+    "https://www.moto-data.net/honda/cbr-600rr-2013 (power, torque, bore x stroke, tyre, wet weight)",
+    "https://hondanews.com/en-US/powersports/releases/release-75a73cd5102e432abb257e4c46f27356-2013-honda-cbr600rr-cbr600rr-c-abs-specifications (410 lb curb, 180/55ZR-17, #525 chain)",
+    "https://www.manualslib.com/manual/945131/Honda-Cbr600rr.html?page=117 (primary 2.111, final 2.562, six gear ratios)",
+    "Cycle News 2013 middleweight shootout (search excerpt only: 15,400 rpm redline)"
+   ],
+   "estimated": [
+    "idle speed"
+   ]
+  },
+  {
+   "id": "vespa-px-125",
+   "category": "motorcycle",
+   "label": "Vespa PX 125",
+   "real": true,
+   "layout": "I1-2T",
+   "displacement": 0.123,
+   "redline": 8000,
+   "idleRpm": 1600,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "small-can",
+   "pipeLength": 0.6,
+   "inertia": 0.7,
+   "camLope": 0.5,
+   "pops": 0.15,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 13.1,
+    "peakRpm": 6250,
+    "powerKw": 8.8,
+    "powerRpm": 6500
+   },
+   "vehicle": "real-vespa-px-125",
+   "spec": "123 cc air-cooled two-stroke single (fires every revolution); four-speed twist-grip gearbox; 112 kg dry. Estimated: rev limit, idle speed, final drive, mass.",
+   "sources": [
+    "https://www.motorcyclespecs.co.za/model/Vespa/Vespa%20PX125%20T5.htm (T5, 1985-99: 123.4 cc, 52 x 55 mm, 8.8 kW at 6500, 1.34 kgf·m at 6250, ratios 16.4/11.0/7.5/5.8, tyres 3.5 x 10, dry 112 kg)",
+    "https://www.motorcyclespecs.co.za/model/Vespa/Vespa%20PX125%2003.htm (2003-07: 123.4 cc, 52.5 x 57 mm, 8.8 kW at 6600, 9.6 N·m at 6000, dry 95 kg, 4-speed, direct drive)",
+    "https://www.ultimatespecs.com/motorcycles-specs/vespa/vespa-px125-2008 (search excerpt)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "final drive",
+    "mass"
+   ]
+  },
+  {
+   "id": "mercedes-f1-w11",
+   "category": "race",
+   "label": "Mercedes-AMG F1 W11 EQ Performance (2020)",
+   "real": true,
+   "layout": "V6-90-even",
+   "displacement": 1.6,
+   "redline": 15000,
+   "idleRpm": 5000,
+   "aspiration": "turbo",
+   "turboSize": 0.35,
+   "bov": "none",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 1.0,
+   "inertia": 0.2,
+   "camLope": 0.1,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "sequential",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 764,
+    "peakRpm": 7875,
+    "powerKw": 764,
+    "powerRpm": 10500
+   },
+   "boost": 3.0,
+   "vehicle": "real-mercedes-f1-w11",
+   "spec": "1.6 L turbocharged 90° V6 hybrid, 15,000 rpm limit, about 764 kW; eight-speed seamless sequential gearbox; 746 kg with driver. Estimated: power rpm, peak torque (derived from power), boost, wheel size, gear ratios (spread to 350 km/h at the rev limit).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mercedes-AMG_F1_W11_EQ_Performance",
+    "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit",
+    "https://www.formula1.com/en/latest/article/pirelli-reveal-wider-faster-2017-tyres.5eQCKChfRIx709KvI2LO3S (search excerpt)",
+    "https://fia.com/node/30202 (search excerpt)",
+    "https://www.mercedes-amg.com/en/technical-briefing-combustion-engine (403, not read; search excerpt only: 100 kg/h fuel flow above 10,500 rpm, 15,000 rpm limit, from the 2024 W15 page)"
+   ],
+   "estimated": [
+    "power rpm",
+    "peak torque (derived from power)",
+    "boost",
+    "wheel size",
+    "gear ratios (spread to 350 km/h at the rev limit)"
+   ]
+  },
+  {
+   "id": "ford-gt40-mk2",
+   "category": "race",
+   "label": "Ford GT40 Mk II (1966 Le Mans)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 6.982,
+   "redline": 6500,
+   "idleRpm": 1000,
+   "firingOrder": [
+    1,
+    5,
+    4,
+    2,
+    6,
+    3,
+    7,
+    8
+   ],
+   "banks": {
+    "1": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.5,
+   "inertia": 1.2,
+   "camLope": 0.7,
+   "pops": 0.5,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 644,
+    "peakRpm": 5000,
+    "powerKw": 362,
+    "powerRpm": 6200
+   },
+   "vehicle": "real-ford-gt40-mk2",
+   "spec": "7.0 L Ford FE 427 V8, 362 kW at 6,200 rpm; Kar Kraft four-speed manual, 2.77 final drive; about 1,207 kg. Estimated: rev limit, idle speed, wheel size.",
+   "sources": [
+    "https://www.ultimatecarpage.com/spec/1089/Ford-GT40-Mk-II.html",
+    "https://tech-racingcars.wikidot.com/ford-gt40-mk-ii",
+    "https://en.wikipedia.org/wiki/Ford_GT40",
+    "https://help.summitracing.com/knowledgebase/article/HE-04976/en-us (search excerpt: FE firing order 1-5-4-2-6-3-7-8, cylinders 1-4 on the passenger side, 5-8 on the driver side)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "lancia-delta-integrale-group-a",
+   "category": "race",
+   "label": "Lancia Delta HF Integrale Evoluzione (Group A rally)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 1.995,
+   "redline": 7500,
+   "idleRpm": 1100,
+   "aspiration": "turbo",
+   "turboSize": 0.7,
+   "bov": "atmospheric",
+   "intake": "cold-air",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "straight",
+   "pipeLength": 1.8,
+   "inertia": 0.6,
+   "camLope": 0.4,
+   "pops": 1.0,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 535,
+    "peakRpm": 4000,
+    "powerKw": 272,
+    "powerRpm": 7000
+   },
+   "boost": 1.9,
+   "vehicle": "real-lancia-delta-integrale-group-a",
+   "spec": "2.0 L turbocharged inline-four, about 246 kW at 7,000 rpm, 1.9 bar; six-speed manual with permanent four-wheel drive; 1,100 kg. Estimated: rev limit, idle speed, wheel size.",
+   "sources": [
+    "https://tech-racingcars.wikidot.com/lancia-deltona",
+    "https://en.wikipedia.org/wiki/Lancia_Delta_Group_A",
+    "https://www.wrc.com/en/misc/lancia-delta-integrale-evo (search excerpt: 300 bhp)",
+    "https://supercarnostalgia.com/blog/lancia-delta-hf-integrale-16v"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "porsche-962c",
+   "category": "race",
+   "label": "Porsche 962C (Group C, 1988)",
+   "real": true,
+   "layout": "H6",
+   "displacement": 2.994,
+   "redline": 8400,
+   "idleRpm": 1100,
+   "firingOrder": [
+    1,
+    6,
+    2,
+    4,
+    3,
+    5
+   ],
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "aspiration": "turbo",
+   "turboSize": 0.6,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "straight",
+   "pipeLength": 1.6,
+   "inertia": 0.5,
+   "camLope": 0.5,
+   "pops": 0.5,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 710,
+    "peakRpm": 5000,
+    "powerKw": 582,
+    "powerRpm": 8200
+   },
+   "boost": 1.2,
+   "vehicle": "real-porsche-962c",
+   "spec": "3.0 L twin-turbo flat-six, 582 kW at 8,200 rpm, 8,400 rpm limit; five-speed manual; about 900 kg. Estimated: idle speed, firing order, wheel size, gear ratios (spread to 340 km/h at the rev limit).",
+   "sources": [
+    "https://www.ultimatecarpage.com/spec/754/Porsche-962C.html",
+    "https://www.stuttcars.com/porsche-model-research/porsche-962-research/",
+    "https://stuttcars.com/?p=414022 (search excerpt: 1.2 bar standard boost, twin KKK K26, 935/83)",
+    "https://en.wikipedia.org/wiki/Porsche_962"
+   ],
+   "estimated": [
+    "idle speed",
+    "firing order",
+    "wheel size",
+    "gear ratios (spread to 340 km/h at the rev limit)"
+   ]
+  },
+  {
+   "id": "wright-r1820-b17",
+   "category": "aircraft",
+   "label": "Wright R-1820-97 Cyclone (Boeing B-17G)",
+   "real": true,
+   "layout": "Radial9",
+   "displacement": 29.87,
+   "redline": 2500,
+   "idleRpm": 600,
+   "aspiration": "turbo",
+   "turboSize": 0.8,
+   "bov": "none",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stacks",
+   "pipeLength": 0.8,
+   "inertia": 2.2,
+   "camLope": 0.4,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 3761,
+    "peakRpm": 1875,
+    "powerKw": 895,
+    "powerRpm": 2500
+   },
+   "boost": 0.6,
+   "vehicle": "none",
+   "propeller": {
+    "blades": 3,
+    "reduction": 0.5625,
+    "diameterM": 3.53,
+    "level": 0.06
+   },
+   "spec": "29.9 L nine-cylinder radial with a turbosupercharger, 895 kW at 2,500 rpm, 0.5625:1 propeller reduction gear. Estimated: idle speed, peak torque (derived from power), boost.",
+   "sources": [
+    "https://enginehistory.org/Dataplates/Cyclone9/Cyclone9Dataplates.shtml",
+    "https://en.wikipedia.org/wiki/Wright_R-1820_Cyclone_9",
+    "https://reddog1944.com/B17_Specifications.htm",
+    "https://enginehistory.org/Propellers/HamStd/hamstd.shtml (search excerpt: B-17F,G hub 23E50 with R-1820-97)",
+    "https://www.airandspace.si.edu/es/collection-objects/wright-cyclone-r-1820-97-studebaker-radial-9-engine/nasm_A19660459000 (search excerpt)",
+    "propeller: a War Department training film listing quoted in a search result (three-blade Hydromatic, 11 ft 7 in), search excerpt"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)",
+    "boost"
+   ]
+  },
+  {
+   "id": "continental-io550-sr22",
+   "category": "aircraft",
+   "label": "Continental IO-550-N (Cirrus SR22)",
+   "real": true,
+   "layout": "H6",
+   "displacement": 9.05,
+   "redline": 2700,
+   "idleRpm": 700,
+   "firingOrder": [
+    1,
+    6,
+    3,
+    2,
+    5,
+    4
+   ],
+   "banks": {
+    "1": [
+     2,
+     4,
+     6
+    ]
+   },
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "stock",
+   "pipeLength": 0.9,
+   "inertia": 2.0,
+   "camLope": 0.2,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 899,
+    "peakRpm": 2025,
+    "powerKw": 231,
+    "powerRpm": 2700
+   },
+   "vehicle": "none",
+   "propeller": {
+    "blades": 3,
+    "reduction": 1.0,
+    "diameterM": 1.98,
+    "level": 0.05
+   },
+   "spec": "9.0 L flat-six, 231 kW (310 hp) at 2,700 rpm, direct-drive three-blade propeller. Estimated: idle speed, firing order, peak torque (derived from power).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Continental_O-550",
+    "https://en.wikipedia.org/wiki/Cirrus_SR22",
+    "https://hartzellprop.com/?p=18706 (search excerpt: PHC-J3YF-1RF/F7693DF, three-blade, max 78 in, min 76 in)",
+    "https://www.scribd.com/document/481868851/Cirrus-SR22-POH (search excerpt: 310 hp at 2,700 rpm, direct drive, 78.0 in propeller)",
+    "https://www.easa.europa.eu/lv/downloads/7645/en (IM.E.100 TCDS, PDF could not be decoded)"
+   ],
+   "estimated": [
+    "idle speed",
+    "firing order",
+    "peak torque (derived from power)"
+   ]
+  },
+  {
+   "id": "continental-a65-j3-cub",
+   "category": "aircraft",
+   "label": "Continental A-65 (Piper J-3 Cub)",
+   "real": true,
+   "layout": "H4",
+   "displacement": 2.8,
+   "redline": 2300,
+   "idleRpm": 550,
+   "firingOrder": [
+    1,
+    3,
+    2,
+    4
+   ],
+   "banks": {
+    "1": [
+     2,
+     4
+    ]
+   },
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 0.8,
+   "inertia": 2.0,
+   "camLope": 0.2,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 219,
+    "peakRpm": 1725,
+    "powerKw": 48,
+    "powerRpm": 2300
+   },
+   "vehicle": "none",
+   "propeller": {
+    "blades": 2,
+    "reduction": 1.0,
+    "diameterM": 1.83,
+    "level": 0.05
+   },
+   "spec": "2.8 L flat-four, firing order 1-3-2-4, 48 kW (65 hp) at 2,300 rpm, direct-drive fixed-pitch propeller. Estimated: idle speed, peak torque (derived from power).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Continental_A65",
+    "https://en.wikipedia.org/wiki/Piper_J-3_Cub",
+    "https://enginehistory.org/Piston/HOAE/Continental1.html (search excerpt)",
+    "Aeronca A65-8 service manual via univair.com (search excerpt: firing order 1-3-2-4)",
+    "https://www.aircraftspruce.com/pdf/2026Individual/Cat26180.pdf (search excerpt: Sensenich W72CK series wood propellers for the J-3 with A-65)"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque (derived from power)"
+   ]
+  },
+  {
+   "id": "mclaren-f1",
+   "category": "road",
+   "label": "McLaren F1 (1994)",
+   "real": true,
+   "layout": "V12",
+   "displacement": 6.064,
+   "redline": 7500,
+   "idleRpm": 1000,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.6,
+   "inertia": 0.7,
+   "camLope": 0.25,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 650,
+    "peakRpm": 5600,
+    "powerKw": 461,
+    "powerRpm": 7400
+   },
+   "vehicle": "real-mclaren-f1",
+   "spec": "6.1 L BMW S70/2 60° V12, 7,500 rpm limiter; six-speed transverse manual; 1,260 kg. Estimated: idle speed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/McLaren_F1 (read, first 100,000 characters)",
+    "https://www.motor-car.net/bmw-engines/item/16057-m70-engine (search excerpt: M70 firing order only)",
+    "https://www.0-60specs.com/mclaren-f1-0-60-times (search excerpt)"
+   ],
+   "estimated": [
+    "idle speed"
+   ]
+  },
+  {
+   "id": "ferrari-f40",
+   "category": "road",
+   "label": "Ferrari F40 (1987)",
+   "real": true,
+   "layout": "V8-flat",
+   "displacement": 2.936,
+   "redline": 7750,
+   "idleRpm": 1000,
+   "aspiration": "turbo",
+   "turboSize": 0.45,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.2,
+   "inertia": 0.6,
+   "camLope": 0.3,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 577,
+    "peakRpm": 4000,
+    "powerKw": 352,
+    "powerRpm": 7000
+   },
+   "boost": 1.1,
+   "vehicle": "real-ferrari-f40",
+   "spec": "2.9 L F120A twin-turbo 90° flat-plane V8, 352 kW at 7,000 rpm; five-speed manual; 1,254 kg. Estimated: rev limit, idle speed, boost, gear ratios (spread to 321 km/h at the rev limit).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ferrari_F40 (read)",
+    "https://www.ferrarichat.com/forum/posts/137586048 (search excerpt only; page returned 403): a 335/35 ZR17 tyre and a forum-suggested 7750 rpm limiter",
+    "https://www.ferrarichat.com/forum/posts/137481052 (search excerpt): flat-plane crank question, unsettled"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost",
+    "gear ratios (spread to 321 km/h at the rev limit)"
+   ]
+  },
+  {
+   "id": "porsche-carrera-gt",
+   "category": "road",
+   "label": "Porsche Carrera GT (2004)",
+   "real": true,
+   "layout": "V10",
+   "displacement": 5.733,
+   "redline": 8400,
+   "idleRpm": 1000,
+   "aspiration": "na",
+   "intake": "itb",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.2,
+   "inertia": 0.3,
+   "camLope": 0.45,
+   "pops": 0.2,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 590,
+    "peakRpm": 5750,
+    "powerKw": 450,
+    "powerRpm": 8000
+   },
+   "vehicle": "real-porsche-carrera-gt",
+   "spec": "5.7 L 68° V10, 8,400 rpm; six-speed manual, 4.44 final drive; 1,380 kg. Estimated: idle speed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Porsche_Carrera_GT (read)",
+    "https://rennlist.com/forums/porsche-supercars-carrera-gt-918-960/845743-cgt-gearbox-details.html (read: tooth counts only, ratios computed by the fetch tool)",
+    "https://www.autobytel.com/porsche/carrera-gt/2004/ (search excerpt: final drive 4.44, 3rd to 6th match the tooth-count ratios)",
+    "https://www.conceptcarz.com/s6946/porsche-carrera-gt.aspx (search excerpt: ratios and 335/30 ZR20 rear)"
+   ],
+   "estimated": [
+    "idle speed"
+   ]
+  },
+  {
+   "id": "nissan-skyline-gt-r-r34",
+   "category": "road",
+   "label": "Nissan Skyline GT-R (R34, 1999)",
+   "real": true,
+   "layout": "I6",
+   "displacement": 2.568,
+   "redline": 8000,
+   "idleRpm": 800,
+   "aspiration": "turbo",
+   "turboSize": 0.5,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 3.0,
+   "inertia": 0.8,
+   "camLope": 0.25,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 392,
+    "peakRpm": 4400,
+    "powerKw": 206,
+    "powerRpm": 6800
+   },
+   "boost": 0.75,
+   "vehicle": "real-nissan-skyline-gt-r-r34",
+   "spec": "2.6 L RB26DETT twin-turbo inline-six, 206 kW at 6,800 rpm, 8,000 rpm; Getrag six-speed manual, 3.545 final drive; 1,560 kg. Estimated: idle speed, peak torque, boost.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Nissan_Skyline_GT-R (read, first 100,000 characters)",
+    "https://www.supercars.net/blog/1999-nissan-skyline-gtr (read: ratios, final drive, 245/40W18, 8,000 rpm, 276 bhp at 6,800; its torque figure of 293 N·m is clearly wrong and ignored)",
+    "https://www.nissan-global.com/EN/HERITAGE_COLLECTION/skyline_gt-r_2000.html (read: Nur page, not the standard car)"
+   ],
+   "estimated": [
+    "idle speed",
+    "peak torque",
+    "boost"
+   ]
+  },
+  {
+   "id": "mercedes-c63-amg-w204",
+   "category": "road",
+   "label": "Mercedes-Benz C63 AMG (W204, 2008)",
+   "real": true,
+   "layout": "V8-cross",
+   "displacement": 6.208,
+   "redline": 7200,
+   "idleRpm": 750,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "dual",
+   "muffler": "sport",
+   "pipeLength": 2.8,
+   "inertia": 1.1,
+   "camLope": 0.3,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 600,
+    "peakRpm": 5000,
+    "powerKw": 336,
+    "powerRpm": 6800
+   },
+   "vehicle": "real-mercedes-c63-amg-w204",
+   "spec": "6.2 L M156 V8, 336 kW at 6,800 rpm, 7,200 rpm; AMG Speedshift MCT seven-speed (modelled as a dual-clutch box), 3.06 final drive; 1,655 kg. Estimated: idle speed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mercedes-Benz_C-Class_(W204) (read, first 100,000 characters)",
+    "https://evo.co.uk/mercedes/c-class/c63-amg (read: 1,655 kg, tacho redline 7,200)",
+    "https://mbworld.org/forums/c63-amg-w204/551344-mct-gear-ratios.html (read: ratios; final drive disputed 2.82 vs 3.06)",
+    "https://www.media.mbusa.com/releases/2017-mercedes-amg-c63-sedan-and-c63-s-sedan-specifications (search excerpt)"
+   ],
+   "estimated": [
+    "idle speed"
+   ]
+  },
+  {
+   "id": "toyota-gr-yaris",
+   "category": "road",
+   "label": "Toyota GR Yaris (2020, manual)",
+   "real": true,
+   "layout": "I3",
+   "displacement": 1.618,
+   "redline": 7000,
+   "idleRpm": 800,
+   "aspiration": "turbo",
+   "turboSize": 0.35,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.6,
+   "inertia": 0.5,
+   "camLope": 0.2,
+   "pops": 0.35,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 370,
+    "peakRpm": 4600,
+    "powerKw": 200,
+    "powerRpm": 6500
+   },
+   "boost": 1.2,
+   "vehicle": "real-toyota-gr-yaris",
+   "spec": "1.6 L G16E-GTS turbocharged inline-three; six-speed manual with a 3.941 final drive for gears one to four and 3.350 for five and six (ratios entered as overall); 1,280 kg. Estimated: rev limit, idle speed, boost.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Toyota_GR_Yaris",
+    "https://www.carexpert.com.au/toyota/yaris/2021/gr/powertrain-and-performance",
+    "https://mag.toyota.co.uk/gr-yaris-drivetrain-how-it-is-bespoke/",
+    "https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/240704-GR-Yaris-Tech-Specs.pdf (July 2024 facelift sheet, downloaded and read with pdftotext)",
+    "https://www.enginelabs.com/?p=5882"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost"
+   ]
+  },
+  {
+   "id": "toyota-ae86",
+   "category": "road",
+   "label": "Toyota Corolla GT-S (AE86, 1985, US)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 1.587,
+   "redline": 7500,
+   "idleRpm": 850,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 2.4,
+   "inertia": 0.45,
+   "camLope": 0.2,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 132,
+    "peakRpm": 4800,
+    "powerKw": 84,
+    "powerRpm": 6600
+   },
+   "vehicle": "real-toyota-ae86",
+   "spec": "1.6 L 4A-GEC twin-cam inline-four, 6,600 rpm power peak, 7,500 rpm redline; T50 five-speed manual with a direct-drive fourth, 4.30 final drive; about 1,043 kg. Estimated: idle speed.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Toyota_AE86",
+    "https://en.wikipedia.org/wiki/Toyota_A_engine",
+    "https://aeu86.org/?p=142",
+    "https://blog.consumerguide.com/1985-1987-toyota-corolla-gt-s/",
+    "https://autozine.org/Archive/Toyota/classic/AE86.html",
+    "Wikipedia 'Toyota T transmission' and a Cusco close-ratio listing (search excerpts only; they agree with aeu86 on the T50 ratios)"
+   ],
+   "estimated": [
+    "idle speed"
+   ]
+  },
+  {
+   "id": "citroen-2cv6",
+   "category": "road",
+   "label": "Citroen 2CV6 (602 cc)",
+   "real": true,
+   "layout": "H2",
+   "displacement": 0.602,
+   "redline": 6500,
+   "idleRpm": 900,
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 1.0,
+   "inertia": 0.8,
+   "camLope": 0.1,
+   "pops": 0.05,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 41.4,
+    "peakRpm": 3500,
+    "powerKw": 21.6,
+    "powerRpm": 5750
+   },
+   "vehicle": "real-citroen-2cv6",
+   "spec": "602 cc air-cooled flat-twin, 21.6 kW at 5,750 rpm; four-speed manual (5.20, 2.65, 1.78, 1.31) with a 4.125 final drive; about 601 kg. Estimated: rev limit, idle speed, wheel size.",
+   "sources": [
+    "https://citroenet.org.uk/passenger-cars/michelin/2cv/1975-autocar.html (Autocar 8 March 1975 road test, read in full)",
+    "https://en.wikipedia.org/wiki/Citro%C3%ABn_2CV",
+    "https://autozine.org/Archive/Citroen/classic/2CV.html",
+    "search excerpt: uniquecarsandparts.com.au 1979 2CV6, carbaze, ultimatespecs (74 x 70 mm bore and stroke, 29 PS @ 5,750)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "ford-gt-2017",
+   "category": "road",
+   "label": "Ford GT (2017, 7-speed DCT)",
+   "real": true,
+   "layout": "V6-60",
+   "displacement": 3.5,
+   "redline": 6800,
+   "idleRpm": 750,
+   "aspiration": "turbo",
+   "turboSize": 0.55,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "equal",
+   "routing": "single",
+   "muffler": "sport",
+   "pipeLength": 2.8,
+   "inertia": 0.65,
+   "camLope": 0.15,
+   "pops": 0.3,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 746,
+    "peakRpm": 5900,
+    "powerKw": 482,
+    "powerRpm": 6250
+   },
+   "boost": 1.5,
+   "vehicle": "real-ford-gt-2017",
+   "spec": "3.5 L twin-turbo EcoBoost 60-degree V6, 647 hp at 6,250 rpm; Getrag seven-speed dual-clutch, 3.667 final drive; 1,521 kg. Estimated: rev limit, idle speed, boost.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ford_GT",
+    "https://www.0-60specs.com/ford-gt-0-60-times/",
+    "https://media.ford.com/content/dam/fordmedia/Europe/documents/en/2017_GT_Tech_Specs_EU.pdf (search excerpt only; the file would not download)",
+    "https://gearpatrol.com/2017/01/25/ford-gt-official-specs/ (search excerpt)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost"
+   ]
+  },
+  {
+   "id": "buick-gnx",
+   "category": "road",
+   "label": "Buick Regal GNX (1987, automatic)",
+   "real": true,
+   "layout": "V6-90-even",
+   "displacement": 3.791,
+   "redline": 5500,
+   "idleRpm": 650,
+   "firingOrder": [
+    1,
+    6,
+    5,
+    4,
+    3,
+    2
+   ],
+   "banks": {
+    "1": [
+     2,
+     4,
+     6
+    ]
+   },
+   "aspiration": "turbo",
+   "turboSize": 0.6,
+   "bov": "atmospheric",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "dual",
+   "muffler": "stock",
+   "pipeLength": 3.0,
+   "inertia": 1.1,
+   "camLope": 0.08,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 488,
+    "peakRpm": 3000,
+    "powerKw": 206,
+    "powerRpm": 4400
+   },
+   "boost": 1.0,
+   "vehicle": "real-buick-gnx",
+   "spec": "3.8 L turbocharged 90-degree V6 on a split-pin crank, firing order 1-6-5-4-3-2; four-speed 200-4R automatic modelled as a planetary box; 1,600 kg. Estimated: rev limit, idle speed, boost, final drive, wheel size.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Buick_Regal",
+    "https://en.wikipedia.org/wiki/Buick_V6_engine",
+    "https://ateupwithmotor.com/?p=1001",
+    "https://gearstar.com/tag/200-4r and https://gearstar.com/gm-200r4-transmissions/ (search excerpts: 200-4R ratios)",
+    "https://edmunds.com/car-reviews/track-tests/1987-buick-regal-grand-national-track-test.html (search excerpt)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost",
+    "final drive",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "ford-f150-ecoboost",
+   "category": "machine",
+   "label": "Ford F-150 3.5 EcoBoost (10R80)",
+   "real": true,
+   "layout": "V6-60",
+   "displacement": 3.497,
+   "redline": 6000,
+   "idleRpm": 650,
+   "firingOrder": [
+    1,
+    4,
+    2,
+    5,
+    3,
+    6
+   ],
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "aspiration": "turbo",
+   "turboSize": 0.5,
+   "bov": "recirculating",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 3.0,
+   "inertia": 1.3,
+   "camLope": 0.03,
+   "pops": 0.1,
+   "fuel": "petrol",
+   "transmission": "dct",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 637,
+    "peakRpm": 3500,
+    "powerKw": 279.6,
+    "powerRpm": 5000
+   },
+   "boost": 1.1,
+   "vehicle": "real-ford-f150-ecoboost",
+   "spec": "3.5 L twin-turbo 60-degree V6; ten-speed 10R80 automatic, modelled as the closest available option, a dual-clutch style shifter. Estimated: rev limit, idle speed, boost, final drive, wheel size.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ford_EcoBoost_engine (read: 60 degree V6, 3,497 cc, 92.51 x 86.7 mm, twin turbo, port + direct injection)",
+    "https://www.f150hub.com/trans/10r80.html (read: all ten ratios and reverse 4.86)",
+    "search excerpt: Yahoo Autos / Ford Authority / Wards, 2017 F-150 3.5 EcoBoost 375 hp @5,000 and 470 lb-ft @3,500",
+    "search excerpt: rerev.com, fordmasterx.com, carscounsel.com (firing order 1-4-2-5-3-6; cylinders 1-3 passenger bank, 4-6 driver bank)",
+    "search excerpt: jdpower.com 2018 F-150 crew cab XL 4WD specs (curb weight 4,769 lb = 2,163 kg)",
+    "search excerpt: Digital Trends (3.55 rear axle ratio on the max-tow configuration)"
+   ],
+   "estimated": [
+    "rev limit",
+    "idle speed",
+    "boost",
+    "final drive",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "peterbilt-379-cat-c15",
+   "category": "machine",
+   "label": "Peterbilt 379 Cat C15 (Eaton Fuller 18-speed)",
+   "real": true,
+   "layout": "I6",
+   "displacement": 15.2,
+   "redline": 2100,
+   "idleRpm": 600,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "aspiration": "turbo",
+   "turboSize": 0.8,
+   "bov": "none",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stacks",
+   "pipeLength": 5.0,
+   "inertia": 3.0,
+   "camLope": 0.05,
+   "pops": 0,
+   "fuel": "diesel",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 2508,
+    "peakRpm": 1200,
+    "powerKw": 410,
+    "powerRpm": 2100
+   },
+   "boost": 2.0,
+   "vehicle": "real-peterbilt-379-cat-c15",
+   "spec": "15.2 L Caterpillar C15 turbodiesel inline-six governed at 2,100 rpm; Eaton Fuller RTLO-18918B 18-speed manual (14.40 to 0.73) and straight stacks. Estimated: idle speed, boost, final drive, wheel size, mass.",
+   "sources": [
+    "search excerpt: Caterpillar C15 on-highway spec sheet copy, 435-550 hp @2,100 rpm, 1550-1850 lb-ft @1,200 rpm, governed speed 2,100, bore 5.4 in (137 mm), stroke 6.75 in (171 mm)",
+    "search excerpt: cat.com C15 industrial pages (5.4 in bore, 6.7 in stroke, 17:1, turbocharged-aftercooled; current ratings peak at 1,400 rpm)",
+    "search excerpt: theautoinsiderblog.com C15 specs (firing order 1-5-3-6-2-4, 15.2 L inline-six)",
+    "https://www.globaltransmissionsupply.com/?p=12170 (read: RTLO-18918B ratio pairs, overall 19.72, splitter 17%, 1,850 lb-ft)",
+    "search excerpt: generaltruckparts.com RTLO-18918 (1st 14.40, 2nd 12.54 conflicting, 17th 0.86, 18th 0.73)",
+    "search excerpt: Overdrive Peterbilt 379 articles (no 379 curb weight, Cd or area found)"
+   ],
+   "estimated": [
+    "idle speed",
+    "boost",
+    "final drive",
+    "wheel size",
+    "mass"
+   ]
+  },
+  {
+   "id": "willys-mb",
+   "category": "machine",
+   "label": "Willys MB (1941-45 jeep)",
+   "real": true,
+   "layout": "I4",
+   "displacement": 2.199,
+   "redline": 4000,
+   "idleRpm": 600,
+   "firingOrder": [
+    1,
+    3,
+    4,
+    2
+   ],
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "small-can",
+   "pipeLength": 1.5,
+   "inertia": 2.0,
+   "camLope": 0.2,
+   "pops": 0.05,
+   "fuel": "petrol",
+   "transmission": "manual",
+   "gearCut": "straight",
+   "torque": {
+    "peakNm": 142,
+    "peakRpm": 2000,
+    "powerKw": 44.7,
+    "powerRpm": 4000
+   },
+   "vehicle": "real-willys-mb",
+   "spec": "2.2 L Go Devil flathead inline-four with a T-84 three-speed gearbox, transfer case in high range. Estimated: rev limit, final drive, wheel size.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Willys_Go_Devil_engine (read: 3.125 x 4.375 in, 134.2 cu in, 60 hp @4,000, 105 lb-ft @2,000, 6.48:1)",
+    "https://en.wikipedia.org/wiki/Willys_MB (read: 54 hp net, curb 2,453 lb = 1,113 kg, 3-speed x 2-range transfer case)",
+    "https://www.offroaders.com/tech/jeep/transmission-factory-t84.htm (read: T-84 2.94 / 1.94 / 1.00)",
+    "search excerpt: kaiserwillys.com MB specs (firing order 1-3-4-2, idle 600 rpm, peak torque 2,000 rpm); 42fordgpw.com; TM 9-803 / TM 9-1803A (search excerpts only: speeds per gear, no ratios)"
+   ],
+   "estimated": [
+    "rev limit",
+    "final drive",
+    "wheel size"
+   ]
+  },
+  {
+   "id": "toyota-land-cruiser-70-1hz",
+   "category": "machine",
+   "label": "Toyota Land Cruiser 70 1HZ (5-speed)",
+   "real": true,
+   "layout": "I6",
+   "displacement": 4.164,
+   "redline": 4400,
+   "idleRpm": 650,
+   "firingOrder": [
+    1,
+    5,
+    3,
+    6,
+    2,
+    4
+   ],
+   "aspiration": "na",
+   "intake": "airbox",
+   "headers": "log",
+   "routing": "single",
+   "muffler": "stock",
+   "pipeLength": 3.0,
+   "inertia": 2.4,
+   "camLope": 0.05,
+   "pops": 0,
+   "fuel": "diesel",
+   "transmission": "manual",
+   "gearCut": "helical",
+   "torque": {
+    "peakNm": 285,
+    "peakRpm": 2200,
+    "powerKw": 96,
+    "powerRpm": 3800
+   },
+   "vehicle": "real-toyota-land-cruiser-70-1hz",
+   "spec": "4.2 L naturally aspirated diesel inline-six; five-speed manual, high range, 7.50R16 tyres. Estimated: wheel size.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Toyota_HZ_engine (read: 4.2 L, 94 x 100 mm, 22.4:1, 96 kW @3,800, 285 N.m @2,200, max engine speed 4,400)",
+    "search excerpt: Pakistani forum and parts listing (5-speed 4.313/2.330/1.436/1.000/0.838, reverse 4.220, 4.300 final drive, transfer high 1.000 low 1.960)",
+    "search excerpt: Toyota repair manual excerpts via manualslib (1HZ manual idle 600-700 rpm); carscounsel.com (firing order 1-5-3-6-2-4)",
+    "search excerpt: toyota-gib.com, pktrucks.com HZJ79 listings (7.50R16 tyres, kerb 2,020-2,280 kg, single cab 2,090)"
+   ],
+   "estimated": [
     "wheel size"
    ]
   }

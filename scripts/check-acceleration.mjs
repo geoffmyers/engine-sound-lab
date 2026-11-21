@@ -14,8 +14,12 @@ const ACCEL_IDS = ["porsche-911-gt3-992", "ferrari-458-italia", "lexus-lfa", "fo
   "dodge-challenger-hellcat", "honda-s2000-ap1", "honda-civic-type-r-fl5", "mazda-rx7-fd", "toyota-supra-a80", "nissan-gt-r-r35",
   "subaru-wrx-sti-grb", "audi-rs3-8y", "bmw-m3-e46", "mercedes-sls-amg", "lamborghini-aventador", "toyota-gr86", "mazda-mx5-nd2",
   "vw-beetle-1600", "bmw-s65", "ducati-panigale-v4", "suzuki-hayabusa", "harley-street-bob-114"];
+// Later research files name their preset in "id".
+const accel2 = JSON.parse(readFileSync(new URL("../research/2026-11-21-acceleration.json", import.meta.url), "utf8"));
 const target = {};
-accel.forEach((a, i) => { const t = a.zeroTo60MphS ?? (a.zeroTo100KmhS != null ? a.zeroTo100KmhS * 0.96 : null); if (t) target[ACCEL_IDS[i]] = t; });
+const t60 = (a) => a.zeroTo60MphS ?? (a.zeroTo100KmhS != null ? a.zeroTo100KmhS * 0.96 : null);
+accel.forEach((a, i) => { const t = t60(a); if (t) target[ACCEL_IDS[i]] = t; });
+accel2.forEach((a) => { const t = t60(a); if (t && a.id) target[a.id] = t; });
 
 export function calibration(p) {
   const s = settingsFromPreset(data, p), c = buildConfig(data, s), tt = c.torqueTable, fs = data.drivetrain.driveFrictionScale;

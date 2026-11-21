@@ -1,0 +1,350 @@
+[
+ {
+  "id": "bmw-r1250gs-2019",
+  "label": "BMW R 1250 GS (2019, boxer twin with ShiftCam)",
+  "category": "motorcycle",
+  "engine": {
+   "code": "BMW Boxer 1254 ShiftCam",
+   "layout": "flat twin (boxer)",
+   "cylinders": 2,
+   "strokes": 4,
+   "bankAngleDeg": 180,
+   "firingOrder": null,
+   "firingIntervalsDeg": [
+    360,
+    360
+   ],
+   "banks": null,
+   "displacementL": 1.254,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "maxRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 100,
+   "powerRpm": 7750,
+   "torqueNm": 143,
+   "torqueRpm": 6250
+  },
+  "transmission": {
+   "type": "constant-mesh 6-speed, helical gears, wet-clutch (primary in the gearbox housing), shaft final drive",
+   "gears": 6,
+   "ratios": [
+    2.438,
+    1.714,
+    1.296,
+    1.059,
+    0.943,
+    0.848
+   ],
+   "primaryDrive": 1.65,
+   "finalDrive": 2.818,
+   "propellerReduction": null,
+   "gearCut": "helical (moto-data: 'helical gearing')"
+  },
+  "vehicle": {
+   "massKg": null,
+   "curbMassKg": 249,
+   "rearTyre": "170/60 R17"
+  },
+  "sources": [
+   "https://www.moto-data.net/bmw/r-1250gs-2019",
+   "https://www.moto-data.net/bmw/r-1250gs-2019/m:amp (search excerpt)",
+   "BMW Motorrad press material, press.bmwgroup.com T0405138FR (search excerpt only: secondary ratio 2.818; page itself redirected and was not read)",
+   "https://www.bennetts.co.uk/bikesocial/reviews/bikes/group-tests/bmw-r1250gs-vs-r1300gs-review (search excerpt)",
+   "https://www.bmwmotorcycles.com/en/engineering/detail/motor-drivetrain/twin-cylinder-boxer-1250.html (search excerpt)"
+  ],
+  "notes": "moto-data: 102.5 x 76 mm, 12.5:1, 100 kW at 7750 rpm, 143 N·m at 6250 rpm, wet 249 kg, rear 170/60 R17, primary 1.650, gears 2.438/1.714/1.296/1.059/0.943/0.848. CONFLICT on final drive: moto-data lists 'secondary ratio 1.061' while a search excerpt of BMW press material gives 2.818 (= 31/11 bevel set) and another source 2.91; 2.818 used because it is manufacturer-sourced, but I only saw the excerpt. 360-degree even firing (360/360) is the generic boxer-twin firing from a general reference, not BMW's 1250 page (BMW pages read gave no crank angle). Rev limit and idle NOT FOUND. Firing order and cylinder numbering not sourced."
+ },
+ {
+  "id": "yamaha-mt-07-2018",
+  "label": "Yamaha MT-07 (2018, CP2 689 cc parallel twin)",
+  "category": "motorcycle",
+  "engine": {
+   "code": "CP2 689",
+   "layout": "parallel twin, 270-degree crossplane crank",
+   "cylinders": 2,
+   "strokes": 4,
+   "bankAngleDeg": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": [
+    270,
+    450
+   ],
+   "banks": null,
+   "displacementL": 0.689,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "maxRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline (throttle-body fuel injection)",
+   "powerKw": 55,
+   "powerRpm": 9000,
+   "torqueNm": 68,
+   "torqueRpm": 6500
+  },
+  "transmission": {
+   "type": "constant-mesh 6-speed, wet multiplate clutch, chain final drive",
+   "gears": 6,
+   "ratios": [
+    2.846,
+    2.125,
+    1.632,
+    1.3,
+    1.091,
+    0.964
+   ],
+   "primaryDrive": 1.925,
+   "finalDrive": 2.688,
+   "propellerReduction": null,
+   "gearCut": "1st-6th = 37/13, 34/16, 31/19, 26/20, 24/22, 27/28; primary 77/40; secondary 43/16"
+  },
+  "vehicle": {
+   "massKg": null,
+   "curbMassKg": 183,
+   "rearTyre": "180/55 ZR17 M/C (73W)"
+  },
+  "sources": [
+   "https://www.moto-data.net/yamaha/mt-07-2018",
+   "https://www.manualslib.com/manual/837941/Yamaha-Mt-07.html?page=97 (owner's manual, primary and secondary reduction)",
+   "https://www.bikesinfotech.com/specifications-658.html (owner's manual copy: all six gear ratios, 180/55 ZR17, 183 kg curb)",
+   "https://en.wikipedia.org/wiki/Yamaha_MT-07 (270-degree crossplane, 0-60 mph)"
+  ],
+  "notes": "Power 55 kW at 9000 and 68 N·m at 6500 (Yamaha figures via moto-data and Wikipedia; ultimatespecs lists torque at 6900 rpm instead). Gear ratios, primary 1.925 and secondary 2.688 are from the Yamaha owner's manual (the manual covers the MT-07 line, not necessarily only 2018). Firing interval 270/450 follows from Wikipedia's '270-degree crossplane' wording. Rev limit and idle NOT FOUND (no source gave either)."
+ },
+ {
+  "id": "triumph-street-triple-765-rs-2017",
+  "label": "Triumph Street Triple 765 RS (2017)",
+  "category": "motorcycle",
+  "engine": {
+   "code": "765 inline triple",
+   "layout": "inline-3, 120-degree crank",
+   "cylinders": 3,
+   "strokes": 4,
+   "bankAngleDeg": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": [
+    240,
+    240,
+    240
+   ],
+   "banks": null,
+   "displacementL": 0.765,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "maxRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 90,
+   "powerRpm": 11700,
+   "torqueNm": 77,
+   "torqueRpm": 10800
+  },
+  "transmission": {
+   "type": "constant-mesh 6-speed, close ratio, wet slip-assist clutch, X-ring chain final drive",
+   "gears": 6,
+   "ratios": [
+    2.62,
+    1.95,
+    1.57,
+    1.35,
+    1.24,
+    1.14
+   ],
+   "primaryDrive": null,
+   "finalDrive": null,
+   "propellerReduction": null,
+   "gearCut": "1st-6th = 34/13, 39/20, 36/23, 27/20, 26/21, 25/22 (search excerpt of motoinst.ru, which lists the 765 R/RS)"
+  },
+  "vehicle": {
+   "massKg": null,
+   "curbMassKg": 182,
+   "rearTyre": "180/55 ZR17"
+  },
+  "sources": [
+   "https://www.motorcyclespecs.co.za/model/triu/triumph_street_triple_765RS_17.htm (power, torque, tyre, dry weight, compression)",
+   "https://www.cyclechaos.com/wiki/Triumph_STREET_TRIPLE_765RS (power, torque, tyre)",
+   "https://en.wikipedia.org/wiki/Triumph_Street_Triple (wet weight 182 kg, search excerpt level; table not tied clearly to the 2017 RS)",
+   "https://motoinst.ru/en/Triumph/Street-Triple/4/owner/intro/113772 (search excerpt only: primary 1.848 = 85/46 and tooth counts)",
+   "https://www.team-bhp.com/forum/superbikes-imports/187193-triumph-street-triple-765-launched-rs-8-50-lakh-4.html (search excerpt only: overall ratios 13.97/10.39/8.4/7.2/6.61/6.1)",
+   "Triumph spec pages (search excerpt: 'Street Triple 765 RS' later years 130 PS at 12,000 rpm)"
+  ],
+  "notes": "Power 90 kW (121 hp) at 11,700 rpm and 77 N·m at 10,800 rpm are Triumph's claimed 2017 RS figures (agree on two sites and Wikipedia's table). Bore x stroke 78 x 53.4 mm, 12.65:1, dry 165.5 kg; wet 182 kg (Wikipedia, year not tied); cyclechaos' '78.7 x 78.7' is wrong. Primary drive is 1.848 (85/46) per the motoinst excerpt: it is NOT put in primaryDrive here because the build script then ignores any estimated final drive; the modelling file carries primary x final as one estimate. FINAL DRIVE NOT FOUND: the Team-BHP overall ratios imply about 2.89 (13.97 / (2.615 x 1.848)), from an unspecified model year. The 2023 update changed all ratios and the final drive, so these ratios apply to 2017-2022. 120-degree crank with 240/240/240 firing from a general reference table (search excerpt), not from Triumph. Rev limit and idle NOT FOUND; Triumph publishes neither."
+ },
+ {
+  "id": "ducati-1299-panigale-2015",
+  "label": "Ducati 1299 Panigale (2015, Superquadro 1285)",
+  "category": "motorcycle",
+  "engine": {
+   "code": "Superquadro 1285",
+   "layout": "90-degree L-twin, desmodromic",
+   "cylinders": 2,
+   "strokes": 4,
+   "bankAngleDeg": 90,
+   "firingOrder": null,
+   "firingIntervalsDeg": [
+    270,
+    450
+   ],
+   "banks": null,
+   "displacementL": 1.285,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "maxRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline",
+   "powerKw": 150.8,
+   "powerRpm": 10500,
+   "torqueNm": 144.6,
+   "torqueRpm": 8750
+  },
+  "transmission": {
+   "type": "6-speed with Ducati Quick Shift, slipper wet multiplate clutch, chain final drive",
+   "gears": 6,
+   "ratios": [
+    2.4667,
+    1.875,
+    1.5,
+    1.25,
+    1.0909,
+    0.9583
+   ],
+   "primaryDrive": 1.77,
+   "finalDrive": 2.6,
+   "propellerReduction": null,
+   "gearCut": "1st-6th = 37/15, 30/16, 27/18, 25/20, 24/22, 23/24; primary 1.77:1 straight-cut; chain 15/39"
+  },
+  "vehicle": {
+   "massKg": 190.5,
+   "rearTyre": "200/55 ZR17"
+  },
+  "sources": [
+   "https://www.moto-data.net/ducati/1299-panigale-2015",
+   "https://en.wikipedia.org/wiki/Ducati_Superquadro_engine (145 kW @10,500, 137 N·m @9000 listed for the 1285 variant)",
+   "https://www.fastbikesmag.com/?p=49149 (search excerpt: 25.6 m/s piston speed at 11,500 rpm)",
+   "https://www.wikipedia.org/wiki/Ducati_V-twin_engine (search excerpt: 270-degree L-twin firing)",
+   "https://motorcyclemojo.com/?p=54610 (search excerpt: 270/450 pulse spacing of a 90-degree V-twin)"
+  ],
+  "notes": "moto-data: 116 x 60.8 mm, 12.6:1, 150.8 kW (205 hp) at 10,500, 144.6 N·m at 8750, dry 166.5 kg, wet 190.5 kg, rear 200/55 ZR17 Pirelli Diablo Supercorsa SP. Wikipedia's infobox gives lower 145 kW and 137 N·m (it appears to be the base-tune figure); moto-data's Ducati claim used. The 270/450 firing is stated for Ducati's L-twin in general, not for the 1299 specifically. Rev limit NOT FOUND (11,500 rpm is only the speed at which a Fast Bikes article quoted piston speed); idle NOT FOUND."
+ },
+ {
+  "id": "honda-cbr600rr-2013",
+  "label": "Honda CBR600RR (2013)",
+  "category": "motorcycle",
+  "engine": {
+   "code": "599 cc inline four",
+   "layout": "inline-4",
+   "cylinders": 4,
+   "strokes": 4,
+   "bankAngleDeg": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 0.599,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "maxRpm": 15400,
+   "idleRpm": null,
+   "fuel": "gasoline (PGM-DSFI)",
+   "powerKw": 88.1,
+   "powerRpm": 13500,
+   "torqueNm": 66,
+   "torqueRpm": 11250
+  },
+  "transmission": {
+   "type": "close-ratio 6-speed, #525 O-ring chain final drive",
+   "gears": 6,
+   "ratios": [
+    2.75,
+    2.0,
+    1.666,
+    1.444,
+    1.304,
+    1.208
+   ],
+   "primaryDrive": 2.111,
+   "finalDrive": 2.562,
+   "propellerReduction": null,
+   "gearCut": "primary 2.111, final 2.562 from a Honda CBR600RR owner's manual copy (model year not confirmed)"
+  },
+  "vehicle": {
+   "massKg": null,
+   "curbMassKg": 186,
+   "rearTyre": "180/55 ZR17"
+  },
+  "sources": [
+   "https://www.moto-data.net/honda/cbr-600rr-2013 (power, torque, bore x stroke, tyre, wet weight)",
+   "https://hondanews.com/en-US/powersports/releases/release-75a73cd5102e432abb257e4c46f27356-2013-honda-cbr600rr-cbr600rr-c-abs-specifications (410 lb curb, 180/55ZR-17, #525 chain)",
+   "https://www.manualslib.com/manual/945131/Honda-Cbr600rr.html?page=117 (primary 2.111, final 2.562, six gear ratios)",
+   "Cycle News 2013 middleweight shootout (search excerpt only: 15,400 rpm redline)"
+  ],
+  "notes": "118 hp / 88.1 kW at 13,500 and 66 N·m at 11,250 (moto-data), 67 x 42.5 mm. CONFLICT on final reduction: 2.562 on the manual page read, but other listings give 2.625, 2.500 or 2.688; 2.562 used. Redline 15,400 rpm is from a Cycle News search excerpt (secondary, not Honda); another review said 15,000, and Honda publishes none. Stock firing order is commonly 1-2-4-3 (2007 owner's manual excerpt, earlier generation), left null since the layout uses its own numbering. Idle NOT FOUND (2007 sheet: 1,400 +/- 100 rpm, earlier generation)."
+ },
+ {
+  "id": "vespa-px-125",
+  "label": "Vespa PX 125 (two-stroke, 4-speed, 1985-99 PX125 T5 data)",
+  "category": "motorcycle",
+  "engine": {
+   "code": "Vespa PX125 two-stroke",
+   "layout": "single-cylinder two-stroke, air-cooled",
+   "cylinders": 1,
+   "strokes": 2,
+   "bankAngleDeg": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 0.1234,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "maxRpm": null,
+   "idleRpm": null,
+   "fuel": "gasoline/oil premix (carburettor)",
+   "powerKw": 8.8,
+   "powerRpm": 6500,
+   "torqueNm": 13.1,
+   "torqueRpm": 6250
+  },
+  "transmission": {
+   "type": "4-speed constant-mesh, twist-grip shift, wet multiplate clutch, direct final drive (engine on the swing arm)",
+   "gears": 4,
+   "ratios": [
+    16.4,
+    11.0,
+    7.5,
+    5.8
+   ],
+   "primaryDrive": null,
+   "finalDrive": null,
+   "propellerReduction": null,
+   "gearCut": "ratios are OVERALL (engine to rear wheel) as listed by motorcyclespecs.co.za; primary and final not separated"
+  },
+  "vehicle": {
+   "massKg": null,
+   "rearTyre": "3.50-10"
+  },
+  "sources": [
+   "https://www.motorcyclespecs.co.za/model/Vespa/Vespa%20PX125%20T5.htm (T5, 1985-99: 123.4 cc, 52 x 55 mm, 8.8 kW at 6500, 1.34 kgf·m at 6250, ratios 16.4/11.0/7.5/5.8, tyres 3.5 x 10, dry 112 kg)",
+   "https://www.motorcyclespecs.co.za/model/Vespa/Vespa%20PX125%2003.htm (2003-07: 123.4 cc, 52.5 x 57 mm, 8.8 kW at 6600, 9.6 N·m at 6000, dry 95 kg, 4-speed, direct drive)",
+   "https://www.ultimatespecs.com/motorcycles-specs/vespa/vespa-px125-2008 (search excerpt)"
+  ],
+  "notes": "No single 'PX 125' dataset exists: the two listings I read disagree (T5 1985-99: 52 x 55 mm, 13.1 N·m at 6250, dry 112 kg; 2003-07: 52.5 x 57 mm, 9.6 N·m at 6000, dry 95 kg, tyres listed there as 110/70-11 and 120/70-11 which looks like a different scooter). T5 figures used throughout because that is the only listing with gear ratios. Torque 13.1 N·m is converted from the page's 1.34 kgf·m (the page's '13.1 kW' is a unit slip). Ratios 16.4/11.0/7.5/5.8 are overall (engine to wheel). Rev limit, idle, wet mass NOT FOUND; the 2-stroke is a 1:20 premix on the T5 and 1:50 on the 2003-07."
+ }
+]

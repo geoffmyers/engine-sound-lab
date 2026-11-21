@@ -37,16 +37,17 @@ headers and exhaust, then rev it in neutral, hold it on a dyno, or drive it thro
 and gearbox with brakes and shift paddles. The sound is synthesized live from the engine's
 own firing events; nothing is sampled.
 
-It ships 63 presets: 42 real vehicles and engines with their published engine and
-drivetrain configurations (a Porsche 911 GT3, a Ferrari 458, a Lexus LFA, a 2005 Formula 1
-V10, a Mazda 787B four-rotor, a Harley-Davidson V-twin, a Spitfire's Merlin V12, a chainsaw)
-and 21 generic engines. It runs live at
+It ships 90 presets: 70 real vehicles and engines with their published engine and
+drivetrain configurations (a McLaren F1, a Ferrari F40, a Porsche Carrera GT, a 2005 Formula 1
+V10, a Mazda 787B four-rotor, a Ducati 1299 Panigale, a B-17's Wright Cyclone radial, a
+Peterbilt with an 18-speed, a Citroën 2CV, a chainsaw) and 20 generic engines, chosen from a
+picker that shows each one as a 3D rendering. It runs live at
 [engine-sound-lab.geoffmyers.com](https://engine-sound-lab.geoffmyers.com).
 
 ## Screenshots
 
 <p align="center">
-  <img src="docs/screenshots/desktop.png" width="100%" alt="A BMW S65 V8 revving at 5,665 rpm: tachometer, readouts, the cylinder map with banks A and B, the firing timeline, and the build sheet with the listening position, engine, aspiration and transmission controls">
+  <img src="docs/screenshots/desktop.png" width="100%" alt="A BMW S65 V8 revving at 5,665 rpm: tachometer, readouts, the 3D cutaway engine with banks A and B, the firing timeline, and the build sheet with the listening position, engine, aspiration and transmission controls">
 </p>
 
 <p align="center"><em>A BMW S65 cross-plane V8 revving, heard from behind the car. Each bank fires unevenly (270-180-90-180°), which is where a cross-plane V8's burble comes from.</em></p>
@@ -58,14 +59,14 @@ and 21 generic engines. It runs live at
 <p align="center"><em>A Porsche 911 GT3 accelerating in Drive, heard from the driver's seat, with its real specification and sources.</em></p>
 
 <p align="center">
-  <img src="docs/screenshots/radial.png" width="68%" alt="A nine-cylinder radial aircraft engine drawn as a ring of cylinders, firing every other cylinder">
+  <img src="docs/screenshots/radial.png" width="68%" alt="A nine-cylinder radial aircraft engine in 3D, cut open to show its pistons and the master rod hub, firing every other cylinder">
   <img src="docs/screenshots/phone.png" width="24%" alt="The page on a phone-sized screen in the dark theme with a Ferrari 458 revving">
 </p>
 
 <p align="center"><em>Left: the T-6 Texan's Pratt &amp; Whitney R-1340 radial, firing 1-3-5-7-9-2-4-6-8. Right: a phone-sized screen.</em></p>
 
-These were captured in headless Chromium with the engine running
-(`scripts/capture-screenshots.mjs`).
+These were captured in Chromium with the engine running (`scripts/capture-screenshots.mjs`;
+the 3D engine needs a browser with a GPU, and `scripts/preview-3d.mjs` shoots a single preset).
 
 ## Features
 
@@ -76,6 +77,9 @@ These were captured in headless Chromium with the engine running
   the reason they do in reality.
 - **27 layouts**, published firing orders per preset, and exhaust routing per bank (one
   collector, an X-pipe, or true dual pipes in stereo).
+- **Loud the way an engine is loud:** each exhaust and intake pulse carries one cylinder's
+  charge, so as the pulses shorten with revs they get stronger, and an engine grows about
+  18 dB from idle to full throttle near the limit, not just more frequent.
 - **Exhaust, intake and the rest:** a muffler chamber and a waveguide tailpipe, airbox
   resonance and induction roar, valve clicks, diesel clatter, turbo whistle and blow-off,
   Roots, twin-screw and centrifugal supercharger whine, a starter motor, overrun pops (their
@@ -86,22 +90,33 @@ These were captured in headless Chromium with the engine running
   helical or straight-cut gear whine, rattle, shifter clicks, driveline shunt, road and wind.
 - **Racing-style automatic shifting** (up at the limiter, down the moment the lower gear
   fits under the redline, rev-matched) or shift by hand; over-revving downshifts are refused.
-- **42 real presets** with each engine's torque curve calibrated to its published peak
-  torque and power.
+- **70 real presets** with each engine's torque curve calibrated to its published peak
+  torque and power, chosen from a **visual picker**: a card per preset with a 3D rendering
+  (a render of the preset's own 3D engine; on the live site, the car's Gran Turismo 7 studio
+  render where GT7 has that model), with category tabs and search.
 - **Listening positions:** behind the car, at the intake, in the engine bay (fitted to
   recordings of a real BMW S65), the driver's seat, or the dry model. Under load, all four
   were checked against the engine recordings in Gran Turismo 5, 6 and 7 (22 presets):
   cylinder-to-cylinder differences that grow with load, combustion noise from the block in
   the engine bay, and a supercharger whine heard mostly at the intake all came from that
-  comparison.
-- **Instruments:** tachometer with boost, readouts, an animated cylinder map, a firing
-  timeline per bank, and a live spectrum and waveform.
+  comparison. A review of related open-source engine synthesizers then fixed most of the
+  high-frequency excess it found ([review](docs/2026-11-16-related-projects-review.md)).
+- **3D cutaway engine:** pistons, connecting rods, crankshaft, camshafts and valves moving
+  with the synthesizer's crank angle, castings cut open along each bank. The geometry is
+  built from the layout's firing angles, so a cross-plane V8 grows a cross-plane crank, a
+  60° V6 split crank pins, a boxer opposed throws, a radial one pin with a master rod hub,
+  and a Wankel rotors turning at a third of shaft speed. Each chamber lights as it fires and
+  the exhaust primaries glow under sustained load. Drag to turn it; **Slow motion** shows
+  it at 1/40 speed so each stroke can be followed.
+- **Instruments:** tachometer with boost, readouts, a firing timeline per bank, and a live
+  spectrum and waveform.
 - **WAV export** of scripted runs (start and blips, a rev sweep, a pull through the gears, a
   pull then braking to a stop), rendered offline.
 
 ## Requirements
 
-- A current browser with Web Audio. Chrome, Edge, Firefox and Safari all work; the
+- A current browser with Web Audio, and WebGL for the 3D engine (the rest of the page works
+  without it). Chrome, Edge, Firefox and Safari all work; the
   synthesizer runs in an AudioWorklet where the page is served securely (HTTPS or
   `localhost`) and falls back to a ScriptProcessor otherwise.
 - To run it yourself: any static file server.
@@ -199,12 +214,19 @@ torque calibration and the checks.
 - Typefaces from Google Fonts, under the SIL Open Font License: Big Shoulders Display,
   Archivo and JetBrains Mono.
 - The GitHub mark is Octicons' `mark-github` (MIT).
+- The 3D engine is drawn with [three.js](https://threejs.org) r170 (MIT, © three.js
+  authors), included unmodified in `lib/three/` with its licence, along with its
+  `OrbitControls` and `RoomEnvironment` add-ons (only their import path changed).
 - Real-vehicle specifications come from the manufacturers' and publishers' pages cited per
   preset (shown on the page, and recorded in `research/`), mostly Wikipedia, manufacturer
   press and specification sheets, owner's manuals and enthusiast technical references.
   Figures are facts; estimates are labelled as such.
 - Acceleration times used by the calibration check are magazine test figures, attributed in
-  `research/2026-11-15-acceleration.json`.
+  `research/2026-11-15-acceleration.json` and `research/2026-11-21-acceleration.json`.
+- The picker's pictures in this repository are renders of the page's own 3D engine
+  (`scripts/render-engine-thumbs.mjs`). The live site also shows Gran Turismo 7 studio renders
+  of the cars GT7 has, by Polyphony Digital and Sony Interactive Entertainment; they are not
+  part of this repository or its licence, and the page works without them.
 
 ## Contributing
 

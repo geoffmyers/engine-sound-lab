@@ -1,0 +1,399 @@
+[
+ {
+  "id": "mercedes-amg-f1-w11-eq-performance-2020",
+  "label": "Mercedes-AMG F1 W11 EQ Performance (2020)",
+  "category": "race",
+  "engine": {
+   "code": "M11 EQ Performance",
+   "layout": "V",
+   "cylinders": 6,
+   "strokes": 4,
+   "bankAngleDeg": 90,
+   "crank": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 1.6,
+   "aspiration": {
+    "type": "turbocharged, single hybrid turbo with MGU-H",
+    "count": 1,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 15000,
+   "idleRpm": 5000,
+   "fuel": "petrol (F1 regulation fuel)",
+   "powerKw": 764,
+   "powerRpm": null,
+   "torqueNm": null,
+   "torqueRpm": null
+  },
+  "transmission": {
+   "type": "Xtrac-co-developed 8-speed semi-automatic seamless-shift sequential",
+   "gears": 8,
+   "ratios": [],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "massKg": 746,
+   "rearTyre": null,
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mercedes-AMG_F1_W11_EQ_Performance",
+   "https://en.wikipedia.org/wiki/Mercedes_V6_hybrid_Formula_One_power_unit",
+   "https://www.formula1.com/en/latest/article/pirelli-reveal-wider-faster-2017-tyres.5eQCKChfRIx709KvI2LO3S (search excerpt)",
+   "https://fia.com/node/30202 (search excerpt)",
+   "https://www.mercedes-amg.com/en/technical-briefing-combustion-engine (403, not read; search excerpt only: 100 kg/h fuel flow above 10,500 rpm, 15,000 rpm limit, from the 2024 W15 page)"
+  ],
+  "notes": "Wikipedia: 1.6 L 90 degree V6, 15,000 rpm limit, 764 kW (1,025 hp) (another source says 740 kW), 746 kg. The power-unit article's family infobox gives 80 x 53 mm, boost 350-500 kPa (3.5-5.0 bar, family-wide, not M11 specific, and probably absolute) and idle 5,000 rpm (also family-wide, with a footnote that the real redline can be lower because of the fuel-flow limit); idle and boost are therefore not taken as W11 facts except idle, which is recorded here as the only published figure. Peak boost is left null (absolute vs gauge unclear). The tyres were the 2017-2019 sizes (front 305/670-13, rear 405/670-13: nominal width/overall diameter in mm) per Pirelli and the FIA statement that the 2019 specification carried over to 2020; this designation does not fit the parser, so rearTyre is null and the 670 mm overall diameter is used as an estimate in the modelling file. NOT FOUND: power rpm, torque, firing order and cylinder numbering, gearbox ratios, final drive, Cd, frontal area. 746 kg is the 2020 minimum including driver (not confirmed on the page)."
+ },
+ {
+  "id": "ford-gt40-mk-ii-1966",
+  "label": "Ford GT40 Mk II (1966 Le Mans)",
+  "category": "race",
+  "engine": {
+   "code": "Ford FE 427 (race)",
+   "layout": "V",
+   "cylinders": 8,
+   "strokes": 4,
+   "bankAngleDeg": 90,
+   "crank": "cast crank, cross-plane (not stated by the sources; standard Ford V8)",
+   "firingOrder": [
+    1,
+    5,
+    4,
+    2,
+    6,
+    3,
+    7,
+    8
+   ],
+   "firingIntervalsDeg": null,
+   "banks": {
+    "left_or_A": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "right_or_B": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "displacementL": 6.982,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "petrol (single Holley 780 CFM carburettor, dry sump)",
+   "powerKw": 362,
+   "powerRpm": 6200,
+   "torqueNm": 644,
+   "torqueRpm": 5000
+  },
+  "transmission": {
+   "type": "Ford/Kar Kraft T-44 4-speed manual",
+   "gears": 4,
+   "ratios": [
+    2.22,
+    1.43,
+    1.19,
+    1.0
+   ],
+   "finalDrive": 2.77,
+   "gearCut": "not stated"
+  },
+  "vehicle": {
+   "massKg": 1207,
+   "rearTyre": null,
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://www.ultimatecarpage.com/spec/1089/Ford-GT40-Mk-II.html",
+   "https://tech-racingcars.wikidot.com/ford-gt40-mk-ii",
+   "https://en.wikipedia.org/wiki/Ford_GT40",
+   "https://help.summitracing.com/knowledgebase/article/HE-04976/en-us (search excerpt: FE firing order 1-5-4-2-6-3-7-8, cylinders 1-4 on the passenger side, 5-8 on the driver side)"
+  ],
+  "notes": "Ultimatecarpage: 485 bhp (362 kW) at 6,200 rpm, 644 Nm (475 lb-ft); torque rpm CONFLICT: ultimatecarpage says 3,200-3,600 rpm, tech-racingcars and a search excerpt say 5,000 rpm (5,000 used). Bore x stroke 107.2 or 107.5 x 96.1 mm, 6,982/6,997 cc (6.982 used). Mass CONFLICT: 1,207 kg (ultimatecarpage) vs 1,100 kg (tech-racingcars); the winning car raced heavier with fuel and driver. Gear ratios 2.22/1.43/1.19/1.00 agree in two sources; final drive 2.77 per ultimatecarpage (tech-racingcars lists several, 2.77 to 4.22, unpaired). Tyres (Goodyear/Firestone era) 9.75 x 15 front, 12.80 x 15 rear: a racing-tyre designation that does not fit the parser, so rearTyre is null. Ultimatecarpage top speed 346 km/h (215 mph, probably a Mulsanne-straight claim, not verified). The Mk II also ran a 5-speed ZF in some cars per tech-racingcars; the 4-speed is the Le Mans 1966 box. NOT FOUND: rev limit, idle, Cd, frontal area. Firing order is the standard FE order (several general sources); bank mapping follows Summit's cylinder numbering and which bank is called 1 is assumed."
+ },
+ {
+  "id": "lancia-delta-hf-integrale-evoluzione-group-a-1992",
+  "label": "Lancia Delta HF Integrale Evoluzione (Group A rally, 1992)",
+  "category": "race",
+  "engine": {
+   "code": "831E5.000 (Lampredi twin cam)",
+   "layout": "inline",
+   "cylinders": 4,
+   "strokes": 4,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 1.995,
+   "aspiration": {
+    "type": "turbocharged",
+    "count": 1,
+    "superchargerType": null,
+    "peakBoostBar": 1.9
+   },
+   "redlineRpm": null,
+   "idleRpm": null,
+   "fuel": "petrol",
+   "powerKw": 272,
+   "powerRpm": 7000,
+   "torqueNm": 535,
+   "torqueRpm": 4000
+  },
+  "transmission": {
+   "type": "Abarth/ZF 6-speed manual, permanent 4WD",
+   "gears": 6,
+   "ratios": [
+    3.182,
+    2.286,
+    1.706,
+    1.35,
+    1.13,
+    0.96
+   ],
+   "finalDrive": 4.272,
+   "gearCut": "not stated"
+  },
+  "vehicle": {
+   "massKg": 1100,
+   "rearTyre": null,
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://tech-racingcars.wikidot.com/lancia-deltona",
+   "https://en.wikipedia.org/wiki/Lancia_Delta_Group_A",
+   "https://www.wrc.com/en/misc/lancia-delta-integrale-evo (search excerpt: 300 bhp)",
+   "https://supercarnostalgia.com/blog/lancia-delta-hf-integrale-16v"
+  ],
+  "notes": "Tech-racingcars (Evoluzione, 1992): 1,995 cc, Garrett turbo with 38 mm restrictor, 1.9 bar maximum (absolute or gauge not stated), 330-365 hp at 7,000 rpm (330 hp = 246 kW used), 535 Nm at 4,000 rpm, 1,100 kg. Power CONFLICT: WRC.com (search excerpt) says 300 bhp; Wikipedia says Group A cars made far more than the notional 300 bhp, 'closer to 400'; the road Evoluzione is 210 PS at 5,750 rpm. Gearbox: the source lists three ratio sets (one 5-speed, two 6-speed) and many final drives, unpaired; the second 6-speed set with the 4.272 final drive listed for 1993 is used and may not match any one car. Tyres: Michelin 245/610-17 tarmac, 185/660-16 gravel (nominal width/overall diameter in mm, not parseable), so rearTyre is null. NOT FOUND: rev limit, idle, Cd, frontal area, a stated cylinder firing order (a Lampredi inline-four; the layout default 1-3-4-2 is assumed in the modelling). Power: the source gives 330-365 hp; 365 hp (272 kW) is used because only it is consistent with the same source's 535 N·m at 4,000 rpm (246 kW at 7,000 rpm would need torque to fall faster than any curve through those points allows)."
+ },
+ {
+  "id": "porsche-962c-1988",
+  "label": "Porsche 962C (Group C, 1988)",
+  "category": "race",
+  "engine": {
+   "code": "962/72 (ultimatecarpage; stuttcars lists 935/83 for 1988-90)",
+   "layout": "flat",
+   "cylinders": 6,
+   "strokes": 4,
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 2.994,
+   "aspiration": {
+    "type": "twin turbocharged (2 x KKK)",
+    "count": 2,
+    "superchargerType": null,
+    "peakBoostBar": 1.2
+   },
+   "redlineRpm": 8400,
+   "idleRpm": null,
+   "fuel": "petrol (Bosch fuel injection)",
+   "powerKw": 582,
+   "powerRpm": 8200,
+   "torqueNm": 710,
+   "torqueRpm": 5000
+  },
+  "transmission": {
+   "type": "Porsche 5-speed manual (dog), dry single-plate clutch",
+   "gears": 5,
+   "ratios": [],
+   "finalDrive": null,
+   "gearCut": null
+  },
+  "vehicle": {
+   "massKg": 900,
+   "rearTyre": null,
+   "cd": null,
+   "frontalAreaM2": null
+  },
+  "sources": [
+   "https://www.ultimatecarpage.com/spec/754/Porsche-962C.html",
+   "https://www.stuttcars.com/porsche-model-research/porsche-962-research/",
+   "https://stuttcars.com/?p=414022 (search excerpt: 1.2 bar standard boost, twin KKK K26, 935/83)",
+   "https://en.wikipedia.org/wiki/Porsche_962"
+  ],
+  "notes": "Ultimatecarpage: 2,994 cc, 95.0 x 70.4 mm, twin KKK, 780 bhp (582 kW) at 8,200 rpm, 710 Nm at 5,000 rpm, redline 8,400 rpm, 900 kg, 5-speed. Power CONFLICT: stuttcars lists 695 bhp at 8,200 rpm (962/72 with restrictor) and 740 bhp (935/83); 780 bhp looks like an unrestricted figure; 620 bhp at 1.2 bar is also quoted. Weight CONFLICT: 900 kg (ultimatecarpage) vs 820 kg Group C1 dry and 850 kg IMSA GTP dry (stuttcars). The 1.2 bar boost is from a search excerpt only and may belong to a different tune. The prompt's '935/82' name was not found in any source. NOT FOUND: firing order (the flat-six order is unsourced here), gear ratios, final drive, tyre size, Cd, frontal area, idle. Ultimatecarpage top speed 340 km/h; its wheel sizes (13 x 12 front, 14.5 x 16 rear) are unclear."
+ },
+ {
+  "id": "wright-r-1820-97-cyclone-b-17g",
+  "label": "Wright R-1820-97 Cyclone (Boeing B-17G Flying Fortress)",
+  "category": "aircraft",
+  "engine": {
+   "code": "R-1820-97 (GR-1820-97, G200 series)",
+   "layout": "radial",
+   "cylinders": 9,
+   "strokes": 4,
+   "bankAngleDeg": null,
+   "crank": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 29.87,
+   "aspiration": {
+    "type": "turbosupercharger (GE B-22) plus internal gear-driven supercharger",
+    "count": 1,
+    "superchargerType": "exhaust turbosupercharger",
+    "peakBoostBar": null
+   },
+   "redlineRpm": 2500,
+   "idleRpm": null,
+   "fuel": "100 grade petrol",
+   "powerKw": 895,
+   "powerRpm": 2500,
+   "torqueNm": null,
+   "torqueRpm": null
+  },
+  "transmission": {
+   "type": "propeller reduction gear",
+   "gears": 1,
+   "ratios": [
+    0.5625
+   ],
+   "finalDrive": null,
+   "gearCut": null,
+   "propellerReduction": 0.5625
+  },
+  "vehicle": {
+   "massKg": null,
+   "rearTyre": null
+  },
+  "sources": [
+   "https://enginehistory.org/Dataplates/Cyclone9/Cyclone9Dataplates.shtml",
+   "https://en.wikipedia.org/wiki/Wright_R-1820_Cyclone_9",
+   "https://reddog1944.com/B17_Specifications.htm",
+   "https://enginehistory.org/Propellers/HamStd/hamstd.shtml (search excerpt: B-17F,G hub 23E50 with R-1820-97)",
+   "https://www.airandspace.si.edu/es/collection-objects/wright-cyclone-r-1820-97-studebaker-radial-9-engine/nasm_A19660459000 (search excerpt)",
+   "propeller: a War Department training film listing quoted in a search result (three-blade Hydromatic, 11 ft 7 in), search excerpt"
+  ],
+  "notes": "Takeoff rating 1,200 hp (895 kW) at 2,500 rpm with 100 grade fuel and a turbosupercharger. Reduction gear 0.5625:1 (9:16) is the factory ratio for the G200 series; the data plate engine shown had been modified to 0.666. Displacement 1,823 cu in (29.87 L), bore 6.125 in, stroke 6.875 in are the R-1820 family values, read from the GR-1820-G2 entry of Wikipedia, not the -97 line. Propeller (excerpt only): Hamilton Standard three-blade Hydromatic 23E50, 11 ft 7 in (3.53 m). NOT FOUND: manifold pressure and boost, idle rpm, firing order (an odd-cylinder radial fires every other cylinder by geometry). The prompt's '16:9' is the inverse notation of 0.5625."
+ },
+ {
+  "id": "continental-io-550-n-cirrus-sr22",
+  "label": "Continental IO-550-N (Cirrus SR22)",
+  "category": "aircraft",
+  "engine": {
+   "code": "IO-550-N",
+   "layout": "flat",
+   "cylinders": 6,
+   "strokes": 4,
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": null,
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 9.05,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 2700,
+   "idleRpm": null,
+   "fuel": "100LL avgas (fuel injected)",
+   "powerKw": 231,
+   "powerRpm": 2700,
+   "torqueNm": null,
+   "torqueRpm": null
+  },
+  "transmission": {
+   "type": "direct drive",
+   "gears": 1,
+   "ratios": [
+    1.0
+   ],
+   "finalDrive": null,
+   "gearCut": null,
+   "propellerReduction": 1.0
+  },
+  "vehicle": {
+   "massKg": null,
+   "rearTyre": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Continental_O-550",
+   "https://en.wikipedia.org/wiki/Cirrus_SR22",
+   "https://hartzellprop.com/?p=18706 (search excerpt: PHC-J3YF-1RF/F7693DF, three-blade, max 78 in, min 76 in)",
+   "https://www.scribd.com/document/481868851/Cirrus-SR22-POH (search excerpt: 310 hp at 2,700 rpm, direct drive, 78.0 in propeller)",
+   "https://www.easa.europa.eu/lv/downloads/7645/en (IM.E.100 TCDS, PDF could not be decoded)"
+  ],
+  "notes": "310 hp (231 kW) at 2,700 rpm from Wikipedia and the SR22 POH excerpt (some listings give 300 hp for the plain IO-550-N; the SR22 is 310). Displacement 552 cu in (9.05 L), bore 5.25 in, stroke 4.25 in are the IO-550 family values; dry weight 195 kg. The FAA TCDS (E00004EN) could not be read, so firing order, idle and the rpm limit beyond the rated 2,700 are not sourced. Propeller: Hartzell three-blade constant speed, 78 in maximum diameter (1.98 m), 76 in minimum. NOT FOUND: torque, idle, firing order."
+ },
+ {
+  "id": "continental-a65-8-piper-j-3-cub",
+  "label": "Continental A-65-8 (Piper J-3 Cub)",
+  "category": "aircraft",
+  "engine": {
+   "code": "A-65-8 (O-170-3)",
+   "layout": "flat",
+   "cylinders": 4,
+   "strokes": 4,
+   "bankAngleDeg": 180,
+   "crank": null,
+   "firingOrder": [
+    1,
+    3,
+    2,
+    4
+   ],
+   "firingIntervalsDeg": null,
+   "banks": null,
+   "displacementL": 2.8,
+   "aspiration": {
+    "type": "naturally aspirated",
+    "count": null,
+    "superchargerType": null,
+    "peakBoostBar": null
+   },
+   "redlineRpm": 2300,
+   "idleRpm": null,
+   "fuel": "80 octane avgas (carburetted)",
+   "powerKw": 48,
+   "powerRpm": 2300,
+   "torqueNm": null,
+   "torqueRpm": null
+  },
+  "transmission": {
+   "type": "direct drive",
+   "gears": 1,
+   "ratios": [
+    1.0
+   ],
+   "finalDrive": null,
+   "gearCut": null,
+   "propellerReduction": 1.0
+  },
+  "vehicle": {
+   "massKg": null,
+   "rearTyre": null
+  },
+  "sources": [
+   "https://en.wikipedia.org/wiki/Continental_A65",
+   "https://en.wikipedia.org/wiki/Piper_J-3_Cub",
+   "https://enginehistory.org/Piston/HOAE/Continental1.html (search excerpt)",
+   "Aeronca A65-8 service manual via univair.com (search excerpt: firing order 1-3-2-4)",
+   "https://www.aircraftspruce.com/pdf/2026Individual/Cat26180.pdf (search excerpt: Sensenich W72CK series wood propellers for the J-3 with A-65)"
+  ],
+  "notes": "Wikipedia A65: 171 cu in (2.8 L), 3.875 x 3.625 in, 65 hp (48 kW) at 2,300 rpm, 6.3:1 compression, 77 kg dry. CONFLICT: the prompt says 3.1 L, but 171 cu in is 2.80 L (all sources); the Cub article quotes 2,350 rpm. Firing order 1-3-2-4 (1940s Continental specification and an Aeronca manual, both search excerpts). Propeller: fixed-pitch two-blade Sensenich 72-inch wood (W72CK series, 1.83 m), seen in a search excerpt only. TCDS E-205 (search excerpt) covers the A-65-8 but could not be read. NOT FOUND: torque, idle, boost (none)."
+ }
+]

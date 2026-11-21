@@ -1616,6 +1616,1072 @@
     "transmission": "manual",
     "gearCut": "straight"
    }
+  },
+  {
+   "id": "bmw-r1250gs",
+   "research": "bmw-r1250gs-2019",
+   "category": "motorcycle",
+   "label": "BMW R 1250 GS (2019)",
+   "layout": "H2",
+   "gearbox": "bike",
+   "spec": "1.25 L ShiftCam boxer twin firing evenly at 360 degrees; six-speed with helical gears, shaft final drive; 249 kg wet.",
+   "estimates": {
+    "idleRpm": 1200,
+    "redline": 8500,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not published; peak power at 7,750 so the limiter is taken as about 8,500"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 1.4,
+    "inertia": 0.9,
+    "camLope": 0.2,
+    "pops": 0.05,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "yamaha-mt-07",
+   "research": "yamaha-mt-07-2018",
+   "category": "motorcycle",
+   "label": "Yamaha MT-07 (2018)",
+   "layout": "I2-270",
+   "gearbox": "bike",
+   "spec": "0.69 L CP2 parallel twin with a 270-degree crank (fires at 0 and 270 degrees); six-speed, chain final drive; 183 kg.",
+   "estimates": {
+    "idleRpm": 1500,
+    "redline": 10500,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not published; power peaks at 9,000 and the limiter is taken as about 10,500"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 1.1,
+    "inertia": 0.5,
+    "camLope": 0.25,
+    "pops": 0.12,
+    "fuel": "petrol",
+    "transmission": "sequential",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "triumph-street-triple-765-rs",
+   "research": "triumph-street-triple-765-rs-2017",
+   "category": "motorcycle",
+   "label": "Triumph Street Triple 765 RS (2017)",
+   "layout": "I3",
+   "gearbox": "bike",
+   "spec": "0.77 L inline-three firing every 240 degrees; six-speed close-ratio gearbox, chain final drive; 182 kg wet.",
+   "estimates": {
+    "idleRpm": 1300,
+    "redline": 12500,
+    "finalDrive": 5.34,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not published; power peaks at 11,700 and the limiter is taken as about 12,500",
+     "finalDrive": "primary 1.848 (85/46, motoinst.ru excerpt) times a final drive of about 2.89 backed out of Team-BHP's overall ratios (13.97 in first); the final drive itself is unpublished"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "cold-air",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "sport",
+    "pipeLength": 1.0,
+    "inertia": 0.3,
+    "camLope": 0.2,
+    "pops": 0.2,
+    "fuel": "petrol",
+    "transmission": "sequential",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "ducati-1299-panigale",
+   "research": "ducati-1299-panigale-2015",
+   "category": "motorcycle",
+   "label": "Ducati 1299 Panigale (2015)",
+   "layout": "V2-90",
+   "gearbox": "bike",
+   "spec": "1.285 L Superquadro 90-degree L-twin firing at 270 and 450 degrees; six-speed with quickshifter, chain final drive; 190.5 kg wet.",
+   "estimates": {
+    "idleRpm": 1300,
+    "redline": 11500,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not published; power peaks at 10,500 and the limiter is taken as about 11,500",
+     "firing": "270/450 follows from the 90-degree L-twin layout"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "cold-air",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "sport",
+    "pipeLength": 1.0,
+    "inertia": 0.45,
+    "camLope": 0.35,
+    "pops": 0.35,
+    "fuel": "petrol",
+    "transmission": "sequential",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "honda-cbr600rr",
+   "research": "honda-cbr600rr-2013",
+   "category": "motorcycle",
+   "label": "Honda CBR600RR (2013)",
+   "layout": "I4",
+   "gearbox": "bike",
+   "spec": "0.6 L inline-four revving to a 15,400 rpm limit; close-ratio six-speed, chain final drive; 186 kg.",
+   "estimates": {
+    "idleRpm": 1400,
+    "_why": {
+     "idleRpm": "not published for 2013; the 2007 model's sheet gave 1,400 rpm"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "cold-air",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "sport",
+    "pipeLength": 1.0,
+    "inertia": 0.25,
+    "camLope": 0.2,
+    "pops": 0.2,
+    "fuel": "petrol",
+    "transmission": "sequential",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "vespa-px-125",
+   "research": "vespa-px-125",
+   "category": "motorcycle",
+   "label": "Vespa PX 125",
+   "layout": "I1-2T",
+   "gearbox": "bike",
+   "ratiosAreOverall": true,
+   "spec": "123 cc air-cooled two-stroke single (fires every revolution); four-speed twist-grip gearbox; 112 kg dry.",
+   "estimates": {
+    "idleRpm": 1600,
+    "redline": 8000,
+    "finalDrive": 1.0,
+    "massKg": 118,
+    "wheelRadiusM": 0.21,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not published; power peaks at 6,500 and a stock two-stroke of this type is about 8,000 at the limit",
+     "finalDrive": "the researched ratios are overall (engine to wheel), so the drive after the gearbox is 1",
+     "massKg": "dry 112 kg is sourced; about 6 kg of fuel, premix and oil added for a wet mass",
+     "wheelRadiusM": "fallback only; 3.50-10 parses from the tyre string"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "small-can",
+    "pipeLength": 0.6,
+    "inertia": 0.7,
+    "camLope": 0.5,
+    "pops": 0.15,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "mercedes-f1-w11",
+   "research": "mercedes-amg-f1-w11-eq-performance-2020",
+   "category": "race",
+   "label": "Mercedes-AMG F1 W11 EQ Performance (2020)",
+   "layout": "V6-90-even",
+   "gearbox": "transaxle",
+   "spec": "1.6 L turbocharged 90° V6 hybrid, 15,000 rpm limit, about 764 kW; eight-speed seamless sequential gearbox; 746 kg with driver.",
+   "estimates": {
+    "boost": 3.0,
+    "wheelRadiusM": 0.335,
+    "topSpeedKmh": 350,
+    "ratioSpread": 2.7,
+    "cdA": 1.0,
+    "brakeDecel": 40,
+    "powerRpm": 10500,
+    "_why": {
+     "boost": "not published; the V6 hybrid family runs 3.5 to 5.0 bar absolute, so about 3 bar of boost is modelled",
+     "wheelRadiusM": "rear 405/670-13 tyre has a 670 mm overall diameter",
+     "ratios": "unpublished: spread to 350 km/h at the rev limit",
+     "cdA": "not published; a modern F1 car is about 1.0 m2",
+     "brakeDecel": "not published; F1 braking exceeds 5 g",
+     "powerRpm": "not published; power peaks below the limit because fuel flow is capped above 10,500 rpm",
+     "firing": "not published: even-firing V6 assumed",
+     "idleRpm": "family infobox figure, not a W11 measurement"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.35,
+    "bov": "none",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "straight",
+    "pipeLength": 1.0,
+    "inertia": 0.2,
+    "camLope": 0.1,
+    "pops": 0.2,
+    "fuel": "petrol",
+    "transmission": "sequential",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "ford-gt40-mk2",
+   "research": "ford-gt40-mk-ii-1966",
+   "category": "race",
+   "label": "Ford GT40 Mk II (1966 Le Mans)",
+   "layout": "V8-cross",
+   "firingOrder": "research",
+   "banks": {
+    "1": [
+     5,
+     6,
+     7,
+     8
+    ]
+   },
+   "gearbox": "transaxle",
+   "spec": "7.0 L Ford FE 427 V8, 362 kW at 6,200 rpm; Kar Kraft four-speed manual, 2.77 final drive; about 1,207 kg.",
+   "estimates": {
+    "redline": 6500,
+    "idleRpm": 1000,
+    "wheelRadiusM": 0.34,
+    "cdA": 0.7,
+    "brakeDecel": 12,
+    "_why": {
+     "redline": "not published; the race 427 peaks at 6,200 rpm",
+     "idleRpm": "not published",
+     "wheelRadiusM": "12.80-15 rear racing tyre, about 27 in overall diameter",
+     "cdA": "not published; about Cd 0.4 on 1.7 m2 assumed",
+     "brakeDecel": "1966 iron-disc brakes, lower than modern race cars",
+     "banks": "cylinders 5 to 8 on bank B as in Ford's numbering"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "straight",
+    "pipeLength": 1.5,
+    "inertia": 1.2,
+    "camLope": 0.7,
+    "pops": 0.5,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "lancia-delta-integrale-group-a",
+   "research": "lancia-delta-hf-integrale-evoluzione-group-a-1992",
+   "category": "race",
+   "label": "Lancia Delta HF Integrale Evoluzione (Group A rally)",
+   "layout": "I4",
+   "gearbox": "transaxle",
+   "spec": "2.0 L turbocharged inline-four, about 246 kW at 7,000 rpm, 1.9 bar; six-speed manual with permanent four-wheel drive; 1,100 kg.",
+   "estimates": {
+    "redline": 7500,
+    "idleRpm": 1100,
+    "wheelRadiusM": 0.305,
+    "cdA": 0.85,
+    "brakeDecel": 13,
+    "_why": {
+     "redline": "not published; peak power at 7,000 rpm",
+     "idleRpm": "not published",
+     "wheelRadiusM": "Michelin 245/610-17 tarmac tyre, 610 mm overall diameter",
+     "cdA": "not published; about Cd 0.4 on 2.1 m2",
+     "brakeDecel": "not published",
+     "gearing": "ratio set and final drive picked from several unpaired lists in the source"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.7,
+    "bov": "atmospheric",
+    "intake": "cold-air",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "straight",
+    "pipeLength": 1.8,
+    "inertia": 0.6,
+    "camLope": 0.4,
+    "pops": 1.0,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "porsche-962c",
+   "research": "porsche-962c-1988",
+   "category": "race",
+   "label": "Porsche 962C (Group C, 1988)",
+   "layout": "H6",
+   "firingOrder": [
+    1,
+    6,
+    2,
+    4,
+    3,
+    5
+   ],
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "gearbox": "transaxle",
+   "spec": "3.0 L twin-turbo flat-six, 582 kW at 8,200 rpm, 8,400 rpm limit; five-speed manual; about 900 kg.",
+   "estimates": {
+    "idleRpm": 1100,
+    "wheelRadiusM": 0.335,
+    "topSpeedKmh": 340,
+    "ratioSpread": 2.5,
+    "cdA": 0.75,
+    "brakeDecel": 16,
+    "_why": {
+     "firing order": "Porsche flat-sixes fire 1-6-2-4-3-5",
+     "idleRpm": "not published",
+     "wheelRadiusM": "rear race tyre of about 670 mm overall diameter assumed",
+     "ratios": "unpublished: spread to 340 km/h at the rev limit",
+     "cdA": "not published; about Cd 0.35 on 2.1 m2",
+     "brakeDecel": "not published"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.6,
+    "bov": "atmospheric",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "straight",
+    "pipeLength": 1.6,
+    "inertia": 0.5,
+    "camLope": 0.5,
+    "pops": 0.5,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "wright-r1820-b17",
+   "research": "wright-r-1820-97-cyclone-b-17g",
+   "category": "aircraft",
+   "label": "Wright R-1820-97 Cyclone (Boeing B-17G)",
+   "layout": "Radial9",
+   "vehicle": "none",
+   "spec": "29.9 L nine-cylinder radial with a turbosupercharger, 895 kW at 2,500 rpm, 0.5625:1 propeller reduction gear.",
+   "estimates": {
+    "idleRpm": 600,
+    "boost": 0.6,
+    "_why": {
+     "idleRpm": "not published",
+     "boost": "manifold pressure not read; the turbosupercharger held about 1.6 bar absolute at takeoff",
+     "propeller": "three-blade Hamilton Standard, 11 ft 7 in, from a search excerpt",
+     "turboSize": "0.8: a larger value spools slower than the boost check allows at these low engine speeds"
+    }
+   },
+   "propeller": {
+    "blades": 3,
+    "reduction": 0.5625,
+    "diameterM": 3.53,
+    "level": 0.06
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.8,
+    "bov": "none",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "stacks",
+    "pipeLength": 0.8,
+    "inertia": 2.2,
+    "camLope": 0.4,
+    "pops": 0.3,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "continental-io550-sr22",
+   "research": "continental-io-550-n-cirrus-sr22",
+   "category": "aircraft",
+   "label": "Continental IO-550-N (Cirrus SR22)",
+   "layout": "H6",
+   "firingOrder": [
+    1,
+    6,
+    3,
+    2,
+    5,
+    4
+   ],
+   "banks": {
+    "1": [
+     2,
+     4,
+     6
+    ]
+   },
+   "vehicle": "none",
+   "spec": "9.0 L flat-six, 231 kW (310 hp) at 2,700 rpm, direct-drive three-blade propeller.",
+   "estimates": {
+    "idleRpm": 700,
+    "_why": {
+     "firing order": "1-6-3-2-5-4 is the usual Continental six-cylinder order, not read in a source here",
+     "idleRpm": "not published",
+     "banks": "odd cylinders on one side, even on the other, assumed",
+     "propeller": "three-blade Hartzell, 78 in maximum diameter, from a search excerpt"
+    }
+   },
+   "propeller": {
+    "blades": 3,
+    "reduction": 1.0,
+    "diameterM": 1.98,
+    "level": 0.05
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "stock",
+    "pipeLength": 0.9,
+    "inertia": 2.0,
+    "camLope": 0.2,
+    "pops": 0.1,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "continental-a65-j3-cub",
+   "research": "continental-a65-8-piper-j-3-cub",
+   "category": "aircraft",
+   "label": "Continental A-65 (Piper J-3 Cub)",
+   "layout": "H4",
+   "firingOrder": "research",
+   "banks": {
+    "1": [
+     2,
+     4
+    ]
+   },
+   "vehicle": "none",
+   "spec": "2.8 L flat-four, firing order 1-3-2-4, 48 kW (65 hp) at 2,300 rpm, direct-drive fixed-pitch propeller.",
+   "estimates": {
+    "idleRpm": 550,
+    "_why": {
+     "idleRpm": "not published",
+     "banks": "assumed: even cylinders on one side",
+     "propeller": "two-blade fixed-pitch 72 in wood Sensenich, from a search excerpt"
+    }
+   },
+   "propeller": {
+    "blades": 2,
+    "reduction": 1.0,
+    "diameterM": 1.83,
+    "level": 0.05
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 0.8,
+    "inertia": 2.0,
+    "camLope": 0.2,
+    "pops": 0.1,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "mclaren-f1",
+   "research": "mclaren-f1-1994",
+   "category": "road",
+   "label": "McLaren F1 (1994)",
+   "layout": "V12",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "6.1 L BMW S70/2 60° V12, 7,500 rpm limiter; six-speed transverse manual; 1,260 kg.",
+   "estimates": {
+    "idleRpm": 1000,
+    "_why": {
+     "idleRpm": "not published",
+     "firing": "order not found for the S70/2; the layout's even-firing order is used"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "itb",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "sport",
+    "pipeLength": 2.6,
+    "inertia": 0.7,
+    "camLope": 0.25,
+    "pops": 0.3,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "ferrari-f40",
+   "research": "ferrari-f40-1987",
+   "category": "road",
+   "label": "Ferrari F40 (1987)",
+   "layout": "V8-flat",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "2.9 L F120A twin-turbo 90° flat-plane V8, 352 kW at 7,000 rpm; five-speed manual; 1,254 kg.",
+   "estimates": {
+    "idleRpm": 1000,
+    "redline": 7750,
+    "boost": 1.1,
+    "topSpeedKmh": 321,
+    "ratioSpread": 3.6,
+    "cdA": 0.62,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not found; 7,750 is the commonly quoted limiter (forum only)",
+     "boost": "not found; about 1.1 bar commonly quoted (unsourced)",
+     "ratios": "unpublished in anything read: spread to Sport Auto's 321 km/h at the rev limit",
+     "cdA": "Cd 0.34 sourced; frontal area about 1.8 m² assumed",
+     "crank": "cross-plane assumed: the F40's flat-plane status is unsettled and the F355 is usually the first flat-plane Ferrari V8 road car",
+     "layout": "flat-plane crank, as in every Ferrari mid-engined V8 from the 308 on (the F120A shares the 288 GTO lineage); no firing order was found, so the layout default is used"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.45,
+    "bov": "atmospheric",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "sport",
+    "pipeLength": 2.2,
+    "inertia": 0.6,
+    "camLope": 0.3,
+    "pops": 0.3,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "porsche-carrera-gt",
+   "research": "porsche-carrera-gt-2004",
+   "category": "road",
+   "label": "Porsche Carrera GT (2004)",
+   "layout": "V10",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "5.7 L 68° V10, 8,400 rpm; six-speed manual, 4.44 final drive; 1,380 kg.",
+   "estimates": {
+    "idleRpm": 1000,
+    "cdA": 0.74,
+    "_why": {
+     "idleRpm": "not published",
+     "cdA": "Cd 0.39 sourced; frontal area about 1.9 m² assumed",
+     "firing": "order not found; the layout's even-firing 72° V10 order is used for a 68° engine"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "itb",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "sport",
+    "pipeLength": 2.2,
+    "inertia": 0.3,
+    "camLope": 0.45,
+    "pops": 0.2,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "nissan-skyline-gt-r-r34",
+   "research": "nissan-skyline-gt-r-r34-1999",
+   "category": "road",
+   "label": "Nissan Skyline GT-R (R34, 1999)",
+   "layout": "I6",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "2.6 L RB26DETT twin-turbo inline-six, 206 kW at 6,800 rpm, 8,000 rpm; Getrag six-speed manual, 3.545 final drive; 1,560 kg.",
+   "estimates": {
+    "idleRpm": 800,
+    "peakNm": 392,
+    "boost": 0.75,
+    "cdA": 0.7,
+    "_why": {
+     "idleRpm": "not published",
+     "peakNm": "torque not read on a page (a search excerpt said 397 at 4,400; Nissan's figure is recalled as 392)",
+     "boost": "not published; about 0.75 bar for the stock turbos (the dash gauge reads to 1.2)",
+     "cdA": "no Cd or area found: about 0.34 x 2.0 m² assumed",
+     "firing": "order not sourced; the layout's I6 order (1-5-3-6-2-4) is the RB26's"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.5,
+    "bov": "recirculating",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "sport",
+    "pipeLength": 3.0,
+    "inertia": 0.8,
+    "camLope": 0.25,
+    "pops": 0.35,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "mercedes-c63-amg-w204",
+   "research": "mercedes-c63-amg-w204-2008",
+   "category": "road",
+   "label": "Mercedes-Benz C63 AMG (W204, 2008)",
+   "layout": "V8-cross",
+   "firingOrder": "research",
+   "gearbox": "transaxle",
+   "spec": "6.2 L M156 V8, 336 kW at 6,800 rpm, 7,200 rpm; AMG Speedshift MCT seven-speed (modelled as a dual-clutch box), 3.06 final drive; 1,655 kg.",
+   "estimates": {
+    "idleRpm": 750,
+    "cdA": 0.7,
+    "_why": {
+     "idleRpm": "not published",
+     "cdA": "no C63 Cd or area found: about 0.33 x 2.1 m² assumed",
+     "firing": "M156 order not found; the layout's cross-plane order is used"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "dual",
+    "muffler": "sport",
+    "pipeLength": 2.8,
+    "inertia": 1.1,
+    "camLope": 0.3,
+    "pops": 0.3,
+    "fuel": "petrol",
+    "transmission": "dct",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "toyota-gr-yaris",
+   "research": "toyota-gr-yaris-2020",
+   "category": "road",
+   "label": "Toyota GR Yaris (2020, manual)",
+   "layout": "I3",
+   "firingOrder": "research",
+   "ratiosAreOverall": true,
+   "gearbox": "layshaft",
+   "spec": "1.6 L G16E-GTS turbocharged inline-three; six-speed manual with a 3.941 final drive for gears one to four and 3.350 for five and six (ratios entered as overall); 1,280 kg.",
+   "estimates": {
+    "idleRpm": 800,
+    "redline": 7000,
+    "boost": 1.2,
+    "cdA": 0.651,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not found; the tachometer red zone starts about 7,000",
+     "boost": "not published; about 1.2 bar assumed for a small single-scroll turbo at 370 N.m from 1.6 L",
+     "cdA": "Cd 0.352 is sourced (2024 sheet); frontal area not found, about 1.85 m2 assumed"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.35,
+    "bov": "atmospheric",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "sport",
+    "pipeLength": 2.6,
+    "inertia": 0.5,
+    "camLope": 0.2,
+    "pops": 0.35,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "toyota-ae86",
+   "research": "toyota-ae86-gts-1985-us",
+   "category": "road",
+   "label": "Toyota Corolla GT-S (AE86, 1985, US)",
+   "layout": "I4",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "1.6 L 4A-GEC twin-cam inline-four, 6,600 rpm power peak, 7,500 rpm redline; T50 five-speed manual with a direct-drive fourth, 4.30 final drive; about 1,043 kg.",
+   "estimates": {
+    "idleRpm": 850,
+    "cdA": 0.6,
+    "_why": {
+     "idleRpm": "not published; typical warm idle",
+     "cdA": "Cd 0.35 sourced; frontal area about 1.7 m2 assumed",
+     "firing order": "not found; the usual 4A-GE order 1-3-4-2 is the layout default"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 2.4,
+    "inertia": 0.45,
+    "camLope": 0.2,
+    "pops": 0.1,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "citroen-2cv6",
+   "research": "citroen-2cv6-602cc",
+   "category": "road",
+   "label": "Citroen 2CV6 (602 cc)",
+   "layout": "H2",
+   "firingOrder": "research",
+   "gearbox": "transaxle",
+   "spec": "602 cc air-cooled flat-twin, 21.6 kW at 5,750 rpm; four-speed manual (5.20, 2.65, 1.78, 1.31) with a 4.125 final drive; about 601 kg.",
+   "estimates": {
+    "idleRpm": 900,
+    "redline": 6500,
+    "cdA": 0.89,
+    "wheelRadiusM": 0.293,
+    "_why": {
+     "idleRpm": "not published; typical air-cooled twin idle",
+     "redline": "not found; Autocar timed the lower gears at 6,750 rpm, so about 6,500 assumed as the practical limit",
+     "cdA": "Cd 0.51 sourced (2CV body); frontal area about 1.75 m2 assumed",
+     "wheelRadiusM": "Michelin 125/15 with the aspect ratio unpublished: radius backed out of Autocar's 12.43 mph per 1,000 rpm in top (about 0.29 m)"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 1.0,
+    "inertia": 0.8,
+    "camLope": 0.1,
+    "pops": 0.05,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "ford-gt-2017",
+   "research": "ford-gt-2017",
+   "category": "road",
+   "label": "Ford GT (2017, 7-speed DCT)",
+   "layout": "V6-60",
+   "firingOrder": "research",
+   "banks": {
+    "1": [
+     2,
+     4,
+     6
+    ]
+   },
+   "gearbox": "transaxle",
+   "spec": "3.5 L twin-turbo EcoBoost 60-degree V6, 647 hp at 6,250 rpm; Getrag seven-speed dual-clutch, 3.667 final drive; 1,521 kg.",
+   "estimates": {
+    "idleRpm": 750,
+    "redline": 6800,
+    "boost": 1.5,
+    "cdA": 0.7,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not found for the road car; the racing GT is limited to 7,300 and the road engine about 6,800",
+     "boost": "not published; about 1.5 bar assumed for 647 hp from 3.5 L",
+     "cdA": "Cd and frontal area not found; about 0.37 x 1.9 m2 assumed",
+     "firing order": "not found; the layout default V6-60 order is used"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.55,
+    "bov": "recirculating",
+    "intake": "airbox",
+    "headers": "equal",
+    "routing": "single",
+    "muffler": "sport",
+    "pipeLength": 2.8,
+    "inertia": 0.65,
+    "camLope": 0.15,
+    "pops": 0.3,
+    "fuel": "petrol",
+    "transmission": "dct",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "buick-gnx",
+   "research": "buick-regal-gnx-1987",
+   "category": "road",
+   "label": "Buick Regal GNX (1987, automatic)",
+   "layout": "V6-90-even",
+   "firingOrder": "research",
+   "banks": {
+    "1": [
+     2,
+     4,
+     6
+    ]
+   },
+   "gearbox": "planetary",
+   "spec": "3.8 L turbocharged 90-degree V6 on a split-pin crank, firing order 1-6-5-4-3-2; four-speed 200-4R automatic modelled as a planetary box; 1,600 kg.",
+   "estimates": {
+    "idleRpm": 650,
+    "redline": 5500,
+    "boost": 1.0,
+    "finalDrive": 3.42,
+    "wheelRadiusM": 0.326,
+    "cdA": 0.8,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not found; the 3.8 turbo is fuel-cut near 5,500",
+     "boost": "not published; about 15 psi (1.0 bar) is the commonly quoted Grand National boost",
+     "finalDrive": "3.42 is the 1984-85 Grand National axle; the GNX's own axle was not found",
+     "wheelRadiusM": "GNX tyre size not found; 245/50R16 assumed",
+     "cdA": "Cd and frontal area not found; about 0.40 x 2.0 m2 assumed",
+     "transmission": "The synthesizer has no torque-converter automatic: the 200-4R is modelled with the planetary gearbox kind (no layshaft, as the Model T uses) and the manual clutch model, the closest existing transmission, so its shifts and launch are clutch-like rather than converter-slipping."
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.6,
+    "bov": "atmospheric",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "dual",
+    "muffler": "stock",
+    "pipeLength": 3.0,
+    "inertia": 1.1,
+    "camLope": 0.08,
+    "pops": 0.1,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "ford-f150-ecoboost",
+   "research": "ford-f150-35-ecoboost-2017-2020",
+   "category": "machine",
+   "label": "Ford F-150 3.5 EcoBoost (10R80)",
+   "layout": "V6-60",
+   "firingOrder": "research",
+   "banks": {
+    "1": [
+     4,
+     5,
+     6
+    ]
+   },
+   "gearbox": "layshaft",
+   "spec": "3.5 L twin-turbo 60-degree V6; ten-speed 10R80 automatic, modelled as the closest available option, a dual-clutch style shifter.",
+   "estimates": {
+    "idleRpm": 650,
+    "redline": 6000,
+    "boost": 1.1,
+    "finalDrive": 3.55,
+    "wheelRadiusM": 0.408,
+    "cdA": 1.2,
+    "_why": {
+     "idleRpm": "not published",
+     "redline": "not published; power peaks at 5,000 rpm, limit assumed near 6,000",
+     "boost": "not published; about 16 psi assumed for the second-generation engine",
+     "finalDrive": "3.55 is only confirmed for the max-tow configuration; other ratios exist",
+     "wheelRadiusM": "275/65R18 assumed, a common F-150 size (rolling radius from the size formula)",
+     "cdA": "no Cd or area found; Cd about 0.40 x 3.0 m2 assumed",
+     "gearbox": "the synthesizer has no torque-converter automatic; the 10R80 is modelled as the dct transmission, the nearest match (no clutch dip, quick shifts), with layshaft gear whine"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.5,
+    "bov": "recirculating",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 3.0,
+    "inertia": 1.3,
+    "camLope": 0.03,
+    "pops": 0.1,
+    "fuel": "petrol",
+    "transmission": "dct",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "peterbilt-379-cat-c15",
+   "research": "peterbilt-379-cat-c15-eaton-fuller-18",
+   "category": "machine",
+   "label": "Peterbilt 379 Cat C15 (Eaton Fuller 18-speed)",
+   "layout": "I6",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "15.2 L Caterpillar C15 turbodiesel inline-six governed at 2,100 rpm; Eaton Fuller RTLO-18918B 18-speed manual (14.40 to 0.73) and straight stacks.",
+   "estimates": {
+    "idleRpm": 600,
+    "boost": 2.0,
+    "finalDrive": 3.7,
+    "massKg": 8300,
+    "wheelRadiusM": 0.5,
+    "cdA": 5.0,
+    "_why": {
+     "idleRpm": "not published; typical heavy-diesel idle",
+     "boost": "not published; about 2 bar peak assumed",
+     "finalDrive": "not found; 3.55 to 3.90 are common 379 axle ratios, 3.70 chosen",
+     "massKg": "bobtail tractor; an unconfirmed Overdrive test unit lists 18,370 lb (8,332 kg) dry; no trailer",
+     "wheelRadiusM": "11R22.5 assumed, loaded radius about 0.50 m (unconfirmed Michelin listing 496 mm); the size string does not parse in the build script",
+     "cdA": "no 379 figure found; the 379 is boxy, bobtail Cd about 0.75 x 6.5 m2 assumed",
+     "gearCut": "Eaton Fuller helical constant-mesh assumed",
+     "turboSize": "0.8: a larger value spools slower than the boost check allows at these low engine speeds"
+    }
+   },
+   "model": {
+    "aspiration": "turbo",
+    "turboSize": 0.8,
+    "bov": "none",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "stacks",
+    "pipeLength": 5.0,
+    "inertia": 3.0,
+    "camLope": 0.05,
+    "pops": 0,
+    "fuel": "diesel",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
+  },
+  {
+   "id": "willys-mb",
+   "research": "willys-mb-1941-1945",
+   "category": "machine",
+   "label": "Willys MB (1941-45 jeep)",
+   "layout": "I4",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "2.2 L Go Devil flathead inline-four with a T-84 three-speed gearbox, transfer case in high range.",
+   "estimates": {
+    "redline": 4000,
+    "finalDrive": 5.375,
+    "wheelRadiusM": 0.343,
+    "cdA": 1.4,
+    "_why": {
+     "redline": "no governor speed found; power peaks at 4,000 rpm",
+     "finalDrive": "axle ratio not found; 5.38:1 is the commonly quoted MB axle, with transfer case high range direct (1.00)",
+     "wheelRadiusM": "6.00-16 tyres assumed (commonly quoted for the MB)",
+     "cdA": "no figure found; Cd about 0.8 x 1.75 m2 assumed",
+     "gearCut": "straight-cut gears assumed for a 1940s crash-box"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "small-can",
+    "pipeLength": 1.5,
+    "inertia": 2.0,
+    "camLope": 0.2,
+    "pops": 0.05,
+    "fuel": "petrol",
+    "transmission": "manual",
+    "gearCut": "straight"
+   }
+  },
+  {
+   "id": "toyota-land-cruiser-70-1hz",
+   "research": "toyota-land-cruiser-70-1hz",
+   "category": "machine",
+   "label": "Toyota Land Cruiser 70 1HZ (5-speed)",
+   "layout": "I6",
+   "firingOrder": "research",
+   "gearbox": "layshaft",
+   "spec": "4.2 L naturally aspirated diesel inline-six; five-speed manual, high range, 7.50R16 tyres.",
+   "estimates": {
+    "wheelRadiusM": 0.41,
+    "cdA": 1.7,
+    "_why": {
+     "wheelRadiusM": "7.50R16 confirmed but the string does not parse; rolling radius about 0.41 m assumed",
+     "cdA": "no Cd or area found; Cd about 0.55 x 3.1 m2 assumed",
+     "gearCut": "helical assumed"
+    }
+   },
+   "model": {
+    "aspiration": "na",
+    "intake": "airbox",
+    "headers": "log",
+    "routing": "single",
+    "muffler": "stock",
+    "pipeLength": 3.0,
+    "inertia": 2.4,
+    "camLope": 0.05,
+    "pops": 0,
+    "fuel": "diesel",
+    "transmission": "manual",
+    "gearCut": "helical"
+   }
   }
  ]
 }

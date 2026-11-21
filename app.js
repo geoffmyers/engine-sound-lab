@@ -1,5 +1,5 @@
 // Engine Sound Lab page controller: settings and controls, the audio graph, and the
-// instruments (tachometer, cylinder map, firing timeline, spectrum).
+// instruments (tachometer, 3D cutaway engine, firing timeline, spectrum).
 import { buildConfig, settingsFromPreset, layoutInfo, firingHz } from "./engine-config.js";
 import { renderScenario, encodeWav } from "./render.js";
 
@@ -36,14 +36,110 @@ function fillSelect(sel, items) {
   }
 }
 const FAMILY = { inline: "Inline", v: "V and L", flat: "Flat (boxer)", rotary: "Rotary" };
-// Presets grouped by category (engine-data.json "presetCategories"), in that order.
-{
-  const cats = data.presetCategories || {};
-  const order = Object.keys(cats);
-  const items = data.presets.map(p => [p.id, p.label, cats[p.category || "generic"] || "Other"]);
-  items.sort((a, b) => order.indexOf(Object.keys(cats).find(k => cats[k] === a[2])) - order.indexOf(Object.keys(cats).find(k => cats[k] === b[2])));
-  fillSelect($("preset"), [["custom", "Custom build"], ...items]);
+// ---- preset picker ------------------------------------------------------------------
+// A card per preset with a 3D rendering: the car's Gran Turismo 7 studio render where GT7 has
+// the same model (img/gt7/index.json; the live site only, never in the public repository),
+// otherwise a render of the preset's own 3D engine (img/presets/).
+const CATS = data.presetCategories || {};
+const catOf = (p) => p.category || "generic";
+const engineImg = (id) => `img/presets/${id}.webp`;
+let gt7 = {};
+const imgFor = (id) => gt7[id] ? `img/gt7/${id}.webp` : engineImg(id);
+const ASP = { turbo: "turbo", supercharger: "supercharged" };
+function presetSub(p) {
+  const L = data.layouts[p.layout];
+  const parts = [L ? L.label.replace(/ \(.*\)$/, "") : p.layout, FORMAT.displacement(p.displacement)];
+  if (ASP[p.aspiration]) parts.push(ASP[p.aspiration]);
+  if (p.fuel === "diesel") parts.push("diesel");
+  return parts.join(" · ");
 }
+function thumb(holder, img, id) {
+  holder.classList.remove("none");
+  // A missing GT7 render falls back to the engine render, and that to the placeholder.
+  img.onerror = () => { if (id && img.src.includes("/gt7/")) img.src = engineImg(id); else holder.classList.add("none"); };
+  if (id) img.src = imgFor(id); else holder.classList.add("none");
+}
+const sortedPresets = [...data.presets].sort((a, b) =>
+  Object.keys(CATS).indexOf(catOf(a)) - Object.keys(CATS).indexOf(catOf(b)) || a.label.localeCompare(b.label));
+let pickerCat = "all";
+function renderPicker() {
+  const q = $("pickerSearch").value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const grid = $("pickerGrid"); grid.textContent = "";
+  let shown = 0, lastCat = null;
+  for (const p of sortedPresets) {
+    if (pickerCat !== "all" && catOf(p) !== pickerCat) continue;
+    const hay = `${p.label} ${CATS[catOf(p)] || ""} ${presetSub(p)} ${p.layout} ${p.spec || ""}`.toLowerCase();
+    if (!q.every(w => hay.includes(w))) continue;
+    if (pickerCat === "all" && catOf(p) !== lastCat) {
+      const h = document.createElement("h3"); h.className = "picker-section"; h.textContent = CATS[catOf(p)] || "Other";
+      grid.append(h); lastCat = catOf(p);
+    }
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "pcard"; b.dataset.id = p.id;
+    if (settings.preset === p.id) b.setAttribute("aria-current", "true");
+    const fig = document.createElement("span"); fig.className = "pcard-img";
+    const img = document.createElement("img"); img.alt = ""; img.loading = "lazy"; img.decoding = "async"; img.width = 480; img.height = 300;
+    fig.append(img); thumb(fig, img, p.id);
+    const tag = catOf(p) === "generic" ? "Generic" : gt7[p.id] ? "" : "Engine";
+    if (tag) { const t = document.createElement("span"); t.className = "tag"; t.textContent = tag; fig.append(t); }
+    if (gt7[p.id]) b.title = `Gran Turismo 7: ${gt7[p.id].car}`;
+    const tx = document.createElement("span"); tx.className = "pcard-text";
+    const nm = document.createElement("b"); nm.textContent = p.label;
+    const sub = document.createElement("small"); sub.textContent = presetSub(p);
+    tx.append(nm, sub); b.append(fig, tx); grid.append(b);
+    shown++;
+  }
+  $("pickerEmpty").hidden = shown > 0;
+}
+function renderTabs() {
+  const tabs = $("pickerTabs"); tabs.textContent = "";
+  const counts = {};
+  for (const p of data.presets) counts[catOf(p)] = (counts[catOf(p)] || 0) + 1;
+  for (const [id, label] of [["all", "All"], ...Object.entries(CATS)]) {
+    if (id !== "all" && !counts[id]) continue;
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.cat = id; b.setAttribute("aria-pressed", String(pickerCat === id));
+    b.append(label); const n = document.createElement("b"); n.textContent = id === "all" ? data.presets.length : counts[id]; b.append(n);
+    tabs.append(b);
+  }
+}
+function renderCredits() {
+  const ul = $("pickerCredits"); ul.textContent = "";
+  $("pickerCreditsBox").hidden = !Object.keys(gt7).length;
+  for (const p of sortedPresets) {
+    const g = gt7[p.id]; if (!g) continue;
+    const li = document.createElement("li");
+    li.textContent = `${p.label}: ${g.car}${g.match === "exact" ? "" : ` (${g.match})`}`;
+    ul.append(li);
+  }
+}
+function updatePresetButton() {
+  const p = presetById[settings.preset];
+  $("presetBtnName").textContent = p ? p.label : "Custom build";
+  $("presetBtnSub").textContent = p ? presetSub(p) : presetSub({ ...settings, layout: settings.layout });
+  thumb($("presetBtnImg").parentElement, $("presetBtnImg"), p ? p.id : null);
+}
+function openPicker() {
+  $("pickerSearch").value = ""; // a search from last time would hide most of the list
+  renderTabs(); renderPicker();
+  $("presetDialog").showModal();
+  const cur = $("pickerGrid").querySelector('[aria-current="true"]');
+  if (cur) { cur.scrollIntoView({ block: "center" }); cur.focus(); } else $("pickerSearch").focus();
+}
+$("presetBtn").addEventListener("click", openPicker);
+$("pickerClose").addEventListener("click", () => $("presetDialog").close());
+$("presetDialog").addEventListener("click", (e) => { if (e.target === $("presetDialog")) $("presetDialog").close(); });
+$("pickerSearch").addEventListener("input", renderPicker);
+$("pickerTabs").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-cat]"); if (!b) return;
+  pickerCat = b.dataset.cat; renderTabs(); renderPicker();
+});
+$("pickerGrid").addEventListener("click", (e) => {
+  const b = e.target.closest(".pcard"); if (!b) return;
+  $("presetDialog").close();
+  applyPreset(b.dataset.id);
+});
+fetch("img/gt7/index.json").then(r => r.ok ? r.json() : {}).then(g => { gt7 = g; renderCredits(); updatePresetButton(); presetSpec(); }).catch(() => {});
 fillSelect($("layout"), Object.entries(data.layouts).map(([id, L]) => [id, L.label, FAMILY[L.family]]));
 fillSelect($("intake"), Object.entries(data.intakes).map(([id, v]) => [id, v.label]));
 fillSelect($("muffler"), Object.entries(data.mufflers).map(([id, v]) => [id, v.label]));
@@ -90,7 +186,7 @@ function syncControls() {
     else el.value = v;
   }
   syncOutputs();
-  $("preset").value = settings.preset && presetById[settings.preset] ? settings.preset : "custom";
+  updatePresetButton();
   for (const r of document.querySelectorAll('input[name="mode"]')) r.checked = r.value === mode;
   syncVisibility();
 }
@@ -103,6 +199,13 @@ function syncOutputs() {
 }
 function presetSpec() {
   const p = presetById[settings.preset];
+  // The car's Gran Turismo 7 render, named (the engine already has its own 3D view).
+  const g = p && gt7[p.id], fig = $("presetPhoto");
+  fig.hidden = !g;
+  if (g) {
+    $("presetPhotoImg").src = imgFor(p.id); $("presetPhotoImg").alt = `${p.label}, rendered in Gran Turismo 7`;
+    $("presetPhotoCredit").textContent = `Gran Turismo 7: ${g.car}${g.match === "exact" ? "" : ` (${g.match})`}`;
+  }
   const el = $("presetSpec"); el.textContent = "";
   if (!p || !p.spec) { el.hidden = true; return; }
   el.hidden = false;
@@ -166,6 +269,9 @@ let ctx = null, node = null, analyser = null;
 let snap = { rpm: 0, state: "off", boost: 0, omega: 0, gear: 0, speedKmh: 0, clutch: 1, throttle: 0, phi: 0, fired: [], limiter: false, dfco: false };
 let snapAt = performance.now();
 const heat = {};
+let engine3d = null, engine3dKey = "";
+const SLOW_MO = 40;                 // slow motion shows the engine at 1/40 of its real speed
+let slowMo = false, visPhi = 0;
 
 async function ensureAudio() {
   if (ctx) { if (ctx.state !== "running") await ctx.resume(); return true; }
@@ -265,7 +371,7 @@ document.addEventListener("input", (e) => {
     }
     if (el.dataset.key === "idleRpm" && settings.redline < v + 1500) { settings.redline = v + 1500; $("redline").value = settings.redline; }
     syncOutputs(); syncVisibility();
-    $("preset").value = settings.preset === "custom" ? "custom" : settings.preset;
+    updatePresetButton();
     sendConfig();
   }
   if (el.id === "throttle") { $("throttleOut").textContent = `${Math.round(el.value * 100)} %`; sendControl(); }
@@ -276,8 +382,8 @@ document.addEventListener("change", (e) => {
   if (el.name === "mode") { mode = el.value; syncVisibility(); sendControl(); store(); }
   if (el.type === "radio" && el.dataset.key) syncVisibility();
 });
-$("preset").addEventListener("change", (e) => {
-  const p = presetById[e.target.value];
+function applyPreset(id) {
+  const p = presetById[id];
   if (!p) return;
   settings = settingsFromPreset(data, p, settings.mix, { perspective: settings.perspective, coldStart: settings.coldStart, shiftMode: settings.shiftMode, revMatch: settings.revMatch });
   if (settings.vehicle === "none" && mode === "drive") {
@@ -287,7 +393,8 @@ $("preset").addEventListener("change", (e) => {
   }
   syncControls(); sendConfig();
   if (mode === "dyno") { $("holdRpm").value = Math.round(settings.redline * 0.45 / 50) * 50; $("holdRpmOut").textContent = `${fmtInt($("holdRpm").value)} rpm`; sendControl(); }
-});
+}
+window.choosePreset = applyPreset; // used by tests/smoke.mjs and the screenshot scripts
 
 // Reset to defaults: the default preset with the default mixer, listening position and shift
 // settings, Free rev, no steady throttle and the hold speed the page loads with. The engine keeps
@@ -474,88 +581,6 @@ function phiNow() {
   return (snap.phi + snap.rpm / 60 * 360 * Math.min(dt, 0.1)) % info.cycle;
 }
 
-function drawEngine(g, W, H) {
-  const info = layoutInfo(data, settings.layout, settings);
-  g.clearRect(0, 0, W, H);
-  const phi = phiNow();
-  const banks = [0, 1].map(b => info.firing.filter(f => f[2] === b).sort((x, y) => x[0] - y[0]));
-  const colorOf = (bank) => bank ? COL.b : COL.a;
-  const glow = (cyl) => heat[cyl] || 0;
-
-  if (info.family === "radial") {
-    // Cylinders around the crankcase, pistons moving out and in along their own radius.
-    const n = info.cylinders, cx = W / 2, cy = H / 2, R0 = Math.min(H * 0.15, W * 0.1), len = Math.min(H * 0.24, W * 0.2);
-    g.fillStyle = COL.glass2; g.beginPath(); g.arc(cx, cy, R0, 0, Math.PI * 2); g.fill();
-    for (const [cyl, angle] of info.firing) {
-      const a = -Math.PI / 2 + (cyl - 1) * Math.PI * 2 / n;
-      const ux = Math.cos(a), uy = Math.sin(a), vx = -uy, vy = ux, w = Math.min(14, len * 0.35);
-      const corner = (r, s) => [cx + ux * r + vx * s, cy + uy * r + vy * s];
-      g.beginPath(); for (const [r, sgn] of [[R0, -1], [R0 + len, -1], [R0 + len, 1], [R0, 1]]) g.lineTo(...corner(r, sgn * w));
-      g.closePath(); g.fillStyle = glowMix(COL.a, 0.15 + 0.85 * glow(cyl), 1); g.fill();
-      g.strokeStyle = glowMix(COL.a, 0.4 + 0.6 * glow(cyl)); g.lineWidth = 1.2; g.stroke();
-      const travel = (1 - Math.cos((phi - angle) * Math.PI / 180)) / 2;
-      const pr = R0 + len * (0.82 - 0.55 * travel);
-      g.strokeStyle = COL.ink; g.lineWidth = 4; g.beginPath(); g.moveTo(...corner(pr, -w * 0.8)); g.lineTo(...corner(pr, w * 0.8)); g.stroke();
-      g.fillStyle = COL.ink; g.font = `600 10px "JetBrains Mono", monospace`; g.textAlign = "center"; g.textBaseline = "middle";
-      g.fillText(String(cyl), ...corner(R0 + len + 9, 0));
-    }
-    return;
-  }
-  if (info.family === "rotary") {
-    const n = info.cylinders, rr = Math.min(H * 0.38, W / (n * 2.6));
-    info.firing.forEach(([cyl, angle], i) => {
-      const cx = W / 2 + (i - (n - 1) / 2) * rr * 2.5, cy = H / 2;
-      g.fillStyle = COL.glass2; g.beginPath(); g.ellipse(cx, cy, rr * 1.1, rr * 0.92, 0, 0, Math.PI * 2); g.fill();
-      g.strokeStyle = glowMix(colorOf(0), glow(cyl)); g.lineWidth = 2; g.stroke();
-      // The rotor turns at one third of the eccentric shaft speed.
-      const rot = ((phi - angle) / 3) * Math.PI / 180;
-      g.fillStyle = glowMix(colorOf(0), 0.25 + 0.75 * glow(cyl));
-      g.beginPath();
-      for (let k = 0; k < 3; k++) { const a = rot + k * Math.PI * 2 / 3; g.lineTo(cx + Math.cos(a) * rr * 0.8, cy + Math.sin(a) * rr * 0.8); }
-      g.closePath(); g.fill();
-      g.fillStyle = COL.ink; g.font = `600 12px "JetBrains Mono", monospace`; g.textAlign = "center"; g.fillText(`R${cyl}`, cx, cy + rr * 1.1 + 14);
-    });
-    return;
-  }
-
-  const rows = info.banks === 2 ? banks : [banks[0]];
-  const maxN = Math.max(...rows.map(r => r.length));
-  const cw = Math.min(54, (W - 40) / (maxN + (info.banks === 2 ? 0.5 : 0)));
-  const ch = info.banks === 2 ? H * 0.36 : H * 0.62;
-  const crankY = info.banks === 2 ? H / 2 : H * 0.84;
-  g.strokeStyle = COL.dim; g.lineWidth = 2;
-  g.beginPath(); g.moveTo(16, crankY); g.lineTo(W - 16, crankY); g.stroke();
-  rows.forEach((row, b) => {
-    row.forEach(([cyl, angle], i) => {
-      const off = info.banks === 2 && info.family === "v" && b === 1 ? cw * 0.5 : 0;
-      const x = W / 2 + (i - (maxN - 1) / 2) * cw + off - cw * 0.42;
-      const up = info.banks === 1 || b === 0;
-      const y0 = up ? crankY - ch - 6 : crankY + 6;
-      const w = cw * 0.84;
-      // Bore
-      g.fillStyle = COL.glass2; g.fillRect(x, y0, w, ch);
-      g.strokeStyle = glowMix(colorOf(b), 0.35 + 0.65 * glow(cyl)); g.lineWidth = 1.5; g.strokeRect(x + 0.5, y0 + 0.5, w - 1, ch - 1);
-      // Piston position: top dead centre at the firing angle and 360° after it.
-      const th = (phi - angle) * Math.PI / 180;
-      const travel = (1 - Math.cos(th)) / 2; // 0 at TDC, 1 at BDC
-      const pis = ch * 0.22, room = ch - pis - 8;
-      const py = up ? y0 + 4 + room * travel : y0 + ch - 4 - pis - room * travel;
-      // Combustion glow above the piston
-      const gl = glow(cyl);
-      if (gl > 0.02) {
-        g.fillStyle = glowMix(colorOf(b), gl, 0.85);
-        if (up) g.fillRect(x + 2, y0 + 2, w - 4, py - y0 - 2); else g.fillRect(x + 2, py + pis, w - 4, y0 + ch - (py + pis) - 2);
-      }
-      g.fillStyle = COL.ink; g.fillRect(x + 3, py, w - 6, pis);
-      g.fillStyle = COL.glass; g.font = `600 11px "JetBrains Mono", monospace`; g.textAlign = "center"; g.textBaseline = "middle";
-      g.fillText(String(cyl), x + w / 2, py + pis / 2);
-    });
-    if (info.banks === 2) {
-      g.fillStyle = colorOf(b); g.font = `600 11px "Archivo", sans-serif`; g.textAlign = "left";
-      g.fillText(b === 0 ? "BANK A" : "BANK B", 4, b === 0 ? crankY - ch / 2 : crankY + ch / 2);
-    }
-  });
-}
 function glowMix(hex, t, alpha = 1) {
   const c = parseInt(hex.slice(1), 16), base = parseInt(COL.glass2.slice(1), 16);
   const ch = (v, s) => (v >> s) & 255;
@@ -582,13 +607,13 @@ function drawTimeline(g, W, H) {
     g.strokeStyle = COL.grid; g.beginPath(); g.moveTo(x0, rowY(b)); g.lineTo(x1, rowY(b)); g.stroke();
   }
   for (const [cyl, angle, bank] of info.firing) {
-    const y = rowY(rows === 1 ? 0 : bank), x = X(angle), gl = heat[cyl] || 0;
+    const y = rowY(rows === 1 ? 0 : bank), x = X(angle), gl = glowOf(cyl);
     g.fillStyle = glowMix(bank ? COL.b : COL.a, 0.45 + 0.55 * gl);
     g.beginPath(); g.arc(x, y, 9, 0, Math.PI * 2); g.fill();
     g.fillStyle = COL.glass; g.textAlign = "center"; g.font = `600 10px "JetBrains Mono", monospace`;
     g.fillText(String(cyl), x, y + 0.5);
   }
-  const p = phiNow();
+  const p = visPhi;
   g.strokeStyle = COL.ink; g.lineWidth = 1.5; g.beginPath(); g.moveTo(X(p), 4); g.lineTo(X(p), H - 16); g.stroke();
 }
 
@@ -629,6 +654,8 @@ function drawSpectrum(g, W, H) {
 // Static text that changes only with the layout.
 function drawStatic() {
   const info = layoutInfo(data, settings.layout, settings);
+  const key = JSON.stringify([settings.layout, settings.fuel, settings.firingOrder, settings.banks]);
+  if (engine3d && key !== engine3dKey) { engine3d.setLayout(info, settings); engine3dKey = key; }
   $("layoutName").textContent = `${info.label} · ${FORMAT.displacement(settings.displacement)}`;
   $("roOrder").textContent = info.order.join("-");
   const even = info.intervals.every(v => v === info.intervals[0]);
@@ -643,13 +670,53 @@ function drawStatic() {
   $("firingNotes").innerHTML = note;
 }
 
+// ---- 3D engine ------------------------------------------------------------------------
+// The cutaway loads after the page (three.js is ~700 KB); everything else works without it.
+import("./engine-3d.js")
+  .then(({ createEngine3D }) => {
+    engine3d = createEngine3D($("engine3d"), { colors: { a: COL.a, b: COL.b } });
+    $("engine3d").dataset.state = "ready";
+    drawStatic();
+  })
+  .catch((err) => {
+    console.error(err);
+    $("engine3d").dataset.state = "failed";
+    $("engine3dNote").textContent = "The 3D engine needs WebGL, which this browser did not provide.";
+  });
+$("slowMo").addEventListener("click", () => {
+  slowMo = !slowMo;
+  $("slowMo").setAttribute("aria-pressed", String(slowMo));
+});
+
+// Combustion glow per cylinder. In real time it is the DSP's own firing events; in slow
+// motion it follows the slowed crank, lit only while the engine is firing.
+function makeGlow(info) {
+  if (!slowMo) return (cyl) => heat[cyl] || 0;
+  const firing = snap.state === "running" && !snap.dfco;
+  const byCyl = {};
+  for (const [cyl, angle] of info.firing) {
+    const after = ((visPhi - angle) % info.cycle + info.cycle) % info.cycle;
+    byCyl[cyl] = firing && after < 70 ? Math.exp(-after / 22) : 0;
+  }
+  return (cyl) => byCyl[cyl] || 0;
+}
+
 let needleRpm = 0, lastFrame = performance.now();
+let glowOf = (cyl) => heat[cyl] || 0;
 function frame(now) {
   const dt = Math.min(0.1, (now - lastFrame) / 1000); lastFrame = now;
   needleRpm += (snap.rpm - needleRpm) * (1 - Math.exp(-dt / 0.04));
   for (const k in heat) heat[k] *= Math.exp(-dt / 0.07);
+  const info = layoutInfo(data, settings.layout, settings);
+  visPhi = slowMo ? (visPhi + snap.rpm / 60 * 360 * dt / SLOW_MO) % info.cycle : phiNow();
+  glowOf = makeGlow(info);
   const t = fitCanvas($("tach")); drawTach(...t);
-  const e = fitCanvas($("engine")); drawEngine(...e);
+  if (engine3d) {
+    engine3d.frame({
+      theta: visPhi, glowOf, dt, moving: snap.rpm > 1,
+      load: snap.state === "running" ? snap.throttle * snap.rpm / settings.redline : 0,
+    });
+  }
   const l = fitCanvas($("timeline")); drawTimeline(...l);
   const s = fitCanvas($("spectrum")); drawSpectrum(...s);
   requestAnimationFrame(frame);

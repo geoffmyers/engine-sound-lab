@@ -7,7 +7,8 @@ please read the last section before opening a PR.
 ## Getting set up
 
 **Stack:** static HTML, CSS and JavaScript (ES modules and an AudioWorklet), with no build
-step and no runtime dependencies. The checks and tooling need Node.js 22; the recording
+step. The one runtime dependency is three.js for the 3D engine, checked in under `lib/three/`
+so nothing is fetched at build or run time. The checks and tooling need Node.js 22; the recording
 analysis and the preset generator need Python 3.
 
 ```bash
@@ -42,8 +43,8 @@ it, drive it through the gears and listen. No check can tell you whether it soun
 
 ## Changing the real-vehicle presets
 
-The 42 real presets in `engine-data.json` (marked `"real": true`) are **generated**: edit the
-sourced research in `research/2026-11-15-*.json` or the modelling choices and labelled
+The 69 real presets in `engine-data.json` (marked `"real": true`) are **generated**: edit the
+sourced research in `research/2026-11-*.json` or the modelling choices and labelled
 estimates in `research/preset-modelling.json`, then run:
 
 ```bash
@@ -54,14 +55,19 @@ python3 scripts/build-real-presets.py --check  # exit 1 if engine-data.json is s
 A new figure needs a source you have actually read; anything estimated goes in `estimates`
 with its reason, and the page will say it is estimated.
 
+Every preset also needs a picture: a render of its own 3D engine. Run
+`CDP_URL=... node scripts/render-engine-thumbs.mjs <id>` against a browser with a GPU (WebGL),
+then `python3 scripts/convert-renders.py`; `scripts/preset-image-sheet.py out.png` tiles them
+all for a look.
+
 ## Before you open a pull request
 
 - Keep the change focused. One concern per PR is much easier to review.
 - Match the surrounding style rather than introducing a new one. There is no
   separate style guide; the existing code is the guide.
 - Keep numbers in `engine-data.json`, not in the code.
-- Keep the site dependency-free unless there is a strong reason. No build step
-  is part of the design.
+- Keep the site free of new dependencies unless there is a strong reason (three.js, vendored
+  in `lib/three/`, is the only one). No build step is part of the design.
 - Update the README if you change behaviour a user can see.
 - Explain **why** in the commit message, not just what. The diff already says
   what changed.
